@@ -1,7 +1,22 @@
+:root {
+	--beige: #DBCFB0;
+	--light-green: #BFC8AD;
+	--dark-green: #90B494;
+	--light-blue: #718F94;
+	--dark-blue: #545775;
+}
+
 body {
 	display: flex;
+	margin: 0;
+	padding: 0;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	width: 100%;
+	font-family: 'Lora', serif;
+}
+
+h1,h2,h3,h4,h5,.display {
+	font-family: 'Tangerine', cursive;
 }

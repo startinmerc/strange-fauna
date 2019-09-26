@@ -1,0 +1,16 @@
+main {
+	max-width: 80%;
+	margin: 0 auto;
+}
+
+.color {
+	display: inline-block;
+	height: 100px;
+	width: 20%;
+}
+
+#color-1 {background-color: var(--beige);}
+#color-2 {background-color: var(--light-green);}
+#color-3 {background-color: var(--dark-green);}
+#color-4 {background-color: var(--light-blue);}
+#color-5 {background-color: var(--dark-blue);}
