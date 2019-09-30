@@ -1,0 +1,19 @@
+.footer {
+	height: 40vh;
+	background-color: var(--dark-blue);
+	color: #f9f9f9;
+	width: 100%;
+}
+
+.footer-link, .footer-link-sub {
+	color: #f9f9f9;
+}
+
+.footer-link {
+	font-size: 1.3rem;
+}
+
+.footer-link-group {
+	list-style: none;
+	display: inline-block;
+}

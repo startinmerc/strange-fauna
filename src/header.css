@@ -1,0 +1,27 @@
+.header {
+	background-color: var(--light-green);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 10%;
+}
+
+.header-title {
+	color: var(--dark-blue);
+	margin: 0;
+	font-size: 1.4rem;
+	padding: 0.1rem 0;
+}
+
+.header-li {
+	font-size: 1rem;
+	display: inline-block;
+	padding: 0.2rem 2rem;
+	background-color: green;
+	height: 100%;
+}
+
+
+.header-links {
+	/*height: 100%;*/
+}
