@@ -3,17 +3,30 @@ import './App.css';
 import Header from './header';
 import Footer from './footer';
 
-
+class Product extends Component {
+	render(){
+		return (
+		<div className="product-card">
+			<h4>Product Title</h4>
+			<p>Chillwave PBR&B sustainable pitchfork poke kitsch.</p>
+		</div>
+		)
+	}
+}
 
 
 
 class App extends Component {
 	render(){
+		const pList = [];
+		for (var i = 0; i <= 6; i++) {
+			pList.push(<Product />)
+		}
 		return(
 			<div>
 				<Header />
 				<main>
-				
+				{pList}
 				{/*
 				<h1 style={{textAlign: 'center', fontSize: '10rem', margin: 0}}>Strange Fauna</h1>
 				<p>
