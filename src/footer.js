@@ -15,7 +15,7 @@ class Footer extends Component {
 					<li><a className="footer-link-sub" href="#">About Sub</a></li>
 					<li><a className="footer-link-sub" href="#">About Sub</a></li>
 				</ul>
-				<a className="footer-link" href="https://www.strangeindustries.co.uk">
+				<a className="footer-link footer-external" href="https://www.strangeindustries.co.uk">
 					Strange Industries 2019
 				</a>
 			</footer>
