@@ -24,7 +24,7 @@ h1,h2,h3,h4,h5,.display {
 
 a {
 	text-decoration: none;
-	color: var(--dark-blue);
+	color: inherit;
 	box-shadow: inset 0 -0.2rem 0rem var(--light-blue);
 	transition: all 250ms ease-in;
 }
