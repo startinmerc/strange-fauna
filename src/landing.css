@@ -3,19 +3,11 @@ main {
 	max-width: 80vw;
 	margin: 0 auto;
 	display: flex;
+	flex-direction: column-reverse;
 	height:"80vh";
 	background-size: cover;
 	background-position: center;
 	background-image: url(https://images.unsplash.com/photo-1528518290605-1fcc8dcca204?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9);
-}
-
-.color {
-	display: inline-block;
-	/*height: 10px;*/
-	flex-grow: 1;
-	align-self: flex-end;
-	color: #112;
-	padding: 10px 0 10px 10px;
 }
 
 .landing-header {
@@ -27,8 +19,3 @@ main {
 	left: 15%;
 }
 
-#color-1 {background-color: var(--beige);color: #112;}
-#color-2 {background-color: var(--light-green);color: #112;}
-#color-3 {background-color: var(--dark-green);color: #112;}
-#color-4 {background-color: var(--light-blue);color: #112;}
-#color-5 {background-color: var(--dark-blue);color: #112;}
