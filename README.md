@@ -39,3 +39,5 @@ Site Structure Plan:
 
 #### Page mockup
 * [Mock up main page on Codepen](https://codepen.io/startinmerc/pen/JjPVGJo)
+* Add sections menu skeleton
+* [Add submenu from Codepen](https://codepen.io/startinmerc/pen/oNNxRNx)
