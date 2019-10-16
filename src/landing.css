@@ -17,5 +17,62 @@ main {
 	letter-spacing: -6px;
 	font-weight: normal;
 	left: 15%;
+	top: 0;
 }
 
+.options {
+	display: flex;
+	width: 80vw;
+	position: relative;
+}
+
+.landing-option {
+	background-color: #f1f1f1;
+	height: auto;
+	font-size: 1.5rem;
+	list-style: none;
+	padding: 5px;
+	flex-grow: 1;
+}
+
+.landing-option:nth-of-type(1){background-color: var(--beige)}
+.landing-option:nth-of-type(2){background-color: var(--light-green)}
+.landing-option:nth-of-type(3){background-color: var(--dark-green)}
+.landing-option:nth-of-type(4){background-color: var(--light-blue)}
+.landing-option:nth-of-type(5){background-color: var(--dark-blue)}
+
+.submenu {
+	position: absolute;
+	width: 70vw;
+	padding: 1% 5vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	left: 0;
+	bottom: calc(10px + 1.5rem);
+	transform-origin: bottom;
+	transition: all 0s 150ms linear;
+	transform: scaleY(0);
+}
+
+.submenu-section {
+	background: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5px;
+	padding: 5px;
+}
+
+.submenu-section img {
+	margin: 0 auto;
+}
+
+.submenu-section h5 {
+	font-size: 1.3rem;
+	margin: 5px 0;
+}
+
+.submenu-section p {
+	font-size: 1rem;
+	margin: 5px 0;
+}
