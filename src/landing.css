@@ -35,12 +35,6 @@ main {
 	flex-grow: 1;
 }
 
-.landing-option:nth-of-type(1){background-color: var(--beige)}
-.landing-option:nth-of-type(2){background-color: var(--light-green)}
-.landing-option:nth-of-type(3){background-color: var(--dark-green)}
-.landing-option:nth-of-type(4){background-color: var(--light-blue)}
-.landing-option:nth-of-type(5){background-color: var(--dark-blue)}
-
 .submenu {
 	position: absolute;
 	width: 70vw;
@@ -50,8 +44,9 @@ main {
 	left: 0;
 	bottom: calc(10px + 1.5rem);
 	transform-origin: bottom;
-	transition: all 0s 150ms linear;
+	transition: all 50ms 50ms linear;
 	transform: scaleY(0);
+	opacity: 0;
 }
 
 .submenu-section {
@@ -75,4 +70,9 @@ main {
 .submenu-section p {
 	font-size: 1rem;
 	margin: 5px 0;
+}
+
+.landing-option:hover > .submenu {
+	transform: scaleY(1);
+	opacity: 1;
 }
