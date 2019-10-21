@@ -2,26 +2,33 @@ import React, {Component} from 'react';
 import './landing.css';
 
 
-class Submenu extends Component {
+class Option extends Component {
 	render(){
 		return(
-			<div className="submenu" style={{backgroundColor: `${this.props.color}`}}>
-				<div className="submenu-section">
-					<img src="https://picsum.photos/200" alt="" />
-					<h5>Submenu Option</h5>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+			<li className="landing-option" 
+			 onMouseEnter={this.props.handleEnter}
+			 onMouseLeave={this.props.handleLeave}
+			 style={{backgroundColor: `${this.props.color}`}}
+			 >
+				{this.props.title}
+				<div className="submenu" style={{backgroundColor: `${this.props.color}`}}>
+					<div className="submenu-section">
+						<img src="https://picsum.photos/200" alt="" />
+						<h5>{this.props.title} Submenu</h5>
+						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+					</div>
+					<div className="submenu-section">
+						<img src="https://picsum.photos/200" alt="" />
+						<h5>{this.props.title} Submenu</h5>
+						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+					</div>
+					<div className="submenu-section">
+						<img src="https://picsum.photos/200" alt="" />
+						<h5>{this.props.title} Submenu</h5>
+						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+					</div>
 				</div>
-				<div className="submenu-section">
-					<img src="https://picsum.photos/200" alt="" />
-					<h5>Submenu Option</h5>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-				</div>
-				<div className="submenu-section">
-					<img src="https://picsum.photos/200" alt="" />
-					<h5>Submenu Option</h5>
-					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-				</div>
-			</div>
+			</li>
 		)
 	}
 }
