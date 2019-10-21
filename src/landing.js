@@ -48,7 +48,6 @@ class Landing extends Component {
 		 ));
 		return(
 			<main>
-				<h1 className="display landing-header">Strange Fauna</h1>
 				<div className="options">
 					{ops}
 				</div>
