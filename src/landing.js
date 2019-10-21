@@ -49,16 +49,21 @@ class Landing extends Component {
 	}
 
 	render(){
+		const colors = [
+			{title: 'Mushrooms', color:'var(--beige)'},
+			{title: 'Berries', color:'var(--light-green)'},
+			{title: 'Flowers', color:'var(--dark-green)'},
+			{title: 'Reductions', color:'var(--light-blue)'},
+			{title: 'About Us', color:'var(--dark-blue)'}
+		];
+		const ops = colors.map((option,index)=>(
+			<Option key={'option-'+index} {...option}/>
+		 ));
 		return(
 			<main>
 				<h1 className="display landing-header">Strange Fauna</h1>
 				<div className="options">
-					<li className="landing-option" onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave}>Mushrooms</li>
-					<li className="landing-option" onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave}>Berries</li>
-					<li className="landing-option" onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave}>Flowers</li>
-					<li className="landing-option" onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave}>Reductions</li>
-					<li className="landing-option" onMouseEnter={this.handleEnter} onMouseLeave={this.handleLeave}>About Us</li>
-					<Submenu />
+					{ops}
 				</div>
 			</main>
 		);
