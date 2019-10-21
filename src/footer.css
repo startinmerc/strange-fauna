@@ -1,5 +1,5 @@
 .footer {
-	background-color: var(--dark-blue);
+	background-color: #777;
 	color: #f9f9f9;
 	width: 100%;
 	display: grid;
@@ -8,8 +8,8 @@
 	grid-template-areas: "list-l list-r"
 											 "link link";
 	text-align: center;
-	padding-top: 1vh;
-	padding-bottom: 10vh;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
 	margin-top: 20px;
 }
 
