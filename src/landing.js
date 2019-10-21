@@ -34,19 +34,6 @@ class Option extends Component {
 }
 
 class Landing extends Component {
-	constructor(props){
-		super(props)
-		this.handleEnter = this.handleEnter.bind(this);
-		this.handleLeave = this.handleLeave.bind(this);
-	}
-
-	handleEnter(e){
-		document.querySelector('.submenu').style.transform = 'scaleY(1)';
-	}
-
-	handleLeave(e){
-		document.querySelector('.submenu').style.transform = 'scaleY(0)';
-	}
 
 	render(){
 		const colors = [
