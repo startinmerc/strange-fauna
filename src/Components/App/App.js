@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import './App.css';
-import Header from './header';
-import Footer from './footer';
-import Landing from './landing';
-import Mushrooms from './Mushrooms';
+import Header from '../Partials/Header';
+import Footer from '../Partials/Footer';
+import Landing from '../Landing/Landing';
+import Products from '../Products/Products';
+import About from '../About/About';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -13,7 +14,8 @@ class App extends Component {
 					<Header />
 					<Switch>
 						<Route path="/" component={Landing} exact />
-						<Route path="/mushrooms" component={Mushrooms} />
+						<Route path="/products" component={Products} />
+						<Route path="/about" component={About} />
 						<Route component={Landing} />
 					</Switch>
 					<Footer />

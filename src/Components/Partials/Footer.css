@@ -13,15 +13,13 @@
 	margin-top: 20px;
 }
 
-.footer-link {
-	color: #fff;
-}
-
 .footer-link-sub {
 	color: #eee;
 }
 
 .footer-link {
+	color: #fff;
+	margin-bottom: 5px;
 	font-size: 1.3rem;
 }
 
