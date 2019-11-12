@@ -3,33 +3,75 @@ import {
   Switch,
   Route,
   Link,
-  useRouteMatch,
-  useParams
+  useRouteMatch
 } from "react-router-dom";
 
-const words = ["Lorem", "ipsum", "dolor", "sit", "amet", "consectetur", "adipisicing", "elit,", "sed", "do", "eiusmod", "tempor", "incididunt", "ut", "labore", "et", "dolore", "magna", "aliqua"];
+const ProductsObj = [
+	{
+		id: 0,
+		name: "product one",
+		type: "mushroom"
+	},
+	{
+		id: 1,
+		name: "product two",
+		type: "berry"
+	},
+	{
+		id: 2,
+		name: "product three",
+		type: "flower"
+	},
+	{
+		id: 3,
+		name: "product four",
+		type: "reduction"
+	}
+];
+
+class ProductList extends Component {
+	render(){
+		var list;
+		if(this.props.type==="all"){
+			list = ProductsObj.map((prod)=>{return <li>{prod.name} of type {prod.type}</li>});
+		} else {
+			list = ProductsObj.filter((p)=>{
+				return p.type === this.props.type
+			}).map((prod)=>{
+				return <li>{prod.name} of type {prod.type}</li>
+			});
+		}
+
+		return (
+			<div>
+				<h1>Hi There! {this.props.type}!</h1>
+				{list}
+			</div>
+		)
+	}
+}
 
 function Products(){
 	let match = useRouteMatch();
 	return (
 		<Switch>
 			<Route path={`${match.url}/all`}>
-				<h1>Hi There! Products!</h1>
+				<ProductList type="all"/>
 			</Route>
 			<Route path={`${match.url}/mushrooms`}>
-				<h1>Hi There! Mushrooms!</h1>
+				<ProductList type="mushroom"/>
 			</Route>
 			<Route path={`${match.url}/berries`}>
-				<h1>Hi There! Berries!</h1>
+				<ProductList type="berry"/>
 			</Route>
 			<Route path={`${match.url}/flowers`}>
-				<h1>Hi There! Flowers!</h1>
+				<ProductList type="flower"/>
 			</Route>
 			<Route path={`${match.url}/reductions`}>
-				<h1>Hi There! Reductions!</h1>
+				<ProductList type="reduction"/>
 			</Route>
 			<Route path={`${match.url}/`}>
-				<h1>Hi There! Products!</h1>
+				<ProductList type="all"/>
 			</Route>
 		</Switch>
 	);
