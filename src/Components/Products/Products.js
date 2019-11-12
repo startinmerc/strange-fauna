@@ -49,12 +49,12 @@ class ProductList extends Component {
 	render(){
 		var list;
 		if(this.props.type==="all"){
-			list = ProductsObj.map((prod)=>{return <li>{prod.name} of type {prod.type}</li>});
+			list = ProductsObj.map((prod)=>{return <li>{prod.name} of type {prod.type} <Link to={`/products/${prod.id}`}>Learn More</Link></li>});
 		} else {
 			list = ProductsObj.filter((p)=>{
 				return p.type === this.props.type
 			}).map((prod)=>{
-				return <li>{prod.name} of type {prod.type}</li>
+				return <li>{prod.name} of type {prod.type} <Link to={`/products/${prod.id}`}>Learn More</Link></li>
 			});
 		}
 
