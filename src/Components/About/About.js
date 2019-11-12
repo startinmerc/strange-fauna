@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const About = ()=>(
 	<h1>Hi There! About!</h1>
