@@ -16,6 +16,7 @@ class Product extends Component {
 }
 
 
+import Mushrooms from './Mushrooms';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
