@@ -45,16 +45,27 @@ const ProductsObj = [
 	}
 ];
 
+function ProductCard({detail}){
+	return (
+		<div id={`product-${detail.id}`}>
+			<h5>{detail.name}</h5>
+			<img src={detail.photos[0]} alt={detail.name}/>
+			<p>{detail.type}</p>
+			<p><Link to={`/products/${detail.id}`}>Learn More</Link></p>
+		</div>
+	)
+}
+
 class ProductList extends Component {
 	render(){
 		var list;
 		if(this.props.type==="all"){
-			list = ProductsObj.map((prod)=>{return <li key={prod.id}>{prod.name} of type {prod.type} <Link to={`/products/${prod.id}`}>Learn More</Link></li>});
+			list = ProductsObj.map((prod)=>{return <ProductCard detail={prod}/>});
 		} else {
 			list = ProductsObj.filter((p)=>{
 				return p.type === this.props.type
 			}).map((prod)=>{
-				return <li key={prod.id}>{prod.name} of type {prod.type} <Link to={`/products/${prod.id}`}>Learn More</Link></li>
+				return <ProductCard detail={prod}/>
 			});
 		}
 
