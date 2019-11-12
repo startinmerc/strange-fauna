@@ -10,22 +10,38 @@ const ProductsObj = [
 	{
 		id: 0,
 		name: "product one",
-		type: "mushroom"
+		type: "mushroom",
+		description: "description ipsum flooby blup blup, isn't it? yeah.",
+		photos: [],
+		reviews: [],
+		price: 5
 	},
 	{
 		id: 1,
 		name: "product two",
-		type: "berry"
+		type: "berry",
+		description: "description ipsum flooby blup blup, isn't it? yeah.",
+		photos: [],
+		reviews: [],
+		price: 5
 	},
 	{
 		id: 2,
 		name: "product three",
-		type: "flower"
+		type: "flower",
+		description: "description ipsum flooby blup blup, isn't it? yeah.",
+		photos: [],
+		reviews: [],
+		price: 5
 	},
 	{
 		id: 3,
 		name: "product four",
-		type: "reduction"
+		type: "reduction",
+		description: "description ipsum flooby blup blup, isn't it? yeah.",
+		photos: [],
+		reviews: [],
+		price: 5
 	}
 ];
 
