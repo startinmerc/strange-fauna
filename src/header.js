@@ -6,10 +6,10 @@ class Header extends Component {
 	render(){
 		return(
 			<header className="header">
-				<Link to="/" exact><h2 className="header-title">Strange Fauna</h2></Link>
+				<Link to="/"><h2 className="header-title">Strange Fauna</h2></Link>
 				<nav className="header-links">
-					<li className="header-li"><a href="#">Fauna</a></li>
-					<li className="header-li"><a href="#">About</a></li>
+					<li className="header-li"><Link to="/all">All Products</Link></li>
+					<li className="header-li"><Link to="/about">About</Link></li>
 				</nav>
 			</header>
 		);
