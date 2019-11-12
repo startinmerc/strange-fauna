@@ -16,6 +16,7 @@ class Product extends Component {
 }
 
 
+import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
 	render(){
@@ -25,9 +26,13 @@ class App extends Component {
 		}
 		return(
 			<div>
-				<Header />
-				<Landing />
-				<Footer />
+					<Header />
+					<Switch>
+						<Route path="/" component={Landing} exact />
+						<Route path="/mushrooms" component={Mushrooms} />
+						<Route component={Landing} />
+					</Switch>
+					<Footer />
 			</div>
 		)
 	}

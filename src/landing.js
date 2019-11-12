@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import './landing.css';
 
 
@@ -14,17 +15,17 @@ class Option extends Component {
 				<div className="submenu" style={{backgroundColor: `${this.props.color}`}}>
 					<div className="submenu-section">
 						<img src="https://picsum.photos/200" alt="" />
-						<h5>{this.props.title} Submenu</h5>
+						<Link to="/mushrooms"><h5>{this.props.title} Submenu</h5></Link>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
 					</div>
 					<div className="submenu-section">
 						<img src="https://picsum.photos/200" alt="" />
-						<h5>{this.props.title} Submenu</h5>
+						<Link to="/mushrooms"><h5>{this.props.title} Submenu</h5></Link>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
 					</div>
 					<div className="submenu-section">
 						<img src="https://picsum.photos/200" alt="" />
-						<h5>{this.props.title} Submenu</h5>
+						<Link to="/mushrooms"><h5>{this.props.title} Submenu</h5></Link>
 						<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
 					</div>
 				</div>
