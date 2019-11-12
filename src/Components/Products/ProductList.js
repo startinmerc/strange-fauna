@@ -41,8 +41,14 @@ const ProductsObj = [
 ];
 
 class ProductList extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			products: ProductsObj
+		}
+	}
 	render(){
-		var list = ProductsObj;
+		var list = this.state.products;
 		if(this.props.type!=="all"){
 			list = list.filter((p)=>{
 				return p.type === this.props.type
