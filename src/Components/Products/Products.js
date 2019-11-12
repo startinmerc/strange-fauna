@@ -58,21 +58,17 @@ function ProductCard({detail}){
 
 class ProductList extends Component {
 	render(){
-		var list;
-		if(this.props.type==="all"){
-			list = ProductsObj.map((prod)=>{return <ProductCard detail={prod}/>});
-		} else {
-			list = ProductsObj.filter((p)=>{
+		var list = ProductsObj;
+		if(this.props.type!=="all"){
+			list = list.filter((p)=>{
 				return p.type === this.props.type
-			}).map((prod)=>{
-				return <ProductCard detail={prod}/>
-			});
+			})
 		}
-
+		var renderList = list.map((prod)=>{return <ProductCard detail={prod}/>});
 		return (
 			<div>
 				<h1>Hi There! {this.props.type}!</h1>
-				{list}
+				{renderList}
 			</div>
 		)
 	}
