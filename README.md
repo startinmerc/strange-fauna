@@ -13,15 +13,16 @@ Site Structure Plan:
 | +-- Product Detail
 | | +-- Description
 | | +-- Photos
-| | +-- Age selection
 | | +-- Ratings & Comments
 | | +-- Quantity selection
 | | +-- Add to basket
 | | +-- Add to wishlist
 | `-- Pagination
 +-- About Page
-| +-- Sourcing
-| `-- Links to network
+| +-- FAQ
+| +-- Disclaimer
+| +-- Returns
+| `-- Delivery
 ```
 ## Features:
 |Feature|Front/Back|Done?|
@@ -41,3 +42,21 @@ Site Structure Plan:
 * [Mock up main page on Codepen](https://codepen.io/startinmerc/pen/JjPVGJo)
 * Add sections menu skeleton
 * [Add submenu from Codepen](https://codepen.io/startinmerc/pen/oNNxRNx)
+
+### V0.2
+
+#### REACT_ROUTER
+* Install react-router
+* npm install
+* import components
+
+#### Implement router components
+* wrap app
+* wrap relevant switches
+* replace internal links with components
+* rearrange file structure as needed
+
+#### Begin Products listings
+* create seeds based on readme model
+* create product list component
+* dynamically render based on url
