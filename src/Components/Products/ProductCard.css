@@ -1,0 +1,16 @@
+.product-card {
+	padding: 5px 10px;
+	margin: 10px;
+	box-shadow: 8px 8px 0px #f1f1f1;
+}
+
+.product-header {
+	margin: 0;
+	font-size: 1.3rem;
+	text-align: justify;
+	width: 100%;
+}
+
+.product-card:hover .product-image {
+	filter: grayscale(0.5);
+}

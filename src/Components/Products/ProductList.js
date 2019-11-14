@@ -7,7 +7,7 @@ const ProductsObj = [
 		name: "product one",
 		type: "mushroom",
 		description: "description ipsum flooby blup blup, isn't it? yeah.",
-		photos: ["https://picsum.photos/200"],
+		photos: ["https://picsum.photos/400"],
 		reviews: [{score: 2, author: "nick", content: "review content"}],
 		price: 5
 	},
@@ -16,7 +16,7 @@ const ProductsObj = [
 		name: "product two",
 		type: "berry",
 		description: "description ipsum flooby blup blup, isn't it? yeah.",
-		photos: ["https://picsum.photos/200"],
+		photos: ["https://picsum.photos/400"],
 		reviews: [{score: 2, author: "nick", content: "review content"}],
 		price: 5
 	},
@@ -25,7 +25,7 @@ const ProductsObj = [
 		name: "product three",
 		type: "flower",
 		description: "description ipsum flooby blup blup, isn't it? yeah.",
-		photos: ["https://picsum.photos/200"],
+		photos: ["https://picsum.photos/400"],
 		reviews: [{score: 2, author: "nick", content: "review content"}],
 		price: 5
 	},
@@ -34,7 +34,7 @@ const ProductsObj = [
 		name: "product four",
 		type: "reduction",
 		description: "description ipsum flooby blup blup, isn't it? yeah.",
-		photos: ["https://picsum.photos/200"],
+		photos: ["https://picsum.photos/400"],
 		reviews: [{score: 2, author: "nick", content: "review content"}],
 		price: 5
 	}
