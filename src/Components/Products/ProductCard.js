@@ -4,16 +4,17 @@ import './ProductCard.css';
 
 function AddToCart() {
 	return (
-		<button className="add-to-cart">
-			Add to Cart
-		</button>
+		<button className="add-to-cart"
+		 onClick={(e)=>{e.target.classList.toggle('cart-added')}}
+		>Add to Cart</button>
 	);
 }
 
 function AddToWish() {
 	return (
-		<button className="add-to-wish">
-		</button>
+		<button className="add-to-wish"
+		 onClick={(e)=>{e.target.classList.toggle('wish-added')}}
+		></button>
 	);
 }
 
