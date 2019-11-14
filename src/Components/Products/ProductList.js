@@ -21,9 +21,14 @@ class ProductList extends Component {
 		var renderList = list.map((prod)=>{return <ProductCard detail={prod} key={`prod-${prod.id}`}/>});
 		return (
 			<main>
-				<h2>Showing {this.props.type} products</h2>
-				<button onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr"})}>3x</button>
-				<button onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr 1fr"})}>4x</button>
+				<div className="product-list-header">
+					<h2>Showing {this.props.type} products</h2>
+					<div>
+						Select columns: 
+						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr"})}>3</button>
+						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr 1fr"})}>4</button>
+					</div>
+				</div>
 				<div className="product-list" style={{gridTemplateColumns: this.state.gridColumns}}>
 					{renderList}
 				</div>
