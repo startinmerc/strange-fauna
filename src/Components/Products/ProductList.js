@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProductCard from './ProductCard';
+import './ProductList.css';
 
 const ProductsObj = [
 	{
@@ -44,15 +45,12 @@ class ProductList extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			products: ProductsObj
+			products: ProductsObj,
+			gridColumns: "1fr 1fr 1fr"
 		}
 	}
 	render(){
 		var list = this.state.products;
-		var style = {
-			display: 'flex',
-			flexWrap: "wrap"
-		}
 		if(this.props.type!=="all"){
 			list = list.filter((p)=>{
 				return p.type === this.props.type
@@ -62,7 +60,9 @@ class ProductList extends Component {
 		return (
 			<main>
 				<h2>Showing {this.props.type} products</h2>
-				<div style={style}>
+				<button onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr"})}>3x</button>
+				<button onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr 1fr"})}>4x</button>
+				<div className="product-list" style={{gridTemplateColumns: this.state.gridColumns}}>
 					{renderList}
 				</div>
 			</main>
