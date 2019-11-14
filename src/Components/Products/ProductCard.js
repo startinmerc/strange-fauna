@@ -2,9 +2,25 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import './ProductCard.css';
 
+function AddToCart() {
+	return (
+		<button className="add-to-cart">
+			Add to Cart
+		</button>
+	);
+}
+
+function AddToWish() {
+	return (
+		<button className="add-to-wish">
+		</button>
+	);
+}
+
 function ProductCard({detail}){
 	return (
 		<div className="product-card" style={{backgroundColor: `var(--${detail.type})`}}>
+			<AddToWish/>
 			<Link to={`/products/${detail.id}`}>
 				<img className="product-image" src={detail.photos[0]} alt={detail.name}/>
 			</Link>
@@ -14,6 +30,7 @@ function ProductCard({detail}){
 				</Link>
 				 <h5>${detail.price}</h5>
 			</div>
+			<AddToCart/>
 		</div>
 	);
 }
