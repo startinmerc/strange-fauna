@@ -8,9 +8,12 @@ function ProductCard({detail}){
 			<Link to={`/products/${detail.id}`}>
 				<img className="product-image" src={detail.photos[0]} alt={detail.name}/>
 			</Link>
-			<Link to={`/products/${detail.id}`}>
-				<h5 className="product-header">{detail.name} ${detail.price}</h5>
-			</Link>
+			<div style={{display:'flex',flexDirection:'rows',justifyContent:'space-between'}}>
+				<Link to={`/products/${detail.id}`}>
+					<h5>{detail.name}</h5>
+				</Link>
+				 <h5>${detail.price}</h5>
+			</div>
 		</div>
 	);
 }
