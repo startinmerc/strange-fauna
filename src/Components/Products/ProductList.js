@@ -49,6 +49,10 @@ class ProductList extends Component {
 	}
 	render(){
 		var list = this.state.products;
+		var style = {
+			display: 'flex',
+			flexWrap: "wrap"
+		}
 		if(this.props.type!=="all"){
 			list = list.filter((p)=>{
 				return p.type === this.props.type
