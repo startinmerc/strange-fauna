@@ -9,6 +9,11 @@
 	font-size: 1.3rem;
 }
 
+.product-image {
+	width: 100%;
+	height: auto;
+}
+
 .product-card:hover .product-image {
 	filter: grayscale(0.5);
 }
