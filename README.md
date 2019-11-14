@@ -60,3 +60,24 @@ Site Structure Plan:
 * create seeds based on readme model
 * create product list component
 * dynamically render based on url
+* split into seperate files
+
+#### Product Cards
+* Create Product Card component
+* Style product cards
+* Add components for cart/wish buttons
+* Basic conditional rendering click functions
+
+#### Product List Grid
+* Add buttons for list layout options
+* Put layout in ProductList state
+* swap out styling
+
+[ ] About Page
+[ ] FAQ Page
+[ ] Delivery Page
+[ ] Returns Page
+[ ] Disclaimer Page
+[ ] Mini-menu Component
+[ ] REDUX
+[ ] Landing Submenu in header
