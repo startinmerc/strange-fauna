@@ -30,7 +30,7 @@ Site Structure Plan:
 |-------|----------|-----|
 |-------|----------|-----|
 
-### V0.1
+### V0.1.0
 
 #### Initial design choices
 * Define display & body fonts
@@ -43,7 +43,7 @@ Site Structure Plan:
 * Add sections menu skeleton
 * [Add submenu from Codepen](https://codepen.io/startinmerc/pen/oNNxRNx)
 
-### V0.2
+### V0.2.0
 
 #### REACT_ROUTER
 * Install react-router
@@ -72,6 +72,13 @@ Site Structure Plan:
 * Add buttons for list layout options
 * Put layout in ProductList state
 * swap out styling
+
+### V0.2.1
+
+#### Mini Menu
+* Add Mini Menu component to header
+* Style
+* Show/hide on click
 
 [ ] About Page
 [ ] FAQ Page
