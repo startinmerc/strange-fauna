@@ -1,9 +1,9 @@
 :root {
-	--beige: #DBCFB0;
-	--light-green: #BFC8AD;
-	--dark-green: #90B494;
-	--light-blue: #718F94;
-	--dark-blue: #545775;
+	--mushroom: #DBCFB0;
+	--berry: #BFC8AD;
+	--flower: #90B494;
+	--reduction: #718F94;
+	--primary: #545775;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Cinzel|Open+Sans&display=swap');

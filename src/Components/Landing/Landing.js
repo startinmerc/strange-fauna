@@ -38,11 +38,11 @@ class Landing extends Component {
 
 	render(){
 		const colors = [
-			{title: 'Mushrooms', color:'var(--beige)'},
-			{title: 'Berries', color:'var(--light-green)'},
-			{title: 'Flowers', color:'var(--dark-green)'},
-			{title: 'Reductions', color:'var(--light-blue)'},
-			{title: 'About Us', color:'var(--dark-blue)'}
+			{title: 'Mushrooms', color:'var(--mushroom)'},
+			{title: 'Berries', color:'var(--berry)'},
+			{title: 'Flowers', color:'var(--flower)'},
+			{title: 'Reductions', color:'var(--reduction)'},
+			{title: 'About Us', color:'var(--primary)'}
 		];
 		const ops = colors.map((option,index)=>(
 			<Option key={'option-'+index} {...option}/>
