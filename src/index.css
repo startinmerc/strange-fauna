@@ -24,3 +24,9 @@ h1,h2,h3,h4,h5,.display {
 a {
 	color: inherit;
 }
+
+main {
+	min-height: 80vh;
+	max-width: 80vw;
+	margin: 0 auto;
+}

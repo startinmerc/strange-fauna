@@ -56,10 +56,12 @@ class ProductList extends Component {
 		}
 		var renderList = list.map((prod)=>{return <ProductCard detail={prod} key={`prod-${prod.id}`}/>});
 		return (
-			<div>
+			<main>
 				<h1>Hi There! {this.props.type}!</h1>
-				{renderList}
-			</div>
+				<div style={style}>
+					{renderList}
+				</div>
+			</main>
 		)
 	}
 }

@@ -48,7 +48,7 @@ class Landing extends Component {
 			<Option key={'option-'+index} {...option}/>
 		 ));
 		return(
-			<main>
+			<main className="landing">
 				<div className="options">
 					{ops}
 				</div>
