@@ -1,10 +1,15 @@
 .header {
+	z-index: 1000;
+}
+
+.header-main {
 	background-color: #f1f1f1;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 5px 10%;
-	margin-bottom: 20px;
+	z-index: 2;
+	position: relative;
 }
 
 .header-title {
@@ -36,7 +41,7 @@
 	transform: scaleY(1);
 }
 
-.header-links {
+.header-carts {
 	display: flex;
 	position: relative;
 }
@@ -82,4 +87,22 @@
 
 .header-container {
 	margin: 0 5px;
+}
+
+.nav-link-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	width: 80%;
+	margin: 0 auto;
+	transition: transform 240ms ease-out;
+	transform: translateY(-80%);
+}
+
+.nav-link {
+	padding: 1px 5px;
+	list-style: none;
+}
+
+.header:hover .nav-link-container {
+	transform: translateY(0%);
 }
