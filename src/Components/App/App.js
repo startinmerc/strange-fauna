@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
-import Header from '../Partials/Header';
-import Footer from '../Partials/Footer';
+import Header from '../Partials/Header/Header';
+import Footer from '../Partials/Footer/Footer';
 import Landing from '../Landing/Landing';
 import Products from '../Products/Products';
 import About from '../About/About';
