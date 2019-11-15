@@ -78,8 +78,18 @@ Site Structure Plan:
 #### Mini Menu
 * Add Mini Menu component to header
 * Style
-* Show/hide on click
+* Show/hide as required
 
+#### Header Nav
+* Add nav component to header
+* Show/hide as required
+
+#### Nav
+* Refactor Landing Submenu component for reuse in header
+* Reorganise files as needed
+[ ] Factor out components from new Nav
+
+[ ] Make section/colors object global
 [ ] About Page
 [ ] FAQ Page
 [ ] Delivery Page
@@ -87,4 +97,3 @@ Site Structure Plan:
 [ ] Disclaimer Page
 [ ] Mini-menu Component
 [ ] REDUX
-[ ] Landing Submenu in header
