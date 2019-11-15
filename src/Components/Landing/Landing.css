@@ -1,65 +1,8 @@
-.landing {
+#landing {
 	display: flex;
 	flex-direction: column-reverse;
 	height:"80vh";
 	background-size: cover;
 	background-position: center;
 	background-image: url(https://images.unsplash.com/photo-1528518290605-1fcc8dcca204?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9);
-
-}
-
-.options {
-	display: flex;
-	width: 80vw;
-	position: relative;
-}
-
-.landing-option {
-	background-color: #f1f1f1;
-	font-size: 1.5rem;
-	list-style: none;
-	padding: 5px;
-	flex-grow: 1;
-}
-
-.submenu {
-	position: absolute;
-	width: 70vw;
-	padding: 1% 5vw;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	left: 0;
-	bottom: calc(10px + 1.5rem);
-	transform-origin: bottom;
-	transition: all 50ms 50ms linear;
-	transform: scaleY(0);
-	opacity: 0;
-}
-
-.submenu-section {
-	background: white;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 5px;
-	padding: 5px;
-}
-
-.submenu-section img {
-	margin: 0 auto;
-}
-
-.submenu-section h5 {
-	font-size: 1.3rem;
-	margin: 5px 0;
-}
-
-.submenu-section p {
-	font-size: 1rem;
-	margin: 5px 0;
-}
-
-.landing-option:hover > .submenu {
-	transform: scaleY(1);
-	opacity: 1;
 }
