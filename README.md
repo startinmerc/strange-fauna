@@ -1,10 +1,17 @@
 # Strange Fauna
 
-## A React/Node app
+#### A full-stack  site built on:
 
-Part of the Strange Industries network, an eCommerce app built in React, using GSAP and SVG animation.
+| React        | Node.js | Redux      |
+| ------------ |---------|------------|
+| React-Router | MongoDB | Custom CSS |
+| Heroku       |         |            |
 
-Site Structure Plan:
+An eCommerce site built for my portfolio, part of the Strange Industries Network.
+The site is built on React using Node, built entirely from scratch.
+It uses extensive components and state management for full interactivity.
+
+#### Site Structure Plan:
 ```
 +-- Header
 +-- Footer
@@ -24,11 +31,10 @@ Site Structure Plan:
 | +-- Returns
 | `-- Delivery
 ```
-## Features:
-|Feature|Front/Back|Done?|
-|-------|----------|-----|
-|-------|----------|-----|
-|-------|----------|-----|
+
+Version logs for the project are below...
+
+---
 
 ### V0.1.0
 
@@ -89,6 +95,7 @@ Site Structure Plan:
 * Reorganise files as needed
 * Factor out components from new Nav
 
+#### Misc
 * Make section/colors object global
 
 ### V0.2.2
@@ -99,6 +106,3 @@ Site Structure Plan:
 * Delivery Page
 * Returns Page
 * Disclaimer Page
-
-
-[ ] REDUX
