@@ -1,0 +1,83 @@
+/*Container*/
+.nav-section-container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	width: 80vw;
+}
+
+#landing .nav-section-container {
+	position: relative;
+}
+
+#header .nav-section-container {
+	margin: 0 auto;
+	transform: translateY(-80%);
+	transition: transform 240ms ease-out;
+}
+
+#header:hover .nav-section-container {
+	transform: translateY(0%);
+}
+
+/*Section*/
+.nav-section {
+	list-style: none;
+	padding: 5px;
+	font-size: 1.2rem;
+}
+
+#landing .nav-section {
+	font-size: 1.5rem;
+}
+
+/*Submenu*/
+.nav-section-submenu {
+	position: absolute;
+	width: 70vw;
+	padding: 1% 5vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	left: 0;
+	transition: all 50ms 50ms linear;
+	transform: scaleY(0);
+	opacity: 0;
+	z-index: 1000;
+}
+
+#landing .nav-section-submenu {
+	bottom: calc(10px + 1.5rem);
+	transform-origin: bottom;
+}
+
+#header .nav-section-submenu {
+	top: calc(10px + 1.2rem);
+	transform-origin: top;
+}
+
+.nav-section-submenu-section {
+	background: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 5px;
+	padding: 5px;
+}
+
+.nav-section-submenu-section img {
+	margin: 0 auto;
+}
+
+.nav-section-submenu-section h5 {
+	font-size: 1.3rem;
+	margin: 5px 0;
+}
+
+.nav-section-submenu-section p {
+	font-size: 1rem;
+	margin: 5px 0;
+}
+
+.nav-section:hover > .nav-section-submenu {
+	transform: scaleY(1);
+	opacity: 1;
+}
