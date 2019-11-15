@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 
-function MiniCart(){
-	return (
-		<ul className="mini-cart">
-			<li>MiniCart</li>
-			<li>MiniCart</li>
-			<li>MiniCart</li>
-		</ul>
-	)
+class MiniCart extends Component {
+	render(){
+		return (
+			<ul className="mini-cart">
+				<li>Mini{this.props.type}</li>
+				<li>Mini{this.props.type}</li>
+				<li>Mini{this.props.type}</li>
+			</ul>
+		)
+	}
 }
 
 export default MiniCart;
