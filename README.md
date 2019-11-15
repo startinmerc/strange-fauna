@@ -87,13 +87,18 @@ Site Structure Plan:
 #### Nav
 * Refactor Landing Submenu component for reuse in header
 * Reorganise files as needed
-[ ] Factor out components from new Nav
+* Factor out components from new Nav
 
-[ ] Make section/colors object global
-[ ] About Page
-[ ] FAQ Page
-[ ] Delivery Page
-[ ] Returns Page
-[ ] Disclaimer Page
-[ ] Mini-menu Component
+* Make section/colors object global
+
+### V0.2.2
+
+#### About Pages Templates
+* About Page
+* FAQ Page
+* Delivery Page
+* Returns Page
+* Disclaimer Page
+
+
 [ ] REDUX
