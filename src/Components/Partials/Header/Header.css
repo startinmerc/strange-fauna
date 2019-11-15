@@ -1,4 +1,4 @@
-.header {
+#header {
 	z-index: 1000;
 }
 
@@ -87,22 +87,4 @@
 
 .header-container {
 	margin: 0 5px;
-}
-
-.nav-link-container {
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-	width: 80%;
-	margin: 0 auto;
-	transition: transform 240ms ease-out;
-	transform: translateY(-80%);
-}
-
-.nav-link {
-	padding: 1px 5px;
-	list-style: none;
-}
-
-.header:hover .nav-link-container {
-	transform: translateY(0%);
 }
