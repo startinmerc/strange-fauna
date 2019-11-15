@@ -2,34 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import NavSectionContainer from '../../Nav/NavSectionContainer';
-
-function MiniMenu(){
-	return (
-		<ul className="mini-cart">
-			<li>MiniMenu</li>
-			<li>MiniMenu</li>
-			<li>MiniMenu</li>
-		</ul>
-	)
-}
-
-function Wishlist(){
-	return (
-		<div className="header-container" id="header-wish">
-			<button className="header-button">Wishlist (0)</button>
-			<MiniMenu />
-		</div>	
-	)
-}
-
-function Cart(){
-	return (
-		<div className="header-container" id="header-cart">
-			<button className="header-button">Cart (0): $</button>
-			<MiniMenu />
-		</div>	
-	)
-}
+import HeaderButton from './HeaderButton';
 
 class Header extends Component {
 	render(){
@@ -38,8 +11,8 @@ class Header extends Component {
 				<div className="header-main">
 					<Link to="/" style={{textDecoration: 'none'}}><h2 className="header-title">Strange Fauna</h2></Link>
 					<div className="header-carts">
-						<Wishlist />
-						<Cart />
+						<HeaderButton type="wish"/>
+						<HeaderButton type="cart"/>
 					</div>
 				</div>
 				<NavSectionContainer />
