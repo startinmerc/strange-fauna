@@ -1,5 +1,7 @@
 # Strange Fauna
 
+##[Landing Page](https://strange-fauna.herokuapp.com/)
+
 #### A full-stack  site built on:
 
 | React        | Node.js | Redux      |
