@@ -5,12 +5,12 @@ import categories from '../../assets/categories';
 
 class NavSectionContainer extends Component {
 	render(){
-		const ops = categories.map((option,index)=>(
-			<NavSection key={'nav-section-'+index} {...option}/>
+		const sections = categories.map((section,index)=>(
+			<NavSection key={'nav-section-'+index} {...section}/>
 		 ));
 		return(
 			<div className="nav-section-container">
-				{ops}
+				{sections}
 			</div>
 		);
 	}
