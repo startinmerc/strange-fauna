@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Header.css';
 import NavSectionContainer from '../../Nav/NavSectionContainer';
 import HeaderButton from './HeaderButton';
+import { connect } from "react-redux";
 
 class Header extends Component {
 	render(){
@@ -23,4 +24,13 @@ class Header extends Component {
 	}
 }
 
-export default Header;
+function mapStateToProps(reduxState) {
+	return {
+		wish: reduxState.wish,
+		cart: reduxState.cart
+	};
+}
+
+export default connect(mapStateToProps)(
+	Header
+);
