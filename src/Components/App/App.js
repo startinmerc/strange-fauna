@@ -6,12 +6,13 @@ import Landing from '../Landing/Landing';
 import Products from '../Products/Products';
 import About from '../About/About';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from "react-redux";
 
 class App extends Component {
 	render(){
 		return(
 			<div>
-					<Header />
+					<Header wish={this.props.wish} cart={this.props.cart}/>
 					<Switch>
 						<Route path="/" component={Landing} exact />
 						<Route path="/products" component={Products} />
@@ -24,4 +25,13 @@ class App extends Component {
 	}
 }
 
-export default App;
+function mapStateToProps(reduxState) {
+	return {
+		wish: reduxState.wish,
+		cart: reduxState.cart
+	};
+}
+
+export default connect(mapStateToProps)(
+	App
+);
