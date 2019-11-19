@@ -9,10 +9,12 @@ class Header extends Component {
 		return(
 			<header id="header">
 				<div className="header-main">
-					<Link to="/" style={{textDecoration: 'none'}}><h2 className="header-title">Strange Fauna</h2></Link>
+					<Link to="/" style={{textDecoration: 'none'}}>
+						<h2 className="header-title">Strange Fauna</h2>
+					</Link>
 					<div className="header-carts">
-						<HeaderButton type="wish"/>
-						<HeaderButton type="cart"/>
+						<HeaderButton type="wish" content={this.props.wish}/>
+						<HeaderButton type="cart" content={this.props.cart}/>
 					</div>
 				</div>
 				<NavSectionContainer />
