@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 
 class MiniCart extends Component {
 	render(){
-		let list = this.props.content.map((id)=>(
-			<li key={`mini${this.props.type}-${id}`}>
-				Mini{this.props.type} {id}
-			</li>)
+
+		let list = this.props.content.map(item => (
+			<li key={`mini${item.type}-${item.id}`}>
+				{item.name}
+			</li>
+			)
 		);
 		return (
 			<ul className="mini-cart">

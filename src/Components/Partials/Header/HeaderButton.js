@@ -12,7 +12,7 @@ class HeaderButton extends Component {
 		return (
 			<div className="header-container" id={`header-${this.props.type}`}>
 				<button className="header-button">{text}</button>
-				<MiniCart type={this.props.type} content={this.props.content}/>
+				<MiniCart content={cartContent}/>
 			</div>
 		);
 	}
