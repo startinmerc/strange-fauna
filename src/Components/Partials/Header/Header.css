@@ -90,3 +90,12 @@
 .header-container {
 	margin: 0 5px;
 }
+
+.mini-cart-item {
+	display: flex;
+	justify-content: space-between;
+}
+
+.mini-cart-item-image {
+	width: 50%;
+}
