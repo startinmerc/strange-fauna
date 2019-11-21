@@ -99,3 +99,16 @@
 .mini-cart-item-image {
 	width: 50%;
 }
+
+.mini-cart-item button {
+	font-size: inherit;
+	padding: 0.2rem;
+	border: 2px solid black;
+	background: transparent;
+}
+
+
+.mini-cart-item button:hover {
+	background-color: black;
+	color: white;
+}

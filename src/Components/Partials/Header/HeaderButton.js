@@ -22,7 +22,7 @@ class HeaderButton extends Component {
 			));
 			text = `Wishlist (${this.props.wish.length})`;
 			list = cartContent.map(item => (
-				<MiniCartItem item={item} remove={this.removeWish.bind(this, item.id)}/>
+				<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeWish.bind(this, item.id)}/>
 			));
 		} else {
 			this.props.cart.forEach((id)=>(
@@ -30,7 +30,7 @@ class HeaderButton extends Component {
 			));
 			text = `Cart (${this.props.cart.length}): $${cartContent.reduce((a,v)=>(a+v.price),0)}`;
 			list = cartContent.map(item => (
-				<MiniCartItem item={item} remove={this.removeCart.bind(this, item.id)}/>
+				<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeCart.bind(this, item.id)}/>
 			));
 		};
 

@@ -1,8 +1,11 @@
-import React, {Component} from "react";
+import React from "react";
 
 const MiniCartItem = ({item, remove})=>(
-	<li key={`mini${item.type}-${item.id}`} className="mini-cart-item" 
-	 style={{backgroundColor: `var(--${item.type})`}}>
+	<li className="mini-cart-item" 
+	 style={{
+	 	backgroundColor: `var(--${item.type})`,
+	 	background: `linear-gradient(90deg, #ffffff00 0%, var(--${item.type}) 50%)`
+	 }}>
 		<div className="mini-cart-item-text">
 			<p>{item.name}</p>
 			<p>${item.price}</p>
