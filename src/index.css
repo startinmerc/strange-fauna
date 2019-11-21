@@ -11,12 +11,9 @@
 body {
 	margin: 0;
 	padding: 0;
-	height: 100vh;
 	width: 100%;
 	font-family: 'Open-Sans', sans-serif;
 	background-color: #fdfdfd;
-	display: grid;
-	grid-template-rows: 1fr 3fr 1fr;
 }
 
 h1,h2,h3,h4,h5,.display {
@@ -31,4 +28,12 @@ main {
 	min-height: 80vh;
 	max-width: 80vw;
 	margin: 0 auto;
+}
+
+#container {
+	min-height: 100vh;
+	width: 100%;
+	background-color: #fdfdfd;
+	display: grid;
+	grid-template-rows: max-content max-content max-content;
 }
