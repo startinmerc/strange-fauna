@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { removeWish } from '../../../actionCreators'
-// import MiniCart from './MiniCart';
+import { removeWish } from '../../../actionCreators';
+import MiniCartItem from './MiniCartItem';
 import seeds from '../../../seeds';
 
 class HeaderButton extends Component {
@@ -32,15 +32,7 @@ class HeaderButton extends Component {
 			text = `Cart (${this.props.cart.length}): $${cartContent.reduce((a,v)=>(a+v.price),0)}`;
 		};
 		let list = cartContent.map(item => (
-			<li key={`mini${item.type}-${item.id}`} className="mini-cart-item" 
-			 style={{backgroundColor: `var(--${item.type})`}}>
-				<div className="mini-cart-item-text">
-					<p>{item.name}</p>
-					<p>${item.price}</p>
-					<p><button onClick={this.removeWish.bind(this, item.id)}>Remove</button></p>
-				</div>
-				<img className="mini-cart-item-image" src={item.photos[0]} alt="" />
-			</li>
+			<MiniCartItem item={item} removeWish={this.removeWish.bind(this, item.id)}/>
 		));
 		return (
 			<div className="header-container" id={`header-${this.props.type}`}>
