@@ -108,3 +108,9 @@ Version logs for the project are below...
 * Delivery Page
 * Returns Page
 * Disclaimer Page
+
+#### Redux Pt/1
+* install redux
+* add to App.js,create store
+* add basic rootReducer
+
