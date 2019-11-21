@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+	Link,
 	Switch,
 	Route,
 	useRouteMatch
@@ -27,6 +28,10 @@ function About() {
 			</Route>
 			<Route path={`${match.url}/`}>
 				<h1>About Us</h1>
+				<h3><Link to="/about/faq">FAQ</Link></h3>
+				<h3><Link to="/about/delivery">Delivery</Link></h3>
+				<h3><Link to="/about/returns">Returns</Link></h3>
+				<h3><Link to="/about/disclaimer">Disclaimer</Link></h3>
 			</Route>
 		</Switch>
 	);
