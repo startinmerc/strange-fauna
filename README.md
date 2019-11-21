@@ -1,6 +1,6 @@
 # Strange Fauna
 
-##[Landing Page](https://strange-fauna.herokuapp.com/)
+## [Landing Page](https://strange-fauna.herokuapp.com/)
 
 #### A full-stack  site built on:
 
@@ -114,3 +114,13 @@ Version logs for the project are below...
 * add to App.js,create store
 * add basic rootReducer
 
+#### Redux Pt.2
+* add actionCreators for add/remove
+* import to HeaderButton
+* pass as props to MiniBasketItem
+
+#### Redux Pt.3
+- [x] import actionCreators to ProductCard
+- [ ] basic add to cart/wish
+- [ ] conditional formatting
+- [ ] advanced add/remove
