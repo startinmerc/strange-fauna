@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import MiniCart from './MiniCart';
+import { connect } from "react-redux";
 import seeds from '../../../seeds';
 
 class HeaderButton extends Component {
@@ -24,4 +24,11 @@ class HeaderButton extends Component {
 	}
 }
 
-export default HeaderButton;
+function mapStateToProps(reduxState) {
+	return {
+		wish: reduxState.wish,
+		cart: reduxState.cart
+	};
+}
+
+export default connect(mapStateToProps, { removeWish })(HeaderButton);
