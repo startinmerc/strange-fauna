@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { addCart, removeCart, addWish, removeWish } from '../../actionCreators';
+import { connect } from "react-redux";
+
 import './ProductCard.css';
 
 function AddToCart() {
@@ -18,22 +21,48 @@ function AddToWish() {
 	);
 }
 
-function ProductCard({detail}){
-	return (
-		<div className="product-card" style={{backgroundColor: `var(--${detail.type})`}}>
-			<AddToWish/>
-			<Link to={`/products/${detail.id}`}>
-				<img className="product-image" src={detail.photos[0]} alt={detail.name}/>
-			</Link>
-			<div style={{display:'flex',flexDirection:'rows',justifyContent:'space-between'}}>
-				<Link to={`/products/${detail.id}`}>
-					<h5>{detail.name}</h5>
+class ProductCard extends Component {
+
+	removeWish(id){
+		this.props.removeWish(id);
+	}
+
+	removeCart(id){
+		this.props.removeCart(id);
+	}
+
+	addWish(id){
+		this.props.addWish(id);
+	}
+
+	addCart(id){
+		this.props.addCart(id);
+	}
+
+	render(){
+		return (
+			<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
+				<AddToWish/>
+				<Link to={`/products/${this.props.detail.id}`}>
+					<img className="product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
 				</Link>
-				 <h5>${detail.price}</h5>
+				<div style={{display:'flex',flexDirection:'rows',justifyContent:'space-between'}}>
+					<Link to={`/products/${this.props.detail.id}`}>
+						<h5>{this.props.detail.name}</h5>
+					</Link>
+					 <h5>${this.props.detail.price}</h5>
+				</div>
+				<AddToCart/>
 			</div>
-			<AddToCart/>
-		</div>
-	);
+		);
+	}
 }
 
-export default ProductCard;
+function mapStateToProps(reduxState) {
+	return {
+		wish: reduxState.wish,
+		cart: reduxState.cart
+	};
+}
+
+export default connect(mapStateToProps, { addCart, removeCart, addWish, removeWish })(ProductCard);
