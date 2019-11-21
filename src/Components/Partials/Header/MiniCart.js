@@ -4,7 +4,8 @@ class MiniCart extends Component {
 	render(){
 
 		let list = this.props.content.map(item => (
-			<li key={`mini${item.type}-${item.id}`} className="mini-cart-item">
+			<li key={`mini${item.type}-${item.id}`} className="mini-cart-item" 
+			 style={{backgroundColor: `var(--${item.type})`}}>
 				<div className="mini-cart-item-text">
 					<p>{item.name}</p>
 					<p>${item.price}</p>
