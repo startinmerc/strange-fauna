@@ -82,3 +82,16 @@
 	transform: scaleY(1);
 	opacity: 1;
 }
+
+@media(max-width: 800px){
+	#header .nav-section-container {
+		width: 100%;
+		transform: translateY(0);
+	}
+	.nav-section {
+		font-size: 1rem;
+	}
+	#landing .nav-section-container {
+		display: none;
+	}
+}

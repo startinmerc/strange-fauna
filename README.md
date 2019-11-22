@@ -133,4 +133,10 @@ Version logs for the project are below...
 * render ProductCards for lists
 * custom styling for each
 
+#### Responsive Styling - 800px
+* viewport in head
+* Header
+* Main
+* Hide Landing NavSection
+* Footer
 
