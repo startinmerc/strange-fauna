@@ -127,7 +127,10 @@ Version logs for the project are below...
 
 ### V0.3
 
-#### Cart
-* add Cart + Wish page components
+#### Cart + Wish
+* add page components
 * change header buttons to links to above
+* render ProductCards for lists
+* custom styling for each
+
 
