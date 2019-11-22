@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import ProductCard from '../Products/ProductCard';
 import seeds from '../../seeds';
@@ -31,7 +30,6 @@ class Cart extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish,
 		cart: reduxState.cart
 	};
 }
