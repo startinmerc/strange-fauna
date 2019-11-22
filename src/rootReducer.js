@@ -15,7 +15,7 @@ export default function rootReducer(state = initialState, action){
 			return {...state, wish};
 
 		case ADD_CART:
-			return {...state, cart: [...state.wish, action.wish]};
+			return {...state, cart: [...state.cart, action.cart]};
 		case REMOVE_CART:
 			let cart = state.cart.filter(val => val !== action.id);
 			return {...state, cart};
