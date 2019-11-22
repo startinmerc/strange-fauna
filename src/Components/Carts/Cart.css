@@ -33,3 +33,13 @@
 .cart-subtotal {
 	text-align: right;
 }
+
+.wish-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.wish-list .product-card {
+	width: 25%;
+}
