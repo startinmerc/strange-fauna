@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Star from '../SVGs/Star';
 import { Link } from "react-router-dom";
 import { addCart, removeCart, addWish, removeWish } from '../../actionCreators';
 import { connect } from "react-redux";
@@ -18,7 +19,7 @@ const AddToWish = ({handleClick, inState})=> {
 	return (
 		<button className={`add-to-wish ${inState ? 'wish-added' : ''}`}
 		 onClick={handleClick}
-		></button>
+		><Star size={30}/></button>
 	);
 }
 

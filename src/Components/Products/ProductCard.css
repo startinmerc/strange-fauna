@@ -46,24 +46,21 @@
 
 .add-to-wish {
 	position: absolute;
-	right: -10px;
-	top: -10px;
+	right: 0px;
+	top: 0px;
 	height: 50px;
 	width: 50px;
-	border-radius: 50%;
-	border: 1px solid black;
+	background-color: transparent;
+	border: none;
+	padding: 0;
 	z-index: 1;
 	opacity: 0;
 	transition: 180ms ease-in all;
 	cursor: pointer;
 }
 
-.wish-added {
-	background-color: var(--primary);
-}
-
-.add-to-wish:hover {
-	background-color: yellow;
+.wish-added .star {
+	fill: yellow;
 }
 
 .product-card:hover .add-to-wish {
