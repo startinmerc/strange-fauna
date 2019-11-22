@@ -64,7 +64,7 @@ class ProductCard extends Component {
 					</Link>
 					<div className="product-card-text">
 						<Link to={`/products/${this.props.detail.id}`}>
-							<h4>{this.props.detail.name}</h4>
+							<h5>{this.props.detail.name}</h5>
 						</Link>
 						 <h5>${this.props.detail.price}</h5>
 					</div>

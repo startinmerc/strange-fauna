@@ -16,9 +16,9 @@
 }
 
 .product-card-text {
-	display:'flex';
-	flex-direction:'rows';
-	justify-content:'space-between';
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 
 .product-card:hover .product-image {
@@ -37,6 +37,7 @@
 
 .cart-added {
 	background-color: var(--primary);
+	color: white;
 }
 
 .add-to-cart:active {
