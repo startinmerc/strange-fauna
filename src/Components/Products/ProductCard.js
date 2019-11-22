@@ -5,44 +5,46 @@ import { connect } from "react-redux";
 
 import './ProductCard.css';
 
-function AddToCart() {
+const AddToCart = ({handleClick, inState})=> {
 	return (
 		<button className="add-to-cart"
-		 onClick={(e)=>{e.target.classList.toggle('cart-added')}}
+		 onClick={handleClick}>
 		>Add to Cart</button>
 	);
 }
 
-function AddToWish() {
+const AddToWish = ({handleClick, inState})=> {
 	return (
 		<button className="add-to-wish"
-		 onClick={(e)=>{e.target.classList.toggle('wish-added')}}
+		 onClick={handleClick}
 		></button>
 	);
 }
 
 class ProductCard extends Component {
 
-	removeWish(id){
-		this.props.removeWish(id);
+	cartClick(id){
+		if(this.props.cart.includes(id)){
+			this.props.removeCart(id);
+		} else {
+			this.props.addCart(id);
+		}
 	}
 
-	removeCart(id){
-		this.props.removeCart(id);
-	}
-
-	addWish(id){
-		this.props.addWish(id);
-	}
-
-	addCart(id){
-		this.props.addCart(id);
+	wishClick(id){
+		if(this.props.wish.includes(id)){
+			this.props.removeWish(id);
+		} else {
+			this.props.addWish(id);
+		}
 	}
 
 	render(){
+		const inCart = this.props.cart.includes(this.props.detail.id);
+		const inWish = this.props.wish.includes(this.props.detail.id);
 		return (
 			<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
-				<AddToWish/>
+				<AddToWish handleClick={this.wishClick.bind(this, this.props.detail.id)} inState={inWish}/>
 				<Link to={`/products/${this.props.detail.id}`}>
 					<img className="product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
 				</Link>
@@ -52,7 +54,7 @@ class ProductCard extends Component {
 					</Link>
 					 <h5>${this.props.detail.price}</h5>
 				</div>
-				<AddToCart/>
+				<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
 			</div>
 		);
 	}
