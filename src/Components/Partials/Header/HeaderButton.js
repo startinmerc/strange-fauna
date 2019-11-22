@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { removeWish, removeCart } from '../../../actionCreators';
+import { Link } from "react-router-dom";
 import MiniCartItem from './MiniCartItem';
 import seeds from '../../../seeds';
 
@@ -32,7 +33,7 @@ class HeaderButton extends Component {
 		};
 		return (
 			<div className="header-container" id={`header-${this.props.type}`}>
-				<button className="header-button">{text}</button>
+				<Link to="/cart" className="header-button">{text}</Link>
 				<ul className="mini-cart">
 					{list}
 				</ul>

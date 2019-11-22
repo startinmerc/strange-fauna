@@ -27,11 +27,12 @@
 
 .header-button {
 	font-size: 1rem;
+	text-decoration: none;
 	display: inline-block;
-	padding: 0.2rem;
+	padding: 2px 0px 2px 2px;
 	border: 2px solid black;
 	background: transparent;
-	width: 150px;
+	width: 144px;
 }
 
 .header-button:hover {
