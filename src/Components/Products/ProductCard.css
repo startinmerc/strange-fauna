@@ -66,3 +66,6 @@
 .product-card:hover .add-to-wish {
 	opacity: 1;
 }
+.add-to-wish:hover  {
+	background-color: white;
+}
