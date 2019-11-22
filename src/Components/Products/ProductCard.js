@@ -7,15 +7,16 @@ import './ProductCard.css';
 
 const AddToCart = ({handleClick, inState})=> {
 	return (
-		<button className="add-to-cart"
+		<button className={`add-to-cart ${inState ? 'cart-added' : ''}`}
 		 onClick={handleClick}>
-		>Add to Cart</button>
+			{inState ? 'Remove from' : 'Add to' } Cart
+		</button>
 	);
 }
 
 const AddToWish = ({handleClick, inState})=> {
 	return (
-		<button className="add-to-wish"
+		<button className={`add-to-wish ${inState ? 'wish-added' : ''}`}
 		 onClick={handleClick}
 		></button>
 	);
