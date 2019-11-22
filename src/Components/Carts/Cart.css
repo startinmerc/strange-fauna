@@ -1,0 +1,35 @@
+.cart-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-product-card {
+	display: flex;
+	margin-bottom: 10px;
+	font-size: 1.1rem;
+}
+
+.cart-product-card p {
+	margin-top: 0;
+}
+
+.cart-product-card-image {
+	width: 30%;
+}
+
+.cart-product-card-price {
+	flex-grow: 1;
+	text-align: right;
+}
+
+.cart-product-card-body button {
+	padding: 10px;
+}
+
+.cart-product-card-body {
+	margin-left: 1.67rem;
+}
+
+.cart-subtotal {
+	text-align: right;
+}
