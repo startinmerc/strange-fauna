@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { removeWish, removeCart } from '../../../actionCreators';
+import { Link } from "react-router-dom";
 import MiniCartItem from './MiniCartItem';
 import seeds from '../../../seeds';
 
@@ -15,28 +16,24 @@ class HeaderButton extends Component {
 	}
 
 	render(){
-		let cartContent = [], text = '', list = [];
+		let link = '', list = [], total = 0;
 		if(this.props.type==="wish"){
-			this.props.wish.forEach((id)=>(
-				cartContent.push(seeds.find((item)=>(item.id === id)))
-			));
-			text = `Wishlist (${this.props.wish.length})`;
-			list = cartContent.map(item => (
-				<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeWish.bind(this, item.id)}/>
-			));
+			this.props.wish.forEach((id)=>{
+				let item = (seeds.find((item)=>(item.id === id)));
+				list.push(<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeWish.bind(this, item.id)}/>);
+			});
+			link = <Link to="/wishlist" className="header-button">{`Wishlist (${this.props.wish.length})`}</Link>
 		} else {
-			this.props.cart.forEach((id)=>(
-				cartContent.push(seeds.find((item)=>(item.id === id)))
-			));
-			text = `Cart (${this.props.cart.length}): $${cartContent.reduce((a,v)=>(a+v.price),0)}`;
-			list = cartContent.map(item => (
-				<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeCart.bind(this, item.id)}/>
-			));
+			this.props.cart.forEach((id)=>{
+				let item = (seeds.find((item)=>(item.id === id)));
+				total += item.price;
+				list.push(<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeCart.bind(this, item.id)}/>);
+			});
+			link = <Link to="/cart" className="header-button">{`Cart (${this.props.cart.length}): $${total}`}</Link>
 		};
-
 		return (
 			<div className="header-container" id={`header-${this.props.type}`}>
-				<button className="header-button">{text}</button>
+				{link}
 				<ul className="mini-cart">
 					{list}
 				</ul>

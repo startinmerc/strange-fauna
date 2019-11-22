@@ -15,6 +15,12 @@
 	height: auto;
 }
 
+.product-card-text {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
 .product-card:hover .product-image {
 	filter: grayscale(0.5);
 }
@@ -31,6 +37,7 @@
 
 .cart-added {
 	background-color: var(--primary);
+	color: white;
 }
 
 .add-to-cart:active {

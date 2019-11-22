@@ -120,7 +120,23 @@ Version logs for the project are below...
 * pass as props to MiniBasketItem
 
 #### Redux Pt.3
-- [x] import actionCreators to ProductCard
-- [ ] basic add to cart/wish
-- [ ] conditional formatting
-- [ ] advanced add/remove
+* import actionCreators to ProductCard
+* basic add to cart/wish
+* conditional formatting
+* advanced add/remove
+
+### V0.3
+
+#### Cart + Wish
+* add page components
+* change header buttons to links to above
+* render ProductCards for lists
+* custom styling for each
+
+#### Responsive Styling - 800px
+* viewport in head
+* Header
+* Main
+* Hide Landing NavSection
+* Footer
+
