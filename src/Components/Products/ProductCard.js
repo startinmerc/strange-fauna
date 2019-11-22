@@ -43,21 +43,35 @@ class ProductCard extends Component {
 	render(){
 		const inCart = this.props.cart.includes(this.props.detail.id);
 		const inWish = this.props.wish.includes(this.props.detail.id);
-		return (
-			<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
-				<AddToWish handleClick={this.wishClick.bind(this, this.props.detail.id)} inState={inWish}/>
-				<Link to={`/products/${this.props.detail.id}`}>
-					<img className="product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
-				</Link>
-				<div style={{display:'flex',flexDirection:'rows',justifyContent:'space-between'}}>
-					<Link to={`/products/${this.props.detail.id}`}>
-						<h5>{this.props.detail.name}</h5>
-					</Link>
-					 <h5>${this.props.detail.price}</h5>
+		if(this.props.type){
+			return (
+				<div className="cart-product-card">
+					<img className="cart-product-card-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
+					<div className="cart-product-card-body">
+						<Link to={`/products/${this.props.detail.id}`}>
+							<p>{this.props.detail.name}</p>
+						</Link>
+						<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
+					</div>
+					<p className="cart-product-card-price">${this.props.detail.price}</p>
 				</div>
-				<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
-			</div>
-		);
+		);} else {
+			return (
+				<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
+					<AddToWish handleClick={this.wishClick.bind(this, this.props.detail.id)} inState={inWish}/>
+					<Link to={`/products/${this.props.detail.id}`}>
+						<img className="product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
+					</Link>
+					<div className="product-card-text">
+						<Link to={`/products/${this.props.detail.id}`}>
+							<h4>{this.props.detail.name}</h4>
+						</Link>
+						 <h5>${this.props.detail.price}</h5>
+					</div>
+					<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
+				</div>
+			);
+		}
 	}
 }
 
