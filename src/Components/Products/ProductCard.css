@@ -75,3 +75,23 @@
 .add-to-wish:hover  {
 	background-color: white;
 }
+
+@media(max-width: 600px){
+	.product-card {
+		padding: 2px;
+		margin: 2px;
+		box-shadow: none;
+	}
+	.product-card h5 {
+		font-size: 1rem;
+	}
+	.add-to-cart {
+		margin: 0;
+		padding: 0;
+		font-size: 0.9rem;
+	}
+	.add-to-wish {
+		/*needs a complete rework*/
+		display: none;
+	}
+}
