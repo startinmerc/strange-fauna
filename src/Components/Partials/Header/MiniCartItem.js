@@ -4,7 +4,7 @@ const MiniCartItem = ({item, remove})=>(
 	<li className="mini-cart-item" 
 	 style={{
 	 	backgroundColor: `var(--${item.type})`,
-	 	background: `linear-gradient(90deg, #ffffff00 0%, var(--${item.type}) 50%)`
+	 	background: `linear-gradient(90deg, #ffffff00 5%, var(--${item.type}) 50%)`
 	 }}>
 		<div className="mini-cart-item-text">
 			<p>{item.name}</p>
