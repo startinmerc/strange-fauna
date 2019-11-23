@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from '../Partials/Header/Header';
+import MobileHeader from '../Partials/Header/MobileHeader';
 import Footer from '../Partials/Footer/Footer';
 import Landing from '../Landing/Landing';
 import Products from '../Products/Products';
@@ -14,6 +15,7 @@ class App extends Component {
 		return(
 			<div id="container">
 				<Header />
+				<MobileHeader />
 				<Switch>
 					<Route path="/" component={Landing} exact />
 					<Route path="/products" component={Products} />
