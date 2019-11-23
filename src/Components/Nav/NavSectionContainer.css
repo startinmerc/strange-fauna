@@ -84,13 +84,21 @@
 }
 
 @media(max-width: 800px){
+
 	#header .nav-section-container {
 		width: 100%;
 		transform: translateY(0);
 	}
+
+	#header .nav-section-submenu {
+		width: 98%;
+		top: calc(12px + 1rem);;
+	}
+	
 	.nav-section {
 		font-size: 1rem;
 	}
+	
 	#landing .nav-section-container {
 		display: none;
 	}
