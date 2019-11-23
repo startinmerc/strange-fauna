@@ -139,4 +139,12 @@ Version logs for the project are below...
 * Main
 * Hide Landing NavSection
 * Footer
+* Header NavSection
 
+#### Responsive Styliny - 600px
+* MobileHeader Component
+* Hide regular Header
+
+#### List
+* Refactor Cart & Wishlist to single component
+* Change Router to pass prop to List for rendering
