@@ -4,8 +4,6 @@ import ProductCard from '../Products/ProductCard';
 import seeds from '../../seeds';
 import './Cart.css';
 
-// expect 'wish' : 'cart'
-
 class List extends Component {
 
 	render(){
