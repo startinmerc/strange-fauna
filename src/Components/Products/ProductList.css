@@ -15,4 +15,10 @@
 	height: 2rem;
 	border: 2px solid black;
 	margin: 0 1px;
+	cursor: pointer;
+}
+
+.grid-button:hover {
+	background-color: black;
+	color: white;
 }
