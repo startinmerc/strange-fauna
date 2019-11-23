@@ -144,6 +144,8 @@ Version logs for the project are below...
 #### Responsive Styliny - 600px
 * MobileHeader Component
 * Hide regular Header
+* ProductCard
+* ProductList - [needs 2 cols as default on <600px]
 
 #### List
 * Refactor Cart & Wishlist to single component
