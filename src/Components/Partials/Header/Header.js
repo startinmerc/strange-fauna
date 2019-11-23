@@ -13,8 +13,8 @@ class Header extends Component {
 						<h2 className="header-title">Strange Fauna</h2>
 					</Link>
 					<div className="header-carts">
-						<HeaderButton type="wish" content={this.props.wish}/>
-						<HeaderButton type="cart" content={this.props.cart}/>
+						<HeaderButton type="wish" />
+						<HeaderButton type="cart" />
 					</div>
 				</div>
 				<NavSectionContainer />
