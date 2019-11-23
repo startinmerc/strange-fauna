@@ -1,16 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './Landing.css';
 import NavSectionContainer from '../Nav/NavSectionContainer';
 
-class Landing extends Component {
-
-	render(){
-		return(
-			<main id="landing">
-				<NavSectionContainer />
-			</main>
-		);
-	}
+function Landing() {
+	return(
+		<main id="landing">
+			<NavSectionContainer />
+		</main>
+	);
 }
 
 export default Landing;
