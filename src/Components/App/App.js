@@ -4,8 +4,7 @@ import Header from '../Partials/Header/Header';
 import Footer from '../Partials/Footer/Footer';
 import Landing from '../Landing/Landing';
 import Products from '../Products/Products';
-import Cart from '../Carts/Cart';
-import Wishlist from '../Carts/Wishlist';
+import List from '../Carts/List';
 import About from '../About/About';
 import { Route, Switch } from 'react-router-dom';
 
@@ -19,8 +18,8 @@ class App extends Component {
 					<Route path="/" component={Landing} exact />
 					<Route path="/products" component={Products} />
 					<Route path="/about" component={About} />
-					<Route path="/cart" component={Cart} />
-					<Route path="/wishlist" component={Wishlist} />
+					<Route path='/wishlist' render={(props) => <List {...props} type={0} />}/>
+					<Route path='/cart' render={(props) => <List {...props} type={1} />}/>
 					<Route component={Landing} />
 				</Switch>
 				<Footer />
