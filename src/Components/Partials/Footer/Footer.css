@@ -26,6 +26,7 @@
 .footer-link-group {
 	list-style: none;
 	display: inline-block;
+	padding: 0;
 }
 
 .footer-link-group:nth-of-type(1){

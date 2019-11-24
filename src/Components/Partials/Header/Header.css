@@ -126,7 +126,11 @@
 
 @media(max-width: 800px){
 	.header-main {
-		flex-direction: column;
+		padding: 5px 5%;
+	}
+	.header-button {
+		padding: 2px;
+		width: auto;
 	}
 }
 

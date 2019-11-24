@@ -26,6 +26,14 @@
 	font-size: 1.2rem;
 }
 
+.nav-section a {
+	text-decoration: none;
+}
+
+.nav-section:hover a {
+	text-decoration: underline;
+}
+
 #landing .nav-section {
 	font-size: 1.5rem;
 }
