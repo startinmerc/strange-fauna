@@ -11,10 +11,12 @@ import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
 	render(){
+		let mobile = window.innerWidth < 600;
+		const header = mobile ? <MobileHeader /> : <Header />;
+		const footer = mobile ? <MobileMenu /> : null;
 		return(
 			<div id="container">
-				<Header />
-				<MobileHeader />
+				{header}
 				<Switch>
 					<Route path="/" component={Landing} exact />
 					<Route path="/products" component={Products} />
@@ -24,7 +26,7 @@ class App extends Component {
 					<Route component={Landing} />
 				</Switch>
 				<Footer />
-				<MobileMenu />
+				{footer}
 			</div>
 		)
 	}
