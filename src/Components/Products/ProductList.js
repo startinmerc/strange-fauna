@@ -4,6 +4,7 @@ import seeds from '../../seeds';
 import './ProductList.css';
 
 class ProductList extends Component {
+
 	constructor(props){
 		super(props);
 		this.state = {
@@ -11,6 +12,13 @@ class ProductList extends Component {
 			gridColumns: "1fr 1fr 1fr"
 		}
 	}
+
+	componentDidMount(){
+		if(window.innerWidth < 600){
+			this.setState({gridColumns: "1fr 1fr"});
+		}
+	}
+	
 	render(){
 		var list = this.state.products;
 		if(this.props.type!=="all"){
