@@ -1,0 +1,22 @@
+#mobile-menu {
+	position: sticky;
+	bottom: 0;
+	width: 100vw;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: var(--header);
+	padding: 7px 0px;
+	z-index: 1000;
+}
+
+#mobile-menu .header-button {
+	border: none;
+	position: relative;
+}
+
+.mobile-menu-quantity {
+	position: absolute;
+	right: -1.1rem;
+	top: 0;
+}

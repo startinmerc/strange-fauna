@@ -2,12 +2,12 @@ import React, {Component} from 'react';
 import Header from '../Partials/Header/Header';
 import MobileHeader from '../Partials/Header/MobileHeader';
 import Footer from '../Partials/Footer/Footer';
+import MobileMenu from '../Partials/MobileMenu/MobileMenu';
 import Landing from '../Landing/Landing';
 import Products from '../Products/Products';
 import List from '../Carts/List';
 import About from '../About/About';
 import { Route, Switch } from 'react-router-dom';
-
 
 class App extends Component {
 	render(){
@@ -24,6 +24,7 @@ class App extends Component {
 					<Route component={Landing} />
 				</Switch>
 				<Footer />
+				<MobileMenu />
 			</div>
 		)
 	}
