@@ -113,7 +113,7 @@
 		cursor: pointer;
 		transition: all 230ms ease-in;
 	}
-	.star {
+	.product-card .star {
 		height: 1.2rem;
 		width: 1.2rem;
 	}
