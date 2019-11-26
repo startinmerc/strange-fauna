@@ -1,3 +1,5 @@
+/*============Product List Container============*/
+
 .product-list {
 	display: grid;
 }
@@ -7,6 +9,8 @@
 	align-items: center;
 	justify-content: space-between;
 }
+
+/*=================Grid Buttons=================*/
 
 .grid-button-container {
 	display: flex;
@@ -24,12 +28,14 @@
 }
 
 .grid-button:hover {
-	background-color: black;
-	color: white;
+	background-color: var(--black);
+	color: var(--white);
 }
 
 .grid-button:nth-of-type(1){display: none;}
 .grid-button:nth-of-type(2){display: none;}
+
+/*=============Responsive - Mobile=============*/
 
 @media(max-width: 600px){
 	.grid-button:nth-of-type(1){display: inline-block;}

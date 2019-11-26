@@ -1,3 +1,5 @@
+/*=============Header Main Sections=============*/
+
 #header {
 	z-index: 1000;
 	position: sticky;
@@ -9,7 +11,7 @@
 }
 
 .header-main {
-	background-color: #f1f1f1;
+	background-color: var(--header);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -29,6 +31,13 @@
 	text-decoration: underline;
 }
 
+/*================Header Buttons================*/
+
+.header-carts {
+	display: flex;
+	position: relative;
+}
+
 .header-button {
 	font-size: 1.1rem;
 	text-decoration: none;
@@ -36,24 +45,24 @@
 	justify-content: space-around;
 	align-items: center;
 	padding: 2px 0px 2px 2px;
-	border: 2px solid black;
-	background: black;
-	color: white;
+	border: 2px solid var(--black);
+	background: var(--black);
+	color: var(--white);
 	width: 144px;
 	transition: all 150ms ease-in;
 }
 
 .header-button.empty {
-	background: #f9f9f9;	
-	color: black;
+	background: var(--header);	
+	color: var(--black);
 }
 
 .header-button .star, .header-button .shopping-cart {
-	stroke: #FFF;
+	stroke: var(--white);
 	stroke-width: 2;
 }
 .header-button.empty .star, .header-button.empty .shopping-cart {
-	stroke: #000;
+	stroke: var(--black);
 	stroke-width: 2;
 }
 
@@ -61,25 +70,22 @@
 	text-decoration: underline;
 }
 
+/*==================Mini Carts==================*/
+
 .header-container:hover .mini-cart {
 	transform: scaleY(1);
 }
 
-.header-carts {
-	display: flex;
-	position: relative;
-}
-
 .mini-cart {
 	position: absolute;
-	background-color: #f9f9f9;
+	background-color: var(--header);
 	list-style: none;
 	padding-left: 0;
 	width: 286px;
 	z-index: 2;
 	margin: 10px 0 0 0;
 	padding: 10px;
-	border: 2px solid black;
+	border: 2px solid var(--black);
 	transform: scaleY(0);
 	transform-origin: top;
 	transition: all 120ms ease-in;
@@ -91,10 +97,9 @@
 	top: -14px;
 	width: 146px;
 	height: 14px;
-	background: #f9f9f9;
-	/*background: linear-gradient(0deg, #f9f9f9 0%, #f9f9f9 89%, #000 89%, #000 100%);*/
-	border-left: 2px solid black;
-	border-right: 2px solid black;
+	background: var(--header);
+	border-left: 2px solid var(--black);
+	border-right: 2px solid var(--black);
 	transform-origin: top;
 }
 
@@ -126,14 +131,16 @@
 .mini-cart-item button {
 	font-size: inherit;
 	padding: 0.2rem;
-	border: 2px solid black;
+	border: 2px solid var(--black);
 	background: transparent;
 }
 
 .mini-cart-item button:hover {
-	background-color: black;
-	color: white;
+	background-color: var(--black);
+	color: var(--white);
 }
+
+/*=============Responsive - Tablet=============*/
 
 @media(max-width: 800px){
 	.header-main {
@@ -144,6 +151,8 @@
 		width: auto;
 	}
 }
+
+/*=============Responsive - Mobile=============*/
 
 @media(max-width: 600px){
 	#header {

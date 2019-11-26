@@ -32,7 +32,7 @@
 .add-to-cart {
 	width: 100%;
 	border: none;
-	background: #fefefe;
+	background: var(--white);
 	margin: 2px auto;
 	font-family: inherit;
 	padding: 5px 0;
@@ -42,11 +42,11 @@
 
 .cart-added {
 	background-color: var(--primary);
-	color: #fefefe;
+	color: var(--white);
 }
 
 .add-to-cart:active {
-	background-color: #a6a7b7;
+	background-color: var(--primary-mid);
 }
 
 /*=============Add To Wish Button=============*/
@@ -80,7 +80,7 @@
 }
 
 .add-to-wish:hover  {
-	background-color: white;
+	background-color: var(--white);
 }
 
 .add-to-wish:active {

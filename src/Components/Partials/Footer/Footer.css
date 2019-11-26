@@ -1,6 +1,6 @@
 .footer {
-	background-color: #777;
-	color: #f9f9f9;
+	background-color: var(--footer);
+	color: var(--white);
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -14,11 +14,11 @@
 }
 
 .footer-link-sub {
-	color: #eee;
+	color: var(--white);
 }
 
 .footer-link {
-	color: #fff;
+	color: var(--white);
 	margin-bottom: 5px;
 	font-size: 1.3rem;
 }

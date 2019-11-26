@@ -1,4 +1,5 @@
-/*Container*/
+/*==================Container==================*/
+
 .nav-section-container {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -19,7 +20,8 @@
 	transform: translateY(0%);
 }
 
-/*Section*/
+/*=================Nav Section=================*/
+
 .nav-section {
 	list-style: none;
 	padding: 5px;
@@ -38,7 +40,8 @@
 	font-size: 1.5rem;
 }
 
-/*Submenu*/
+/*=================Nav Submenu=================*/
+
 .nav-section-submenu {
 	position: absolute;
 	width: 78vw;
@@ -61,6 +64,8 @@
 	top: calc(12px + 1.2rem);
 	transform-origin: top;
 }
+
+/*============Nav Section Subsection============*/
 
 .nav-section-submenu-section {
 	background: white;
@@ -90,6 +95,8 @@
 	transform: scaleY(1);
 	opacity: 1;
 }
+
+/*=============Responsive - Tablet=============*/
 
 @media(max-width: 800px){
 

@@ -1,7 +1,22 @@
+/*==================Cart List==================*/
+
 .cart-list {
 	display: flex;
 	flex-direction: column;
 }
+
+.cart-subtotal {
+	text-align: right;
+}
+
+/*==================Wish List==================*/
+
+.wish-list {
+	display: flex;
+	justify-content: center;
+}
+
+/*==============Cart Product Card==============*/
 
 .cart-product-card {
 	display: flex;
@@ -28,13 +43,4 @@
 
 .cart-product-card-body {
 	margin-left: 1.67rem;
-}
-
-.cart-subtotal {
-	text-align: right;
-}
-
-.wish-list {
-	display: flex;
-	justify-content: center;
 }
