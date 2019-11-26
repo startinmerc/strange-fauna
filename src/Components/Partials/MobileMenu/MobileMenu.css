@@ -31,3 +31,23 @@
 	top: 0;
 	color: var(--black);
 }
+
+.mobile-menu-dropup {
+	position: absolute;
+	bottom: calc(2rem + 18px);
+	width: 100vw;
+	transform-origin: bottom;
+	transform: scaleY(0);
+	transition: transform 250ms ease-in;
+}
+
+.mobile-menu-dropup.expanded {
+	transform: scaleY(1);
+}
+
+.dropup {
+	list-style: none;
+	width: 100%;
+	font-size: 1.3rem;
+	padding: 2px 0;
+}
