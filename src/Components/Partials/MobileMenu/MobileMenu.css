@@ -13,10 +13,21 @@
 #mobile-menu .header-button {
 	border: none;
 	position: relative;
+	background: transparent;
+}
+
+#mobile-menu .header-button svg {
+	fill: var(--black);
+	stroke: var(--black);
+}
+
+#mobile-menu .header-button.empty svg {
+	fill: none;
 }
 
 .mobile-menu-quantity {
 	position: absolute;
-	right: -1.1rem;
+	left: 2.2rem;
 	top: 0;
+	color: var(--black);
 }
