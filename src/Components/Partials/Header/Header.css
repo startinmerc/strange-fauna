@@ -30,9 +30,11 @@
 }
 
 .header-button {
-	font-size: 1rem;
+	font-size: 1.1rem;
 	text-decoration: none;
-	display: inline-block;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 	padding: 2px 0px 2px 2px;
 	border: 2px solid black;
 	background: black;
@@ -44,6 +46,15 @@
 .header-button.empty {
 	background: #f9f9f9;	
 	color: black;
+}
+
+.header-button .star, .header-button .shopping-cart {
+	stroke: #FFF;
+	stroke-width: 2;
+}
+.header-button.empty .star, .header-button.empty .shopping-cart {
+	stroke: #000;
+	stroke-width: 2;
 }
 
 .header-button:hover {
