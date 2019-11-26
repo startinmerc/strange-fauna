@@ -8,6 +8,11 @@
 	justify-content: space-between;
 }
 
+.grid-button-container {
+	display: flex;
+	align-items: center;
+}
+
 .grid-button {
 	border-radius: 0;
 	padding: inherit;

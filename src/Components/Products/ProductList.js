@@ -23,7 +23,7 @@ class ProductList extends Component {
 			<main>
 				<div className="product-list-header">
 					<h2>Showing {this.props.type} products</h2>
-					<div>
+					<div className="grid-button-container">
 						Select columns: 
 						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr"})}>1</button>
 						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr 1fr"})}>2</button>
