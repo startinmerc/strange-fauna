@@ -42,4 +42,16 @@
 	.grid-button:nth-of-type(2){display: inline-block;}
 	.grid-button:nth-of-type(3){display: none;}
 	.grid-button:nth-of-type(4){display: none;}
+
+	.product-list-header h2 {
+		margin: 0;
+		align-self: flex-start;
+	}
+	.product-list-header {
+		flex-wrap: wrap;
+		flex-direction: column;
+	}
+	.grid-button-container {
+		align-self: flex-end;
+	}
 }
