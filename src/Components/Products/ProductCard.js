@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Star from '../SVGs/Star';
+import AddToCart from './AddToCart';
+import AddToWish from './AddToWish';
 import { Link } from "react-router-dom";
 import { addCart, removeCart, addWish, removeWish } from '../../actionCreators';
 import { connect } from "react-redux";
@@ -7,23 +8,6 @@ import './ProductCard.css';
 
 // Expects 'detail' object to be passed in with product detail
 // Returns ProductCard based on 'type', with default
-
-const AddToCart = ({handleClick, inState})=> {
-	return (
-		<button className={`add-to-cart ${inState ? 'cart-added' : ''}`}
-		 onClick={handleClick}>
-			{inState ? 'Remove from' : 'Add to' } Cart
-		</button>
-	);
-}
-
-const AddToWish = ({handleClick, inState})=> {
-	return (
-		<button className={`add-to-wish ${inState ? 'wish-added' : ''}`}
-		 onClick={handleClick}
-		><Star size={30}/></button>
-	);
-}
 
 class ProductCard extends Component {
 
@@ -62,7 +46,6 @@ class ProductCard extends Component {
 						<p className="cart product-card-price">${this.props.detail.price}</p>
 					</div>
 				);
-				break;
 			case 'nav':
 				// Nav Section ProductCard
 				return (
@@ -97,7 +80,6 @@ class ProductCard extends Component {
 						<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
 					</div>
 				);
-				break;
 			}
 	}
 
