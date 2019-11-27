@@ -47,9 +47,18 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
-	background-image: url("https://images.unsplash.com/photo-1525261774241-4a83714af514?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
+}
+
+#delivery .box-image {
+	background-image: url("https://images.unsplash.com/photo-1557568192-387504499261?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
 }
 
 .box:nth-of-type(odd) {
 	text-align: right;
+}
+
+/*===================Returns===================*/
+
+#returns .box-image {
+	background-image: url("https://images.unsplash.com/photo-1525261774241-4a83714af514?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
 }
