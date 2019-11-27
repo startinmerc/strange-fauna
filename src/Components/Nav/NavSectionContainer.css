@@ -46,23 +46,23 @@
 	position: absolute;
 	width: 78vw;
 	padding: 1% 1vw;
-	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	left: 0;
 	transition: all 50ms 50ms linear;
-	transform: scaleY(0);
-	opacity: 0;
+	display: none;
 	z-index: 1000;
 }
 
 #landing .nav-section-submenu {
 	bottom: calc(14px + 1.5rem);
-	transform-origin: bottom;
 }
 
 #header .nav-section-submenu {
 	top: calc(12px + 1.2rem);
-	transform-origin: top;
+}
+
+.nav-section:hover .nav-section-submenu {
+	display: grid;
 }
 
 /*============Nav Section Subsection============*/
@@ -89,11 +89,6 @@
 .nav-section-submenu-section p {
 	font-size: 1rem;
 	margin: 5px 0;
-}
-
-.nav-section:hover > .nav-section-submenu {
-	transform: scaleY(1);
-	opacity: 1;
 }
 
 /*=============Responsive - Tablet=============*/
