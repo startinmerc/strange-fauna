@@ -13,3 +13,12 @@
 .about-links-container h3 {	
 	text-align: center;
 }
+
+.faq-list {
+	list-style: none;
+	padding: none;
+}
+
+.faq-list p {
+	margin-left: 1rem;
+}
