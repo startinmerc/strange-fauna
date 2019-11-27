@@ -20,10 +20,11 @@
 
 .cart.product-card {
 	display: flex;
-	margin-bottom: 10px;
 	font-size: 1.1rem;
 	box-shadow: none;
 	border-bottom: 2px solid var(--footer);
+	padding: 5px 0px;
+	margin: 0;
 }
 
 .cart.product-card p {
@@ -31,7 +32,7 @@
 }
 
 .cart.product-card-image {
-	width: 30%;
+	width: 20%;
 }
 
 .cart.product-card-price {
