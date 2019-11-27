@@ -18,29 +18,31 @@
 
 /*==============Cart Product Card==============*/
 
-.cart-product-card {
+.cart.product-card {
 	display: flex;
 	margin-bottom: 10px;
 	font-size: 1.1rem;
+	box-shadow: none;
+	border-bottom: 2px solid var(--footer);
 }
 
-.cart-product-card p {
+.cart.product-card p {
 	margin-top: 0;
 }
 
-.cart-product-card-image {
+.cart.product-card-image {
 	width: 30%;
 }
 
-.cart-product-card-price {
+.cart.product-card-price {
 	flex-grow: 1;
 	text-align: right;
 }
 
-.cart-product-card-body button {
+.cart.product-card-body button {
 	padding: 10px;
 }
 
-.cart-product-card-body {
+.cart.product-card-body {
 	margin-left: 1.67rem;
 }
