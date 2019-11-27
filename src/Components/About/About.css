@@ -1,0 +1,15 @@
+#about img {
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+}
+
+.about-links-container {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.about-links-container h3 {	
+	text-align: center;
+}
