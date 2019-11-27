@@ -2,7 +2,9 @@ import React from 'react';
 
 function Returns(){
 	return (
-		<h1>Returns</h1>
+		<main>
+			<h1>Returns</h1>
+		</main>
 	)
 }
 

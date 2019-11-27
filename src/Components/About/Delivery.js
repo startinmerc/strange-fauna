@@ -2,7 +2,9 @@ import React from 'react';
 
 function Delivery(){
 	return (
-		<h1>Delivery</h1>
+		<main>
+			<h1>Delivery</h1>
+		</main>
 	)
 }
 
