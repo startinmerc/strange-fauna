@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MiniCartItem = ({item, remove})=>(
 	<li className="mini-cart-item" 
@@ -7,7 +8,7 @@ const MiniCartItem = ({item, remove})=>(
 	 	background: `linear-gradient(90deg, #ffffff00 5%, var(--${item.type}) 50%)`
 	 }}>
 		<div className="mini-cart-item-text">
-			<p>{item.name}</p>
+			<p><Link to={`/products/${item.id}`}>{item.name}</Link></p>
 			<p>${item.price}</p>
 			<p><button onClick={remove}>Remove</button></p>
 		</div>
