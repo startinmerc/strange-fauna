@@ -69,30 +69,14 @@
 	display: flex;
 }
 
-/*============Nav Section Subsection============*/
 
-.nav-section-submenu-section {
-	background: white;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	margin: 5px;
+/*============Nav Section Card============*/
+
+.nav.product-card {
+	box-shadow: none;
+	background: var(--header);
 	padding: 5px;
-}
-
-.nav-section-submenu-section img {
-	margin: 0 auto;
-	max-width: 100%;
-}
-
-.nav-section-submenu-section h5 {
-	font-size: 1.3rem;
-	margin: 5px 0;
-}
-
-.nav-section-submenu-section p {
-	font-size: 1rem;
-	margin: 5px 0;
+	margin: 5px;
 }
 
 .about-submenu-link {
