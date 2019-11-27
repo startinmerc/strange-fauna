@@ -141,12 +141,22 @@ Version logs for the project are below...
 * Footer
 * Header NavSection
 
-#### Responsive Styliny - 600px
+#### Responsive Styling - 600px
 * MobileHeader Component
 * Hide regular Header
 * ProductCard
-* ProductList - [needs 2 cols as default on <600px]
+* Render relevant components based on window.innerWidth
+
+#### MobileMenu
+* Create basic component
+* Add SVGs for icons
+* Show/hide DropUp form MobileMenu
 
 #### List
 * Refactor Cart & Wishlist to single component
 * Change Router to pass prop to List for rendering
+
+#### Styling
+* Convert all color refs to root variables
+* Remove unused/unneeded styling
+* Link & Button resets
