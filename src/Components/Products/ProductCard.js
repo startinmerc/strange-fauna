@@ -3,8 +3,10 @@ import Star from '../SVGs/Star';
 import { Link } from "react-router-dom";
 import { addCart, removeCart, addWish, removeWish } from '../../actionCreators';
 import { connect } from "react-redux";
-
 import './ProductCard.css';
+
+// Expects 'detail' object to be passed in with product detail
+// Returns ProductCard based on 'type', with default
 
 const AddToCart = ({handleClick, inState})=> {
 	return (
@@ -42,10 +44,12 @@ class ProductCard extends Component {
 	}
 
 	render(){
+		// Figure if item is in wish/cart
 		const inCart = this.props.cart.includes(this.props.detail.id);
 		const inWish = this.props.wish.includes(this.props.detail.id);
 		switch(this.props.type){
 			case 'cart':
+				// Shopping Cart ProductCard
 				return (
 					<div className="cart product-card">
 						<img className="cart product-card-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
@@ -60,6 +64,7 @@ class ProductCard extends Component {
 				);
 				break;
 			case 'nav':
+				// Nav Section ProductCard
 				return (
 					<div className="nav product-card">
 						<AddToWish handleClick={this.wishClick.bind(this, this.props.detail.id)} inState={inWish}/>
@@ -75,7 +80,8 @@ class ProductCard extends Component {
 						<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
 					</div>
 				)
-			default: 
+			default:
+				// Default ProductCard
 				return (
 					<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
 						<AddToWish handleClick={this.wishClick.bind(this, this.props.detail.id)} inState={inWish}/>
