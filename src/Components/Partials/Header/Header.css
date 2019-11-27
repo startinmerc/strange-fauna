@@ -25,6 +25,7 @@
 	margin: 0;
 	font-size: 2.4rem;
 	padding: 2px;
+	transition: all 180ms ease-in;
 }
 
 .header-title:hover {
@@ -42,6 +43,7 @@
 .header-button {
 	font-size: 1.1rem;
 	text-decoration: none;
+	position: relative;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -53,22 +55,45 @@
 	transition: all 150ms ease-in;
 }
 
+.header-button::before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: -2px;
+	width: 146px;
+	height: 0%;
+	background: var(--header);
+	border-left: 2px solid var(--black);
+	border-right: 2px solid var(--black);
+	z-index: 3;
+}
+
 .header-button.empty {
 	background: var(--header);	
 	color: var(--black);
 }
 
-.header-button .star, .header-button .shopping-cart {
+.header-button svg {
 	stroke: var(--white);
 	stroke-width: 2;
 }
-.header-button.empty .star, .header-button.empty .shopping-cart {
+.header-button.empty svg {
 	stroke: var(--black);
 	stroke-width: 2;
 }
 
-.header-button:hover {
+.header-container:hover .header-button {
 	text-decoration: underline;
+	background-color: var(--header);
+	color: var(--black);
+}
+
+.header-container:hover .header-button::before {
+	height: 50%;
+}
+
+.header-container:hover .header-button svg {
+	stroke: var(--black);
 }
 
 /*==================Mini Carts==================*/
@@ -92,28 +117,12 @@
 	transition: all 120ms ease-in;
 }
 
-.mini-cart::before {
-	content: '';
-	position: absolute;
-	top: -14px;
-	width: 146px;
-	height: 14px;
-	background: var(--header);
-	border-left: 2px solid var(--black);
-	border-right: 2px solid var(--black);
-	transform-origin: top;
-}
-
-#header-wish .mini-cart::before {
-	left: -2px;
+#header-wish svg {
+	fill: transparent;
 }
 
 #header-cart .mini-cart {
 	right: 5px;
-}
-
-#header-cart .mini-cart::before {
-	right: -2px;
 }
 
 .header-container {

@@ -41,7 +41,7 @@ class HeaderButton extends Component {
 			<div className="header-container" id={`header-${this.props.type}`}>
 				{link}
 				<ul className="mini-cart">
-					{list}
+					{list.length > 0 ? list : 'Empty!'}
 				</ul>
 			</div>
 		);
