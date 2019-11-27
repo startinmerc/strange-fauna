@@ -160,3 +160,10 @@ Version logs for the project are below...
 * Convert all color refs to root variables
 * Remove unused/unneeded styling
 * Link & Button resets
+
+#### Product Card
+* Switch/Case rendering on types of product card
+* Swap out NavSectionItem for Product Card & style
+
+### V0.4
+[ ] - MONGO TIME!
