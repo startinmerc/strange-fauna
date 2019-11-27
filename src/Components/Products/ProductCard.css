@@ -30,13 +30,10 @@
 
 .add-to-cart {
 	width: 100%;
-	border: none;
-	background: var(--white);
-	margin: 2px auto;
-	font-family: inherit;
-	padding: 5px 0;
-	cursor: pointer;
-	transition: all 230ms ease-in;
+}
+
+.cart-added:hover {
+	background-color: var(--primary-mid);
 }
 
 .cart-added {
@@ -57,13 +54,12 @@
 	height: 50px;
 	width: 50px;
 	background-color: transparent;
-	border: none;
 	border-radius: 0 0 0 50%;
 	padding: 0;
 	z-index: 1;
 	opacity: 0;
-	transition: all 230ms ease-in;
-	cursor: pointer;
+	box-shadow: none;
+	margin: 0;
 }
 
 .star {

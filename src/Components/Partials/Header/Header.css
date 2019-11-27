@@ -138,18 +138,6 @@
 	width: 50%;
 }
 
-.mini-cart-item button {
-	font-size: inherit;
-	padding: 0.2rem;
-	border: 2px solid var(--black);
-	background: transparent;
-}
-
-.mini-cart-item button:hover {
-	background-color: var(--black);
-	color: var(--white);
-}
-
 /*=============Responsive - Tablet=============*/
 
 @media(max-width: 800px){

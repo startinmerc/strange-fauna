@@ -19,13 +19,12 @@
 }
 
 .grid-button {
-	border-radius: 0;
 	padding: inherit;
 	width: 2rem;
 	height: 2rem;
 	border: 2px solid black;
 	margin: 0 1px;
-	cursor: pointer;
+	box-shadow: none;
 }
 
 .grid-button:hover {
