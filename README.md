@@ -165,5 +165,8 @@ Version logs for the project are below...
 * Switch/Case rendering on types of product card
 * Swap out NavSectionItem for Product Card & style
 
+#### About Pages
+* Rough templates for each page with basic styling
+
 ### V0.4
 [ ] - MONGO TIME!
