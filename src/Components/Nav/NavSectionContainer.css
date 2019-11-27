@@ -65,6 +65,10 @@
 	display: grid;
 }
 
+.nav-section:hover .about-submenu {
+	display: flex;
+}
+
 /*============Nav Section Subsection============*/
 
 .nav-section-submenu-section {
@@ -89,6 +93,22 @@
 .nav-section-submenu-section p {
 	font-size: 1rem;
 	margin: 5px 0;
+}
+
+.about-submenu-link {
+	flex-grow: 1;
+	color: var(--white);
+	text-align: center;
+	border-right: 2px solid var(--white);
+}
+
+.about-submenu-link:hover {
+	background: var(--white);
+	color: var(--primary);
+}
+
+.about-submenu-link:last-of-type {
+	border-right: none;
 }
 
 /*=============Responsive - Tablet=============*/
