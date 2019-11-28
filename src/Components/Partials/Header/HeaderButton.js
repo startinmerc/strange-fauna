@@ -17,6 +17,25 @@ class HeaderButton extends Component {
 		this.props.removeCart(id);
 	}
 
+	componentDidUpdate(e){
+		const element = document.querySelector(`#header-${e.type}`)
+		if (e.type === 'cart'){
+			if(e.cart.length !== this.props.cart.length){
+				element.classList.add('updated');
+				element.addEventListener('animationend',()=>{
+					element.classList.remove('updated');
+				});
+			}
+		} else {
+			if(e.wish.length !== this.props.wish.length){
+				element.classList.add('updated');
+				element.addEventListener('animationend',()=>{
+					element.classList.remove('updated');
+				});
+			}
+		}
+	}
+
 	render(){
 		let link = '', list = [], total = 0;
 		if(this.props.type==="wish"){

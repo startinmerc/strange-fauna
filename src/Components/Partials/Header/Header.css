@@ -29,6 +29,17 @@
 	color: var(--white);
 }
 
+.updated {
+	animation: update 270ms linear;
+}
+
+@keyframes update {
+	0%  {outline:  0px solid #000000FF}
+	50% {outline: 10px solid #000000FF}
+	75% {outline: 10px solid #00000000}
+	100% {outline: 0px solid #00000000}
+}
+
 /*================Header Buttons================*/
 
 .header-carts {
