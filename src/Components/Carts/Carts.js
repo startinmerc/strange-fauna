@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 import ProductCard from '../Products/ProductCard';
 import seeds from '../../seeds';
-import './Cart.css';
+import './Carts.css';
 
 class List extends Component {
 
@@ -28,7 +28,12 @@ class List extends Component {
 				<div className={options.class[this.props.type]}>
 					{list}
 				</div>
-				{options.subtotal[this.props.type] ? <h2 className="cart-subtotal">Subtotal: ${total}</h2> : null}
+				{options.subtotal[this.props.type] ? 
+					<div style={{textAlign: 'right'}}>
+						<p className="cart-subtotal">Subtotal: ${total}</p>
+						<p>Delivery: $50</p>
+						<h2>Total: $$$</h2>
+					</div> : null}
 			</main>
 		)
 	}

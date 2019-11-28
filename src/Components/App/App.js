@@ -5,7 +5,7 @@ import Footer from '../Partials/Footer/Footer';
 import MobileMenu from '../Partials/MobileMenu/MobileMenu';
 import Landing from '../Landing/Landing';
 import Products from '../Products/Products';
-import List from '../Carts/List';
+import Carts from '../Carts/Carts';
 import About from '../About/About';
 import { Route, Switch } from 'react-router-dom';
 
@@ -21,8 +21,8 @@ class App extends Component {
 					<Route path="/" component={Landing} exact />
 					<Route path="/products" component={Products} />
 					<Route path="/about" component={About} />
-					<Route path='/wishlist' render={(props) => <List {...props} type={0} />}/>
-					<Route path='/cart' render={(props) => <List {...props} type={1} />}/>
+					<Route path='/wishlist' render={(props) => <Carts {...props} type={0} />}/>
+					<Route path='/cart' render={(props) => <Carts {...props} type={1} />}/>
 					<Route component={Landing} />
 				</Switch>
 				<Footer />
