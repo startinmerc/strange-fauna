@@ -48,10 +48,14 @@
 	width: 100vw;
 	transform-origin: bottom;
 	z-index: -1;
+	transform: scaleY(0);
 }
 
 .mobile-menu-dropup.expanded .dropup {
 	transform: translateY(0);
+}
+.mobile-menu-dropup.expanded {
+	transform: scaleY(1);
 }
 
 .dropup {
