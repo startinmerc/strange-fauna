@@ -62,3 +62,15 @@
 #returns .box-image {
 	background-image: url("https://images.unsplash.com/photo-1525261774241-4a83714af514?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9");
 }
+
+@media(max-width: 600px){
+	.boxes {
+		grid-template-columns: 1fr;
+	}
+	.box-image {
+		min-height: 50vh;
+	}
+	.box:nth-of-type(2) {
+		grid-row: 1;
+	}
+}
