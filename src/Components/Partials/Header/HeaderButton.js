@@ -18,22 +18,16 @@ class HeaderButton extends Component {
 	}
 
 	componentDidUpdate(e){
-		const element = document.querySelector(`#header-${e.type}`)
-		if (e.type === 'cart'){
-			if(e.cart.length !== this.props.cart.length){
-				element.classList.add('updated');
-				element.addEventListener('animationend',()=>{
-					element.classList.remove('updated');
-				});
-			}
-		} else {
-			if(e.wish.length !== this.props.wish.length){
-				element.classList.add('updated');
-				element.addEventListener('animationend',()=>{
-					element.classList.remove('updated');
-				});
-			}
+		let element;
+		if(e.cart.length !== this.props.cart.length){
+			element = document.querySelector('#header-cart');
+		} else if(e.wish.length !== this.props.wish.length){
+			element = document.querySelector('#header-wish');
 		}
+		element.classList.add('updated');
+		element.addEventListener('animationend',()=>{
+			element.classList.remove('updated');
+		});
 	}
 
 	render(){
