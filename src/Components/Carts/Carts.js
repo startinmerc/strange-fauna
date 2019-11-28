@@ -5,6 +5,12 @@ import seeds from '../../seeds';
 import './Carts.css';
 
 class List extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			delivery: 50
+		}
+	}
 
 	render(){
 		const options = {
@@ -13,6 +19,10 @@ class List extends Component {
 			class: ['wish-list','cart-list'],
 			subtotal: [false,true]
 		};
+		const deliveries = [
+			{name: 'premium', price: 50},
+			{name: 'standard', price: 20}
+		]
 		let list = [], total = 0;
 		options.ids[this.props.type].forEach((id)=>{
 			let item = (seeds.find((item)=>(item.id === id)));
@@ -31,8 +41,8 @@ class List extends Component {
 				{options.subtotal[this.props.type] ? 
 					<div style={{textAlign: 'right'}}>
 						<p className="cart-subtotal">Subtotal: ${total}</p>
-						<p>Delivery: $50</p>
-						<h2>Total: $$$</h2>
+						<p>Delivery: {this.state.delivery}</p>
+						<h2>Total: ${total + this.state.delivery}</h2>
 					</div> : null}
 			</main>
 		)
