@@ -41,8 +41,12 @@ class List extends Component {
 				{options.subtotal[this.props.type] ? 
 					<div style={{textAlign: 'right'}}>
 						<p className="cart-subtotal">Subtotal: ${total}</p>
-						<p>Delivery: {this.state.delivery}</p>
-						<h2>Total: ${total + this.state.delivery}</h2>
+							Choose delivery option: 
+						<select onChange={(e)=> this.setState({delivery: e.target.value})}>
+							{deliveries.map(op => (<option value={op.price}>{op.name}</option>))}
+						</select>
+						<p>Delivery: ${this.state.delivery}</p>
+						<h2>Total: ${total + Number(this.state.delivery)}</h2>
 					</div> : null}
 			</main>
 		)
