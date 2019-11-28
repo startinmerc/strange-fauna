@@ -6,10 +6,6 @@
 	top: 0;
 }
 
-#mobile-header {
-	display: none;
-}
-
 .header-main {
 	background-color: var(--header);
 	display: flex;
@@ -147,16 +143,5 @@
 	.header-button {
 		padding: 2px;
 		width: auto;
-	}
-}
-
-/*=============Responsive - Mobile=============*/
-
-@media(max-width: 600px){
-	#header {
-		display: none;
-	}
-	#mobile-header {
-		display: block;
 	}
 }
