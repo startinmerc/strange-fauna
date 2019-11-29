@@ -7,31 +7,25 @@
 	background-size: cover;
 	background-position: center;
 	margin-bottom: 3rem;
+	position: relative;
+	transition: filter 230ms ease-in;
 }
 
-#landing section:nth-of-type(even){
-	flex-direction: row-reverse;
-	text-align: right;
-}
-#landing section:nth-of-type(even) .section-text::after {
-	right: 70%;
-	transform-origin: right;
-
-}
-#landing section:nth-of-type(odd) .section-text::after {
-	left: 70%;
-	transform-origin: left;
+.section-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
 }
 
-#landing section:nth-of-type(even) .section-link {
-	margin-right: 0;
-	margin-left: 1rem;
+#landing section:hover .section-image {
+	filter: blur(2px);
 }
 
 .section-text {
-	position: relative;
 	padding: 2rem;
-	max-width: 60%;
+	z-index: 1;
 }
 
 .section-header {
@@ -55,27 +49,42 @@
 	color: var(--primary);
 }
 
-.section-text::after {
-	content: '';
+.section-stripe {
 	position: absolute;
 	height: 100%;
-	width: 10%;
+	width: 5%;
 	top: 0;
 	transform: skewX(-45deg) scaleX(0) scaleY(0);
+	transform-origin: center;
 }
 
-.mushroom .section-text::after {background-color: var(--mushroom);}
-.berry .section-text::after {background-color: var(--berry);}
-.flower .section-text::after {background-color: var(--flower);}
-.reduction .section-text::after {background-color: var(--reduction);}
-.primary .section-text::after {background-color: var(--primary);}
+/*==============Odd/Even Sections==============*/
 
-#landing section:nth-of-type(odd):hover .section-text:after {
+#landing section:nth-of-type(even){
+	flex-direction: row-reverse;
+	text-align: right;
+}
+
+#landing section:nth-of-type(even) .section-link {
+	margin-right: 0;
+	margin-left: 1rem;
+}
+
+#landing section:nth-of-type(even) .section-stripe {
+	right: 40%;
+}
+#landing section:nth-of-type(odd) .section-stripe {
+	left: 40%;
+}
+
+#landing section:nth-of-type(odd):hover .section-stripe {
 	animation: diagonalOdd 800ms ease-in forwards;
 }
-#landing section:nth-of-type(even):hover .section-text:after {
+#landing section:nth-of-type(even):hover .section-stripe {
 	animation: diagonalEven 800ms ease-in forwards;
 }
+
+/*==================Keyframes==================*/
 
 @keyframes diagonalOdd {
 	0%   {transform: skewX(-45deg) scaleX(0)   scaleY(0)}
