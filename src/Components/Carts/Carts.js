@@ -25,7 +25,7 @@ class List extends Component {
 		]
 		let list = [], total = 0;
 		options.ids[this.props.type].forEach((id)=>{
-			let item = (seeds.find((item)=>(item.id === id)));
+			let item = (seeds.products.find((item)=>(item.id === id)));
 			total += item.price;
 			list.push(<ProductCard detail={item} key={`prod-${item.id}`}
 			 type={(options.subtotal[this.props.type]) ? "cart" : null}/>);
