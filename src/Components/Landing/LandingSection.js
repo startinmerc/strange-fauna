@@ -18,7 +18,10 @@ function LandingSection({content}) {
 		<Link to={link.link} className="section-link">{link.title}</Link>
 	));
 	return (
-		<section style={{color: `var(--${content.dark ? 'black' : 'white'})`}} className={content.type}>
+		<section style={{
+			color: `var(--${content.dark ? 'black' : 'white'})`,
+			borderBottomColor: `var(--${content.type})`,
+		}} className={content.type}>
 			<div className="section-image" style={{backgroundImage: `url(${content.image})`}}></div>
 			<div className="section-stripe" style={{backgroundColor: `var(--${content.type})`}}></div>
 			<div className="section-text">

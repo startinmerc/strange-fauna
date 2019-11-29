@@ -111,8 +111,10 @@
 /*=============Responsive - Mobile=============*/
 
 @media(max-width: 600px){
-	#landing {
-		background-color: var(--primary);
+	#landing section {
+		margin-bottom: 0;
+		border-bottom-width: 15px;
+		border-bottom-style: solid;
 	}
 	.section-header {
 		font-size: 2rem;
