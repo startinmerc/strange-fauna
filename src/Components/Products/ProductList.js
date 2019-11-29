@@ -8,7 +8,7 @@ class ProductList extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			products: seeds,
+			products: seeds.products,
 			gridColumns: "1fr 1fr 1fr"
 		}
 	}

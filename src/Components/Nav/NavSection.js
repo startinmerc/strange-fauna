@@ -22,7 +22,7 @@ class NavSection extends Component {
 			);
 		}
 		let link = `/products/${this.props.title}`;
-		let sectionItems = seeds.filter((seed)=>(seed.type === this.props.section));
+		let sectionItems = seeds.products.filter((seed)=>(seed.type === this.props.section));
 		return(
 			<li className="nav-section" style={{backgroundColor: `${this.props.color}`}}>
 				<Link to={link}>{this.props.title}</Link>

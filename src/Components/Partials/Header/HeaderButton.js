@@ -34,7 +34,7 @@ class HeaderButton extends Component {
 		let link = '', list = [], total = 0;
 		if(this.props.type==="wish"){
 			this.props.wish.forEach((id)=>{
-				let item = (seeds.find((item)=>(item.id === id)));
+				let item = (seeds.products.find((item)=>(item.id === id)));
 				list.push(<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeWish.bind(this, item.id)}/>);
 			});
 			link = <Link to="/wishlist" className={`header-button ${(list.length > 0) ? null : 'empty'}`}>
@@ -42,7 +42,7 @@ class HeaderButton extends Component {
 			</Link>
 		} else {
 			this.props.cart.forEach((id)=>{
-				let item = (seeds.find((item)=>(item.id === id)));
+				let item = (seeds.products.find((item)=>(item.id === id)));
 				total += item.price;
 				list.push(<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeCart.bind(this, item.id)}/>);
 			});

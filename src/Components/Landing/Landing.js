@@ -1,11 +1,11 @@
 import React from 'react';
 import './Landing.css';
 import { Link } from 'react-router-dom';
-import landingSeeds from '../../landingSeeds';
+import seeds from '../../seeds';
 import LandingSection from './LandingSection';
 
 function Landing() {
-	const sections = landingSeeds.map((seed)=>(
+	const sections = seeds.landingSections.map((seed)=>(
 		<LandingSection content={seed} />
 	))
 	return(
