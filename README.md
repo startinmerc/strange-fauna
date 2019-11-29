@@ -168,5 +168,15 @@ Version logs for the project are below...
 #### About Pages
 * Rough templates for each page with basic styling
 
+#### Landing Page
+* Expand Landing page to multiple sections
+* Style odd/even sections
+* Animate hover styling
+* Contextual based on product type
+* Factor out to Component
+* Put landing content as seeds
+
 ### V0.4
-[ ] - MONGO TIME!
+[ ] - Node Backend
+[ ] - Delivery option in cart page
+[ ] - 1st Nav subsection to text
