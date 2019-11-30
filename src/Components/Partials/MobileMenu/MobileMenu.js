@@ -24,9 +24,9 @@ class MobileMenu extends Component {
 
 	handleClick(e) {
 		document.querySelector('.mobile-menu-dropup').classList.toggle('expanded');
-		document.querySelector('#dropup-background').addEventListener('click',function _fn(){
+		document.querySelector('#mobile-menu').addEventListener('click',function _fn(){
 			document.querySelector('.mobile-menu-dropup').classList.remove('expanded');
-			document.querySelector('#dropup-background').removeEventListener('click',_fn);
+			document.querySelector('#mobile-menu').removeEventListener('click',_fn);
 		})
 	}
 	
