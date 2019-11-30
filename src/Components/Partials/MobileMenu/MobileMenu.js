@@ -21,6 +21,14 @@ class MobileMenu extends Component {
 			element.classList.remove('updated');
 		});
 	}
+
+	handleClick(e) {
+		document.querySelector('.mobile-menu-dropup').classList.toggle('expanded');
+		document.querySelector('#dropup-background').addEventListener('click',function _fn(){
+			document.querySelector('.mobile-menu-dropup').classList.remove('expanded');
+			document.querySelector('#dropup-background').removeEventListener('click',_fn);
+		})
+	}
 	
 	render(){
 		const sections = categories.map((section,index)=>(
@@ -33,6 +41,7 @@ class MobileMenu extends Component {
 		return(
 			<div id="mobile-menu">
 				<div className="mobile-menu-dropup">
+					<li id="dropup-background"></li>
 					{sections}
 				</div>
 				<div className="mobile-menu-content">
@@ -44,7 +53,7 @@ class MobileMenu extends Component {
 						<ShoppingCart size={'2rem'}/>
 						<div className="mobile-menu-quantity">({this.props.cart.length})</div>
 					</Link>
-					<button onClick={()=>{document.querySelector('.mobile-menu-dropup').classList.toggle('expanded')}}><Menu size={'2rem'}/></button>
+					<button onClick={this.handleClick.bind(this)}><Menu size={'2rem'}/></button>
 				</div>
 			</div>
 		);
