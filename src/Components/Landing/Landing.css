@@ -119,4 +119,7 @@
 	.section-header {
 		font-size: 2rem;
 	}
+	.section-image {
+		filter: blur(2px);
+	}
 }
