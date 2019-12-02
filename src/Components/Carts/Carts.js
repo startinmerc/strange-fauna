@@ -10,6 +10,11 @@ class List extends Component {
 		this.state = {
 			delivery: 50
 		}
+		this.handleChange = this.handleChange.bind(this);
+	}
+
+	handleChange(e) {
+		this.setState({delivery: e.target.value});
 	}
 
 	render(){
@@ -42,7 +47,7 @@ class List extends Component {
 					<div style={{textAlign: 'right'}}>
 						<p className="cart-subtotal">Subtotal: ${total}</p>
 							Choose delivery option: 
-						<select onChange={(e)=> this.setState({delivery: e.target.value})}>
+						<select value={this.state.delivery} onChange={this.handleChange}>
 							{deliveries.map(op => (<option value={op.price}>{op.name}</option>))}
 						</select>
 						<p>Delivery: ${this.state.delivery}</p>
