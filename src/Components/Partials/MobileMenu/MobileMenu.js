@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
 import Menu from '../../SVGs/Menu';
-import categories from '../../../assets/categories';
+import seeds from '../../../seeds';
 import './MobileMenu.css';
 
 class MobileMenu extends Component {
@@ -31,7 +31,7 @@ class MobileMenu extends Component {
 	}
 	
 	render(){
-		const sections = categories.map((section,index)=>(
+		const sections = seeds.categories.map((section,index)=>(
 			<li key={'nav-section-'+index} className="dropup" style={{background: section.color}}>
 				<Link to={
 					(section.title!=='About Us') ? `/products/${section.title}` : '/about'
