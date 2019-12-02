@@ -8,6 +8,14 @@ import seeds from '../../../seeds';
 import './MobileMenu.css';
 
 class MobileMenu extends Component {
+	constructor(props){
+		super(props);
+		this.state = {
+			expanded: false
+		}
+		this.showMenu = this.showMenu.bind(this);
+		this.closeMenu = this.closeMenu.bind(this);
+	}
 
 	componentDidUpdate(e){
 		let element;
@@ -18,16 +26,16 @@ class MobileMenu extends Component {
 		}
 		element.classList.add('updated');
 		element.addEventListener('animationend',()=>{
-			element.classList.remove('updated');
+	showMenu(){
+		this.setState({expanded: true}, () => {
+			document.addEventListener('click', this.closeMenu);
 		});
 	}
 
-	handleClick(e) {
-		document.querySelector('.mobile-menu-dropup').classList.toggle('expanded');
-		document.querySelector('#mobile-menu').addEventListener('click',function _fn(){
-			document.querySelector('.mobile-menu-dropup').classList.remove('expanded');
-			document.querySelector('#mobile-menu').removeEventListener('click',_fn);
-		})
+	closeMenu(){
+		this.setState({expanded: false}, () => {
+			document.removeEventListener('click', this.closeMenu);
+		});
 	}
 	
 	render(){
@@ -40,7 +48,7 @@ class MobileMenu extends Component {
 		));
 		return(
 			<div id="mobile-menu">
-				<div className="mobile-menu-dropup">
+				<div className={`mobile-menu-dropup ${(this.state.expanded) ? 'expanded' : null}`}>
 					<li id="dropup-background"></li>
 					{sections}
 				</div>
@@ -53,7 +61,7 @@ class MobileMenu extends Component {
 						<ShoppingCart size={'2rem'}/>
 						<div className="mobile-menu-quantity">({this.props.cart.length})</div>
 					</Link>
-					<button onClick={this.handleClick.bind(this)}><Menu size={'2rem'}/></button>
+					<button onClick={this.showMenu}><Menu size={'2rem'}/></button>
 				</div>
 			</div>
 		);
