@@ -1,8 +1,20 @@
 const products = [], landingSections = [];
-const types = ['mushroom','berry','flower','reduction'];
+
+const deliveries = [
+	{name: 'premium', price: 50},
+	{name: 'standard', price: 20}
+]
+
+const categories = [
+	{title: 'Mushrooms', section: 'mushroom', color: 'var(--mushroom)'},
+	{title: 'Berries', section: 'berry', color: 'var(--berry)'},
+	{title: 'Flowers', section: 'flower', color: 'var(--flower)'},
+	{title: 'Reductions', section: 'reduction', color: 'var(--reduction)'},
+	{title: 'About Us', section: 'about', color: 'var(--primary)'}
+];
 
 for(let i=0;i<40;i++){
-	let t = types[Math.floor(Math.random()*4)]
+	let t = categories[Math.floor(Math.random()*4)].section
 	products.push({
 		id: i, 
 		name: `${t} ${i}`,
@@ -52,7 +64,9 @@ function addToLanding(dark,header,copy,image,type,links){
 
 const seeds = {
 	products: products,
-	landingSections: landingSections
+	landingSections: landingSections,
+	deliveries: deliveries,
+	categories: categories
 }
 
 export default seeds;
