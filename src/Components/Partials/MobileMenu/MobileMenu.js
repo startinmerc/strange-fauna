@@ -18,14 +18,23 @@ class MobileMenu extends Component {
 	}
 
 	componentDidUpdate(e){
-		let element;
-		if(e.cart.length !== this.props.cart.length){
-			element = document.querySelector('#header-cart');
-		} else if(e.wish.length !== this.props.wish.length){
-			element = document.querySelector('#header-wish');
+		// if new cart size differs from state
+		if(e.cart.length !== this.props.cart.length || e.wish.length !== this.props.wish.length){
+			let element;
+			// decide which has updated
+			if(e.cart.length !== this.props.cart.length){
+				element = document.querySelector('#header-cart');
+			} else if(e.wish.length !== this.props.wish.length){
+				element = document.querySelector('#header-wish');
+			}
+			// play updated animation & remove class on animation end
+			element.classList.add('updated');
+			element.addEventListener('animationend',()=>{
+				element.classList.remove('updated');
+			});
 		}
-		element.classList.add('updated');
-		element.addEventListener('animationend',()=>{
+	}
+
 	showMenu(){
 		this.setState({expanded: true}, () => {
 			document.addEventListener('click', this.closeMenu);
