@@ -10,6 +10,7 @@ import About from '../About/About';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
+
 	render(){
 		let mobile = window.innerWidth < 600;
 		const header = mobile ? <MobileHeader /> : <Header />;
@@ -21,8 +22,8 @@ class App extends Component {
 					<Route path="/" component={Landing} exact />
 					<Route path="/products" component={Products} />
 					<Route path="/about" component={About} />
-					<Route path='/wishlist' render={(props) => <Carts {...props} type={0} />}/>
-					<Route path='/cart' render={(props) => <Carts {...props} type={1} />}/>
+					<Route path='/wishlist' render={() => <Carts type={0} />}/>
+					<Route path='/cart' render={() => <Carts type={1} />}/>
 					<Route component={Landing} />
 				</Switch>
 				<Footer />
