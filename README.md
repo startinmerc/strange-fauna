@@ -1,6 +1,6 @@
-# Strange Fauna
+# Strange Flora
 
-## [Landing Page](https://strange-fauna.herokuapp.com/)
+## [Landing Page](https://strange-flora.herokuapp.com/)
 
 #### A full-stack  site built on:
 
