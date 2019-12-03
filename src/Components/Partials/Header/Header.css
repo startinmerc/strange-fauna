@@ -129,11 +129,11 @@
 }
 
 #header-cart .mini-cart {
-	right: 5px;
+	right: 0;
 }
 
-.header-container {
-	margin: 0 5px;
+.header-container:first-of-type {
+	margin-right: 10px;
 }
 
 .mini-cart-item {
