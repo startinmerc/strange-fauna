@@ -5,13 +5,6 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	min-width: 800px;
 	max-width: 80vw;
-}
-
-#landing .nav-section-container {
-	position: relative;
-}
-
-#header .nav-section-container {
 	margin: 0 auto;
 	transform: translateY(-80%);
 	transition: transform 240ms ease-out;
@@ -37,10 +30,6 @@
 	text-decoration: underline;
 }
 
-#landing .nav-section {
-	font-size: 1.5rem;
-}
-
 /*=================Nav Submenu=================*/
 
 .nav-section-submenu {
@@ -52,18 +41,11 @@
 	transition: all 50ms 50ms linear;
 	display: none;
 	z-index: 1000;
+	top: calc(12px + 1.2rem);
 }
 
 .about-submenu {
 	width: calc(100% - 2vw);
-}
-
-#landing .nav-section-submenu {
-	bottom: calc(14px + 1.5rem);
-}
-
-#header .nav-section-submenu {
-	top: calc(12px + 1.2rem);
 }
 
 .nav-section:hover .nav-section-submenu {
@@ -121,8 +103,5 @@
 	.nav-section {
 		font-size: 1rem;
 	}
-	
-	#landing .nav-section-container {
-		display: none;
-	}
+
 }
