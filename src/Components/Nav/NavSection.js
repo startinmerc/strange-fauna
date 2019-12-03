@@ -27,7 +27,7 @@ class NavSection extends Component {
 			<li className="nav-section" style={{backgroundColor: `${this.props.color}`}}>
 				<Link to={link}>{this.props.title}</Link>
 				<div className="nav-section-submenu" style={{backgroundColor: `${this.props.color}`}}>
-					<div class="nav-section-submenu-blurb">
+					<div className="nav-section-submenu-blurb">
 						<h2>{this.props.title}</h2>
 						<p>
 							Secondary fermentation degrees plato units of bitterness, cask conditioned ale ibu real ale pint glass craft beer.
