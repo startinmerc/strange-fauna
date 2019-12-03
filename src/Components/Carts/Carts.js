@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
+import { changeDelivery } from '../../actionCreators';
 import ProductCard from '../Products/ProductCard';
 import seeds from '../../seeds';
 import './Carts.css';
@@ -9,14 +10,11 @@ import './Carts.css';
 class List extends Component {
 	constructor(props){
 		super(props);
-		this.state = {
-			delivery: 50
-		}
 		this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleChange(e) {
-		this.setState({delivery: e.target.value});
+		this.props.changeDelivery(e.target.value);
 	}
 
 	render(){
@@ -56,8 +54,8 @@ class List extends Component {
 						<select value={this.state.delivery} onChange={this.handleChange}>
 							{seeds.deliveries.map(op => (<option value={op.price}>{op.name}</option>))}
 						</select>
-						<p>Delivery: ${this.state.delivery}</p>
-						<h2>Total: ${total + Number(this.state.delivery)}</h2>
+						<p>Delivery: ${this.props.delivery}</p>
+						<h2>Total: ${total + Number(this.props.delivery)}</h2>
 					</div> : null}
 			</main>
 		)
@@ -67,8 +65,9 @@ class List extends Component {
 function mapStateToProps(reduxState) {
 	return {
 		wish: reduxState.wish,
-		cart: reduxState.cart
+		cart: reduxState.cart,
+		delivery: reduxState.delivery
 	};
 }
 
-export default connect(mapStateToProps)(List);
+export default connect(mapStateToProps, { changeDelivery })(List);

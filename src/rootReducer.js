@@ -1,8 +1,9 @@
-import { ADD_WISH, REMOVE_WISH, ADD_CART, REMOVE_CART } from "./actionCreators";
+import { ADD_WISH, REMOVE_WISH, ADD_CART, REMOVE_CART, CHANGE_DELIVERY } from "./actionCreators";
 
 const initialState = {
 	wish: [1],
-	cart: [9,26]
+	cart: [9,26],
+	delivery: 50
 };
 
 export default function rootReducer(state = initialState, action){
@@ -19,6 +20,10 @@ export default function rootReducer(state = initialState, action){
 		case REMOVE_CART:
 			let cart = state.cart.filter(val => val !== action.id);
 			return {...state, cart};
+
+		case CHANGE_DELIVERY:
+			return {...state, delivery: action.delivery}
+
 		default:
 			return state;
 	}
