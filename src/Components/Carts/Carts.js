@@ -51,8 +51,8 @@ class List extends Component {
 					<div style={{textAlign: 'right'}}>
 						<p className="cart-subtotal">Subtotal: ${total}</p>
 							Choose delivery option: 
-						<select value={this.state.delivery} onChange={this.handleChange}>
-							{seeds.deliveries.map(op => (<option value={op.price}>{op.name}</option>))}
+						<select value={this.props.delivery} onChange={this.handleChange}>
+							{seeds.deliveries.map((op,i) => (<option key={`del-op-${i}`} value={op.price}>{op.name}</option>))}
 						</select>
 						<p>Delivery: ${this.props.delivery}</p>
 						<h2>Total: ${total + Number(this.props.delivery)}</h2>

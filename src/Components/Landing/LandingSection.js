@@ -14,8 +14,8 @@ Expects content:
 */
 
 function LandingSection({content}) {
-	const mappedLinks = content.links.map((link)=>(
-		<Link to={link.link} className="section-link">{link.title}</Link>
+	const mappedLinks = content.links.map((link,i)=>(
+		<Link to={link.link} key={`section-link-${i}`} className="section-link">{link.title}</Link>
 	));
 	return (
 		<section style={{
