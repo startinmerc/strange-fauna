@@ -175,8 +175,17 @@ Version logs for the project are below...
 * Contextual based on product type
 * Factor out to Component
 * Put landing content as seeds
+* Stop blur effect from overflowing
+
+#### Delivery
+* Change delivery from local state to redux store
+* Add action, reducer to handle change
+* Implement in Cart, change refs
+
+#### Nav
+* Change first column to blurb
+* Remove unused css
 
 ### V0.4
 [ ] - Node Backend
-[ ] - Delivery option in cart page
-[ ] - 1st Nav subsection to text
+[ ] - Checkout Pages
