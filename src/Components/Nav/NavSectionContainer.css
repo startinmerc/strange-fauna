@@ -84,6 +84,10 @@
 	margin: 5px;
 }
 
+.nav-section-submenu-blurb h2 {
+	margin-top: 0;
+}
+
 .about-submenu-link {
 	flex-grow: 1;
 	color: var(--white);
