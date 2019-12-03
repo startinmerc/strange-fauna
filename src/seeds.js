@@ -1,8 +1,8 @@
 const products = [], landingSections = [];
 
 const deliveries = [
-	{name: 'premium', price: 50},
-	{name: 'standard', price: 20}
+	{name: 'Premium', price: 50},
+	{name: 'Standard', price: 20}
 ]
 
 const categories = [
