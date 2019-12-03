@@ -56,7 +56,6 @@
 	width: 100%;
 	top: 0;
 	transform: skewX(-45deg);
-	transform-origin: center;
 	opacity: 0.9;
 }
 
@@ -74,34 +73,36 @@
 
 #landing section:nth-of-type(even) .section-stripe {
 	right: -50%;
-	transform: skewX(-45deg) translateX(100%);
+	transform: skewX(-45deg) scaleX(0);
+	transform-origin: right;
 }
 #landing section:nth-of-type(odd) .section-stripe {
 	left: -50%;
-	transform: skewX(-45deg) translateX(-100%);
+	transform: skewX(-45deg) scaleX(0);
+	transform-origin: left;
 }
 
 #landing section:nth-of-type(odd):hover .section-stripe {
-	animation: diagonalOdd 800ms ease-in forwards;
+	animation: diagonalOdd 800ms ease-in-out forwards;
 }
 #landing section:nth-of-type(even):hover .section-stripe {
-	animation: diagonalEven 800ms ease-in forwards;
+	animation: diagonalEven 800ms ease-in-out forwards;
 }
 
 /*==================Keyframes==================*/
 
 @keyframes diagonalOdd {
-	0%   {transform: skewX(-45deg) translateX(-100%)}
-	50%  {transform: skewX(-45deg) translateX(10%)}
-	70%  {transform: skewX(-45deg) translateX(-10%)}
-	100% {transform: skewX(-45deg) translateX(0%)}
+	0%   {transform: skewX(-45deg) scaleX(0)}
+	50%  {transform: skewX(-45deg) scaleX(1.1)}
+	70%  {transform: skewX(-45deg) scaleX(0.9)}
+	100% {transform: skewX(-45deg) scaleX(1)}
 }
 
 @keyframes diagonalEven {
-	0%   {transform: skewX(45deg) translateX(100%)}
-	50%  {transform: skewX(45deg) translateX(-10%)}
-	70%  {transform: skewX(45deg) translateX(10%)}
-	100% {transform: skewX(45deg) translateX(0%)}
+	0%   {transform: skewX(45deg) scaleX(0)}
+	50%  {transform: skewX(45deg) scaleX(1.1)}
+	70%  {transform: skewX(45deg) scaleX(0.9)}
+	100% {transform: skewX(45deg) scaleX(1)}
 }
 
 /*=============Responsive - Tablet=============*/
@@ -126,4 +127,9 @@
 	.section-image {
 		filter: blur(2px);
 	}
+	.section-stripe {
+		width: 105%;
+	}
+	#landing section:nth-of-type(odd) .section-stripe {left: -55%;}
+	#landing section:nth-of-type(even) .section-stripe {right: -55%;}
 }
