@@ -7,6 +7,7 @@
 	margin-bottom: 3rem;
 	position: relative;
 	transition: filter 230ms ease-in;
+	overflow: hidden;
 }
 
 .section-image {
