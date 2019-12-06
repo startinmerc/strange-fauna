@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { changeDelivery } from '../../actionCreators';
+import { Link } from 'react-router-dom';
 import ProductCard from '../Products/ProductCard';
 import seeds from '../../seeds';
 import './Carts.css';
@@ -57,6 +58,7 @@ class List extends Component {
 							</select>
 						</p>
 						<h2>Total: ${total + Number(this.props.delivery)}</h2>
+						<Link to="/checkout">Proceed to Checkout</Link>
 					</div> : null}
 			</main>
 		)
