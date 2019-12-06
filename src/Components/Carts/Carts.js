@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ProductCard from '../Products/ProductCard';
 import seeds from '../../seeds';
 import './Carts.css';
+import { getItems } from '../../middleware';
 
 // Returns cart, expects type prop: 0 = wishlist, 1 = shopping cart.
 
@@ -27,37 +28,31 @@ class List extends Component {
 			subtotal: [false,true]
 		};
 
-		// Compile list of items in cart/wish based on ids from Redux state
-		let itemList = [], total = 0;
-		options.ids[this.props.type].forEach((id)=>{
-			// Find item in seeds from id
-			let item = (seeds.products.find((item)=>(item.id === id)));
-			// Update subtotal
-			total += item.price;
-			// Push ProductCard to itemList
-			itemList.push(<ProductCard detail={item} key={`prod-${item.id}`}
-				// includes cart type prop if needed
-			 type={(options.subtotal[this.props.type]) ? "cart" : null}/>);
-		});
-
+		let items = getItems(options.ids[this.props.type],seeds.products);
+		
 		return (
 			<main>
 				<div className="cart-header">
-					<h2>{options.header[this.props.type]}{(itemList.length === 0) ? ' is empty' : null}</h2>
+					<h2>{options.header[this.props.type]}{(items.itemList.length === 0) ? ' is empty' : null}</h2>
 				</div>
 				<div className={options.class[this.props.type]}>
-					{itemList}
+					{
+						items.itemList.map(item => (
+						<ProductCard detail={item} key={`prod-${item.id}`}
+						// includes cart type prop if needed
+						 type={(options.subtotal[this.props.type]) ? "cart" : null}/>))
+					}
 				</div>
 				{options.subtotal[this.props.type] ? 
 					<div style={{textAlign: 'right'}}>
-						<p className="cart-subtotal">Subtotal: ${total}</p>
+						<p className="cart-subtotal">Subtotal: ${items.total}</p>
 						<p>
 							Choose delivery option:
 							<select value={this.props.delivery} onChange={this.handleChange}>
 								{seeds.deliveries.map((op,i) => (<option key={`del-op-${i}`} value={op.price}>{op.name} - ${op.price}</option>))}
 							</select>
 						</p>
-						<h2>Total: ${total + Number(this.props.delivery)}</h2>
+						<h2>Total: ${items.total + Number(this.props.delivery)}</h2>
 						<Link to="/checkout">Proceed to Checkout</Link>
 					</div> : null}
 			</main>
