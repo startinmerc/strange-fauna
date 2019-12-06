@@ -12,11 +12,13 @@ class Checkout extends Component {
 	}
 
 	handleChange(e) {
-		this.props.changeDelivery(Number(e.target.value));
+		this.props.changeDelivery(e.target.value);
 	}
 
 	render(){
+
 		let items = getItems(this.props.cart,seeds.products);
+		
 		return (
 			<main id="checkout">
 				<div id="order-summary">

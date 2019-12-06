@@ -22,7 +22,7 @@ export default function rootReducer(state = initialState, action){
 			return {...state, cart};
 
 		case CHANGE_DELIVERY:
-			return {...state, delivery: action.delivery}
+			return {...state, delivery: Number(action.delivery)}
 
 		default:
 			return state;
