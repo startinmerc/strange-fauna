@@ -9,11 +9,22 @@ class Checkout extends Component {
 	constructor(props){
 		super(props);
 		this.handleChange = this.handleChange.bind(this);
+		this.handleInputChange = this.handleInputChange.bind(this);
 	}
 
 	handleChange(e) {
 		this.props.changeDelivery(e.target.value);
 	}
+
+	handleInputChange(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value
+    });
+  }
 
 	render(){
 
@@ -40,20 +51,20 @@ class Checkout extends Component {
 					<div id="delivery-address" className="summary-section">
 						<h3>Delivery Address</h3>
 						<form>
-							<label htmlFor="#name">Name <span>*</span></label>
-							<input type="text" name="name" id="name" placeholder="Full Name"/>
-							<label htmlFor="#address1">Address 1 <span>*</span></label>
-							<input type="text" name="address1" id="address1" placeholder="Address 1"/>
-							<label htmlFor="#address2">Address 2</label>
-							<input type="text" name="address2" id="address2" placeholder="Address 2"/>
-							<label htmlFor="#town">Town/City <span>*</span></label>
-							<input type="text" name="town" id="town" placeholder="Town/City"/>
-							<label htmlFor="#county">County</label>
-							<input type="text" name="county" id="county" placeholder="County"/>
-							<label htmlFor="#postcode">Postcode <span>*</span></label>
-							<input type="text" name="postcode" id="postcode" placeholder="Postcode"/>
-							<label htmlFor="#phone">Phone Number <span>*</span></label>
-							<input type="text" name="phone" id="phone" placeholder="+440000000000"/>
+							<label htmlFor="name">Name <span>*</span></label>
+							<input onChange={this.handleInputChange} type="text" name="name" id="name" placeholder="Full Name"/>
+							<label htmlFor="address1">Address 1 <span>*</span></label>
+							<input onChange={this.handleInputChange} type="text" name="address1" id="address1" placeholder="Address 1"/>
+							<label htmlFor="address2">Address 2</label>
+							<input onChange={this.handleInputChange} type="text" name="address2" id="address2" placeholder="Address 2"/>
+							<label htmlFor="town">Town/City <span>*</span></label>
+							<input onChange={this.handleInputChange} type="text" name="town" id="town" placeholder="Town/City"/>
+							<label htmlFor="county">County</label>
+							<input onChange={this.handleInputChange} type="text" name="county" id="county" placeholder="County"/>
+							<label htmlFor="postcode">Postcode <span>*</span></label>
+							<input onChange={this.handleInputChange} type="text" name="postcode" id="postcode" placeholder="Postcode"/>
+							<label htmlFor="phone">Phone Number <span>*</span></label>
+							<input onChange={this.handleInputChange} type="text" name="phone" id="phone" placeholder="+440000000000"/>
 						</form>
 					</div>
 					<div id="delivery-method" className="summary-section">
