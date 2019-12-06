@@ -186,6 +186,17 @@ Version logs for the project are below...
 * Change first column to blurb
 * Remove unused css
 
+#### Checkout
+* Checkout component skeleton
+* Add styling
+* React rendering for cart summary etc
+* Pass form content to state
+
+#### Middleware & Cleanups
+* Move getItems from cart & checkout etc to middleware
+* destructure seeds exports to only import as needed
+
 ### V0.4
 [ ] - Node Backend
-[ ] - Checkout Pages
+[ ] - Checkout Page Refactor
+[ ] - componentDidUpdate from HeaderButton/MobileMenu
