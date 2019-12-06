@@ -1,11 +1,11 @@
 const products = [], landingSections = [];
 
-const deliveries = [
+export const deliveries = [
 	{name: 'Premium', price: 50},
 	{name: 'Standard', price: 20}
 ]
 
-const categories = [
+export const categories = [
 	{title: 'Mushrooms', section: 'mushroom', color: 'var(--mushroom)'},
 	{title: 'Berries', section: 'berry', color: 'var(--berry)'},
 	{title: 'Flowers', section: 'flower', color: 'var(--flower)'},
@@ -64,9 +64,7 @@ function addToLanding(dark,header,copy,image,type,links){
 
 const seeds = {
 	products: products,
-	landingSections: landingSections,
-	deliveries: deliveries,
-	categories: categories
+	landingSections: landingSections
 }
 
 export default seeds;

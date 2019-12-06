@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { changeDelivery } from '../../actionCreators';
 import { Link } from 'react-router-dom';
-import seeds from '../../seeds';
+import { deliveries } from '../../seeds';
 import { getItems } from '../../middleware';
 
 class Checkout extends Component {
@@ -28,7 +28,7 @@ class Checkout extends Component {
 
 	render(){
 
-		let items = getItems(this.props.cart,seeds.products);
+		let items = getItems(this.props.cart);
 		
 		return (
 			<main id="checkout">
@@ -70,7 +70,7 @@ class Checkout extends Component {
 					<div id="delivery-method" className="summary-section">
 						<h3>Delivery method</h3>
 						{
-							seeds.deliveries.map((op,i) => (
+							deliveries.map((op,i) => (
 								<div className="delivery-radio" key={`delivery-option-${i}`}>
 									<label>
 										<input type="radio" value={op.price} name="delivery-option"

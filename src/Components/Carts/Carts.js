@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { changeDelivery } from '../../actionCreators';
 import { Link } from 'react-router-dom';
 import ProductCard from '../Products/ProductCard';
-import seeds from '../../seeds';
+import { deliveries } from '../../seeds';
 import './Carts.css';
 import { getItems } from '../../middleware';
 
@@ -28,7 +28,7 @@ class List extends Component {
 			subtotal: [false,true]
 		};
 
-		let items = getItems(options.ids[this.props.type],seeds.products);
+		let items = getItems(options.ids[this.props.type]);
 		
 		return (
 			<main>
@@ -49,7 +49,7 @@ class List extends Component {
 						<p>
 							Choose delivery option:
 							<select value={this.props.delivery} onChange={this.handleChange}>
-								{seeds.deliveries.map((op,i) => (<option key={`del-op-${i}`} value={op.price}>{op.name} - ${op.price}</option>))}
+								{deliveries.map((op,i) => (<option key={`del-op-${i}`} value={op.price}>{op.name} - ${op.price}</option>))}
 							</select>
 						</p>
 						<h2>Total: ${items.total + Number(this.props.delivery)}</h2>
