@@ -35,8 +35,8 @@ class Checkout extends Component {
 				<div id="order-summary">
 					<h2>Order Summary</h2>
 					<ul>
-						{items.itemList.map((item)=>(<li>
-							<img src={item.photos[0]}/>
+						{items.itemList.map((item)=>(<li key={item.id}>
+							<img src={item.photos[0]} alt={item.name}/>
 							<p>{item.name}</p>
 							<p>${item.price}</p>
 							</li>))}
@@ -71,7 +71,7 @@ class Checkout extends Component {
 						<h3>Delivery method</h3>
 						{
 							seeds.deliveries.map((op,i) => (
-								<div className="delivery-radio">
+								<div className="delivery-radio" key={`delivery-option-${i}`}>
 									<label>
 										<input type="radio" value={op.price} name="delivery-option"
 										 id={`delivery-option-${i}`} checked={op.price === this.props.delivery} 
@@ -93,7 +93,7 @@ class Checkout extends Component {
 						<div id="check-container">
 							<label htmlFor="check-1">Add a note about your order</label>
 							<input type="checkbox" value="1" name="checkboxes" id="check-1"/>
-							<input type="text" name="note" id="note" placeholder=""/>
+							<input type="text" name="note" id="note" placeholder="Enter a note for our staff"/>
 						</div>
 					</div>
 					<button className="summary-section">
