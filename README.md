@@ -195,8 +195,9 @@ Version logs for the project are below...
 #### Middleware & Cleanups
 * Move getItems from cart & checkout etc to middleware
 * destructure seeds exports to only import as needed
+* move componentDidUpdate from HeaderButton/MobileMenu
 
 ### V0.4
 [ ] - Node Backend
 [ ] - Checkout Page Refactor
-[ ] - componentDidUpdate from HeaderButton/MobileMenu
+[ ] - Form data from state in checkout
