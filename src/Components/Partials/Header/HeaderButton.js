@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
 import MiniCartItem from './MiniCartItem';
-import seeds from '../../../seeds';
-import { animateIcon } from '../../../middleware';
+import { animateIcon, getItems } from '../../../middleware';
+
+// Returns HeaderButton with MiniCart child, expects type prop: 0 = wishlist, 1 = shopping cart.
 
 class HeaderButton extends Component {
 
@@ -23,30 +24,33 @@ class HeaderButton extends Component {
 	}
 
 	render(){
-		let link = '', list = [], total = 0;
-		if(this.props.type==="wish"){
-			this.props.wish.forEach((id)=>{
-				let item = (seeds.products.find((item)=>(item.id === id)));
-				list.push(<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeWish.bind(this, item.id)}/>);
-			});
-			link = <Link to="/wishlist" className={`header-button ${(list.length > 0) ? null : 'empty'}`}>
-				<Star size={'1.5rem'}/>{`Wishlist (${list.length})`}
-			</Link>
-		} else {
-			this.props.cart.forEach((id)=>{
-				let item = (seeds.products.find((item)=>(item.id === id)));
-				total += item.price;
-				list.push(<MiniCartItem key={`mini${item.type}-${item.id}`} item={item} remove={this.removeCart.bind(this, item.id)}/>);
-			});
-			link = <Link to="/cart" className={`header-button ${(list.length > 0) ? null : 'empty'}`}>
-				<ShoppingCart size={'1.5rem'}/>{`Cart (${list.length}): $${total}`}
-			</Link>
+
+		const options = {
+			ids: [this.props.wish,this.props.cart],
+			headerIcon: [<Star size={'1.5rem'}/>,<ShoppingCart size={'1.5rem'}/>],
+			headerText: ['Wishlist','Cart'],
+			id: ['header-wish','header-cart'],
+			remove: [this.removeWish,this.removeCart],
+			url: ['/wishlist','/cart'],
+			subtotal: [false,true]
 		};
+
+		let items = getItems(options.ids[this.props.type]);
+
 		return (
-			<div className="header-container" id={`header-${this.props.type}`}>
-				{link}
+			<div className="header-container" id={options.id[this.props.type]}>
+				<Link to={options.url[this.props.type]} className={`header-button ${(items.itemList.length > 0) ? null : 'empty'}`}>
+					{options.headerIcon[this.props.type]}{options.headerText[this.props.type]}
+					{` (${items.itemList.length})${options.subtotal[this.props.type] ? `: $${items.total}` : ''}`}
+				</Link>
 				<ul className="mini-cart">
-					{list.length > 0 ? list : 'Empty!'}
+					{
+						(items.itemList.length > 0) ? 
+						items.itemList.map((item)=>(
+							<MiniCartItem key={`mini${item.type}-${item.id}`} 
+							 item={item} remove={options.remove[this.props.type].bind(this, item.id)}/>
+						)) : 'Empty!'
+					}
 				</ul>
 			</div>
 		);

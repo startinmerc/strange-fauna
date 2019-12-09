@@ -13,8 +13,8 @@ class Header extends Component {
 						<h2 className="header-title">Strange Flora</h2>
 					</Link>
 					<div className="header-carts">
-						<HeaderButton type="wish" />
-						<HeaderButton type="cart" />
+						<HeaderButton type={0} />
+						<HeaderButton type={1} />
 					</div>
 				</div>
 				<NavSectionContainer />
