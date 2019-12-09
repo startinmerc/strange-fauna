@@ -8,6 +8,9 @@ import { getItems } from '../../middleware';
 class Checkout extends Component {
 	constructor(props){
 		super(props);
+		this.state = {
+			noteCheckbox: false
+		}
 		this.handleChange = this.handleChange.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
@@ -92,8 +95,12 @@ class Checkout extends Component {
 						<h3>Options</h3>
 						<div id="check-container">
 							<label htmlFor="check-1">Add a note about your order</label>
-							<input type="checkbox" value="1" name="checkboxes" id="check-1"/>
-							<input type="text" name="note" id="note" placeholder="Enter a note for our staff"/>
+							<input onChange={this.handleInputChange} type="checkbox" value="1" name="noteCheckbox" id="check-1"/><br/>
+							{
+								this.state.noteCheckbox ? 
+									<input onChange={this.handleInputChange} type="text" name="note" id="note" placeholder="Enter a note for our staff"/>
+								: null
+							}
 						</div>
 					</div>
 					<button className="summary-section">
