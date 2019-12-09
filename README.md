@@ -197,6 +197,10 @@ Version logs for the project are below...
 * destructure seeds exports to only import as needed
 * move componentDidUpdate from HeaderButton/MobileMenu
 
+#### MiniCart
+* Rewrite HeaderButton to use same rendering logic as Carts
+* Factor MiniCart out of HeaderButton
+
 ### V0.4
 [ ] - Node Backend
 [ ] - Checkout Page Refactor
