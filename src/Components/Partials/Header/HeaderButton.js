@@ -1,23 +1,15 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { removeWish, removeCart } from '../../../actionCreators';
 import { Link } from "react-router-dom";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
-import MiniCartItem from './MiniCartItem';
+import MiniCart from './MiniCart';
 import { animateIcon, getItems } from '../../../middleware';
 
-// Returns HeaderButton with MiniCart child, expects type prop: 0 = wishlist, 1 = shopping cart.
+// Returns HeaderButton with MiniCart child,
+// Expects type prop: 0 = wishlist, 1 = shopping cart.
 
 class HeaderButton extends Component {
-
-	removeWish(id){
-		this.props.removeWish(id);
-	}
-
-	removeCart(id){
-		this.props.removeCart(id);
-	}
 
 	componentDidUpdate(e){
 		animateIcon([e.cart,e.wish],[this.props.cart,this.props.wish]);
@@ -30,7 +22,6 @@ class HeaderButton extends Component {
 			headerIcon: [<Star size={'1.5rem'}/>,<ShoppingCart size={'1.5rem'}/>],
 			headerText: ['Wishlist','Cart'],
 			id: ['header-wish','header-cart'],
-			remove: [this.removeWish,this.removeCart],
 			url: ['/wishlist','/cart'],
 			subtotal: [false,true]
 		};
@@ -43,15 +34,7 @@ class HeaderButton extends Component {
 					{options.headerIcon[this.props.type]}{options.headerText[this.props.type]}
 					{` (${items.itemList.length})${options.subtotal[this.props.type] ? `: $${items.total}` : ''}`}
 				</Link>
-				<ul className="mini-cart">
-					{
-						(items.itemList.length > 0) ? 
-						items.itemList.map((item)=>(
-							<MiniCartItem key={`mini${item.type}-${item.id}`} 
-							 item={item} remove={options.remove[this.props.type].bind(this, item.id)}/>
-						)) : 'Empty!'
-					}
-				</ul>
+				<MiniCart items={items.itemList} type={this.props.type}/>
 			</div>
 		);
 	}
@@ -64,4 +47,4 @@ function mapStateToProps(reduxState) {
 	};
 }
 
-export default connect(mapStateToProps, { removeWish, removeCart })(HeaderButton);
+export default connect(mapStateToProps)(HeaderButton);
