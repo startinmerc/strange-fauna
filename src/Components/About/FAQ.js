@@ -1,5 +1,7 @@
 import React from 'react';
 
+// Returns static about section
+
 function Question() {
 	return (
 		<li>

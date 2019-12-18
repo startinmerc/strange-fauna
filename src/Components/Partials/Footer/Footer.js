@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
 
+// Returns footer element with site links & link to Strange Industries
+
 class Footer extends Component {
 	render(){
 		return(

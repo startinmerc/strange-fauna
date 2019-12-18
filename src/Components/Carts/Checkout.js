@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { deliveries } from '../../seeds';
 import { getItems } from '../../middleware';
 
+// Returns checkout element with local state of form content
+
 class Checkout extends Component {
 	constructor(props){
 		super(props);

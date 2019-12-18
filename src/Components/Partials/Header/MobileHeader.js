@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Returns basic non-sticky header for use on mobile devices
+
 function Header() {	
 	return(
 		<header id="mobile-header" style={{borderBottom: '5px solid var(--primary)'}}>

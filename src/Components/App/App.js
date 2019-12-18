@@ -13,6 +13,7 @@ import { Route, Switch } from 'react-router-dom';
 class App extends Component {
 
 	render(){
+		// Conditional mounting of mobile elements
 		let mobile = window.innerWidth < 600;
 		const header = mobile ? <MobileHeader /> : <Header />;
 		const footer = mobile ? <MobileMenu /> : null;

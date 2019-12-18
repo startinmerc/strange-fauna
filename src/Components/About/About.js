@@ -11,6 +11,8 @@ import Returns from './Returns';
 import AboutMain from './AboutMain';
 import './About.css';
 
+// Switch for about pages
+
 function About() {
 	let match = useRouteMatch();
 	return (

@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import seeds from '../../seeds';
 import ProductCard from '../Products/ProductCard'
 
+// Expects prop of section object
+// Returns element with link to section & dropdown menu of blurb & 2 product cards
+// Or list of about links
+
 class NavSection extends Component {
 	render(){
 		if(this.props.section==='about') {

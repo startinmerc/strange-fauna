@@ -7,7 +7,8 @@ import { deliveries } from '../../seeds';
 import './Carts.css';
 import { getItems } from '../../middleware';
 
-// Returns cart, expects type prop: 0 = wishlist, 1 = shopping cart.
+// Expects type prop: 0 = wishlist, 1 = shopping cart.
+// Returns cart element
 
 class List extends Component {
 	constructor(props){

@@ -3,6 +3,9 @@ import ProductCard from './ProductCard';
 import seeds from '../../seeds';
 import './ProductList.css';
 
+// Expects 'type' string as prop, either all or product category
+// Returns main element with grid display option & products
+
 class ProductList extends Component {
 
 	constructor(props){

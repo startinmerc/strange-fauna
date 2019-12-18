@@ -8,6 +8,9 @@ import { categories } from '../../../seeds';
 import { animateIcon } from '../../../middleware';
 import './MobileMenu.css';
 
+// Returns sticky footer mobile menu with cart & wishlist buttons,
+// Along with popup nav of sections
+
 class MobileMenu extends Component {
 	constructor(props){
 		super(props);

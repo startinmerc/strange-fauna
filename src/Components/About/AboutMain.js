@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+// Returns static about element with links to other about sections
+
 function AboutMain() {
 	return (
 		<main id="about">

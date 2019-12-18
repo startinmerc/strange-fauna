@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Expects item object with product data, and remove function
+
 const MiniCartItem = ({item, remove})=>(
 	<li className="mini-cart-item" 
 	 style={{

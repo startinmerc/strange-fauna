@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import ProductList from './ProductList';
 
+// Acts as switch for React Router
+
 function Products(){
 	let match = useRouteMatch();
 	return (
