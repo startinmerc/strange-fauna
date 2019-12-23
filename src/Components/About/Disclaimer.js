@@ -3,6 +3,7 @@ import React from 'react';
 // Returns static about section
 
 function Disclaimer(){
+	document.title = 'Disclaimer';
 	return (
 		<main>
 			<h1>Disclaimer</h1>

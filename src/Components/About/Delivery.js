@@ -3,6 +3,7 @@ import React from 'react';
 // Returns static about section
 
 function Delivery(){
+	document.title = 'Delivery';
 	return (
 		<main id='delivery'>
 			<h1 className="header">Delivery</h1>

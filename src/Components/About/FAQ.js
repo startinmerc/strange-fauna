@@ -16,6 +16,7 @@ function Question() {
 
 
 function FAQ(){
+	document.title = 'FAQ';
 	return (
 		<main>
 			<h1>FAQ</h1>

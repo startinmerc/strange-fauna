@@ -29,6 +29,8 @@ class List extends Component {
 			subtotal: [false,true]
 		};
 
+		document.title = options.header[this.props.type];
+
 		let items = getItems(options.ids[this.props.type]);
 		
 		return (

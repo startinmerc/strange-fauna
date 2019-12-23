@@ -17,6 +17,10 @@ class Checkout extends Component {
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
 
+	componentDidMount() {
+		document.title = 'Checkout';
+	}
+
 	handleChange(e) {
 		this.props.changeDelivery(e.target.value);
 	}

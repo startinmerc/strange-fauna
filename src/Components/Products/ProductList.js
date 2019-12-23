@@ -23,13 +23,17 @@ class ProductList extends Component {
 	}
 	
 	render(){
+		document.title = `Showing ${this.props.type} products`;
+
 		var list = this.state.products;
 		if(this.props.type!=="all"){
 			list = list.filter((p)=>{
 				return p.type === this.props.type
 			})
 		}
+
 		var renderList = list.map((prod)=>{return <ProductCard detail={prod} key={`prod-${prod.id}`}/>});
+		
 		return (
 			<main>
 				<div className="product-list-header">
