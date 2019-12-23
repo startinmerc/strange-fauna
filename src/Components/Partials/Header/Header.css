@@ -65,9 +65,11 @@
 .header-button::before {
 	content: '';
 	position: absolute;
-	top: 100%;
+	top:  calc(100% - 1px);
 	left: -2px;
-	width: 146px;
+	/*moz - left: -1px*/
+	width: 100%;
+	/*moz - width: calc(100% - 1px)*/
 	height: 0%;
 	background: var(--header);
 	border-left: 2px solid var(--black);
@@ -96,7 +98,8 @@
 }
 
 .header-container:hover .header-button::before {
-	height: 50%;
+	height: calc(50% + 2px);
+	/*moz - height: 50%*/
 }
 
 .header-container:hover .header-button svg {
