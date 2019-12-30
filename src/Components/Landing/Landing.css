@@ -6,7 +6,6 @@
 	height: 60vh;
 	margin-bottom: 3rem;
 	position: relative;
-	transition: filter 230ms ease-in;
 	overflow: hidden;
 }
 
@@ -18,6 +17,7 @@
 	width: 100%;
 	background-size: cover;
 	background-position: center;
+	transition: filter 230ms ease-in;
 }
 
 #landing section:hover .section-image {
@@ -123,9 +123,6 @@
 	}
 	.section-header {
 		font-size: 2rem;
-	}
-	.section-image {
-		filter: blur(2px);
 	}
 	.section-stripe {
 		width: 105%;
