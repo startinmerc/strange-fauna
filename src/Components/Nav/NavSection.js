@@ -19,7 +19,7 @@ class NavSection extends Component {
 					<Link to='/about' className="about-submenu-link">About Us</Link>
 					<Link to='/about/faq' className="about-submenu-link">FAQ</Link>
 					<Link to='/about/delivery' className="about-submenu-link">Delivery</Link>
-					<Link to='/about/returns' className="about-submenu-link">Retuns</Link>
+					<Link to='/about/returns' className="about-submenu-link">Returns</Link>
 					<Link to='/about/disclaimer' className="about-submenu-link">Disclaimer</Link>
 				</div>
 			 </li>
