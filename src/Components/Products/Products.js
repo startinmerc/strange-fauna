@@ -28,6 +28,9 @@ function Products(){
 			<Route path={`${match.url}/reductions`}>
 				<ProductList type="reduction"/>
 			</Route>
+			<Route path={`${match.url}/:id`}>
+				<ProductDetail/>
+			</Route>
 			<Route path={`${match.url}/`}>
 				<ProductList type="all"/>
 			</Route>
