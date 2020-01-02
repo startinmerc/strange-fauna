@@ -202,6 +202,8 @@ Version logs for the project are below...
 * Factor MiniCart out of HeaderButton
 
 ### V0.4
-[ ] - Node Backend
-[ ] - Checkout Page Refactor
-[ ] - Form data from state in checkout
+
+#### ProductDetail
+* put route matching in Products switch
+* pass ID from switch to ProductDetail as hook via router
+* template page to render details
