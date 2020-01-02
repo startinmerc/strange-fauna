@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-  Switch,
-  Route,
-  useRouteMatch
+	Switch,
+	Route,
+	useRouteMatch
 } from "react-router-dom";
 import ProductList from './ProductList';
+import ProductDetail from './ProductDetail';
 
 // Acts as switch for React Router
 
