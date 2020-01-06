@@ -2,12 +2,14 @@
 
 ## [Landing Page](https://strange-flora.herokuapp.com/)
 
-#### A full-stack  site built on:
+#### A full-stack site built on:
 
-| React        | Node.js | Redux      |
-| ------------ |---------|------------|
-| React-Router | MongoDB | Custom CSS |
-| Heroku       |         |            |
+* React
+* Node.js 
+* Redux
+* React-Router
+* Custom CSS
+* Heroku
 
 An eCommerce site built for my portfolio, part of the Strange Industries Network.
 The site is built on React using Node, built entirely from scratch.
