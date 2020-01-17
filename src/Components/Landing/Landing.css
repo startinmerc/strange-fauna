@@ -7,6 +7,7 @@
 	margin-bottom: 3rem;
 	position: relative;
 	overflow: hidden;
+	background-color: var(--primary);
 }
 
 .section-image {
@@ -43,6 +44,7 @@
 	margin-top: 0.83rem;
 	border: 2px solid var(--white);
 	box-shadow: 2px 2px 0 var(--footer);
+	text-shadow: none;
 }
 
 .section-link:hover {

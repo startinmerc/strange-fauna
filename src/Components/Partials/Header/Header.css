@@ -146,6 +146,7 @@
 
 .mini-cart-item-image {
 	width: 50%;
+	height: auto;
 }
 
 /*=============Responsive - Tablet=============*/
