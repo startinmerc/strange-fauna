@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import AddToCart from './AddToCart';
 import seeds, { categories } from '../../seeds';
 import { useParams,	Link } from "react-router-dom";
