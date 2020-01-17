@@ -39,6 +39,7 @@
 
 .footer-external {
 	grid-area: link;
+	font-size: 1.3rem;
 }
 
 @media(max-width: 800px){

@@ -26,7 +26,7 @@ class Footer extends Component {
 					A <a className="footer-link" rel="noopener noreferrer"
 					 target="_blank" href="https://www.strangeindustries.co.uk">
 						Strange Industries
-					</a> site.
+					</a> Site.
 				</p>
 			</footer>
 		);
