@@ -4,10 +4,10 @@ export const ADD_CART = "ADD_CART";
 export const REMOVE_CART = "REMOVE_CART";
 export const CHANGE_DELIVERY = "CHANGE_DELIVERY";
 
-export function addWish(wish){
+export function addWish(id){
 	return {
 		type: "ADD_WISH",
-		wish
+		id
 	}
 }
 
@@ -18,10 +18,10 @@ export function removeWish(id){
 	}
 }
 
-export function addCart(cart){
+export function addCart(id){
 	return {
 		type: "ADD_CART",
-		cart
+		id
 	}
 }
 

@@ -10,13 +10,13 @@ export default function rootReducer(state = initialState, action){
 	switch(action.type){
 
 		case ADD_WISH:
-			return {...state, wish: [...state.wish, action.wish]};
+			return {...state, wish: [...state.wish, action.id]};
 		case REMOVE_WISH:
 			let wish = state.wish.filter(val => val !== action.id);
 			return {...state, wish};
 
 		case ADD_CART:
-			return {...state, cart: [...state.cart, action.cart]};
+			return {...state, cart: [...state.cart, action.id]};
 		case REMOVE_CART:
 			let cart = state.cart.filter(val => val !== action.id);
 			return {...state, cart};
