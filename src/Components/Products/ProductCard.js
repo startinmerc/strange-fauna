@@ -42,7 +42,7 @@ class ProductCard extends Component {
 							<Link to={`/products/${this.props.detail.id}`}>
 								<p>{this.props.detail.name}</p>
 							</Link>
-							<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
+							<AddToCart id={this.props.detail.id}/>
 						</div>
 						<p className="cart product-card-price">${this.props.detail.price}</p>
 					</div>
@@ -61,7 +61,7 @@ class ProductCard extends Component {
 							</Link>
 							 <h5>${this.props.detail.price}</h5>
 						</div>
-						<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
+						<AddToCart id={this.props.detail.id}/>
 					</div>
 				)
 			default:
@@ -78,7 +78,7 @@ class ProductCard extends Component {
 							</Link>
 							 <h5>${this.props.detail.price}</h5>
 						</div>
-						<AddToCart handleClick={this.cartClick.bind(this, this.props.detail.id)} inState={inCart}/>
+						<AddToCart id={this.props.detail.id}/>
 					</div>
 				);
 			}

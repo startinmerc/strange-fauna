@@ -24,7 +24,7 @@ function ProductDetail() {
 					<button type="button" name="removeQty" className="btn-quantity btn-quantity-remove">-</button>
 					<input type="number" name="quantity" id="quantity" placeholder="1"/>
 					<button type="button" name="addQty" className="btn-quantity btn-quantity-add">+</button>
-					<AddToCart/>
+					<AddToCart id={item.id}/>
 					(AddToWish)
 				</div>
 				<div>
