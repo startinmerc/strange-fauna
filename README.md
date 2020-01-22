@@ -209,3 +209,21 @@ Version logs for the project are below...
 * put route matching in Products switch
 * pass ID from switch to ProductDetail as hook via router
 * template page to render details
+
+#### Redux Reorganise
+* split reducers
+* split actions
+* split actionTypes
+* add index compilers
+* change file refs
+* change mapStateToProps destructuring
+
+---
+
+### To Do:
+* move add/remove cart + wish functions to respective comps,
+ * only pass in id
+* add to cart/wish functionality in detail
+* move display state to redux state.other
+* add cart total to redux state.cart
+* add length to cart/wish?
