@@ -1,8 +1,8 @@
 import { ADD_WISH, REMOVE_WISH, ADD_CART, REMOVE_CART, CHANGE_DELIVERY } from "./actionCreators";
 
 const initialState = {
-	wish: [1],
-	cart: [9,26],
+	wish: [],
+	cart: [],
 	delivery: 50
 };
 
