@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { addCart, removeCart } from '../../store/actions/cart';
+import { connect } from "react-redux";
 
-// Expects handleClick to add/remove from cart & inState boolean to determine wether parent product is in cart
+// Expects product id
 // Returns add to cart button with conditional formatting
 
-const AddToCart = ({handleClick, inState})=> {
-	return (
-		<button className={`add-to-cart ${inState ? 'cart-added' : ''}`}
-		 onClick={handleClick}>
-			{inState ? 'Remove from' : 'Add to' } Cart
-		</button>
-	);
+class AddToCart extends Component {
+	handleClick(id){
+		if(this.props.cart.includes(id)){
+			this.props.removeCart(id);
+		} else {
+			this.props.addCart(id);
+		}
+	}
+
+	render(){
+		const inCart = this.props.cart.includes(this.props.id);
+		return (
+			<button className={`add-to-cart ${inCart ? 'cart-added' : ''}`}
+			 onClick={this.handleClick.bind(this, this.props.id)}>
+				{inCart ? 'Remove from' : 'Add to' } Cart
+			</button>
+		);
+	}
 }
 
-export default AddToCart;
+function mapStateToProps(reduxState) {
+	return {
+		cart: reduxState.cart.cart
+	};
+}
+
+export default connect(mapStateToProps, { addCart, removeCart })(AddToCart);
