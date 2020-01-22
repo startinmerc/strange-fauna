@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { changeDelivery } from '../../actionCreators';
+import { changeDelivery } from '../../store/actions/other';
 import { Link } from 'react-router-dom';
 import ProductCard from '../Products/ProductCard';
 import { deliveries } from '../../seeds';
@@ -65,9 +65,9 @@ class List extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish,
-		cart: reduxState.cart,
-		delivery: reduxState.delivery
+		wish: reduxState.wish.wish,
+		cart: reduxState.cart.cart,
+		delivery: reduxState.other.delivery
 	};
 }
 

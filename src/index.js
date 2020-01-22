@@ -4,15 +4,11 @@ import './index.css';
 import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
 import { BrowserRouter } from 'react-router-dom';
-import { createStore } from 'redux';
-import rootReducer from './rootReducer';
 import { Provider } from "react-redux";
 import ScrollTop from "./Components/Partials/ScrollTop";
+import { configureStore } from "./store";
 
-const store = createStore(
-	rootReducer, 
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = configureStore();
 
 ReactDOM.render(
 	<Provider store={store}>

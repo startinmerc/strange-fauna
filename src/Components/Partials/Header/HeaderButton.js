@@ -42,8 +42,8 @@ class HeaderButton extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish,
-		cart: reduxState.cart
+		wish: reduxState.wish.wish,
+		cart: reduxState.cart.cart
 	};
 }
 

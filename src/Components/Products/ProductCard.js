@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
 import { Link } from "react-router-dom";
-import { addCart, removeCart, addWish, removeWish } from '../../actionCreators';
+import { addCart, removeCart } from '../../store/actions/cart';
+import { addWish, removeWish } from '../../store/actions/wish';
 import { connect } from "react-redux";
 import './ProductCard.css';
 
@@ -87,8 +88,8 @@ class ProductCard extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish,
-		cart: reduxState.cart
+		wish: reduxState.wish.wish,
+		cart: reduxState.cart.cart
 	};
 }
 

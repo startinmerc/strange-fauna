@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { changeDelivery } from '../../actionCreators';
+import { changeDelivery } from '../../store/actions/other';
 import { Link } from 'react-router-dom';
 import { deliveries } from '../../seeds';
 import { getItems } from '../../middleware';
@@ -22,6 +22,7 @@ class Checkout extends Component {
 	}
 
 	handleChange(e) {
+		console.log(e.target.value);
 		this.props.changeDelivery(e.target.value);
 	}
 
@@ -120,8 +121,8 @@ class Checkout extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		cart: reduxState.cart,
-		delivery: reduxState.delivery
+		cart: reduxState.cart.cart,
+		delivery: reduxState.other.delivery
 	};
 }
 
