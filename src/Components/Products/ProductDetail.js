@@ -9,7 +9,7 @@ function ProductDetail() {
 	const item = seeds.products.find(item=>(item.id === Number(id)));
 	const cat = categories.find(cat=>(item.type === cat.section));
 	return (
-		<main id={`details details-${item.id}`}>
+		<main id="details">
 			<h3>
 				<Link to="/">Home</Link> / <Link to={`/products/${cat.title}`}>{cat.title}</Link>
 			</h3>
@@ -21,32 +21,39 @@ function ProductDetail() {
 					<h2 style={{marginTop: 0}}>{item.name}</h2>
 					<h3>${item.price}</h3>
 					<p>{item.description}</p>
-					<label htmlFor="quantity">Quantity:</label><br/>
-					<button type="button" name="removeQty" className="btn-quantity btn-quantity-remove">-</button>
-					<input type="number" name="quantity" id="quantity" placeholder="1"/>
-					<button type="button" name="addQty" className="btn-quantity btn-quantity-add">+</button>
+					<label htmlFor="quantity">Quantity:</label>
+					<input type="number" name="quantity" id="quantity"
+					 placeholder="1" className="quantity"/>
 					<AddToCart id={item.id}/>
 					<AddToWish id={item.id} button/>
 				</div>
-				<div>
-					<table>
-						<thead>
-							<tr>
-								<th colSpan="3">Reviews</th>
-							</tr>
-						</thead>
-						<tbody>
-							{item.reviews.map((review,i) => (
-								<tr key={`review-${i}`}>
-									<td>{review.score}</td>
-									<td>{review.author}</td>
-									<td>{review.content}</td>
-								</tr>
-							))}
-						</tbody>
-					</table>
-				</div>
 			</div>
+			<table className="reviews-table">
+				<colgroup>
+					<col span="1" style={{width: "15%"}}/>
+					<col span="1" style={{width: "15%"}}/>
+					<col span="1" style={{width: "auto"}}/>
+				</colgroup>
+				<thead>
+					<tr>
+						<th colSpan="3"><h3>Reviews</h3></th>
+					</tr>
+					<tr>
+						<th>Rating</th>
+						<th>Author</th>
+						<th>Review</th>
+					</tr>
+				</thead>
+				<tbody>
+					{item.reviews.map((review,i) => (
+						<tr key={`review-${i}`} className="review">
+							<td>{review.score}/5</td>
+							<td>{review.author}</td>
+							<td>{review.content}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
 		</main>
 	);
 }

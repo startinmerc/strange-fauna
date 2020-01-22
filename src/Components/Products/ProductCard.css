@@ -82,6 +82,48 @@
 	transform: scale(1.3);
 }
 
+/*================Product Detail================*/
+
+#details button {
+	margin-top: 15px;
+}
+
+#details .add-to-cart {
+	padding: 1rem 0;
+	border: 2px solid var(--black);
+}
+
+.quantity {
+	border: 2px solid var(--black);
+	height: 2rem;
+	width: 4rem;
+	font-size: inherit;
+	text-align: center;
+	margin-left: 5px;
+}
+
+.wish-btn {
+	width: 100%;
+	padding: 0.2rem 0;
+	border: 2px solid var(--black);
+}
+
+.reviews-table {
+	width: 100%;
+	margin-top: 5px;
+	background-color: var(--header);
+	border-collapse: collapse;
+}
+
+.reviews-table td {
+	padding: 5px;
+	border: 1px solid var(--black);
+}
+
+.review:nth-of-type(odd){
+	background-color: var(--white);
+}
+
 /*=============Responsive - Mobile=============*/
 
 @media(max-width: 600px){

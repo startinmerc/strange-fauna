@@ -19,7 +19,7 @@ class AddToWish extends Component {
 		const inWish = this.props.wish.includes(this.props.id);
 		if(this.props.button){
 			return (
-				<button className={`add-to-cart ${inWish ? 'cart-added' : ''}`}
+				<button className={`wish-btn ${inWish ? 'cart-added' : ''}`}
 			 onClick={this.handleClick.bind(this, this.props.id)}
 			>{inWish ? 'Remove from' : 'Add to' } Wishlist
 			</button>
