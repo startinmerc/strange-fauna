@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
 import { Link } from "react-router-dom";
-import { addCart, removeCart } from '../../store/actions/cart';
 import { addWish, removeWish } from '../../store/actions/wish';
 import { connect } from "react-redux";
 import './ProductCard.css';
@@ -11,14 +10,6 @@ import './ProductCard.css';
 // Returns ProductCard based on 'type', with default
 
 class ProductCard extends Component {
-
-	cartClick(id){
-		if(this.props.cart.includes(id)){
-			this.props.removeCart(id);
-		} else {
-			this.props.addCart(id);
-		}
-	}
 
 	wishClick(id){
 		if(this.props.wish.includes(id)){
@@ -30,7 +21,6 @@ class ProductCard extends Component {
 
 	render(){
 		// Figure if item is in wish/cart
-		const inCart = this.props.cart.includes(this.props.detail.id);
 		const inWish = this.props.wish.includes(this.props.detail.id);
 		switch(this.props.type){
 			case 'cart':
@@ -89,8 +79,7 @@ class ProductCard extends Component {
 function mapStateToProps(reduxState) {
 	return {
 		wish: reduxState.wish.wish,
-		cart: reduxState.cart.cart
 	};
 }
 
-export default connect(mapStateToProps, { addCart, removeCart, addWish, removeWish })(ProductCard);
+export default connect(mapStateToProps, { addWish, removeWish })(ProductCard);
