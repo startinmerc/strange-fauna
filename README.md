@@ -218,6 +218,17 @@ Version logs for the project are below...
 * change file refs
 * change mapStateToProps destructuring
 
+#### Cart + Wish Buttons
+* make proto component in prodDetail for button
+* pass prodID
+* add redux actions & state to proto
+* add click handler from ProductCard
+* add inCart from same
+* change props
+* switch from proto to main component
+* remove now-unused code from ProductCard
+* as above for Wish button
+
 ---
 
 ### To Do:
