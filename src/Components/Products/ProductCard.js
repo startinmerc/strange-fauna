@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
 import { Link } from "react-router-dom";
-import { addWish, removeWish } from '../../store/actions/wish';
-import { connect } from "react-redux";
 import './ProductCard.css';
 
 // Expects 'detail' object to be passed in with product detail
@@ -11,17 +9,7 @@ import './ProductCard.css';
 
 class ProductCard extends Component {
 
-	wishClick(id){
-		if(this.props.wish.includes(id)){
-			this.props.removeWish(id);
-		} else {
-			this.props.addWish(id);
-		}
-	}
-
 	render(){
-		// Figure if item is in wish/cart
-		const inWish = this.props.wish.includes(this.props.detail.id);
 		switch(this.props.type){
 			case 'cart':
 				// Shopping Cart ProductCard
@@ -41,7 +29,7 @@ class ProductCard extends Component {
 				// Nav Section ProductCard
 				return (
 					<div className="nav product-card">
-						<AddToWish handleClick={this.wishClick.bind(this, this.props.detail.id)} inState={inWish}/>
+						<AddToWish id={this.props.detail.id}/>
 						<Link to={`/products/${this.props.detail.id}`}>
 							<img className="nav product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
 						</Link>
@@ -58,7 +46,7 @@ class ProductCard extends Component {
 				// Default ProductCard
 				return (
 					<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
-						<AddToWish handleClick={this.wishClick.bind(this, this.props.detail.id)} inState={inWish}/>
+						<AddToWish id={this.props.detail.id}/>
 						<Link to={`/products/${this.props.detail.id}`}>
 							<img className="product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
 						</Link>
@@ -71,15 +59,9 @@ class ProductCard extends Component {
 						<AddToCart id={this.props.detail.id}/>
 					</div>
 				);
-			}
-	}
-
-}
-
-function mapStateToProps(reduxState) {
-	return {
-		wish: reduxState.wish.wish,
+		};
 	};
-}
+};
 
-export default connect(mapStateToProps, { addWish, removeWish })(ProductCard);
+
+export default ProductCard;
