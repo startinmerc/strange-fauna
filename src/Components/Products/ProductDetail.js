@@ -1,5 +1,6 @@
 import React from 'react';
 import AddToCart from './AddToCart';
+import AddToWish from './AddToWish';
 import seeds, { categories } from '../../seeds';
 import { useParams,	Link } from "react-router-dom";
 
@@ -25,7 +26,7 @@ function ProductDetail() {
 					<input type="number" name="quantity" id="quantity" placeholder="1"/>
 					<button type="button" name="addQty" className="btn-quantity btn-quantity-add">+</button>
 					<AddToCart id={item.id}/>
-					(AddToWish)
+					<AddToWish id={item.id} button/>
 				</div>
 				<div>
 					<table>

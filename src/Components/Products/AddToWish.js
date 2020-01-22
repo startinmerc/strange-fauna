@@ -17,11 +17,18 @@ class AddToWish extends Component {
 
 	render(){
 		const inWish = this.props.wish.includes(this.props.id);
-		return (
-			<button className={`add-to-wish ${inWish ? 'wish-added' : ''}`}
+		if(this.props.button){
+			return (
+				<button className={`add-to-cart ${inWish ? 'cart-added' : ''}`}
 			 onClick={this.handleClick.bind(this, this.props.id)}
-			><Star size={30}/></button>
-		);
+			>{inWish ? 'Remove from' : 'Add to' } Wishlist
+			</button>
+		)} else {
+			return (
+				<button className={`add-to-wish ${inWish ? 'wish-added' : ''}`}
+				 onClick={this.handleClick.bind(this, this.props.id)}
+				><Star size={30}/></button>
+		)};
 	}
 }
 

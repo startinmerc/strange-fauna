@@ -229,11 +229,13 @@ Version logs for the project are below...
 * remove now-unused code from ProductCard
 * as above for Wish button
 
+#### Cart + Wish Buttons pt.2
+* Add newly functional buttons to ProductDetail
+* Create alternate add to wish button for ProductDetail
+
 ---
 
 ### To Do:
-* move add/remove cart + wish functions to respective comps,
- * only pass in id
 * add to cart/wish functionality in detail
 * move display state to redux state.other
 * add cart total to redux state.cart
