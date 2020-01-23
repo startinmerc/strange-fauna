@@ -40,7 +40,7 @@ a:hover {
 
 main {
 	min-height: 80vh;
-	max-width: 80vw;
+	max-width: 80%;
 	min-width: 800px;
 	margin: 0 auto;
 }
