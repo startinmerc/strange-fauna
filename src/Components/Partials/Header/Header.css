@@ -67,14 +67,19 @@
 	position: absolute;
 	top:  calc(100% - 1px);
 	left: -2px;
-	/*moz - left: -1px*/
 	width: 100%;
-	/*moz - width: calc(100% - 1px)*/
 	height: 0%;
 	background: var(--header);
 	border-left: 2px solid var(--black);
 	border-right: 2px solid var(--black);
 	z-index: 3;
+}
+
+@supports (-moz-appearance:none) {
+	.header-button::before {
+		top: calc(100% - 3px);
+		width: calc(100% + 1px)
+	} 
 }
 
 .header-button.empty {
