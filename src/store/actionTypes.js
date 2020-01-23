@@ -3,3 +3,4 @@ export const REMOVE_WISH = "REMOVE_WISH";
 export const ADD_CART = "ADD_CART";
 export const REMOVE_CART = "REMOVE_CART";
 export const CHANGE_DELIVERY = "CHANGE_DELIVERY";
+export const CHANGE_GRID = "CHANGE_GRID";

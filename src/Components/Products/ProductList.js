@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux";
+import { changeGrid } from "../../store/actions/other";
 import ProductCard from './ProductCard';
 import seeds from '../../seeds';
 import './ProductList.css';
@@ -11,14 +13,13 @@ class ProductList extends Component {
 	constructor(props){
 		super(props);
 		this.state = {
-			products: seeds.products,
-			gridColumns: "1fr 1fr 1fr"
+			products: seeds.products
 		}
 	}
 
 	componentDidMount(){
 		if(window.innerWidth < 600){
-			this.setState({gridColumns: "1fr 1fr"});
+			this.props.changeGrid({gridColumns: "1fr 1fr"});
 		}
 	}
 	
@@ -40,13 +41,13 @@ class ProductList extends Component {
 					<h2>Showing {this.props.type} products</h2>
 					<div className="grid-button-container">
 						Select columns: 
-						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr"})}>1</button>
-						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr 1fr"})}>2</button>
-						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr"})}>3</button>
-						<button className="grid-button" onClick={()=>this.setState({gridColumns: "1fr 1fr 1fr 1fr"})}>4</button>
+						<button className="grid-button" onClick={()=>this.props.changeGrid("1fr")}>1</button>
+						<button className="grid-button" onClick={()=>this.props.changeGrid("1fr 1fr")}>2</button>
+						<button className="grid-button" onClick={()=>this.props.changeGrid("1fr 1fr 1fr")}>3</button>
+						<button className="grid-button" onClick={()=>this.props.changeGrid("1fr 1fr 1fr 1fr")}>4</button>
 					</div>
 				</div>
-				<div className="product-list" style={{gridTemplateColumns: this.state.gridColumns}}>
+				<div className="product-list" style={{gridTemplateColumns: this.props.gridColumns}}>
 					{renderList}
 				</div>
 			</main>
@@ -54,4 +55,10 @@ class ProductList extends Component {
 	}
 }
 
-export default ProductList;
+function mapStateToProps(reduxState){
+	return {
+		gridColumns: reduxState.other.gridColumns
+	};
+};
+
+export default connect(mapStateToProps, { changeGrid })(ProductList);
