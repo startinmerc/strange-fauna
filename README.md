@@ -233,10 +233,24 @@ Version logs for the project are below...
 * Add newly functional buttons to ProductDetail
 * Create alternate add to wish button for ProductDetail
 
+### V0.5
+
+#### Expanding Redux pt.1
+* Add action/reducer/actionType for gridColumns
+* Add Redux to ProductList
+* Switch click handlers to Redux actions
+* Remove old local state handling
+
+#### Expanding Redux pt.2
+...
+
 ---
 
 ### To Do:
-* add to cart/wish functionality in detail
-* move display state to redux state.other
 * add cart total to redux state.cart
 * add length to cart/wish?
+* change cart to [{id:-,quantity:-},...]
+ * update reducer
+ * update actions
+ * implement on details page
+ * default 1 on click in card
