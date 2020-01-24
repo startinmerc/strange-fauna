@@ -242,17 +242,29 @@ Version logs for the project are below...
 * Remove old local state handling
 
 #### Expanding Redux pt.2
-...
+* Expand cart action to handle quantity of id
+* Expand reducer to add {id,qty} object to cart
+* Modify remove reducer to search by id
+* Modify middleware & inCart to search by id
+* Add static defaultProp to ensure qty > 0
+* Pass qty to onClick, reducer
 
 ---
 
-### To Do:
-* change cart to [{id:-,quantity:-},...]
- * update reducer
- * update actions
- * implement on details page
- * default 1 on click in card
-* all components to fncs
- * HOOKS!
-* Wishlist renders ProductList?
-* REview semantic HTML
+### ToDo...
+
+#### Expanding Redux pt.2
+Show qty in carts
+
+#### Expanding Redux pt.3
+Quantity in details page as localstate
+Pass to addToCart
+
+#### Expanding Redux pt.4
+Edit qty action,reducer,actionType
+Button to update in cart/detail
+
+### V0.6
+Change wishlist to ProductList Component
+Review semantic HTML
+Convert all components to functions w/ hooks
