@@ -6,8 +6,12 @@ import { connect } from "react-redux";
 // Returns add to cart button with conditional formatting
 
 class AddToCart extends Component {
-	handleClick(id){
-		if(this.props.cart.includes(id)){
+
+	// default 1 qty for adding to cart
+	static defaultProps = {
+		qty: 1
+	};
+
 	handleClick(id, qty){
 		if(
 			// If filtered cart by props.id is non-zero 
