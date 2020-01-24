@@ -104,7 +104,6 @@
 
 .header-container:hover .header-button::before {
 	height: calc(50% + 2px);
-	/*moz - height: 50%*/
 }
 
 .header-container:hover .header-button svg {
@@ -121,7 +120,6 @@
 	position: absolute;
 	background-color: var(--header);
 	list-style: none;
-	padding-left: 0;
 	width: 286px;
 	z-index: 2;
 	margin: 10px 0 0 0;
