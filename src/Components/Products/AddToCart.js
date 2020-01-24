@@ -21,7 +21,7 @@ class AddToCart extends Component {
 			){
 			this.props.removeCart(id);
 		} else {
-			this.props.addCart(id);
+			this.props.addCart(id,qty);
 		}
 	}
 
@@ -32,7 +32,7 @@ class AddToCart extends Component {
 			).length > 0;
 		return (
 			<button className={`add-to-cart ${inCart ? 'cart-added' : ''}`}
-			 onClick={this.handleClick.bind(this, this.props.id)}>
+			 onClick={this.handleClick.bind(this, this.props.id, this.props.qty)}>
 				{inCart ? 'Remove from' : 'Add to' } Cart
 			</button>
 		);
