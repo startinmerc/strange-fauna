@@ -1,12 +1,12 @@
 import seeds from './seeds';
 
-// expects array of product IDs
+// expects array of id/qty objects
 export function getItems(ids){
 	let itemList = [], total = 0;
-	// for each product ID in array
+	// for each object in array
 	ids.forEach((id)=>{
 		// find matching item in seeds
-		let item = (seeds.products.find((item)=>(item.id === id)));
+		let item = (seeds.products.find((item)=>(item.id === id.id)));
 		// update cart total
 		total += item.price;
 		// add found item to list
