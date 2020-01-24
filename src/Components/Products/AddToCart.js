@@ -8,6 +8,13 @@ import { connect } from "react-redux";
 class AddToCart extends Component {
 	handleClick(id){
 		if(this.props.cart.includes(id)){
+	handleClick(id, qty){
+		if(
+			// If filtered cart by props.id is non-zero 
+			this.props.cart.filter(
+				(item)=>(item.id === id)
+			).length > 0
+			){
 			this.props.removeCart(id);
 		} else {
 			this.props.addCart(id);
@@ -15,7 +22,10 @@ class AddToCart extends Component {
 	}
 
 	render(){
-		const inCart = this.props.cart.includes(this.props.id);
+		// If filtered cart by props.id is non-zero
+		const inCart = this.props.cart.filter(
+				(item)=>(item.id === this.props.id)
+			).length > 0;
 		return (
 			<button className={`add-to-cart ${inCart ? 'cart-added' : ''}`}
 			 onClick={this.handleClick.bind(this, this.props.id)}>
