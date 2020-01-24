@@ -21,16 +21,19 @@ class MiniCart extends Component {
 		return (
 			<ul className="mini-cart">
 				{
+					// If cart is non-empty
 					(this.props.items.length > 0) ? 
-					this.props.items.map((item)=>(
-						<MiniCartItem key={`mini-${item.type}-${item.id}`} 
-						 item={item} remove={
-						 	(this.props.type === 0) ? this.removeWish.bind(this, item.id) : this.removeCart.bind(this, item.id)}/>
+						// Map cart to MiniCartItems & bind remove function to item's ID 
+						this.props.items.map((item)=>(
+							<MiniCartItem key={`mini-${item.type}-${item.id}`} 
+							 item={item} remove={
+							 	(this.props.type === 0) ? this.removeWish.bind(this, item.id) : this.removeCart.bind(this, item.id)}/>
+					// Otherwise returns text
 					)) : 'Empty!'
 				}
-				</ul>
+			</ul>
 		);
-	}
-}
+	};
+};
 
 export default connect(null, { removeWish, removeCart })(MiniCart);

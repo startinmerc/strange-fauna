@@ -4,7 +4,7 @@ import './Header.css';
 import NavSectionContainer from '../../Nav/NavSectionContainer';
 import HeaderButton from './HeaderButton';
 
-// Returns header element containing header buttons & nav section
+// Returns sticky header element containing header buttons & nav section
 
 class Header extends Component {
 	render(){
@@ -22,7 +22,7 @@ class Header extends Component {
 				<NavSectionContainer />
 			</header>
 		);
-	}
-}
+	};
+};
 
 export default Header;

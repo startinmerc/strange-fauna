@@ -17,6 +17,7 @@ class HeaderButton extends Component {
 
 	render(){
 
+		// Object for wishlist/cart render data
 		const options = {
 			ids: [this.props.wish,this.props.cart],
 			headerIcon: [<Star size={'1.5rem'}/>,<ShoppingCart size={'1.5rem'}/>],
@@ -26,12 +27,16 @@ class HeaderButton extends Component {
 			subtotal: [false,true]
 		};
 
+		// create obj of item data & subtotal
 		let items = getItems(options.ids[this.props.type]);
 
 		return (
 			<div className="header-container" id={options.id[this.props.type]}>
+																																						{/*Add/remove empty class from button*/}
 				<Link to={options.url[this.props.type]} className={`header-button ${(items.itemList.length > 0) ? null : 'empty'}`}>
+					{/*render relevant icon & text*/}
 					{options.headerIcon[this.props.type]}{options.headerText[this.props.type]}
+					{/*Adds subtotal if cart*/}
 					{` (${items.itemList.length})${options.subtotal[this.props.type] ? `: $${items.total}` : ''}`}
 				</Link>
 				<MiniCart items={items.itemList} type={this.props.type}/>
