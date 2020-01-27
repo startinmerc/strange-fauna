@@ -248,13 +248,11 @@ Version logs for the project are below...
 * Modify middleware & inCart to search by id
 * Add static defaultProp to ensure qty > 0
 * Pass qty to onClick, reducer
+* Show qty in carts
 
 ---
 
 ### ToDo...
-
-#### Expanding Redux pt.2
-Show qty in carts
 
 #### Expanding Redux pt.3
 Quantity in details page as localstate
