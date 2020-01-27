@@ -14,11 +14,12 @@ export const categories = [
 ];
 
 for(let i=0;i<40;i++){
-	let t = categories[Math.floor(Math.random()*4)].section
+	let n = Math.floor(Math.random()*4);
+	let t = categories[n].section
 	products.push({
 		id: i, 
 		name: `${t} ${i}`,
-		photos: ["https://picsum.photos/400"], 
+		photos: [`https://picsum.photos/400?random=${n}`], 
 		description: "description ipsum flooby blup blup, isn't it? yeah.",
 		reviews: [{score: 2, author: "nick", content: "review content"}],
 		price: Math.floor(Math.random()*99),
