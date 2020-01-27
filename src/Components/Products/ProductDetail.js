@@ -23,7 +23,7 @@ function ProductDetail() {
 					<p>{item.description}</p>
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
-					 placeholder="1" className="quantity"/>
+					 placeholder="1" className="quantity" disabled="disabled"/> (Not currently supported)
 					<AddToCart id={item.id}/>
 					<AddToWish id={item.id} button/>
 				</div>
