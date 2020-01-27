@@ -8,6 +8,12 @@ function ProductDetail() {
 	let { id } = useParams();
 	const item = seeds.products.find(item=>(item.id === Number(id)));
 	const cat = categories.find(cat=>(item.type === cat.section));
+	const [qty, setQty] = React.useState(1);
+
+	function handleChange(e){
+		setQty(e.target.value);
+	}
+
 	return (
 		<main id="details">
 			<h3>
@@ -23,8 +29,9 @@ function ProductDetail() {
 					<p>{item.description}</p>
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
-					 placeholder="1" className="quantity" disabled="disabled"/> (Not currently supported)
-					<AddToCart id={item.id}/>
+					 placeholder="1" className="quantity" onChange={handleChange}
+					 min="1"/>
+					<AddToCart id={item.id} qty={qty}/>
 					<AddToWish id={item.id} button/>
 				</div>
 			</div>
