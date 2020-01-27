@@ -254,15 +254,17 @@ Version logs for the project are below...
 Quantity in details page as state via hook
 Pass to addToCart
 
+#### Expanding Redux pt.4
+Edit qty action,reducer,actionType
+
 ---
 
 ### ToDo...
 
-#### Expanding Redux pt.4
-Edit qty action,reducer,actionType
 Button to update in cart/detail
 
 ### V0.6
 Change wishlist to ProductList Component
 Review semantic HTML
 Convert all components to functions w/ hooks
+Stock limit
