@@ -9,7 +9,7 @@ export default (state = DEFAULT_STATE, action) => {
 		case ADD_WISH:
 			return {...state, wish: [...state.wish, {id: action.id, qty: action.qty}]};
 		case REMOVE_WISH:
-			let newWish = state.wish.filter(val => val !== action.id);
+			let newWish = state.wish.filter(val => val.id !== action.id);
 			return {...state, wish: newWish};
 		default:
 			return state;

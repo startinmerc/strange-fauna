@@ -28,7 +28,9 @@ class AddToWish extends Component {
 	}
 
 	render(){
-		const inWish = this.props.wish.includes(this.props.id);
+		const inWish = this.props.wish.filter(
+				(item)=>(item.id === this.props.id)
+			).length > 0;
 		if(this.props.button){
 			return (
 				<button className={`wish-btn ${inWish ? 'cart-added' : ''}`}
@@ -38,7 +40,7 @@ class AddToWish extends Component {
 		)} else {
 			return (
 				<button className={`add-to-wish ${inWish ? 'wish-added' : ''}`}
-				 onClick={this.handleClick.bind(this, this.props.id)}
+				 onClick={this.handleClick.bind(this, this.props.id, this.props.qty)}
 				><Star size={30}/></button>
 		)};
 	}
