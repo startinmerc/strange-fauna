@@ -250,13 +250,13 @@ Version logs for the project are below...
 * Pass qty to onClick, reducer
 * Show qty in carts
 
+#### Expanding Redux pt.3
+Quantity in details page as state via hook
+Pass to addToCart
+
 ---
 
 ### ToDo...
-
-#### Expanding Redux pt.3
-Quantity in details page as localstate
-Pass to addToCart
 
 #### Expanding Redux pt.4
 Edit qty action,reducer,actionType
