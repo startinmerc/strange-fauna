@@ -7,11 +7,23 @@ import Star from '../SVGs/Star';
 // Returns button in top corner of product card
 
 class AddToWish extends Component {
-	handleClick(id){
-		if(this.props.wish.includes(id)){
+
+	// default 1 qty for adding to cart
+	static defaultProps = {
+		qty: 1
+	};
+
+
+	handleClick(id, qty){
+		if(
+			// If filtered cart by props.id is non-zero 
+			this.props.wish.filter(
+				(item)=>(item.id === id)
+			).length > 0
+			){
 			this.props.removeWish(id);
 		} else {
-			this.props.addWish(id);
+			this.props.addWish(id, qty);
 		}
 	}
 
