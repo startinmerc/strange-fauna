@@ -12,7 +12,7 @@ const MiniCartItem = ({item, remove})=>(
 	 	background: `linear-gradient(90deg, #ffffff00 5%, var(--${item.type}) 50%)`
 	 }}>
 		<div className="mini-cart-item-text">
-			<p className="display"><strong><Link to={`/products/${item.id}`}>{item.name}</Link></strong></p>
+			<p className="display"><Link to={`/products/${item.id}`}>{item.name}</Link></p>
 			<p>${item.price} x {item.qty}</p>
 			<p><button onClick={remove}>Remove</button></p>
 		</div>
