@@ -1,9 +1,10 @@
 import { ADD_WISH, REMOVE_WISH } from "../actionTypes";
 
-export const addWish = (id)=>(
+export const addWish = (id, qty)=>(
 	{
 		type: ADD_WISH,
-		id
+		id,
+		qty
 	}
 );
 
