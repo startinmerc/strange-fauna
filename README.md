@@ -258,20 +258,43 @@ Version logs for the project are below...
 * Edit qty action,reducer,actionType
 * Create EditQuantity component to handle quantity changes
 * Render in Cart ProductCard
+* Add function & button to ProductDetail (can't reuse, parent needs qty)
+* Show/Hide when in cart
+
+#### Expanding Redux pt.5
+* redo edit function to pure edit
 
 ---
 
 ### ToDo...
-changequantity in product detail
- use component? - problem is passing qty to parent
- OR
- render update qty button if item is in cart
-  update qty as button, refactor component?
 
-### V0.6
-Change wishlist to ProductList Component
-Review semantic HTML
-Convert all components to functions w/ hooks
-Stock limit
-Minicart max height
-Checkout styling from Codepen
+#### Expanding Redux pt.5
+* reduce cart/wish to ids in mapStateToProps
+* change middleware
+
+#### Stock limit
+* add stock limit to seeds
+* add max limit to quantity
+* remove incart from stock limit
+* disable button if 0 stock
+
+#### Wishlist
+* Change out to render ProductList with wish ids
+
+#### MiniCart
+* Set max height
+* Overflow to scroll
+
+#### Checkout
+* Form styling from Codepen
+* Summary styling
+
+#### ProductDetail
+* Style reviews
+* Fade in edit qty button
+* getItem middleware
+
+
+### Bigger Stuff
+* Review semantic HTML
+* Convert all components to functions w/ hooks
