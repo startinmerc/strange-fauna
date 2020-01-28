@@ -12,8 +12,15 @@ export default (state = DEFAULT_STATE, action) => {
 			let newCart = state.cart.filter(val => val.id !== action.id);
 			return {...state, cart: newCart};
 		case EDIT_CART_QTY:
-			let editCart = state.cart.filter(val => val.id !== action.id);
-			return {...state, cart: [...editCart, {id: action.id, qty: action.qty}]};
+			let editedCart = state.cart.map((item) => {
+				if (item.id === action.id) {
+					item.qty = action.qty;
+					return item;
+				} else {
+					return item;
+				}
+			});
+			return {...state, cart: editedCart};
 		default:
 			return state;
 	};
