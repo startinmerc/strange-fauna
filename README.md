@@ -251,20 +251,27 @@ Version logs for the project are below...
 * Show qty in carts
 
 #### Expanding Redux pt.3
-Quantity in details page as state via hook
-Pass to addToCart
+* Quantity in details page as state via hook
+* Pass to addToCart
 
 #### Expanding Redux pt.4
-Edit qty action,reducer,actionType
+* Edit qty action,reducer,actionType
+* Create EditQuantity component to handle quantity changes
+* Render in Cart ProductCard
 
 ---
 
 ### ToDo...
-
-Button to update in cart/detail
+changequantity in product detail
+ use component? - problem is passing qty to parent
+ OR
+ render update qty button if item is in cart
+  update qty as button, refactor component?
 
 ### V0.6
 Change wishlist to ProductList Component
 Review semantic HTML
 Convert all components to functions w/ hooks
 Stock limit
+Minicart max height
+Checkout styling from Codepen
