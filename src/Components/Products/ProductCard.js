@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
+import EditQuantity from './EditQuantity';
 import { Link } from "react-router-dom";
 import './ProductCard.css';
 
@@ -22,6 +23,7 @@ class ProductCard extends Component {
 							</Link>
 							<AddToCart id={this.props.detail.id}/>
 						</div>
+						<EditQuantity id={this.props.detail.id} qty={this.props.detail.qty}/>
 						<p className="cart product-card-price">{this.props.detail.qty} x ${this.props.detail.price}</p>
 					</div>
 				);
