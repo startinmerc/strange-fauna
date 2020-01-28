@@ -22,7 +22,7 @@ function EditQuantity(props){
 		<form onSubmit={handleSubmit}>
 			<label htmlFor="quantity">Quantity:</label>
 			<input type="number" name="quantity" id="quantity"
-			 placeholder={qty} className="quantity" onChange={handleChange}
+			 value={qty} className="quantity" onChange={handleChange}
 			 min="1"/>
 			 <button type="submit">Change Quantity</button>
 		 </form>
