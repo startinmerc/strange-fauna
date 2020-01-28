@@ -6,16 +6,25 @@ import { useParams,	Link } from "react-router-dom";
 import { editCart } from '../../store/actions/cart';
 import { connect } from 'react-redux';
 
+// Expects no props,
+// Returns full product detail page
+
 function ProductDetail(props) {
+	// get product id from url
 	let { id } = useParams();
+	// retrieve product info using middleware
 	const item = seeds.products.find(item=>(item.id === Number(id)));
+	// find relevant category title based on item type
 	const cat = categories.find(cat=>(item.type === cat.section));
+	// Hook to set quantity and reducer
 	const [qty, setQty] = React.useState(1);
 
+	// update quantity on input change
 	function handleChange(e){
 		setQty(e.target.value);
 	}
 
+	// update quantity in cart on click
 	function handleClick(e){
 		props.editCart(item.id, qty);
 	}
@@ -37,9 +46,10 @@ function ProductDetail(props) {
 					<input type="number" name="quantity" id="quantity"
 					 placeholder={qty} className="quantity" onChange={handleChange}
 					 min="1"/>
-					 {props.cart.includes(item.id) ? 
-					 	<button onClick={handleClick}>Update Quantity</button>
-					 	 : null}
+					{/*render quantity update if product in cart*/}
+					{props.cart.includes(item.id) ? 
+						<button onClick={handleClick}>Update Quantity</button>
+						 : null}
 					<AddToCart id={item.id} qty={qty}/>
 					<AddToWish id={item.id} button/>
 				</div>
@@ -76,6 +86,7 @@ function ProductDetail(props) {
 
 function mapStateToProps(reduxState){
 	return {
+		// reduce cart item objects to array of ids
 		cart: reduxState.cart.cart.map((v)=>(v.id))
 	}
 }
