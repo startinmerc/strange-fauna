@@ -17,7 +17,7 @@ function ProductDetail(props) {
 	// find relevant category title based on item type
 	const cat = categories.find(cat=>(item.type === cat.section));
 	// Hook to set quantity and reducer
-	const [qty, setQty] = React.useState(1);
+	const [qty, setQty] = React.useState(item.qty || 1);
 
 	// update quantity on input change
 	function handleChange(e){
@@ -44,7 +44,7 @@ function ProductDetail(props) {
 					<p>{item.description}</p>
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
-					 placeholder={qty} className="quantity" onChange={handleChange}
+					 value={qty} className="quantity" onChange={handleChange}
 					 min="1"/>
 					{/*render quantity update if product in cart*/}
 					{props.cart.includes(item.id) ? 
