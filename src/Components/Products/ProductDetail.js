@@ -3,8 +3,10 @@ import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
 import seeds, { categories } from '../../seeds';
 import { useParams,	Link } from "react-router-dom";
+import { editCart } from '../../store/actions/cart';
+import { connect } from 'react-redux';
 
-function ProductDetail() {
+function ProductDetail(props) {
 	let { id } = useParams();
 	const item = seeds.products.find(item=>(item.id === Number(id)));
 	const cat = categories.find(cat=>(item.type === cat.section));
@@ -12,6 +14,10 @@ function ProductDetail() {
 
 	function handleChange(e){
 		setQty(e.target.value);
+	}
+
+	function handleClick(e){
+		props.editCart(item.id, qty);
 	}
 
 	return (
@@ -29,8 +35,11 @@ function ProductDetail() {
 					<p>{item.description}</p>
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
-					 placeholder="1" className="quantity" onChange={handleChange}
+					 placeholder={qty} className="quantity" onChange={handleChange}
 					 min="1"/>
+					 {props.cart.includes(item.id) ? 
+					 	<button onClick={handleClick}>Update Quantity</button>
+					 	 : null}
 					<AddToCart id={item.id} qty={qty}/>
 					<AddToWish id={item.id} button/>
 				</div>
@@ -65,4 +74,11 @@ function ProductDetail() {
 	);
 }
 
-export default ProductDetail;
+function mapStateToProps(reduxState){
+	return {
+		cart: reduxState.cart.cart.map((v)=>(v.id))
+	}
+}
+
+
+export default connect(mapStateToProps, { editCart })(ProductDetail);
