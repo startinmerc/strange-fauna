@@ -271,14 +271,13 @@ Version logs for the project are below...
 * add max limit to quantity
 * disable button + quantity if 0 in stock
 
+#### Expanding Redux pt.5
+* add subscriber to monitor store
+* add middleware to import localStore
+
 ---
 
 ### ToDo...
-
-#### Expanding Redux pt.5
-* cart/wish in localStorage
- * where/when to store?
- * modify createStore(combined,localState)
 
 #### Stock limit
 * remove incart from stock limit
@@ -303,6 +302,9 @@ Version logs for the project are below...
 #### ProductList
 * Animate grid size transition
 
+#### UI
+* Button/hover transitions
+* Nav show/hide
 
 ### Bigger Stuff
 * Review semantic HTML
