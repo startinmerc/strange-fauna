@@ -23,8 +23,10 @@ for(let i=0;i<40;i++){
 		description: "description ipsum flooby blup blup, isn't it? yeah.",
 		reviews: [{score: 2, author: "nick", content: "review content"}],
 		price: Math.floor(Math.random()*99),
-		type: t
-	})
+		type: t,
+		stock: Math.floor(Math.random()*20)
+		// stock: 0
+	});
 }
 
 addToLanding(
