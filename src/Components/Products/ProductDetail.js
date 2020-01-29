@@ -45,12 +45,15 @@ function ProductDetail(props) {
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
 					 value={qty} className="quantity" onChange={handleChange}
-					 min="1"/>
+					 disabled={item.stock < 1 ? "disabled" : null}
+					 min="1" max={item.stock}/>
+					&nbsp;
 					{/*render quantity update if product in cart*/}
 					{props.cart.includes(item.id) ? 
 						<button onClick={handleClick}>Update Quantity</button>
 						 : null}
-					<AddToCart id={item.id} qty={qty}/>
+					&nbsp;Currently {item.stock} in stock
+					<AddToCart id={item.id} qty={qty} stk={item.stock}/>
 					<AddToWish id={item.id} button/>
 				</div>
 			</div>
