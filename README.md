@@ -264,22 +264,28 @@ Version logs for the project are below...
 #### Expanding Redux pt.5
 * redo edit function to pure edit
 
+### V0.6
+
+#### Stock Limit
+* add stock limit to seeds
+* add max limit to quantity
+* disable button + quantity if 0 in stock
+
 ---
 
 ### ToDo...
 
 #### Expanding Redux pt.5
-* reduce cart/wish to ids in mapStateToProps
-* change middleware
+* cart/wish in localStorage
+ * where/when to store?
+ * modify createStore(combined,localState)
 
 #### Stock limit
-* add stock limit to seeds
-* add max limit to quantity
 * remove incart from stock limit
-* disable button if 0 stock
 
 #### Wishlist
 * Change out to render ProductList with wish ids
+* Change button animation
 
 #### MiniCart
 * Set max height
@@ -293,6 +299,9 @@ Version logs for the project are below...
 * Style reviews
 * Fade in edit qty button
 * getItem middleware
+
+#### ProductList
+* Animate grid size transition
 
 
 ### Bigger Stuff
