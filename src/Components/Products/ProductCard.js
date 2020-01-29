@@ -21,9 +21,9 @@ class ProductCard extends Component {
 							<Link to={`/products/${this.props.detail.id}`}>
 								<p className="display">{this.props.detail.name}</p>
 							</Link>
-							<AddToCart id={this.props.detail.id}/>
+							<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
 						</div>
-						<EditQuantity id={this.props.detail.id} qty={this.props.detail.qty}/>
+						<EditQuantity id={this.props.detail.id} qty={this.props.detail.qty} stk={this.props.detail.stock}/>
 						<p className="cart product-card-price">{this.props.detail.qty} x ${this.props.detail.price}</p>
 					</div>
 				);
@@ -41,7 +41,7 @@ class ProductCard extends Component {
 							</Link>
 							 <h5>${this.props.detail.price}</h5>
 						</div>
-						<AddToCart id={this.props.detail.id}/>
+						<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
 					</div>
 				)
 			default:
@@ -58,7 +58,7 @@ class ProductCard extends Component {
 							</Link>
 							 <h5>${this.props.detail.price}</h5>
 						</div>
-						<AddToCart id={this.props.detail.id}/>
+						<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
 					</div>
 				);
 		};
