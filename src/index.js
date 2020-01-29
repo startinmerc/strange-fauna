@@ -10,6 +10,10 @@ import { configureStore } from "./store";
 
 const store = configureStore();
 
+store.subscribe(()=>{
+	localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+});
+
 ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
