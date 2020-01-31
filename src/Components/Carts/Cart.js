@@ -10,7 +10,7 @@ import { getItems } from '../../middleware';
 // No props expected
 // Returns cart element
 
-class List extends Component {
+class Cart extends Component {
 	constructor(props){
 		super(props);
 		this.handleChange = this.handleChange.bind(this);
@@ -60,4 +60,4 @@ function mapStateToProps(reduxState) {
 	};
 }
 
-export default connect(mapStateToProps, { changeDelivery })(List);
+export default connect(mapStateToProps, { changeDelivery })(Cart);

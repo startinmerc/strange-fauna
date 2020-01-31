@@ -5,7 +5,7 @@ import Footer from '../Partials/Footer/Footer';
 import MobileMenu from '../Partials/MobileMenu/MobileMenu';
 import Landing from '../Landing/Landing';
 import Products from '../Products/Products';
-import Carts from '../Carts/Carts';
+import Cart from '../Carts/Cart';
 import Checkout from '../Carts/Checkout';
 import About from '../About/About';
 import ProductList from '../Products/ProductList';
@@ -27,7 +27,7 @@ class App extends Component {
 					<Route path="/about" component={About} />
 					<Route path="/checkout" component={Checkout} />
 					<Route path='/wishlist' render={() => <ProductList type="wish" title="Your Wishlist"/>}/>
-					<Route path='/cart' render={() => <Carts type={1} />}/>
+					<Route path='/cart' render={() => <Cart />}/>
 					<Route component={Landing} />
 				</Switch>
 				<Footer />
