@@ -8,6 +8,7 @@ import Products from '../Products/Products';
 import Carts from '../Carts/Carts';
 import Checkout from '../Carts/Checkout';
 import About from '../About/About';
+import ProductList from '../Products/ProductList';
 import { Route, Switch } from 'react-router-dom';
 
 class App extends Component {
@@ -25,7 +26,7 @@ class App extends Component {
 					<Route path="/products" component={Products} />
 					<Route path="/about" component={About} />
 					<Route path="/checkout" component={Checkout} />
-					<Route path='/wishlist' render={() => <Carts type={0} />}/>
+					<Route path='/wishlist' render={() => <ProductList type="wish" title="Your Wishlist"/>}/>
 					<Route path='/cart' render={() => <Carts type={1} />}/>
 					<Route component={Landing} />
 				</Switch>
