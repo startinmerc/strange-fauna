@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { changeGrid } from "../../store/actions/other";
+import { getItems } from "../../middleware";
 import ProductCard from './ProductCard';
 import seeds from '../../seeds';
 import './ProductList.css';
@@ -24,21 +25,29 @@ class ProductList extends Component {
 	}
 	
 	render(){
-		document.title = `Showing ${this.props.type} products`;
+		const header = this.props.title || `Showing ${this.props.type} products`;
+		document.title = header;
+		var list;
 
-		var list = this.state.products;
-		if(this.props.type!=="all"){
-			list = list.filter((p)=>{
-				return p.type === this.props.type
-			})
+		switch(this.props.type){
+			case "all":
+				list = this.state.products;
+				break;
+			case "wish":
+				list = getItems(this.props.wish).itemList;
+				break;
+			default:
+				list = this.state.products.filter((p)=>{
+					return p.type === this.props.type;
+				});
+				break;
 		}
-
 		var renderList = list.map((prod)=>{return <ProductCard detail={prod} key={`prod-${prod.id}`}/>});
-		
+
 		return (
 			<main>
 				<div className="product-list-header">
-					<h2>Showing {this.props.type} products</h2>
+					<h2>{header}</h2>
 					<div className="grid-button-container">
 						Select columns: 
 						<button className="grid-button" onClick={()=>this.props.changeGrid("1fr")}>1</button>
@@ -57,7 +66,8 @@ class ProductList extends Component {
 
 function mapStateToProps(reduxState){
 	return {
-		gridColumns: reduxState.other.gridColumns
+		gridColumns: reduxState.other.gridColumns,
+		wish: reduxState.wish.wish
 	};
 };
 
