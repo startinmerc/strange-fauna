@@ -17,6 +17,9 @@ export function getItems(list){
 	return {itemList: itemList, total: total};
 }
 
+export function isMobile(){
+	return window.innerWidth < 600;
+}
 // expects array of local state & array of redux state
 export function animateIcon(localState,reduxState){
 	// if new cart size differs from state

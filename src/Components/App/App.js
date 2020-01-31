@@ -10,17 +10,14 @@ import Checkout from '../Carts/Checkout';
 import About from '../About/About';
 import ProductList from '../Products/ProductList';
 import { Route, Switch } from 'react-router-dom';
+import { isMobile } from '../../middleware';
 
 class App extends Component {
 
 	render(){
-		// Conditional mounting of mobile elements
-		let mobile = window.innerWidth < 600;
-		const header = mobile ? <MobileHeader /> : <Header />;
-		const footer = mobile ? <MobileMenu /> : null;
 		return(
 			<div id="container">
-				{header}
+				{isMobile() ? <MobileHeader /> : <Header />}
 				<Switch>
 					<Route path="/" component={Landing} exact />
 					<Route path="/products" component={Products} />
@@ -31,7 +28,7 @@ class App extends Component {
 					<Route component={Landing} />
 				</Switch>
 				<Footer />
-				{footer}
+				{isMobile() ? <MobileMenu /> : null}
 			</div>
 		)
 	}

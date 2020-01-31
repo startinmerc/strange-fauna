@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
 import { changeGrid } from "../../store/actions/other";
-import { getItems } from "../../middleware";
+import { getItems, isMobile } from "../../middleware";
 import ProductCard from './ProductCard';
 import seeds from '../../seeds';
 import './ProductList.css';
 
-// Expects 'type' string as prop, either all or product category
+// Expects 'type' string as prop, either all, wish or product category
 // Returns main element with grid display option & products
 
 class ProductList extends Component {
@@ -19,8 +19,8 @@ class ProductList extends Component {
 	}
 
 	componentDidMount(){
-		if(window.innerWidth < 600){
-			this.props.changeGrid({gridColumns: "1fr 1fr"});
+		if (isMobile()){
+			this.props.changeGrid("1fr 1fr")
 		}
 	}
 	
