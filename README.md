@@ -275,15 +275,26 @@ Version logs for the project are below...
 * add subscriber to monitor store
 * add middleware to import localStore
 
+#### Wishlist/Productlist redesign
+* Change wishlist to Productlist
+* Change Productlist to handle wish list
+* Remove unneeded code in Cart + rename
+* Rename components
+
+#### Middleware/Shared functions
+* Move isMobile to middleware for easier management
+
 ---
 
 ### ToDo...
 
+* getItem middleware - split out total
+* call in ProductDetail
+
 #### Stock limit
-* remove incart from stock limit
+* remove inCart from stock limit
 
 #### Wishlist
-* Change out to render ProductList with wish ids
 * Change button animation
 
 #### MiniCart
@@ -297,7 +308,6 @@ Version logs for the project are below...
 #### ProductDetail
 * Style reviews
 * Fade in edit qty button
-* getItem middleware
 
 #### ProductList
 * Animate grid size transition
