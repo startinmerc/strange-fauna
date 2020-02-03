@@ -35,8 +35,8 @@ function ProductDetail(props) {
 			<h3>
 				<Link to="/">Home</Link> / <Link to={`/products/${cat.title}`}>{cat.title}</Link>
 			</h3>
-			<div className="boxes" style={{gridTemplateColumns: 'auto 1fr'}}>
-				<div className="box box-image" style={{textAlign: 'left'}}>
+			<div className="boxes">
+				<div className="box box-image">
 					<img src={item.photos[0]} alt="product"/>
 				</div>
 				<div className="box box-text" style={{paddingTop: 0}}>
@@ -66,20 +66,24 @@ function ProductDetail(props) {
 				</colgroup>
 				<thead>
 					<tr>
-						<th colSpan="3"><h3>Reviews</h3></th>
+						<th colSpan="3">
+							<h3>Customer Reviews</h3>
+							<p>{((item.reviews.reduce((acc,review)=>(acc+review.score),0))/item.reviews.length).toFixed(1)}
+							 /5 from {item.reviews.length} reviews</p>
+						</th>
 					</tr>
-					<tr>
-						<th>Rating</th>
-						<th>Author</th>
-						<th>Review</th>
+					<tr style={{textAlign: "left"}}>
+						<th style={{paddingLeft: "1.3rem"}}>Rating</th>
+						<th style={{paddingLeft: "1.3rem"}}>Author</th>
+						<th style={{paddingLeft: "1.3rem"}}>Review</th>
 					</tr>
 				</thead>
 				<tbody>
 					{item.reviews.map((review,i) => (
 						<tr key={`review-${i}`} className="review">
-							<td>{review.score}/5</td>
+							<td>{'Y'.repeat(review.score)}{'N'.repeat(5-review.score)}</td>
 							<td>{review.author}</td>
-							<td>{review.content}</td>
+							<td><strong style={{fontSize: '1.3rem', color: 'var(--primary)'}}>"</strong>{review.content}<strong style={{fontSize: '1.3rem', color: 'var(--primary)'}}>"</strong></td>
 						</tr>
 					))}
 				</tbody>

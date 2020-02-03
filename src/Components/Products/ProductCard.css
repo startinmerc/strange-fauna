@@ -93,6 +93,10 @@
 	border: 2px solid var(--black);
 }
 
+#details .boxes {
+	grid-template-columns: auto 1fr;
+}
+
 .quantity {
 	border: 2px solid var(--black);
 	height: 2rem;
@@ -115,9 +119,21 @@
 	border-collapse: collapse;
 }
 
-.reviews-table td {
-	padding: 5px;
-	border: 1px solid var(--black);
+.reviews-table thead p {
+	font-weight: normal;
+	font-size: 0.9rem;
+}
+
+.review {
+	border-bottom: 2px solid var(--black);
+}
+
+.review td {
+	padding: 1.3rem;
+}
+
+.review:first-of-type {
+	border-top: 2px solid var(--black);
 }
 
 .review:nth-of-type(odd){
@@ -153,5 +169,8 @@
 	.product-card .star {
 		height: 1.2rem;
 		width: 1.2rem;
+	}
+	#details .boxes {
+		display: inline-block;
 	}
 }
