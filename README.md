@@ -289,35 +289,32 @@ Version logs for the project are below...
 #### MiniCart
 * Set max height
 * Overflow to scroll
----
 
-### ToDo...
-
-
-#### Stock limit
-* remove inCart from stock limit
+#### ProductDetail
+* Reorganise inline styling
+* CSS styling, mainly reviews table & info rendering
 
 #### Wishlist
 * Change button animation
 
-#### MiniCart
-* Set max height
-* Overflow to scroll
+---
+
+### ToDo...
+* Fade in edit qty button
+
+#### Stock limit
+* remove inCart from stock limit
 
 #### Checkout
 * Form styling from Codepen
 * Summary styling
 
-#### ProductDetail
-* Style reviews
-* Fade in edit qty button
-
 #### ProductList
 * Animate grid size transition
 
 #### UI
-* Button/hover transitions
-* Nav show/hide
+* link hover transitions
+* Nav show/hide via transform
 
 ### Bigger Stuff
 * Review semantic HTML
