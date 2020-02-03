@@ -2,24 +2,35 @@ import seeds from './seeds';
 
 // expects array of id/qty objects
 export function getItems(list){
-	let itemList = [], total = 0;
+	let itemList = [];
 	// for each object in array
 	list.forEach((listItem)=>{
 		// find matching item in seeds
-		let item = (seeds.products.find((item)=>(item.id === listItem.id)));
+		let item = (seeds.products.find(
+			(item)=>(item.id === listItem.id))
+		);
 		item.qty = listItem.qty;
-		// update cart total
-		total += item.price * listItem.qty;
 		// add found item to list
 		itemList.push(item)
 	});
-	// export completed list & cart total
-	return {itemList: itemList, total: total};
+	// export completed list
+	return itemList;
 }
 
+// expects array of item objects
+export function getTotal(list){
+	// returns total of all items multiplied by quantity
+	return list.reduce((acc,item)=>(
+		acc + item.price * item.qty),0
+	);
+}
+
+// no variables expected
 export function isMobile(){
+	// returns boolean if screen < 600px
 	return window.innerWidth < 600;
 }
+
 // expects array of local state & array of redux state
 export function animateIcon(localState,reduxState){
 	// if new cart size differs from state
