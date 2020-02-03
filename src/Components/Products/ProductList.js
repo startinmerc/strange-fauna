@@ -47,7 +47,7 @@ class ProductList extends Component {
 		return (
 			<main>
 				<div className="product-list-header">
-					<h2>{header}</h2>
+					<h2>{header}{list.length < 1 ? ' is empty' : null}</h2>
 					<div className="grid-button-container">
 						Select columns: 
 						<button className="grid-button" onClick={()=>this.props.changeGrid("1fr")}>1</button>
