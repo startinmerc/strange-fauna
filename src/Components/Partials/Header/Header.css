@@ -29,15 +29,15 @@
 	color: var(--white);
 }
 
-.updated {
+.updated svg {
 	animation: update 270ms linear;
 }
 
 @keyframes update {
-	0%  {outline:  0px solid #000000FF}
-	50% {outline: 10px solid #000000FF}
-	75% {outline: 10px solid #00000000}
-	100% {outline: 0px solid #00000000}
+	0%   {transform: scale(1)}
+	50%  {transform: scale(1.8)}
+	75%  {transform: scale(0.3)}
+	100% {transform: scale(1)}
 }
 
 /*================Header Buttons================*/
