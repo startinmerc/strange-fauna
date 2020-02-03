@@ -317,6 +317,7 @@ Version logs for the project are below...
 * Nav show/hide via transform
 
 ### Bigger Stuff
+* Scrollbar styling
 * Page transitions
 * Showing/hiding components transitions
 * Review semantic HTML
