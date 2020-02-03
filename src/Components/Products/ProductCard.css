@@ -78,8 +78,8 @@
 	background-color: var(--white);
 }
 
-.add-to-wish:active {
-	transform: scale(1.3);
+.add-to-wish:active svg {
+	transform: scale(1.7);
 }
 
 /*================Product Detail================*/
