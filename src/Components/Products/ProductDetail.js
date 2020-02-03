@@ -1,10 +1,11 @@
 import React from 'react';
 import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
-import seeds, { categories } from '../../seeds';
+import { categories } from '../../seeds';
 import { useParams,	Link } from "react-router-dom";
 import { editCart } from '../../store/actions/cart';
 import { connect } from 'react-redux';
+import { getItem } from '../../middleware';
 
 // Expects no props,
 // Returns full product detail page
@@ -13,7 +14,7 @@ function ProductDetail(props) {
 	// get product id from url
 	let { id } = useParams();
 	// retrieve product info using middleware
-	const item = seeds.products.find(item=>(item.id === Number(id)));
+	const item = getItem(id);
 	// find relevant category title based on item type
 	const cat = categories.find(cat=>(item.type === cat.section));
 	// Hook to set quantity and reducer
