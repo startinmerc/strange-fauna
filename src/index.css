@@ -96,11 +96,48 @@ input[type="text"]:focus {
 	background-color: var(--white);
 }
 
+/*====================Boxes====================*/
+
+.boxes {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.box-text {
+	padding: 2rem;
+}
+
+.box-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+.box:nth-of-type(odd) {
+	text-align: right;
+}
+
+
 /*=============Responsive - Tablet=============*/
 
 @media(max-width: 800px){
 	main {
 		max-width: 96vw;
 		min-width: 96vw;
+	}
+}
+
+/*=============Responsive - Mobile=============*/
+
+@media(max-width: 600px){
+	.boxes {
+		grid-template-columns: 1fr;
+	}
+	.box-image {
+		min-height: 50vh;
+	}
+	.box:nth-of-type(2) {
+		grid-row: 1;
 	}
 }
