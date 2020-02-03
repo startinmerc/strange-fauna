@@ -6,15 +6,21 @@ export function getItems(list){
 	// for each object in array
 	list.forEach((listItem)=>{
 		// find matching item in seeds
-		let item = (seeds.products.find(
-			(item)=>(item.id === listItem.id))
-		);
+		let item = getItem(listItem.id);
 		item.qty = listItem.qty;
 		// add found item to list
 		itemList.push(item)
 	});
 	// export completed list
 	return itemList;
+}
+
+// expects item id
+export function getItem(id){
+	// returns item object
+	return seeds.products.find(
+		(item)=>(item.id === Number(id))
+	)
 }
 
 // expects array of item objects
