@@ -8,22 +8,11 @@ import Star from '../SVGs/Star';
 
 class AddToWish extends Component {
 
-	// default 1 qty for adding to cart
-	static defaultProps = {
-		qty: 1
-	};
-
-
-	handleClick(id, qty){
-		if(
-			// If filtered cart by props.id is non-zero 
-			this.props.wish.filter(
-				(item)=>(item.id === id)
-			).length > 0
-			){
+	handleClick(id, inWish){
+		if(inWish){
 			this.props.removeWish(id);
 		} else {
-			this.props.addWish(id, qty);
+			this.props.addWish(id, 1);
 		}
 	}
 
@@ -40,7 +29,7 @@ class AddToWish extends Component {
 		)} else {
 			return (
 				<button className={`add-to-wish ${inWish ? 'wish-added' : ''}`}
-				 onClick={this.handleClick.bind(this, this.props.id, this.props.qty)}>
+				 onClick={this.handleClick.bind(this, this.props.id, inWish)}>
 					<Star size={30}/>
 				</button>
 		)};
