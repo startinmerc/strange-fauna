@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { changeDelivery } from '../../store/actions/other';
 import { Link } from 'react-router-dom';
 import { deliveries } from '../../seeds';
-import { getItems } from '../../middleware';
+import { getItems, getTotal } from '../../middleware';
 
 // Returns checkout element with local state of form content
 
@@ -39,21 +39,21 @@ class Checkout extends Component {
 	render(){
 
 		let items = getItems(this.props.cart);
-		
+		let total = getTotal(items);
 		return (
 			<main id="checkout">
 				<div id="order-summary">
 					<h2>Order Summary</h2>
 					<ul>
-						{items.itemList.map((item)=>(<li key={item.id}>
+						{items.map((item)=>(<li key={item.id}>
 							<img src={item.photos[0]} alt={item.name}/>
 							<p>{item.name}</p>
 							<p>${item.price}</p>
 							</li>))}
 					</ul>
-					<p style={{textAlign: 'right'}}>Subtotal: ${items.total}</p>
+					<p style={{textAlign: 'right'}}>Subtotal: ${total}</p>
 					<p style={{textAlign: 'right'}}>Delivery: ${this.props.delivery}</p>
-					<h2 style={{textAlign: 'right'}}>Total: ${items.total + Number(this.props.delivery)}</h2>
+					<h2 style={{textAlign: 'right'}}>Total: ${total + Number(this.props.delivery)}</h2>
 				</div>
 
 				<div id="checkout-summary">

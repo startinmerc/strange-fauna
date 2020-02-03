@@ -34,7 +34,7 @@ class ProductList extends Component {
 				list = this.state.products;
 				break;
 			case "wish":
-				list = getItems(this.props.wish).itemList;
+				list = getItems(this.props.wish);
 				break;
 			default:
 				list = this.state.products.filter((p)=>{

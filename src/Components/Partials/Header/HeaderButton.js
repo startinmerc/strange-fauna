@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
 import MiniCart from './MiniCart';
-import { animateIcon, getItems } from '../../../middleware';
+import { animateIcon, getItems, getTotal } from '../../../middleware';
 
 // Returns HeaderButton with MiniCart child,
 // Expects type prop: 0 = wishlist, 1 = shopping cart.
@@ -29,17 +29,18 @@ class HeaderButton extends Component {
 
 		// create obj of item data & subtotal
 		let items = getItems(options.ids[this.props.type]);
+		let total = getTotal(items);
 
 		return (
 			<div className="header-container" id={options.id[this.props.type]}>
 																																						{/*Add/remove empty class from button*/}
-				<Link to={options.url[this.props.type]} className={`header-button ${(items.itemList.length > 0) ? null : 'empty'}`}>
+				<Link to={options.url[this.props.type]} className={`header-button ${(items.length > 0) ? null : 'empty'}`}>
 					{/*render relevant icon & text*/}
 					{options.headerIcon[this.props.type]}{options.headerText[this.props.type]}
 					{/*Adds subtotal if cart*/}
-					{` (${items.itemList.length})${options.subtotal[this.props.type] ? `: $${items.total}` : ''}`}
+					{` (${items.length})${options.subtotal[this.props.type] ? `: $${total}` : ''}`}
 				</Link>
-				<MiniCart items={items.itemList} type={this.props.type}/>
+				<MiniCart items={items} type={this.props.type}/>
 			</div>
 		);
 	}
