@@ -283,13 +283,13 @@ Version logs for the project are below...
 
 #### Middleware/Shared functions
 * Move isMobile to middleware for easier management
+* split out getTotal from getItems
+* getItem to retrieve single id
 
 ---
 
 ### ToDo...
 
-* getItem middleware - split out total
-* call in ProductDetail
 
 #### Stock limit
 * remove inCart from stock limit
