@@ -286,6 +286,9 @@ Version logs for the project are below...
 * split out getTotal from getItems
 * getItem to retrieve single id
 
+#### MiniCart
+* Set max height
+* Overflow to scroll
 ---
 
 ### ToDo...

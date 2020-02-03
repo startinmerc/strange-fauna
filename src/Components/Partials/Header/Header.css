@@ -128,6 +128,8 @@
 	transform: scaleY(0);
 	transform-origin: top;
 	transition: all 120ms ease-in;
+	max-height: 429px;
+	overflow-y: scroll;
 }
 
 #header-wish svg {
