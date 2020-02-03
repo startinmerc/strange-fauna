@@ -296,11 +296,11 @@ Version logs for the project are below...
 
 #### Wishlist
 * Change button animation
+* Clean up AddToWish click handler
 
 ---
 
 ### ToDo...
-* Fade in edit qty button
 
 #### Stock limit
 * remove inCart from stock limit
@@ -317,5 +317,7 @@ Version logs for the project are below...
 * Nav show/hide via transform
 
 ### Bigger Stuff
+* Page transitions
+* Showing/hiding components transitions
 * Review semantic HTML
 * Convert all components to functions w/ hooks
