@@ -8,8 +8,11 @@ import Star from '../SVGs/Star';
 
 class AddToWish extends Component {
 
-	handleClick(id, inWish){
-		if(inWish){
+	handleClick(id){
+		if(
+			// If filtered cart by props.id is non-zero 
+			this.props.wish.includes(this.props.id)
+			){
 			this.props.removeWish(id);
 		} else {
 			this.props.addWish(id, 1);
@@ -17,19 +20,17 @@ class AddToWish extends Component {
 	}
 
 	render(){
-		const inWish = this.props.wish.filter(
-				(item)=>(item.id === this.props.id)
-			).length > 0;
+		let inWish = this.props.wish.includes(this.props.id);
 		if(this.props.button){
 			return (
 				<button className={`wish-btn ${inWish ? 'cart-added' : ''}`}
-				 onClick={this.handleClick.bind(this, this.props.id, this.props.qty)}>
+				 onClick={this.handleClick.bind(this, this.props.id)}>
 					{inWish ? 'Remove from' : 'Add to' } Wishlist
 				</button>
 		)} else {
 			return (
 				<button className={`add-to-wish ${inWish ? 'wish-added' : ''}`}
-				 onClick={this.handleClick.bind(this, this.props.id, inWish)}>
+				 onClick={this.handleClick.bind(this, this.props.id)}>
 					<Star size={30}/>
 				</button>
 		)};
@@ -38,7 +39,8 @@ class AddToWish extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish.wish
+		// reduce wish item objects to array of ids
+		wish: reduxState.wish.wish.map((v)=>(v.id))
 	};
 };
 
