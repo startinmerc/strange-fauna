@@ -45,6 +45,11 @@
 	border: 2px solid var(--white);
 	box-shadow: 2px 2px 0 var(--footer);
 	text-shadow: none;
+	transition: all 150ms ease-in;
+}
+
+.section-link::before {
+	display: none;
 }
 
 .section-link:hover {

@@ -11,9 +11,11 @@ class Header extends Component {
 		return(
 			<header id="header">
 				<div className="header-main">
-					<Link to="/" style={{textDecoration: 'none'}}>
-						<h2 className="header-title">Strange Flora</h2>
-					</Link>
+					<h2 className="header-title">
+						<Link to="/">
+							Strange Flora
+						</Link>
+					</h2>
 					<div className="header-carts">
 						<HeaderButton type={0} />
 						<HeaderButton type={1} />
