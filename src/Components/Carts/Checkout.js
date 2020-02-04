@@ -40,15 +40,19 @@ class Checkout extends Component {
 
 		let items = getItems(this.props.cart);
 		let total = getTotal(items);
+
 		return (
 			<main id="checkout">
 				<div id="order-summary">
 					<h2>Order Summary</h2>
 					<ul>
-						{items.map((item)=>(<li key={item.id}>
+						{items.map((item)=>(<li style={{marginBottom: '0.5rem'}} key={item.id}>
 							<img src={item.photos[0]} alt={item.name}/>
-							<p>{item.name}</p>
-							<p>${item.price}</p>
+							<p style={{flexGrow: 1, marginLeft: '1rem', lineHeight: '1.5rem'}}>
+								{item.name}<br/>
+								{item.qty} x ${item.price}
+							</p>
+							<p>${item.price * item.qty}</p>
 							</li>))}
 					</ul>
 					<p style={{textAlign: 'right'}}>Subtotal: ${total}</p>
@@ -91,13 +95,6 @@ class Checkout extends Component {
 							))
 						}
 					</div>
-					<div id="payment" className="summary-section">
-						<h3>Payment</h3>
-						<form>
-							<label htmlFor="#card">card</label><br/>
-							<input type="text" name="card" id="card" placeholder="" disabled/>
-						</form>
-					</div>
 					<div id="delivery-options" className="summary-section">
 						<h3>Options</h3>
 						<div id="check-container">
@@ -105,7 +102,9 @@ class Checkout extends Component {
 							<input onChange={this.handleInputChange} type="checkbox" value="1" name="noteCheckbox" id="check-1"/><br/>
 							{
 								this.state.noteCheckbox ? 
-									<input onChange={this.handleInputChange} type="text" name="note" id="note" placeholder="Enter a note for our staff"/>
+									<input onChange={this.handleInputChange} type="text" 
+									 name="note" id="note" placeholder="Enter a note for our staff"
+									 style={{width: 'calc(100% - 1rem + 2px)'}}/>
 								: null
 							}
 						</div>
