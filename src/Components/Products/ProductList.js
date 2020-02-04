@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from "react-redux";
-import { getItems, isMobile } from "../../middleware";
+import { getItems } from "../../middleware";
 import ProductCard from './ProductCard';
 import seeds from '../../seeds';
 import './ProductList.css';
