@@ -52,13 +52,13 @@ class MobileMenu extends Component {
 					{sections}
 				</div>
 				<div className="mobile-menu-content">
-					<Link to="/wishlist" id="header-wish" className={`header-button ${(this.props.wish.length > 0) ? null : 'empty'}`}>
+					<Link to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
 						<Star size={'2rem'}/>
-						<div className="mobile-menu-quantity">({this.props.wish.length})</div>
+						{this.props.wish.length > 0 ? <div className="mobile-menu-quantity">({this.props.wish.length})</div> : null}
 					</Link>
-					<Link to="/cart" id="header-cart" className={`header-button ${(this.props.cart.length > 0) ? null : 'empty'}`}>
+					<Link to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
 						<ShoppingCart size={'2rem'}/>
-						<div className="mobile-menu-quantity">({this.props.cart.length})</div>
+						{this.props.cart.length > 0 ? <div className="mobile-menu-quantity">({this.props.cart.length})</div> : null}
 					</Link>
 					<button onClick={this.showMenu}><Menu size={'2rem'}/></button>
 				</div>
@@ -69,8 +69,8 @@ class MobileMenu extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish,
-		cart: reduxState.cart
+		wish: reduxState.wish.wish,
+		cart: reduxState.cart.cart
 	};
 }
 
