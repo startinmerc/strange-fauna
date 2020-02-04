@@ -37,24 +37,23 @@
 	padding: 1%;
 	grid-template-columns: 1fr 1fr 1fr;
 	left: 0;
-	transition: all 50ms 50ms linear;
-	display: none;
+	transition: all 170ms ease-in;
+	display: grid;
 	top: 100%;
+	transform: translateY(-200%);
+	transform-origin: top;
+	z-index: -1;
 }
 
 .about-submenu {
 	width: 100%;
 	padding: 1% 0;
-}
-
-.nav-section:hover .nav-section-submenu {
-	display: grid;
-}
-
-.nav-section:hover .about-submenu {
 	display: flex;
 }
 
+.nav-section:hover .nav-section-submenu {
+	transform: translateY(0%);
+}
 
 /*===============Nav Product Card===============*/
 
