@@ -114,14 +114,22 @@
 
 #order-summary img {
 	height: 5rem;
+	width: auto;
 }
 
 @media(max-width: 600px){
 	#checkout {
 		flex-direction: column;
 	}
-
 	#checkout-summary, #order-summary {
 		margin: 1rem 0 ;
+	}
+	.cart.product-card-image {
+		width: 40%;
+		margin-bottom: 8px;
+	}
+	.cart.product-card-body {
+		margin-left: 3%;
+		width: 57%;
 	}
 }
