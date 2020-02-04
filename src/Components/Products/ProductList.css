@@ -4,6 +4,7 @@
 	display: grid;
 	grid-gap: 20px;
 	grid-template-columns: repeat(4, 1fr);
+	padding-bottom: 16px;
 }
 
 .product-list-header {
