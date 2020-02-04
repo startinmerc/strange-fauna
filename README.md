@@ -304,22 +304,20 @@ Version logs for the project are below...
 * Simplify display of elements
 * Fix responsive styling
 
+#### Checkout
+* Summary styling
+* Input field styling
+
 ---
 
 ### ToDo...
 
-#### Stock limit
-* remove inCart from stock limit
-
-#### Checkout
-* Form styling from Codepen
-* Summary styling
-
-#### ProductList
-* Animate grid size transition
-
 #### UI
 * link hover transitions
+
+#### Redux
+* remove inCart from stock limit
+* save checkout info to redux
 
 ### Bigger Stuff
 * Scrollbar styling
