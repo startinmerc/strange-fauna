@@ -3,6 +3,7 @@
 .product-list {
 	display: grid;
 	grid-gap: 20px;
+	grid-template-columns: repeat(4, 1fr);
 }
 
 .product-list-header {
@@ -11,41 +12,22 @@
 	justify-content: space-between;
 }
 
-/*=================Grid Buttons=================*/
+/*=============Responsive - Tablet=============*/
 
-.grid-button-container {
-	display: flex;
-	align-items: center;
+@media(max-width: 800px){
+	.product-list{
+		grid-template-columns: repeat(3,1fr);
+	}
 }
 
-.grid-button {
-	padding: inherit;
-	width: 2rem;
-	height: 2rem;
-	border: 2px solid black;
-	margin: 0 1px;
-	box-shadow: none;
-}
-
-.grid-button:hover {
-	background-color: var(--black);
-	color: var(--white);
-}
-
-.grid-button:nth-of-type(1){display: none;}
-.grid-button:nth-of-type(2){display: none;}
 
 /*=============Responsive - Mobile=============*/
 
 @media(max-width: 600px){
 	.product-list {
 		grid-gap: 1px;
+		grid-template-columns: repeat(2,1fr);
 	}
-	.grid-button:nth-of-type(1){display: inline-block;}
-	.grid-button:nth-of-type(2){display: inline-block;}
-	.grid-button:nth-of-type(3){display: none;}
-	.grid-button:nth-of-type(4){display: none;}
-
 	.product-list-header h2 {
 		margin: 0;
 		align-self: flex-start;
@@ -53,8 +35,5 @@
 	.product-list-header {
 		flex-wrap: wrap;
 		flex-direction: column;
-	}
-	.grid-button-container {
-		align-self: flex-end;
 	}
 }
