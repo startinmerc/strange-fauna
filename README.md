@@ -307,13 +307,20 @@ Version logs for the project are below...
 #### Checkout
 * Summary styling
 * Input field styling
+* Add edit cart link
 
+#### Styling
+* link hover styling
+* productList padding
+
+#### Responsive Styling
+* hide minicart from tablet down
+* hide cart content if empty in mobilemenu
+* Cart styling
 ---
 
 ### ToDo...
 
-#### UI
-* link hover transitions
 
 #### Redux
 * remove inCart from stock limit
@@ -324,4 +331,5 @@ Version logs for the project are below...
 * Page transitions
 * Showing/hiding components transitions
 * Review semantic HTML
+* A11y audit
 * Convert all components to functions w/ hooks
