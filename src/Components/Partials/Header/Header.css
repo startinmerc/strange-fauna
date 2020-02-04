@@ -164,4 +164,10 @@
 		padding: 2px;
 		width: auto;
 	}
+	.header-button::before {
+		display: none;
+	}
+	.mini-cart {
+		display: none;
+	}
 }
