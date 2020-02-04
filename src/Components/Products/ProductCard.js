@@ -18,12 +18,14 @@ class ProductCard extends Component {
 					<div className="cart product-card">
 						<img className="cart product-card-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
 						<div className="cart product-card-body">
+						<p className="display">
 							<Link to={`/products/${this.props.detail.id}`}>
-								<p className="display">{this.props.detail.name}</p>
+								{this.props.detail.name}
 							</Link>
-							<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
-						</div>
+						</p>
+						<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
 						<EditQuantity id={this.props.detail.id} qty={this.props.detail.qty} stk={this.props.detail.stock}/>
+						</div>
 						<p className="cart product-card-price">{this.props.detail.qty} x ${this.props.detail.price}</p>
 					</div>
 				);

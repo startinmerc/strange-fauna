@@ -13,6 +13,7 @@
 
 .cart.product-card {
 	display: flex;
+	flex-wrap: wrap;
 	font-size: 1.1rem;
 	box-shadow: none;
 	border-bottom: 2px solid var(--footer);
@@ -26,6 +27,7 @@
 
 .cart.product-card-image {
 	width: 20%;
+	height: auto;
 }
 
 .cart.product-card-price {
@@ -39,6 +41,9 @@
 
 .cart.product-card-body {
 	margin-left: 1.67rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 /*===================Checkout===================*/
