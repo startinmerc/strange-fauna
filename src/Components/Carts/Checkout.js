@@ -55,6 +55,7 @@ class Checkout extends Component {
 							<p>${item.price * item.qty}</p>
 							</li>))}
 					</ul>
+					<p><Link to="/cart">Edit Cart</Link></p>
 					<p style={{textAlign: 'right'}}>Subtotal: ${total}</p>
 					<p style={{textAlign: 'right'}}>Delivery: ${this.props.delivery}</p>
 					<h2 style={{textAlign: 'right'}}>Total: ${total + Number(this.props.delivery)}</h2>
@@ -98,7 +99,7 @@ class Checkout extends Component {
 					<div id="delivery-options" className="summary-section">
 						<h3>Options</h3>
 						<div id="check-container">
-							<label htmlFor="check-1">Add a note about your order</label>
+							<label htmlFor="check-1">Add a note about your order?</label>
 							<input onChange={this.handleInputChange} type="checkbox" value="1" name="noteCheckbox" id="check-1"/><br/>
 							{
 								this.state.noteCheckbox ? 
