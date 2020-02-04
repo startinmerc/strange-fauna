@@ -289,6 +289,7 @@ Version logs for the project are below...
 #### MiniCart
 * Set max height
 * Overflow to scroll
+* Clean up pseudo & hover CSS
 
 #### ProductDetail
 * Reorganise inline styling
@@ -297,6 +298,11 @@ Version logs for the project are below...
 #### Wishlist
 * Change button animation
 * Clean up AddToWish click handler
+
+#### Nav
+* Show/hide nav submenu via transform
+* Simplify display of elements
+* Fix responsive styling
 
 ---
 
@@ -314,7 +320,6 @@ Version logs for the project are below...
 
 #### UI
 * link hover transitions
-* Nav show/hide via transform
 
 ### Bigger Stuff
 * Scrollbar styling
