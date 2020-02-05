@@ -36,10 +36,10 @@ function ProductDetail(props) {
 				<Link to="/">Home</Link> / <Link to={`/products/${cat.title}`}>{cat.title}</Link>
 			</h3>
 			<div className="boxes">
-				<div className="box box-image">
+				<div className="box box__image">
 					<img src={item.photos[0]}  style={{width: '100%', height: 'auto'}} alt="product"/>
 				</div>
-				<div className="box box-text" style={{paddingTop: 0}}>
+				<div className="box box__text" style={{paddingTop: 0}}>
 					<h2 style={{marginTop: 0}}>{item.name}</h2>
 					<h3>${item.price}</h3>
 					<p>{item.description}</p>

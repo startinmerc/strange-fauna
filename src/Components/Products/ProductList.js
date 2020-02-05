@@ -39,7 +39,7 @@ class ProductList extends Component {
 
 		return (
 			<main>
-				<div className="product-list-header">
+				<div className="product-list__header">
 					<h2>{header}{list.length < 1 ? ' is empty' : null}</h2>
 				</div>
 				<div className="product-list">

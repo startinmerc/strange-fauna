@@ -7,7 +7,7 @@
 	padding-bottom: 16px;
 }
 
-.product-list-header {
+.product-list__header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -29,11 +29,11 @@
 		grid-gap: 1px;
 		grid-template-columns: repeat(2,1fr);
 	}
-	.product-list-header h2 {
+	.product-list__header h2 {
 		margin: 0;
 		align-self: flex-start;
 	}
-	.product-list-header {
+	.product-list__header {
 		flex-wrap: wrap;
 		flex-direction: column;
 	}
