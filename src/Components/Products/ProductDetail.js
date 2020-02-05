@@ -37,7 +37,7 @@ function ProductDetail(props) {
 			</h3>
 			<div className="boxes">
 				<div className="box box-image">
-					<img src={item.photos[0]} alt="product"/>
+					<img src={item.photos[0]}  style={{width: '100%', height: 'auto'}} alt="product"/>
 				</div>
 				<div className="box box-text" style={{paddingTop: 0}}>
 					<h2 style={{marginTop: 0}}>{item.name}</h2>
