@@ -50,30 +50,6 @@
 	transform: translateY(0%);
 }
 
-/*===============Nav Product Card===============*/
-
-.nav.product-card {
-	box-shadow: none;
-	background: var(--header);
-	padding: 5px;
-	margin: 5px;
-}
-
-.nav-section__submenu-content h2 {
-	margin-top: 0;
-}
-
-.about-submenu__link {
-	flex-grow: 1;
-	color: var(--white);
-	text-align: center;
-	border-right: 2px solid var(--white);
-}
-
-.about-submenu__link:last-of-type {
-	border-right: none;
-}
-
 /*=============Responsive - Tablet=============*/
 
 @media(max-width: 800px){
