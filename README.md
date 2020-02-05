@@ -317,10 +317,24 @@ Version logs for the project are below...
 * hide minicart from tablet down
 * hide cart content if empty in mobilemenu
 * Cart styling
+
+#### LandingSection
+* Swap section-stripe to pseudo
+* Change animation to transition
+* Tweak transition
+
+#### BEM
+* Change CSS classes to BEM naming
+* Rearrange ProductCard css
+
 ---
 
 ### ToDo...
 
+#### Misc
+* Checkout form pseudo style on select
+* Cart responsive styling
+* ProductDetail picture sizing on mobile
 
 #### Redux
 * remove inCart from stock limit
@@ -329,6 +343,7 @@ Version logs for the project are below...
 ### Bigger Stuff
 * Scrollbar styling
 * Page transitions
+* Pagination in products
 * Showing/hiding components transitions
 * Review semantic HTML
 * A11y audit
