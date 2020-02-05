@@ -15,19 +15,18 @@ Expects content:
 
 function LandingSection({content}) {
 	const mappedLinks = content.links.map((link,i)=>(
-		<Link to={link.link} key={`section-link-${i}`} className="section-link">{link.title}</Link>
+		<Link to={link.link} key={`section-link-${i}`} className="landing-section__link">{link.title}</Link>
 	));
 	return (
 		<section style={{
 			color: `var(--${content.dark ? 'black' : 'white'})`,
 			textShadow: `0 0 2px var(--${content.dark ? 'white' : 'black'})`,
-			borderBottomColor: `var(--${content.type})`,
-		}} className={content.type}>
-			<div className="section-image" style={{backgroundImage: `url(${content.image})`}}></div>
-			<div className="section-stripe" style={{backgroundColor: `var(--${content.type})`}}></div>
-			<div className="section-text">
-				<h2 className="section-header">{content.header}</h2>
-				<p className="section-copy">{content.copy}</p>
+			borderBottomColor: `var(--${content.type})`, backgroundColor: `var(--${content.type})`
+		}} className="landing-section">
+			<div className="landing-section__image" style={{backgroundImage: `url(${content.image})`}}></div>
+			<div className="landing-section__text">
+				<h2 className="landing-section__header">{content.header}</h2>
+				<p className="landing-section__copy">{content.copy}</p>
 				{mappedLinks}
 			</div>
 		</section>

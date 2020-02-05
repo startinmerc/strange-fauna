@@ -1,6 +1,6 @@
 /*===================Landing===================*/
 
-#landing section {
+.landing-section {
 	display: flex;
 	width: 100%;
 	height: 60vh;
@@ -11,6 +11,7 @@
 }
 
 .section-image {
+.landing-section__image {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -21,24 +22,24 @@
 	transition: filter 230ms ease-in;
 }
 
-#landing section:hover .section-image {
+.landing-section:hover .landing-section__image {
 	filter: blur(2px);
 }
 
-.section-text {
+.landing-section__text {
 	padding: 2rem;
 	z-index: 1;
 }
 
-.section-header {
+.landing-section__header {
 	font-size: 4rem;
 }
 
-.section-copy {
+.landing-section__copy {
 	margin-bottom: 4rem;
 }
 
-.section-link {
+.landing-section__link {
 	padding: 0.4rem;
 	margin-right: 1rem;
 	margin-top: 0.83rem;
@@ -68,12 +69,12 @@
 
 /*==============Odd/Even Sections==============*/
 
-#landing section:nth-of-type(even){
+.landing-section:nth-of-type(even){
 	flex-direction: row-reverse;
 	text-align: right;
 }
 
-#landing section:nth-of-type(even) .section-link {
+.landing-section:nth-of-type(even) .landing-section__link {
 	margin-right: 0;
 	margin-left: 1rem;
 }
@@ -123,12 +124,12 @@
 /*=============Responsive - Mobile=============*/
 
 @media(max-width: 600px){
-	#landing section {
+	.landing-section {
 		margin-bottom: 0;
 		border-bottom-width: 15px;
 		border-bottom-style: solid;
 	}
-	.section-header {
+	.landing-section__header {
 		font-size: 2rem;
 	}
 	.section-stripe {
