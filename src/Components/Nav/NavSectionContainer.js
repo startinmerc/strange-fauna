@@ -11,7 +11,7 @@ class NavSectionContainer extends Component {
 			<NavSection key={'nav-section-'+index} {...section}/>
 		 ));
 		return(
-			<div className="nav-section-container">
+			<div className="nav-section__container">
 				{sections}
 			</div>
 		);
