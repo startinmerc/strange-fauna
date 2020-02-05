@@ -15,29 +15,29 @@ class ProductCard extends Component {
 			case 'cart':
 				// Shopping Cart ProductCard
 				return (
-					<div className="cart product-card">
-						<img className="cart product-card-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
-						<div className="cart product-card-body">
-						<p className="display">
-							<Link to={`/products/${this.props.detail.id}`}>
-								{this.props.detail.name}
-							</Link>
-						</p>
-						<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
-						<EditQuantity id={this.props.detail.id} qty={this.props.detail.qty} stk={this.props.detail.stock}/>
+					<div className="product-card product-card--cart">
+						<img className="product-card__image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
+						<div className="product-card__body">
+							<p className="display">
+								<Link to={`/products/${this.props.detail.id}`}>
+									{this.props.detail.name}
+								</Link>
+							</p>
+							<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
+							<EditQuantity id={this.props.detail.id} qty={this.props.detail.qty} stk={this.props.detail.stock}/>
 						</div>
-						<p className="cart product-card-price">{this.props.detail.qty} x ${this.props.detail.price}</p>
+						<p className="product-card__price">{this.props.detail.qty} x ${this.props.detail.price}</p>
 					</div>
 				);
 			case 'nav':
 				// Nav Section ProductCard
 				return (
-					<div className="nav product-card">
+					<div className="product-card product-card--nav">
 						<AddToWish id={this.props.detail.id}/>
 						<Link to={`/products/${this.props.detail.id}`}>
-							<img className="nav product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
+							<img className="product-card__image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
 						</Link>
-						<div className="nav product-card-text">
+						<div className="product-card__text">
 							<Link to={`/products/${this.props.detail.id}`}>
 								<h5>{this.props.detail.name}</h5>
 							</Link>
@@ -52,9 +52,9 @@ class ProductCard extends Component {
 					<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
 						<AddToWish id={this.props.detail.id}/>
 						<Link to={`/products/${this.props.detail.id}`}>
-							<img className="product-image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
+							<img className="product-card__image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
 						</Link>
-						<div className="product-card-text">
+						<div className="product-card__text">
 							<Link to={`/products/${this.props.detail.id}`}>
 								<h5>{this.props.detail.name}</h5>
 							</Link>
