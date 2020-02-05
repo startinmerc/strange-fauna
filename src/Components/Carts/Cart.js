@@ -29,17 +29,17 @@ class Cart extends Component {
 		let total = getTotal(items);
 		
 		return (
-			<main>
-				<div className="cart-header">
+			<main id="cart">
+				<div>
 					<h2>{header}{(items.length === 0) ? ' is empty' : null}</h2>
 				</div>
-				<div className="cart-list">
+				<div className="cart__list">
 					{items.map(item => (
 						<ProductCard detail={item} key={`prod-${item.id}`} type="cart"/>
 					))}
 				</div>
 				<div style={{textAlign: 'right'}}>
-					<p className="cart-subtotal">Subtotal: ${total}</p>
+					<p className="cart__subtotal">Subtotal: ${total}</p>
 					<p>
 						Choose delivery option:
 						<select value={this.props.delivery} onChange={this.handleChange}>

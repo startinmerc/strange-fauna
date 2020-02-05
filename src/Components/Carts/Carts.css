@@ -1,11 +1,11 @@
 /*==================Cart List==================*/
 
-.cart-list {
+.cart__list {
 	display: flex;
 	flex-direction: column;
 }
 
-.cart-subtotal {
+.cart__subtotal {
 	text-align: right;
 }
 
