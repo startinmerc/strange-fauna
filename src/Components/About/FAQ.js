@@ -18,7 +18,7 @@ function Question() {
 function FAQ(){
 	document.title = 'FAQ';
 	return (
-		<main>
+		<main id="faq">
 			<h1>FAQ</h1>
 			<ul className="faq-list">
 				<Question />
