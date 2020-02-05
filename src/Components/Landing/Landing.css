@@ -15,10 +15,10 @@
 	height: 100%;
 	width: 100%;
 	top: 0;
-	transform: skewX(-45deg);
 	opacity: 0.9;
 	background-color: inherit;
 	z-index: 1;
+	transition: transform 300ms ease-in;
 }
 
 .landing-section__image {
@@ -80,38 +80,22 @@
 	margin-left: 1rem;
 }
 
-.landing-section:nth-of-type(even)::before {
-	right: -50%;
-	transform: skewX(-45deg) scaleX(0);
-	transform-origin: right;
-}
 .landing-section:nth-of-type(odd)::before {
 	left: -50%;
-	transform: skewX(-45deg) scaleX(0);
-	transform-origin: left;
+	transform: skewX(0deg) scaleX(0);
+}
+
+.landing-section:nth-of-type(even)::before {
+	right: -50%;
+	transform: skewX(0deg) scaleX(0);
 }
 
 .landing-section:nth-of-type(odd):hover::before {
-	animation: diagonalOdd 800ms ease-in-out forwards;
+	transform: skewX(-45deg) scaleX(1);
 }
+
 .landing-section:nth-of-type(even):hover::before {
-	animation: diagonalEven 800ms ease-in-out forwards;
-}
-
-/*==================Keyframes==================*/
-
-@keyframes diagonalOdd {
-	0%   {transform: skewX(-45deg) scaleX(0)}
-	50%  {transform: skewX(-45deg) scaleX(1.1)}
-	70%  {transform: skewX(-45deg) scaleX(0.9)}
-	100% {transform: skewX(-45deg) scaleX(1)}
-}
-
-@keyframes diagonalEven {
-	0%   {transform: skewX(45deg) scaleX(0)}
-	50%  {transform: skewX(45deg) scaleX(1.1)}
-	70%  {transform: skewX(45deg) scaleX(0.9)}
-	100% {transform: skewX(45deg) scaleX(1)}
+	transform: skewX(45deg) scaleX(1);
 }
 
 /*=============Responsive - Tablet=============*/
@@ -134,8 +118,6 @@
 		font-size: 2rem;
 	}
 	.landing-section::before {
-		width: 105%;
+		transform-origin: bottom;
 	}
-	.landing-section:nth-of-type(odd)::before {left: -55%;}
-	.landing-section:nth-of-type(even)::before {right: -55%;}
 }
