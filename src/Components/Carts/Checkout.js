@@ -22,7 +22,6 @@ class Checkout extends Component {
 	}
 
 	handleChange(e) {
-		console.log(e.target.value);
 		this.props.changeDelivery(e.target.value);
 	}
 
@@ -45,7 +44,7 @@ class Checkout extends Component {
 			<main id="checkout">
 				<div id="order-summary">
 					<h2>Order Summary</h2>
-					<ul>
+					<ul className="summary-section">
 						{items.map((item)=>(<li style={{marginBottom: '0.5rem'}} key={item.id}>
 							<img src={item.photos[0]} alt={item.name}/>
 							<p style={{flexGrow: 1, marginLeft: '1rem', lineHeight: '1.5rem'}}>
@@ -58,13 +57,12 @@ class Checkout extends Component {
 					<p><Link to="/cart">Edit Cart</Link></p>
 					<p style={{textAlign: 'right'}}>Subtotal: ${total}</p>
 					<p style={{textAlign: 'right'}}>Delivery: ${this.props.delivery}</p>
-					<h2 style={{textAlign: 'right'}}>Total: ${total + Number(this.props.delivery)}</h2>
+					<p style={{textAlign: 'right', fontSize: '1.4rem'}} className="display">Total: ${total + Number(this.props.delivery)}</p>
 				</div>
 
 				<div id="checkout-summary">
-					<h2>Summary</h2>
+					<h2>Delivery Address</h2>
 					<div id="delivery-address" className="summary-section">
-						<h3>Delivery Address</h3>
 						<form>
 							<label htmlFor="name">Name <span>*</span></label>
 							<input onChange={this.handleInputChange} type="text" name="name" id="name" placeholder="Full Name"/>
