@@ -119,11 +119,11 @@ input[type="text"]:focus {
 	grid-template-columns: 1fr 1fr;
 }
 
-.box-text {
+.box__text {
 	padding: 2rem;
 }
 
-.box-image {
+.box__image {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -149,7 +149,7 @@ input[type="text"]:focus {
 	.boxes {
 		grid-template-columns: 1fr;
 	}
-	.box-image {
+	.box__image {
 		min-height: 50vh;
 	}
 	.box:nth-of-type(2) {
