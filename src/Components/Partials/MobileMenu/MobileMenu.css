@@ -6,7 +6,7 @@
 	box-shadow: 0px 0px 0.2rem var(--black);
 }
 
-.mobile-menu-content {
+.mobile-menu__content {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -36,14 +36,14 @@
 	padding: 0;
 }
 
-.mobile-menu-quantity {
+.mobile-menu__quantity {
 	position: absolute;
 	left: 2.2rem;
 	top: 0;
 	color: var(--black);
 }
 
-.mobile-menu-dropup {
+.mobile-menu__dropup {
 	position: absolute;
 	bottom: calc(2rem + 18px);
 	width: 100vw;
@@ -62,15 +62,15 @@
 	opacity: 0;
 	transition: opacity 210ms 110ms ease-in;
 }
-.mobile-menu-dropup.expanded #dropup-background {
+.mobile-menu__dropup.expanded #dropup-background {
 	opacity: 0.4;
 }
 
-.mobile-menu-dropup.expanded .dropup {
+.mobile-menu__dropup.expanded .dropup {
 	transform: translateY(0);
 }
 
-.mobile-menu-dropup.expanded {
+.mobile-menu__dropup.expanded {
 	transform: scaleY(1);
 }
 

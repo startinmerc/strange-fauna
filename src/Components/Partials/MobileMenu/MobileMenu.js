@@ -47,18 +47,18 @@ class MobileMenu extends Component {
 		));
 		return(
 			<div id="mobile-menu">
-				<div className={`mobile-menu-dropup ${(this.state.expanded) ? 'expanded' : null}`}>
+				<div className={`mobile-menu__dropup ${(this.state.expanded) ? 'expanded' : null}`}>
 					<li id="dropup-background"></li>
 					{sections}
 				</div>
-				<div className="mobile-menu-content">
+				<div className="mobile-menu__content">
 					<Link to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
 						<Star size={'2rem'}/>
-						{this.props.wish.length > 0 ? <div className="mobile-menu-quantity">({this.props.wish.length})</div> : null}
+						{this.props.wish.length > 0 ? <div className="mobile-menu__quantity">({this.props.wish.length})</div> : null}
 					</Link>
 					<Link to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
 						<ShoppingCart size={'2rem'}/>
-						{this.props.cart.length > 0 ? <div className="mobile-menu-quantity">({this.props.cart.length})</div> : null}
+						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
 					</Link>
 					<button onClick={this.showMenu}><Menu size={'2rem'}/></button>
 				</div>
