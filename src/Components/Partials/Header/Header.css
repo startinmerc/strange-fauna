@@ -6,7 +6,7 @@
 	top: 0;
 }
 
-.header-main {
+.header__main-container {
 	background-color: var(--header);
 	display: flex;
 	align-items: center;
@@ -16,7 +16,7 @@
 	position: relative;
 }
 
-.header-title {
+.header__title {
 	color: var(--primary);
 	margin: 0;
 	font-size: 2.4rem;
@@ -24,34 +24,23 @@
 	transition: all 180ms ease-in;
 }
 
-.header-title a::before {
+.header__title a::before {
 	display: none;
 }
 
-.header-title:hover {
+.header__title:hover {
 	background: var(--primary);
 	color: var(--white);
 }
 
-.updated svg {
-	animation: update 270ms linear;
-}
-
-@keyframes update {
-	0%   {transform: scale(1)}
-	50%  {transform: scale(1.8)}
-	75%  {transform: scale(0.3)}
-	100% {transform: scale(1)}
-}
-
 /*================Header Buttons================*/
 
-.header-carts {
+.header__buttons-container {
 	display: flex;
 	position: relative;
 }
 
-.header-button {
+.header-button__link {
 	font-size: 1.1rem;
 	text-decoration: none;
 	position: relative;
@@ -66,7 +55,7 @@
 	transition: all 150ms ease-in;
 }
 
-.header-button::before {
+.header-button__link::before {
 	content: '';
 	position: absolute;
 	top: 100%;
@@ -82,37 +71,48 @@
 	transform-origin: top;
 }
 
-.header-button.empty {
+.header-button__link.empty {
 	background: var(--header);	
 	color: var(--black);
 }
 
-.header-button svg {
+.header-button__link svg {
 	stroke: var(--white);
 	stroke-width: 2;
 }
-.header-button.empty svg {
+.header-button__link.empty svg {
 	stroke: var(--black);
 	stroke-width: 2;
 }
 
-.header-container:hover .header-button {
+.header-button:hover .header-button__link {
 	text-decoration: underline;
 	background-color: var(--header);
 	color: var(--black);
 }
 
-.header-container:hover .header-button::before {
+.header-button:hover .header-button__link::before {
 	transform: scaleY(1);
 }
 
-.header-container:hover .header-button svg {
+.header-button:hover .header-button__link svg {
 	stroke: var(--black);
+}
+
+.updated svg {
+	animation: update 270ms linear;
+}
+
+@keyframes update {
+	0%   {transform: scale(1)}
+	50%  {transform: scale(1.8)}
+	75%  {transform: scale(0.3)}
+	100% {transform: scale(1)}
 }
 
 /*==================Mini Carts==================*/
 
-.header-container:hover .mini-cart {
+.header-button:hover .mini-cart {
 	transform: scaleY(1);
 }
 
@@ -140,16 +140,16 @@
 	right: 0;
 }
 
-.header-container:first-of-type {
+.header-button:first-of-type {
 	margin-right: 10px;
 }
 
-.mini-cart-item {
+.mini-cart__item {
 	display: flex;
 	justify-content: space-between;
 }
 
-.mini-cart-item-image {
+.mini-cart__item-image {
 	width: 50%;
 	height: auto;
 }
@@ -157,14 +157,14 @@
 /*=============Responsive - Tablet=============*/
 
 @media(max-width: 800px){
-	.header-main {
+	.header__main-container {
 		padding: 5px 5%;
 	}
-	.header-button {
+	.header-button__link {
 		padding: 2px;
 		width: auto;
 	}
-	.header-button::before {
+	.header-button__link::before {
 		display: none;
 	}
 	.mini-cart {

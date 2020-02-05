@@ -32,9 +32,9 @@ class HeaderButton extends Component {
 		let total = getTotal(items);
 
 		return (
-			<div className="header-container" id={options.id[this.props.type]}>
+			<div className="header-button" id={options.id[this.props.type]}>
 																																						{/*Add/remove empty class from button*/}
-				<Link to={options.url[this.props.type]} className={`header-button ${(items.length > 0) ? null : 'empty'}`}>
+				<Link to={options.url[this.props.type]} className={`header-button__link ${(items.length > 0) ? null : 'empty'}`}>
 					{/*render relevant icon & text*/}
 					{options.headerIcon[this.props.type]}{options.headerText[this.props.type]}
 					{/*Adds subtotal if cart*/}

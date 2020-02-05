@@ -10,13 +10,13 @@ class Header extends Component {
 	render(){
 		return(
 			<header id="header">
-				<div className="header-main">
-					<h2 className="header-title">
+				<div className="header__main-container">
+					<h2 className="header__title">
 						<Link to="/">
 							Strange Flora
 						</Link>
 					</h2>
-					<div className="header-carts">
+					<div className="header__buttons-container">
 						<HeaderButton type={0} />
 						<HeaderButton type={1} />
 					</div>
