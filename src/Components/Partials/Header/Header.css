@@ -69,11 +69,11 @@
 	color: var(--black);
 }
 
-.header-button__link svg {
+.header-button__link .icon {
 	stroke: var(--white);
 	stroke-width: 2;
 }
-.header-button__link.empty svg {
+.header-button__link.empty .icon {
 	stroke: var(--black);
 	stroke-width: 2;
 }
@@ -96,11 +96,11 @@
 	transform-origin: left;
 }
 
-.header-button:hover .header-button__link svg {
+.header-button:hover .header-button__link .icon {
 	stroke: var(--black);
 }
 
-.updated svg {
+.updated .icon {
 	animation: update 270ms linear;
 }
 
