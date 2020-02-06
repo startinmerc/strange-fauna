@@ -56,19 +56,8 @@
 }
 
 .header-button__link::before {
-	content: '';
-	position: absolute;
-	top: 100%;
-	left: -2px;
-	width: 100%;
-	transform: scaleY(0);
-	height: 50%;
-	background: var(--header);
-	border-left: 2px solid var(--black);
-	border-right: 2px solid var(--black);
-	z-index: 3;
-	transition: all 50ms linear;
-	transform-origin: top;
+	background-color: var(--header);
+	bottom: -2px;
 }
 
 .header-button__link.empty {
