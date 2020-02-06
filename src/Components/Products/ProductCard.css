@@ -234,4 +234,7 @@
 	#details .boxes {
 		display: inline-block;
 	}
+	#details .box__text {
+		padding: 0;
+	}
 }
