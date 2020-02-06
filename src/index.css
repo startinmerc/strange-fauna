@@ -102,7 +102,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-	background-color: var(--header);
+	background-color: var(--primary-mid);
 }
 
 #container {
