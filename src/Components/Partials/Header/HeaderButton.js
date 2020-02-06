@@ -24,7 +24,8 @@ class HeaderButton extends Component {
 			headerText: ['Wishlist','Cart'],
 			id: ['header-wish','header-cart'],
 			url: ['/wishlist','/cart'],
-			subtotal: [false,true]
+			subtotal: [false,true],
+			path: ["m 3,0 l 0,10 l 0,429 l 308,0 l 0,-429 l -160,0 l 0,-10","m 311,0 l 0,10 l 0,429 l -308,0 l 0,-429 l 160,0 l 0,-10"]
 		};
 
 		// create obj of item data & subtotal
@@ -40,6 +41,9 @@ class HeaderButton extends Component {
 					{/*Adds subtotal if cart*/}
 					{` (${items.length})${options.subtotal[this.props.type] ? `: $${total}` : ''}`}
 				</Link>
+				<svg class="minicart__svg" viewbox="0 0 314 443">
+					<path d={options.path[this.props.type]} pathLength="1"/>
+				</svg>
 				<MiniCart items={items} type={this.props.type}/>
 			</div>
 		);
