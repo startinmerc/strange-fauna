@@ -17,7 +17,6 @@ class ProductCard extends Component {
 				return (
 					<div className="product-card product-card--cart">
 						<img className="product-card__image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>
-						<div className="product-card__body">
 							<p className="display">
 								<Link to={`/products/${this.props.detail.id}`}>
 									{this.props.detail.name}
@@ -25,8 +24,7 @@ class ProductCard extends Component {
 							</p>
 							<AddToCart id={this.props.detail.id} stk={this.props.detail.stock}/>
 							<EditQuantity id={this.props.detail.id} qty={this.props.detail.qty} stk={this.props.detail.stock}/>
-						</div>
-						<p className="product-card__price">{this.props.detail.qty} x ${this.props.detail.price}</p>
+							<p className="product-card__price">{this.props.detail.qty} x ${this.props.detail.price}</p>
 					</div>
 				);
 			case 'nav':

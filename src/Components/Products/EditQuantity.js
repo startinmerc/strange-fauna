@@ -24,8 +24,8 @@ function EditQuantity(props){
 			<input type="number" name="quantity"
 			 value={qty} className="quantity" onChange={handleChange}
 			 disabled={props.stk < 1 ? "disabled" : null}
-			 min="1" max={props.stk}/>
-			 &nbsp;<button type="submit">Change Quantity</button>
+			 min="1" max={props.stk}/><br/>
+			<button type="submit" style={{width: '100%'}}>Change Quantity</button>
 		 </form>
 	);
 };

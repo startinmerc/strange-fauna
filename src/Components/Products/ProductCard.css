@@ -55,6 +55,8 @@
 .product-card--cart {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
 	font-size: 1.1rem;
 	box-shadow: none;
 	border-bottom: 2px solid var(--footer);
@@ -66,14 +68,19 @@
 	margin-top: 0;
 }
 
+.product-card--cart .add-to-cart {
+	width: auto;
+	height: 2rem;
+}
+
 .product-card--cart .product-card__image {
 	width: 20%;
 	height: auto;
 }
 
 .product-card--cart .product-card__price {
-	flex-grow: 1;
 	text-align: right;
+	align-self: flex-end;
 }
 
 .product-card--cart .product-card__body button {
