@@ -18,7 +18,8 @@
 	list-style: none;
 	padding: 5px;
 	font-size: 1.2rem;
-	flex-grow: 1;
+	flex-basis: 0;
+	flex: 1 1 0px;
 }
 
 .nav-section__block-link {
@@ -40,14 +41,30 @@
 	z-index: -1;
 }
 
+.nav-section__submenu-content h2 {
+	margin-top: 0;
+}
+
+.nav-section:hover .nav-section__submenu {
+	transform: translateY(0%);
+}
+
 .about-submenu {
 	width: 100%;
 	padding: 1% 0;
 	display: flex;
 }
 
-.nav-section:hover .nav-section__submenu {
-	transform: translateY(0%);
+.about-submenu__link {
+	color: var(--white);
+	text-align: center;
+	border-right: 2px solid var(--white);
+	flex-basis: 0;
+	flex: 1 1 0px;
+}
+
+.about-submenu__link:last-of-type {
+	border-right: none;
 }
 
 /*=============Responsive - Tablet=============*/
