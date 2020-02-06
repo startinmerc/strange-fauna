@@ -142,6 +142,15 @@
 	stroke-dashoffset: 1;
 	transition: all 300ms ease-in-out;
 }
+
+.header-button:hover .minicart__svg path {
+	stroke-dashoffset: 0;
+}
+
+.header-button:hover .minicart__svg {
+	transform: scaleY(1);
+}
+
 #header-wish svg {
 	fill: transparent;
 }
