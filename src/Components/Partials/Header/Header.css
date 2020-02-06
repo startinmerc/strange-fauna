@@ -132,6 +132,27 @@
 	overflow-y: scroll;
 }
 
+.minicart__svg {
+	position: absolute;
+	background-color: transparent;
+	list-style: none;
+	width: 314px;
+	z-index: 2;
+	left: -2px;
+	padding: 0px;
+	height: 443px;
+	transform: scaleY(0);
+	transform-origin: top;
+}
+
+.minicart__svg path {
+	stroke: var(--black);
+	stroke-width: 2px;
+	fill: none;
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	transition: all 300ms ease-in-out;
+}
 #header-wish svg {
 	fill: transparent;
 }
