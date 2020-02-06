@@ -317,6 +317,7 @@ Version logs for the project are below...
 * hide minicart from tablet down
 * hide cart content if empty in mobilemenu
 * Cart styling
+* ProductDetail styling
 
 #### LandingSection
 * Swap section-stripe to pseudo
@@ -327,18 +328,20 @@ Version logs for the project are below...
 * Change CSS classes to BEM naming
 * Rearrange ProductCard css
 
+#### Minicart Hover
+* Add SVG
+* Style hover
+* Tweak minicart styling to fit
+* Change to fixed height
+
 ---
 
 ### ToDo...
 
-#### Misc
-* Checkout form pseudo style on select
-* Cart responsive styling
-* ProductDetail picture sizing on mobile
-
 #### Redux
 * remove inCart from stock limit
 * save checkout info to redux
+* move from cart to wish if in localstore & OoS
 
 ### Bigger Stuff
 * Scrollbar styling
