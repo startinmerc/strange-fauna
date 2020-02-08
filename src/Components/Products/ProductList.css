@@ -11,6 +11,21 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.product-list .product-card {
+	display: flex;
+	flex-direction: column;
+}
+
+.product-list .add-to-cart {
+	margin-top: auto;
+}
+
+.product-list .product-card__text {
+	margin-bottom: 2px;
 }
 
 /*=============Responsive - Tablet=============*/
