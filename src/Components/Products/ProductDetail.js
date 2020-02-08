@@ -1,6 +1,7 @@
 import React from 'react';
 import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
+import Star from '../SVGs/Star';
 import { categories } from '../../seeds';
 import { useParams,	Link } from "react-router-dom";
 import { editCart } from '../../store/actions/cart';
@@ -81,9 +82,15 @@ function ProductDetail(props) {
 				<tbody>
 					{item.reviews.map((review,i) => (
 						<tr key={`review-${i}`} className="review">
-							<td>{'Y'.repeat(review.score)}{'N'.repeat(5-review.score)}</td>
+							<td>
+								<Star size='1rem' fill="var(--black)"/>
+								<Star size='1rem' fill={review.score > 1 ? 'var(--black)' : 'none'}/>
+								<Star size='1rem' fill={review.score > 2 ? 'var(--black)' : 'none'}/>
+								<Star size='1rem' fill={review.score > 3 ? 'var(--black)' : 'none'}/>
+								<Star size='1rem' fill={review.score > 4 ? 'var(--black)' : 'none'}/>
+							</td>
 							<td>{review.author}</td>
-							<td><strong style={{fontSize: '1.3rem', color: 'var(--primary)'}}>"</strong>{review.content}<strong style={{fontSize: '1.3rem', color: 'var(--primary)'}}>"</strong></td>
+							<td>{review.content}</td>
 						</tr>
 					))}
 				</tbody>
