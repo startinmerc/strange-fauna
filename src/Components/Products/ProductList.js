@@ -39,7 +39,7 @@ class ProductList extends Component {
 
 		return (
 			<main>
-				<div className="product-list__header">
+				<div className="product-list__header" style={{backgroundColor: `var(--${this.props.type})`}}>
 					<h2>{header}{list.length < 1 ? ' is empty' : null}</h2>
 				</div>
 				<div className="product-list">
