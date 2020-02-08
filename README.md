@@ -334,6 +334,15 @@ Version logs for the project are below...
 * Tweak minicart styling to fit
 * Change to fixed height
 
+#### ProductList
+* Tweak card styling to accommodate longer titles
+* Color ProductList header
+
+#### ProductDetail
+* Add Star to review scores
+* Move average to const
+* Add fill prop on Star w/default
+
 ---
 
 ### ToDo...
