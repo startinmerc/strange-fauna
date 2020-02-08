@@ -20,6 +20,8 @@ function ProductDetail(props) {
 	const cat = categories.find(cat=>(item.type === cat.section));
 	// Hook to set quantity and reducer
 	const [qty, setQty] = React.useState(item.qty || 1);
+	// calculate average review
+	const avgReview = ((item.reviews.reduce((acc,review)=>(acc+review.score),0))/item.reviews.length).toFixed(1)
 
 	// update quantity on input change
 	function handleChange(e){
@@ -69,8 +71,15 @@ function ProductDetail(props) {
 					<tr>
 						<th colSpan="3">
 							<h3>Customer Reviews</h3>
-							<p>{((item.reviews.reduce((acc,review)=>(acc+review.score),0))/item.reviews.length).toFixed(1)}
-							 /5 from {item.reviews.length} reviews</p>
+							<p>
+								<Star size='1.3rem' fill="var(--black)"/>
+								<Star size='1.3rem' fill={avgReview > 1.5 ? 'var(--black)' : 'none'}/>
+								<Star size='1.3rem' fill={avgReview > 2.5 ? 'var(--black)' : 'none'}/>
+								<Star size='1.3rem' fill={avgReview > 3.5 ? 'var(--black)' : 'none'}/>
+								<Star size='1.3rem' fill={avgReview > 4.5 ? 'var(--black)' : 'none'}/>
+								&nbsp;<small>({avgReview})/5</small><br/>
+								from {item.reviews.length} reviews
+							</p>
 						</th>
 					</tr>
 					<tr style={{textAlign: "left"}}>
