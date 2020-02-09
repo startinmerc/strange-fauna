@@ -33,6 +33,14 @@
 	color: var(--white);
 }
 
+/*================Mobile Header================*/
+
+#mobile-header {
+	width: 100%;
+	border-bottom: 5px solid var(--primary);
+	text-align: center;
+}
+
 /*================Header Buttons================*/
 
 .header__buttons-container {
