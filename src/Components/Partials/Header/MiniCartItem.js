@@ -9,7 +9,7 @@ const MiniCartItem = ({item, remove})=>(
 	 style={{
 	 	// Background color based on product type
 	 	backgroundColor: `var(--${item.type})`,
-	 	background: `linear-gradient(90deg, #ffffff00 5%, var(--${item.type}) 50%)`
+	 	background: `linear-gradient(90deg, var(--header) 5%, var(--${item.type}) 50%)`
 	 }}>
 		<div className="mini-cart__item-text">
 			<p className="display"><Link to={`/products/${item.id}`}>{item.name}</Link></p>
