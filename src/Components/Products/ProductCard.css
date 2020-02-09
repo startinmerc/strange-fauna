@@ -115,11 +115,11 @@
 	margin: 0;
 }
 
-.add-to-wish svg {
+.add-to-wish .icon {
 	transition: all 130ms ease-in;
 }
 
-.wish--added svg {
+.wish--added .icon {
 	fill: yellow;
 }
 
@@ -131,7 +131,7 @@
 	background-color: var(--white);
 }
 
-.add-to-wish:active svg {
+.add-to-wish:active .icon {
 	transform: scale(1.7);
 }
 

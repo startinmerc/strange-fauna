@@ -20,12 +20,12 @@
 	background: transparent;
 }
 
-#mobile-menu .header-button svg {
+#mobile-menu .header-button .icon {
 	fill: var(--black);
 	stroke: var(--black);
 }
 
-#mobile-menu .header-button.empty svg {
+#mobile-menu .header-button.empty .icon {
 	fill: none;
 }
 
