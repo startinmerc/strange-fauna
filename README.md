@@ -351,12 +351,14 @@ Version logs for the project are below...
 * remove inCart from stock limit
 * save checkout info to redux
 * move from cart to wish if in localstore & OoS
+* Pagination in products
 
 ### Bigger Stuff
+* About sections
 * Scrollbar styling
-* Page transitions
-* Pagination in products
+* React Router
+ * Page transitions
 * Showing/hiding components transitions
-* Review semantic HTML
 * A11y audit
+ * Review semantic HTML
 * Convert all components to functions w/ hooks
