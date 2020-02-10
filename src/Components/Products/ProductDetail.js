@@ -6,7 +6,7 @@ import { categories } from '../../seeds';
 import { useParams,	Link } from "react-router-dom";
 import { editCart } from '../../store/actions/cart';
 import { connect } from 'react-redux';
-import { getItem } from '../../middleware';
+import { getItem, updateStock } from '../../middleware';
 
 // Expects no props,
 // Returns full product detail page
@@ -31,6 +31,7 @@ function ProductDetail(props) {
 
 	// update quantity in cart on click
 	function handleClick(e){
+		updateStock(item.id, qty);
 		props.editCart(item.id, qty);
 	}
 
