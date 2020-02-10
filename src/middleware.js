@@ -55,3 +55,11 @@ export function animateIcon(localState,reduxState){
 		});
 	}
 }
+
+// Expects item ID, quantity to update by (can be negative)
+export function updateStock(id,qty) {
+	// Find product in seeds
+	let prod = getItem(id);
+	// Add qty to stock
+	prod.stock += Number(qty);
+}
