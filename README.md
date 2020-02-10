@@ -329,7 +329,7 @@ Version logs for the project are below...
 * Rearrange ProductCard css
 
 #### Minicart Hover
-* Add SVG
+* Add [SVG from Codepen](https://codepen.io/startinmerc/pen/RwPwLZv)
 * Style hover
 * Tweak minicart styling to fit
 * Change to fixed height
