@@ -25,7 +25,6 @@ for(let i=0;i<40;i++){
 		price: Math.floor(Math.random()*99),
 		type: t,
 		stock: Math.floor(Math.random()*20)
-		// stock: 0
 	});
 }
 

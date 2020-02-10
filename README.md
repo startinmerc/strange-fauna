@@ -343,12 +343,13 @@ Version logs for the project are below...
 * Move average to const
 * Add fill prop on Star w/default
 
+#### Redux
+* remove inCart from stock limit (middleware, hacky)
+
 ---
 
 ### ToDo...
 
-#### Redux
-* remove inCart from stock limit
 * save checkout info to redux
 * move from cart to wish if in localstore & OoS
 * Pagination in products
