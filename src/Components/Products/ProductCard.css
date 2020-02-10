@@ -117,6 +117,7 @@
 
 .add-to-wish .icon {
 	transition: all 130ms ease-in;
+	fill: var(--white);
 }
 
 .wish--added .icon {
