@@ -72,11 +72,11 @@ function ProductDetail(props) {
 						<th colSpan="3">
 							<h3>Customer Reviews</h3>
 							<p>
-								<Star size='1.3rem' fill="var(--black)"/>
-								<Star size='1.3rem' fill={avgReview > 1.5 ? 'var(--black)' : 'none'}/>
-								<Star size='1.3rem' fill={avgReview > 2.5 ? 'var(--black)' : 'none'}/>
-								<Star size='1.3rem' fill={avgReview > 3.5 ? 'var(--black)' : 'none'}/>
-								<Star size='1.3rem' fill={avgReview > 4.5 ? 'var(--black)' : 'none'}/>
+								<Star size='20px' fill="var(--black)"/>
+								<Star size='20px' fill={avgReview > 1.5 ? 'var(--black)' : 'none'}/>
+								<Star size='20px' fill={avgReview > 2.5 ? 'var(--black)' : 'none'}/>
+								<Star size='20px' fill={avgReview > 3.5 ? 'var(--black)' : 'none'}/>
+								<Star size='20px' fill={avgReview > 4.5 ? 'var(--black)' : 'none'}/>
 								&nbsp;<small>({avgReview})/5</small><br/>
 								from {item.reviews.length} reviews
 							</p>
@@ -92,11 +92,11 @@ function ProductDetail(props) {
 					{item.reviews.map((review,i) => (
 						<tr key={`review-${i}`} className="review">
 							<td>
-								<Star size='1rem' fill="var(--black)"/>
-								<Star size='1rem' fill={review.score > 1 ? 'var(--black)' : 'none'}/>
-								<Star size='1rem' fill={review.score > 2 ? 'var(--black)' : 'none'}/>
-								<Star size='1rem' fill={review.score > 3 ? 'var(--black)' : 'none'}/>
-								<Star size='1rem' fill={review.score > 4 ? 'var(--black)' : 'none'}/>
+								<Star size='17px' fill="var(--black)"/>
+								<Star size='17px' fill={review.score > 1 ? 'var(--black)' : 'none'}/>
+								<Star size='17px' fill={review.score > 2 ? 'var(--black)' : 'none'}/>
+								<Star size='17px' fill={review.score > 3 ? 'var(--black)' : 'none'}/>
+								<Star size='17px' fill={review.score > 4 ? 'var(--black)' : 'none'}/>
 							</td>
 							<td>{review.author}</td>
 							<td>{review.content}</td>

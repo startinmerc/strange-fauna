@@ -20,7 +20,7 @@ class HeaderButton extends Component {
 		// Object for wishlist/cart render data
 		const options = {
 			ids: [this.props.wish,this.props.cart],
-			headerIcon: [<Star size={'1.5rem'}/>,<ShoppingCart size={'1.5rem'}/>],
+			headerIcon: [<Star size={'24px'}/>,<ShoppingCart size={'24px'}/>],
 			headerText: ['Wishlist','Cart'],
 			id: ['header-wish','header-cart'],
 			url: ['/wishlist','/cart'],
@@ -41,7 +41,7 @@ class HeaderButton extends Component {
 					{/*Adds subtotal if cart*/}
 					{` (${items.length})${options.subtotal[this.props.type] ? `: $${total}` : ''}`}
 				</Link>
-				<svg class="minicart__svg" viewbox="0 0 314 443">
+				<svg className="minicart__svg" viewBox="0 0 314 443">
 					<path d={options.path[this.props.type]} pathLength="1"/>
 				</svg>
 				<MiniCart items={items} type={this.props.type}/>
