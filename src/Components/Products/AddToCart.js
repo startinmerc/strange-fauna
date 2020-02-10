@@ -32,8 +32,8 @@ class AddToCart extends Component {
 			).length > 0;
 		return (
 			<button className={`add-to-cart ${inCart ? 'cart--added' : ''}`}
-			 disabled={this.props.stk < 1 ? "disabled" : null}
-			 onClick={this.handleClick.bind(this, this.props.id, this.props.qty)}>
+			 disabled={this.props.stk < 1 && !inCart ? "disabled" : null}
+			 onClick={this.handleClick.bind(this, this.props.id, this.props.qty, inCart)}>
 				{inCart ? 'Remove from Cart' : this.props.stk > 0 ? 'Add to Cart' : 'Out of Stock'}
 			</button>
 		);

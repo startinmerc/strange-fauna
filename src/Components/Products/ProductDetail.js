@@ -22,7 +22,8 @@ function ProductDetail(props) {
 	const [qty, setQty] = React.useState(item.qty || 1);
 	// calculate average review
 	const avgReview = ((item.reviews.reduce((acc,review)=>(acc+review.score),0))/item.reviews.length).toFixed(1)
-
+	// find if in cart
+	const inCart = props.cart.includes(Number(id));
 	// update quantity on input change
 	function handleChange(e){
 		setQty(e.target.value);
@@ -49,7 +50,7 @@ function ProductDetail(props) {
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
 					 value={qty} className="quantity" onChange={handleChange}
-					 disabled={item.stock < 1 ? "disabled" : null}
+					 disabled={item.stock < 1 && !inCart ? "disabled" : null}
 					 min="1" max={item.stock}/>
 					&nbsp;
 					{/*render quantity update if product in cart*/}
