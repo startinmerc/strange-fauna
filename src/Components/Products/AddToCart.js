@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { addCart, removeCart } from '../../store/actions/cart';
+import { updateStock } from '../../middleware';
 import { connect } from "react-redux";
 
 // Expects product id
@@ -12,16 +13,17 @@ class AddToCart extends Component {
 		qty: 1
 	};
 
-	handleClick(id, qty){
-		if(
-			// If filtered cart by props.id is non-zero 
-			this.props.cart.filter(
-				(item)=>(item.id === id)
-			).length > 0
-			){
+	handleClick(id, qty,inCart){
+		if(inCart){
+			// Take obj from cart (Redux)
 			this.props.removeCart(id);
+			// Find quantiy in cart & add back to stock
+			updateStock(id, this.props.cart.find(v=>v.id === id).qty);
 		} else {
+			// Add obj to cart (Redux)
 			this.props.addCart(id,qty);
+			// Take added qty from available stock
+			updateStock(id,(qty*-1));
 		}
 	}
 
