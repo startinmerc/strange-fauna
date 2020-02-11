@@ -109,14 +109,14 @@
 }
 
 .updated .icon {
-	animation: update 270ms linear;
+	animation: update 270ms linear forwards;
 }
 
 @keyframes update {
-	0%   {transform: scale(1)}
+	0%   {transform: scale(1) rotate(0deg)}
 	50%  {transform: scale(1.8)}
 	75%  {transform: scale(0.3)}
-	100% {transform: scale(1)}
+	100% {transform: scale(1) rotate(90deg)}
 }
 
 /*==================Mini Carts==================*/
