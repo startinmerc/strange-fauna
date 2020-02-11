@@ -20,7 +20,7 @@
 
 .faq-list {
 	list-style: none;
-	padding: none;
+	padding: 0;
 }
 
 .question__header {
@@ -29,13 +29,15 @@
 	box-shadow: none;
 	width: 100%;
 	text-align: left;
+	margin-bottom: 0;
 }
 
 .question__answer {
 	height: 0px;
 	overflow: hidden;
-	margin-left: 1rem;
 	padding-left: 1rem;
+	padding-top: 1rem;
+	margin-top: 0;
 	border-left: 2px solid var(--black);
 	transition: all 150ms ease-in-out;
 	opacity: 0;
