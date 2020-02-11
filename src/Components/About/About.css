@@ -23,8 +23,28 @@
 	padding: none;
 }
 
-.faq-list p {
+.question__header {
+	border: none;
+	border-bottom: 2px solid var(--black);
+	box-shadow: none;
+	width: 100%;
+	text-align: left;
+}
+
+.question__answer {
+	height: 0px;
+	overflow: hidden;
 	margin-left: 1rem;
+	padding-left: 1rem;
+	border-left: 2px solid var(--black);
+	transition: all 150ms ease-in-out;
+	opacity: 0;
+	transform-origin: top;
+}
+
+.question.expanded .question__answer {
+	height: auto;
+	opacity: 1;
 }
 
 /*===================Delivery===================*/
