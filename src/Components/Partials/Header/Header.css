@@ -133,8 +133,7 @@
 	z-index: 2;
 	margin: 11px 0 0 0;
 	padding: 4px 10px;
-	transform: scaleY(0);
-	transform-origin: top;
+	transform: scaleX(0);
 	transition: all 120ms 150ms ease-in;
 	height: 419px;
 	overflow-y: scroll;
@@ -167,7 +166,7 @@
 }
 
 .header-button:hover .minicart__svg {
-	transform: scaleY(1);
+	transform: scaleX(1);
 }
 
 #header-wish .icon {
@@ -176,10 +175,12 @@
 
 #header-cart .mini-cart {
 	right: 2px;
+	transform-origin: right;
 }
 
 #header-wish .mini-cart {
 	left: 2px;
+	transform-origin: left;
 }
 
 .mini-cart__item {
