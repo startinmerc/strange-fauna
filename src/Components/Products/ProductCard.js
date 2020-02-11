@@ -47,7 +47,10 @@ class ProductCard extends Component {
 			default:
 				// Default ProductCard
 				return (
-					<div className="product-card" style={{backgroundColor: `var(--${this.props.detail.type})`}}>
+					<div className="product-card" style={{
+						backgroundColor: `var(--${this.props.detail.type})`,
+						animationDelay: `${this.props.delay*100}ms`
+					}}>
 						<AddToWish id={this.props.detail.id}/>
 						<Link to={`/products/${this.props.detail.id}`}>
 							<img className="product-card__image" src={this.props.detail.photos[0]} alt={this.props.detail.name}/>

@@ -4,6 +4,16 @@
 	padding: 5px 10px;
 	box-shadow: 8px 8px 0px #f1f1f1;
 	position: relative;
+	transform: scale(0);
+	animation: popUp 150ms ease-in forwards;
+}
+
+@keyframes popUp {
+	from {
+		transform: scale(0);
+	} to {
+		transform: scale(1);
+	}
 }
 
 .product-card h5 {

@@ -35,7 +35,9 @@ class ProductList extends Component {
 				});
 				break;
 		}
-		var renderList = list.map((prod)=>{return <ProductCard detail={prod} key={`prod-${prod.id}`}/>});
+		var renderList = list.map((prod, i)=>{
+			return <ProductCard detail={prod} key={`prod-${prod.id}`} delay={i} />
+		});
 
 		return (
 			<main>
