@@ -63,21 +63,22 @@ function ProductDetail(props) {
 					<AddToWish id={item.id} button/>
 				</div>
 			</div>
-			<div className="reviews">
-				<div className="reviews__header">
-					<h3>Customer Reviews</h3>
-					<p>
-						<Star size='20px' fill="var(--primary)"/>
-						<Star size='20px' fill={avgReview > 1.5 ? 'var(--primary)' : 'none'}/>
-						<Star size='20px' fill={avgReview > 2.5 ? 'var(--primary)' : 'none'}/>
-						<Star size='20px' fill={avgReview > 3.5 ? 'var(--primary)' : 'none'}/>
-						<Star size='20px' fill={avgReview > 4.5 ? 'var(--primary)' : 'none'}/>
-						&nbsp;<small>({avgReview})/5</small><br/>
-						from {item.reviews.length} reviews
-					</p>
-				</div>
+
+			<div className="reviews__header">
+				<h3>Customer Reviews</h3>
+				<p>
+					<Star size='20px' fill="var(--primary)"/>
+					<Star size='20px' fill={avgReview > 1.5 ? 'var(--primary)' : 'none'}/>
+					<Star size='20px' fill={avgReview > 2.5 ? 'var(--primary)' : 'none'}/>
+					<Star size='20px' fill={avgReview > 3.5 ? 'var(--primary)' : 'none'}/>
+					<Star size='20px' fill={avgReview > 4.5 ? 'var(--primary)' : 'none'}/>
+					&nbsp;<small>({avgReview})/5</small><br/>
+					from {item.reviews.length} reviews
+				</p>
+			</div>
+			<ul className="reviews">
 				{item.reviews.map((review,i) => (
-					<div key={`review-${i}`} className="review">
+					<li key={`review-${i}`} className="review">
 						<h3>
 							<span class="review__rating">
 								<Star size='17px' fill="var(--primary)"/>
@@ -90,9 +91,9 @@ function ProductDetail(props) {
 						</h3>
 						<small class="review__author">by {review.author} on 01/01/01</small>
 						<p class="review__text">{review.content}</p>
-					</div>
+					</li>
 				))}
-			</div>
+			</ul>
 		</main>
 	);
 }
