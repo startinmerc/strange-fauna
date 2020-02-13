@@ -177,21 +177,27 @@
 }
 
 .reviews {
+	list-style: none;
+	padding: 0;
 	background-color: var(--header);
-	margin-top: 5px;
+	margin-top: 0;
+	border-bottom: 2px solid var(--black);
 }
 
 .reviews__header {
 	text-align: center;
 	padding: 1.3rem;
+	margin-top: 5px;
+	background-color: var(--header);
+	margin-bottom: 0;
 }
 
 .review {
 	padding: 1.3rem;
-	border-bottom: 2px solid var(--black);
+	border-top: 2px solid var(--black);
 }
 
-.review:nth-of-type(even) {
+.review:nth-of-type(odd) {
 	background-color: var(--white);
 }
 
