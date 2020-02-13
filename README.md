@@ -342,6 +342,7 @@ Version logs for the project are below...
 * Add Star to review scores
 * Move average to const
 * Add fill prop on Star w/default
+* Redesign reviews [from Codepen](https://codepen.io/startinmerc/pen/JjdGoom)
 
 #### Redux
 * remove inCart from stock limit (middleware, hacky)
@@ -354,8 +355,9 @@ Version logs for the project are below...
 
 ### ToDo...
 
+#### Redux
 * move from cart to wish if in localstore & OoS
-* Pagination in products
+* Pagination in products (after Mongo)
 
 ### Bigger Stuff
 * React helmet for header management
