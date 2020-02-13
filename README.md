@@ -346,17 +346,23 @@ Version logs for the project are below...
 #### Redux
 * remove inCart from stock limit (middleware, hacky)
 
+#### About Sections
+* FAQ to button sections
+* Show/hide on click
+
 ---
 
 ### ToDo...
 
-* save checkout info to redux
 * move from cart to wish if in localstore & OoS
 * Pagination in products
 
 ### Bigger Stuff
-* About sections
-* Scrollbar styling
+* React helmet for header management
+* Backend
+ * Mongoose/Express/Node
+ * Add User accounts
+* Scrollbar styling?
 * React Router
  * Page transitions
 * Showing/hiding components transitions
