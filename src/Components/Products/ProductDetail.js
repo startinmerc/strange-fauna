@@ -65,9 +65,9 @@ function ProductDetail(props) {
 			</div>
 			<table className="reviews-table">
 				<colgroup>
-					<col span="1" style={{width: "15%"}}/>
-					<col span="1" style={{width: "15%"}}/>
-					<col span="1" style={{width: "auto"}}/>
+					<col span="1" />
+					<col span="1" />
+					<col span="1" />
 				</colgroup>
 				<thead>
 					<tr>
@@ -84,10 +84,10 @@ function ProductDetail(props) {
 							</p>
 						</th>
 					</tr>
-					<tr style={{textAlign: "left"}}>
-						<th style={{paddingLeft: "1.3rem"}}>Rating</th>
-						<th style={{paddingLeft: "1.3rem"}}>Author</th>
-						<th style={{paddingLeft: "1.3rem"}}>Review</th>
+					<tr className="review-headers">
+						<th>Rating</th>
+						<th>Author</th>
+						<th>Review</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -188,6 +188,22 @@
 	font-size: 0.9rem;
 }
 
+.reviews-table colgroup col {
+	width: auto;
+}
+
+.reviews-table colgroup col:first-of-type {
+	min-width: calc(85px + 2.6rem);
+}
+
+.review-headers {
+	text-align: left;
+}
+
+.review-headers th {
+	padding-left: 1.3rem
+}
+
 .review {
 	border-bottom: 2px solid var(--black);
 }
@@ -240,4 +256,14 @@
 	#details .box__text {
 		padding: 0;
 	}
+	.reviews-table colgroup col:first-of-type {
+		min-width: calc(85px + 0.6rem);
+	}
+	.review-headers th {
+		padding-left: 0.3rem
+	}
+	.review td {
+		padding: 0.3rem
+	}
+	
 }
