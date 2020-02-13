@@ -21,7 +21,7 @@ for(let i=0;i<40;i++){
 		name: `${t} ${i}`,
 		photos: [`https://picsum.photos/400?random=${n}`], 
 		description: "description ipsum flooby blup blup, isn't it? yeah.",
-		reviews: [{score: 2, author: "nick", content: "review content"},{score: 5, author: "dave", content: "extended review content lorem description ipsum flooby blup blup, isn't it? yeah. description ipsum flooby blup blup, isn't it? yeah."}],
+		reviews: [{title: "Review Title One",score: 2, author: "nick", content: "review content"},{title: "A More Generous Review",score: 5, author: "dave", content: "extended review content lorem description ipsum flooby blup blup, isn't it? yeah. description ipsum flooby blup blup, isn't it? yeah."}],
 		price: Math.floor(Math.random()*99),
 		type: t,
 		stock: Math.floor(Math.random()*20)

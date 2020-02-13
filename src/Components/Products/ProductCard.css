@@ -176,48 +176,33 @@
 	border: 2px solid var(--black);
 }
 
-.reviews-table {
-	width: 100%;
-	margin-top: 5px;
+.reviews {
 	background-color: var(--header);
-	border-collapse: collapse;
+	margin-top: 5px;
 }
 
-.reviews-table thead p {
-	font-weight: normal;
-	font-size: 0.9rem;
-}
-
-.reviews-table colgroup col {
-	width: auto;
-}
-
-.reviews-table colgroup col:first-of-type {
-	min-width: calc(85px + 2.6rem);
-}
-
-.review-headers {
-	text-align: left;
-}
-
-.review-headers th {
-	padding-left: 1.3rem
-}
-
-.review {
-	border-bottom: 2px solid var(--black);
-}
-
-.review td {
+.reviews__header {
+	text-align: center;
 	padding: 1.3rem;
 }
 
-.review:first-of-type {
-	border-top: 2px solid var(--black);
+.review {
+	padding: 1.3rem;
+	border-bottom: 2px solid var(--black);
 }
 
-.review:nth-of-type(odd){
+.review:nth-of-type(even) {
 	background-color: var(--white);
+}
+
+.review__rating {
+	font-family: monospace;
+	margin-right: 1rem
+}
+
+.review h3 {
+	margin-top: 0;
+	margin-bottom: 0.03rem;
 }
 
 /*=============Responsive - Mobile=============*/
@@ -256,14 +241,4 @@
 	#details .box__text {
 		padding: 0;
 	}
-	.reviews-table colgroup col:first-of-type {
-		min-width: calc(85px + 0.6rem);
-	}
-	.review-headers th {
-		padding-left: 0.3rem
-	}
-	.review td {
-		padding: 0.3rem
-	}
-	
 }

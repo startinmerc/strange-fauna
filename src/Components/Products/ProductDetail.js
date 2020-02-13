@@ -63,49 +63,36 @@ function ProductDetail(props) {
 					<AddToWish id={item.id} button/>
 				</div>
 			</div>
-			<table className="reviews-table">
-				<colgroup>
-					<col span="1" />
-					<col span="1" />
-					<col span="1" />
-				</colgroup>
-				<thead>
-					<tr>
-						<th colSpan="3">
-							<h3>Customer Reviews</h3>
-							<p>
-								<Star size='20px' fill="var(--black)"/>
-								<Star size='20px' fill={avgReview > 1.5 ? 'var(--black)' : 'none'}/>
-								<Star size='20px' fill={avgReview > 2.5 ? 'var(--black)' : 'none'}/>
-								<Star size='20px' fill={avgReview > 3.5 ? 'var(--black)' : 'none'}/>
-								<Star size='20px' fill={avgReview > 4.5 ? 'var(--black)' : 'none'}/>
-								&nbsp;<small>({avgReview})/5</small><br/>
-								from {item.reviews.length} reviews
-							</p>
-						</th>
-					</tr>
-					<tr className="review-headers">
-						<th>Rating</th>
-						<th>Author</th>
-						<th>Review</th>
-					</tr>
-				</thead>
-				<tbody>
-					{item.reviews.map((review,i) => (
-						<tr key={`review-${i}`} className="review">
-							<td>
-								<Star size='17px' fill="var(--black)"/>
-								<Star size='17px' fill={review.score > 1 ? 'var(--black)' : 'none'}/>
-								<Star size='17px' fill={review.score > 2 ? 'var(--black)' : 'none'}/>
-								<Star size='17px' fill={review.score > 3 ? 'var(--black)' : 'none'}/>
-								<Star size='17px' fill={review.score > 4 ? 'var(--black)' : 'none'}/>
-							</td>
-							<td>{review.author}</td>
-							<td>{review.content}</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
+			<div className="reviews">
+				<div className="reviews__header">
+					<h3>Customer Reviews</h3>
+					<p>
+						<Star size='20px' fill="var(--primary)"/>
+						<Star size='20px' fill={avgReview > 1.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={avgReview > 2.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={avgReview > 3.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={avgReview > 4.5 ? 'var(--primary)' : 'none'}/>
+						&nbsp;<small>({avgReview})/5</small><br/>
+						from {item.reviews.length} reviews
+					</p>
+				</div>
+				{item.reviews.map((review,i) => (
+					<div key={`review-${i}`} className="review">
+						<h3>
+							<span class="review__rating">
+								<Star size='17px' fill="var(--primary)"/>
+								<Star size='17px' fill={review.score > 1 ? 'var(--primary)' : 'none'}/>
+								<Star size='17px' fill={review.score > 2 ? 'var(--primary)' : 'none'}/>
+								<Star size='17px' fill={review.score > 3 ? 'var(--primary)' : 'none'}/>
+								<Star size='17px' fill={review.score > 4 ? 'var(--primary)' : 'none'}/>
+							</span>
+							<span class="review__title">{review.title}</span>
+						</h3>
+						<small class="review__author">by {review.author} on 01/01/01</small>
+						<p class="review__text">{review.content}</p>
+					</div>
+				))}
+			</div>
 		</main>
 	);
 }
