@@ -351,6 +351,11 @@ Version logs for the project are below...
 * FAQ to button sections
 * Show/hide on click
 
+#### React Helmet
+* Install react-helmet
+* Import to App for defaults
+* Replace any document.title with Helmet
+
 ---
 
 ### ToDo...
