@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import './Landing.css';
 import seeds from '../../seeds';
 import LandingSection from './LandingSection';
@@ -10,11 +11,12 @@ function Landing() {
 	const sections = seeds.landingSections.map((seed,index)=>(
 		<LandingSection content={seed} key={`section-${index}`}/>
 	))
-	
-	document.title = 'Strange Flora';
 
 	return(
 		<main id="landing">
+			<Helmet>
+				<title>Strange Flora</title>
+			</Helmet>
 			{sections}
 		</main>
 	);

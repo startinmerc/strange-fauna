@@ -1,7 +1,7 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 function FAQ(){
-	document.title = 'FAQ';
 
 	function handleClick(e){
 		e.target.parentNode.classList.toggle('expanded');
@@ -9,6 +9,9 @@ function FAQ(){
 
 	return (
 		<main id="faq">
+			<Helmet>
+				<title>Strange Flora - FAQ</title>
+			</Helmet>
 			<h1>FAQ</h1>
 			<ul className="faq-list">
 				<li className="question">

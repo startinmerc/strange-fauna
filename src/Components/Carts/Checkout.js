@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { changeDelivery } from '../../store/actions/other';
 import { Link } from 'react-router-dom';
@@ -8,6 +9,7 @@ import { getItems, getTotal } from '../../middleware';
 // Returns checkout element with local state of form content
 
 class Checkout extends Component {
+
 	constructor(props){
 		super(props);
 		this.state = {
@@ -15,10 +17,6 @@ class Checkout extends Component {
 		}
 		this.handleChange = this.handleChange.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
-	}
-
-	componentDidMount() {
-		document.title = 'Checkout';
 	}
 
 	handleChange(e) {
@@ -42,6 +40,9 @@ class Checkout extends Component {
 
 		return (
 			<main id="checkout">
+				<Helmet>
+					<title>Strange Flora - Checkout</title>
+				</Helmet>
 				<div id="order-summary">
 					<h2>Order Summary</h2>
 					<ul className="summary-section">
