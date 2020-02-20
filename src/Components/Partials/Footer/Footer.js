@@ -13,10 +13,10 @@ class Footer extends Component {
 				<div className="footer__column">
 					<Signup />
 					<div className="footer__socials">
-						<a href="http://www.facebook.com"><FacebookSquare size="40px"/></a>
-						<a href="http://www.twitter.com"><TwitterSquare size="40px"/></a>
-						<a href="http://www.instagram.com"><InstagramSquare size="40px"/></a>
-						<a href="http://www.youtube.com"><YoutubeSquare size="40px"/></a>
+						<a href="http://www.facebook.com" aria-label="Link to Facebook"><FacebookSquare size="40px"/></a>
+						<a href="http://www.twitter.com" aria-label="Link to Twitter"><TwitterSquare size="40px"/></a>
+						<a href="http://www.instagram.com" aria-label="Link to Instagram"><InstagramSquare size="40px"/></a>
+						<a href="http://www.youtube.com" aria-label="Link to Youtube"><YoutubeSquare size="40px"/></a>
 					</div>
 				</div>
 				<div className="footer__column">

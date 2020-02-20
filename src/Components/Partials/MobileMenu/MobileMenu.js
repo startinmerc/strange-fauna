@@ -52,17 +52,15 @@ class MobileMenu extends Component {
 					{sections}
 				</div>
 				<div className="mobile-menu__content">
-					<Link to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
-						<Star size={'2rem'}/>
+					<Link aria-label="Link to Wishlist" to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
 						<Star size={'2rem'} strokeWidth="2"/>
 						{this.props.wish.length > 0 ? <div className="mobile-menu__quantity">({this.props.wish.length})</div> : null}
 					</Link>
-					<Link to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
-						<ShoppingCart size={'2rem'}/>
+					<Link aria-label="Link to Cart" to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
 						<ShoppingCart size={'2rem'} strokeWidth="2"/>
 						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
 					</Link>
-					<button onClick={this.showMenu}><Menu size={'2rem'}/></button>
+					<button aria-label="Show Menu" onClick={this.showMenu}>
 						<Menu size={'2rem'}/>
 					</button>
 				</div>

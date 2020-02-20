@@ -376,6 +376,8 @@ Version logs for the project are below...
 * Hide decorative SVGs
 
 #### Accessibility Pt.3 - Aria Labeling
+* Add aria-label to icon-based links
+
 #### Accessibility Pt.4 - Focus styling
 
 ---
