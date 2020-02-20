@@ -8,7 +8,7 @@
 }
 
 .signup__submit {
-	width: calc(30% - 2px - 0.3rem);
+	width: calc(30% - 0.3rem);
 	border: 2px solid var(--black);
 	border-left: 0;
 	padding: 0.3rem;
