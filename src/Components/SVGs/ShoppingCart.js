@@ -1,9 +1,9 @@
 import React from "react";
 
-const ShoppingCart = ({size=48, color="#000000"}) => (
+const ShoppingCart = ({size=48, color="#000000", strokeWidth="1"}) => (
 
 	<svg xmlns="http://www.w3.org/2000/svg" width={size} height={size}
-	 viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1"
+	 viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth={strokeWidth} role="img"
 	 strokeLinecap="butt" strokeLinejoin="arcs" className="icon shopping-cart">
 		<circle cx="10" cy="20.5" r="1"/>
 		<circle cx="18" cy="20.5" r="1"/>

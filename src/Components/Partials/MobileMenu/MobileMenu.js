@@ -54,13 +54,17 @@ class MobileMenu extends Component {
 				<div className="mobile-menu__content">
 					<Link to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
 						<Star size={'2rem'}/>
+						<Star size={'2rem'} strokeWidth="2"/>
 						{this.props.wish.length > 0 ? <div className="mobile-menu__quantity">({this.props.wish.length})</div> : null}
 					</Link>
 					<Link to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
 						<ShoppingCart size={'2rem'}/>
+						<ShoppingCart size={'2rem'} strokeWidth="2"/>
 						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
 					</Link>
 					<button onClick={this.showMenu}><Menu size={'2rem'}/></button>
+						<Menu size={'2rem'}/>
+					</button>
 				</div>
 			</div>
 		);
