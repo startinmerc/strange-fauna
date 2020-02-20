@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import Signup from '../Signup/Signup';
 import { FacebookSquare, TwitterSquare, InstagramSquare, YoutubeSquare } from '../../SVGs/Socials';
 import './Footer.css';
 
@@ -10,17 +11,7 @@ class Footer extends Component {
 		return(
 			<footer className="footer">
 				<div className="footer__column">
-					<form className="signup">
-						<label className="signup__label" htmlFor="email">
-							Sign up to get our latest products, top deals and inspiring stories straight to your inbox.
-							Plus, get £5 off your first order over £50 – please allow 24hrs to receive your code.
-						</label>
-						<br/>
-						<input className="signup__input" type="text"/>
-						<button className="signup__submit" type="submit">
-							Sign Up!
-						</button>
-					</form>
+					<Signup />
 					<div className="footer__socials">
 						<a href="http://www.facebook.com"><FacebookSquare size="40px"/></a>
 						<a href="http://www.twitter.com"><TwitterSquare size="40px"/></a>
