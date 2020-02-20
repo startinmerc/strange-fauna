@@ -373,6 +373,7 @@ Version logs for the project are below...
 #### Accessibility Pt.2 - SVG Labelling
 * Add `<title>` to all SVGs
 * Add `role=img` to all decorative SVGs
+* Hide decorative SVGs
 
 #### Accessibility Pt.3 - Aria Labeling
 #### Accessibility Pt.4 - Focus styling

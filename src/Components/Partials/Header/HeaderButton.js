@@ -41,7 +41,7 @@ class HeaderButton extends Component {
 					{/*Adds subtotal if cart*/}
 					{` (${items.length})${options.subtotal[this.props.type] ? `: $${total}` : ''}`}
 				</Link>
-				<svg className="minicart__svg" viewBox="0 0 314 443">
+				<svg className="minicart__svg" viewBox="0 0 314 443" role="img" aria-hidden="true">
 					<path d={options.path[this.props.type]} pathLength="1"/>
 				</svg>
 				<MiniCart items={items} type={this.props.type}/>
