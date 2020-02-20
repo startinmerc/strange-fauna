@@ -377,8 +377,11 @@ Version logs for the project are below...
 
 #### Accessibility Pt.3 - Aria Labeling
 * Add aria-label to icon-based links
+* Ensure all inputs labelled
 
 #### Accessibility Pt.4 - Focus styling
+* Add focus to current over styles (global)
+* Add focus/hover to MobileMenu icons
 
 ---
 
@@ -392,6 +395,5 @@ Version logs for the project are below...
 
 * React Router Page transitions
 * Showing/hiding components transitions
-* A11y audit
 * Review semantic HTML
 * Convert all components to functions w/ hooks
