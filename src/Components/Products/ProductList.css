@@ -38,8 +38,11 @@
 	.product-list{
 		grid-template-columns: repeat(3,1fr);
 	}
+	.product-list__header {
+		margin: 0 calc(-2% - 1px) 20px calc(-2% - 1px);
+		padding: 0 calc(-2% - 1px);
+	}
 }
-
 
 /*=============Responsive - Mobile=============*/
 
