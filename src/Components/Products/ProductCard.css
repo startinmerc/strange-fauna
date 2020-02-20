@@ -93,6 +93,7 @@
 
 .add-to-cart {
 	width: 100%;
+	max-width: 400px;
 }
 
 .cart--added:hover {
@@ -174,6 +175,7 @@
 	width: 100%;
 	padding: 0.2rem 0;
 	border: 2px solid var(--black);
+	max-width: 400px;
 }
 
 .reviews {
