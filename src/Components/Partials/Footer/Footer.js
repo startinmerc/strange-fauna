@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import { FacebookSquare, TwitterSquare, InstagramSquare, YoutubeSquare } from '../../SVGs/Socials';
 import './Footer.css';
 
 // Returns footer element with site links & link to Strange Industries
@@ -22,6 +23,12 @@ class Footer extends Component {
 					<li className="footer__link-sub"><Link to="/about/returns">Returns</Link></li>
 					<li className="footer__link-sub"><Link to="/about/disclaimer">Disclaimer</Link></li>
 				</ul>
+					<div className="footer__socials">
+						<a href="http://www.facebook.com"><FacebookSquare size="40px"/></a>
+						<a href="http://www.twitter.com"><TwitterSquare size="40px"/></a>
+						<a href="http://www.instagram.com"><InstagramSquare size="40px"/></a>
+						<a href="http://www.youtube.com"><YoutubeSquare size="40px"/></a>
+					</div>
 				<p className="footer__external">
 					A <a className="footer__link" rel="noopener noreferrer"
 					 target="_blank" href="https://www.strangeindustries.co.uk">
