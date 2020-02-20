@@ -48,6 +48,7 @@ function ProductDetail(props) {
 					<h2 style={{marginTop: 0}}>{item.name}</h2>
 					<h3>${item.price}</h3>
 					<p>{item.description}</p>
+					<p>Currently {item.stock} in stock</p>
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
 					 value={qty} className="quantity" onChange={handleChange}
@@ -58,9 +59,8 @@ function ProductDetail(props) {
 					{props.cart.includes(item.id) ? 
 						<button onClick={handleClick}>Update Quantity</button>
 						 : null}
-					&nbsp;Currently {item.stock} in stock
-					<AddToCart id={item.id} qty={qty} stk={item.stock}/>
-					<AddToWish id={item.id} button/>
+					<br/><AddToCart id={item.id} qty={qty} stk={item.stock}/>
+					<br/><AddToWish id={item.id} button/>
 				</div>
 			</div>
 
