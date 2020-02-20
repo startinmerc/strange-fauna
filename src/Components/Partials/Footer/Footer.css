@@ -31,34 +31,8 @@
 	justify-content: space-around;
 }
 
-.footer__socials a::before {
-	display: none;
-}
-
-.footer__icon:hover,
- .footer__icon:focus {
-	fill: var(--primary);
-}
-
-.signup {
-	background-color: var(--footer);
-}
-
-.signup__input {
-	margin-top: 10px;
-	width: calc(70% - 4px - 0.3rem);
-}
-
-.signup__submit {
-	width: calc(30% - 2px - 0.3rem);
-	border: 2px solid var(--black);
-	border-left: 0;
-	padding: 0.3rem;
-}
-
-.signup__submit:hover,
-.signup__submit:focus {
-	background-color: var(--primary-mid);
+.footer__icon {
+	transition: all 180ms ease-in;
 }
 
 /*=================Right Column=================*/
