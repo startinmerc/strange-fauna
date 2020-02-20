@@ -80,17 +80,17 @@ function ProductDetail(props) {
 				{item.reviews.map((review,i) => (
 					<li key={`review-${i}`} className="review">
 						<h3>
-							<span class="review__rating">
+							<span className="review__rating">
 								<Star size='17px' fill="var(--primary)"/>
 								<Star size='17px' fill={review.score > 1 ? 'var(--primary)' : 'none'}/>
 								<Star size='17px' fill={review.score > 2 ? 'var(--primary)' : 'none'}/>
 								<Star size='17px' fill={review.score > 3 ? 'var(--primary)' : 'none'}/>
 								<Star size='17px' fill={review.score > 4 ? 'var(--primary)' : 'none'}/>
 							</span>
-							<span class="review__title">{review.title}</span>
+							<span className="review__title">{review.title}</span>
 						</h3>
-						<small class="review__author">by {review.author} on 01/01/01</small>
-						<p class="review__text">{review.content}</p>
+						<small className="review__author">by {review.author} on 01/01/01</small>
+						<p className="review__text">{review.content}</p>
 					</li>
 				))}
 			</ul>
