@@ -20,7 +20,7 @@ function LandingSection({content}) {
 	return (
 		<section style={{
 			color: `var(--${content.dark ? 'black' : 'white'})`,
-			textShadow: `0 0 2px var(--${content.dark ? 'white' : 'black'})`,
+			textShadow: `0 0 16px var(--${content.dark ? 'white' : 'black'})`,
 			borderBottomColor: `var(--${content.type})`, backgroundColor: `var(--${content.type})`
 		}} className="landing-section">
 			<div className="landing-section__image" style={{backgroundImage: `url(${content.image})`}}></div>

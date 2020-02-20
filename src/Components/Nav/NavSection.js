@@ -12,7 +12,7 @@ class NavSection extends Component {
 		if(this.props.section==='about') {
 			return (
 				<li className="nav-section" style={{backgroundColor: `${this.props.color}`}}>
-				<Link to='/about' className="nav-section__block-link">
+				<Link to='/about' className={`nav-section__block-link nav--${this.props.section}`}>
 					{this.props.title}
 				</Link>
 				<div className="nav-section__submenu about-submenu" style={{backgroundColor: `${this.props.color}`}}>
@@ -29,7 +29,7 @@ class NavSection extends Component {
 		let sectionItems = seeds.products.filter((seed)=>(seed.type === this.props.section));
 		return(
 			<li className="nav-section" style={{backgroundColor: `${this.props.color}`}}>
-				<Link to={link} className="nav-section__block-link">{this.props.title}</Link>
+				<Link to={link} className={`nav-section__block-link nav--${this.props.section}`}>{this.props.title}</Link>
 				<div className="nav-section__submenu" style={{backgroundColor: `${this.props.color}`}}>
 					<div className="nav-section__submenu-content">
 						<h2>{this.props.title}</h2>

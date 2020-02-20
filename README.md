@@ -362,6 +362,12 @@ Version logs for the project are below...
 * Rearrange layout
 * Responsive design
 
+### V0.7
+
+#### Accessibility Pt.1 - Colors
+* Run all colors through accessibility contrase checker
+* Change footer color for white contrast
+* Increase text shadow on LandingSections
 
 ---
 

@@ -26,6 +26,10 @@
 	display: block;
 }
 
+.nav--about {
+	color: var(--white);
+}
+
 /*=================Nav Submenu=================*/
 
 .nav-section__submenu {
