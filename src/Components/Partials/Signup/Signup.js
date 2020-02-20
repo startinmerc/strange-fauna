@@ -9,7 +9,7 @@ export default function Signup(){
 				Plus, get £5 off your first order over £50 – please allow 24hrs to receive your code.
 			</label>
 			<br/>
-			<input className="signup__input" type="text"/>
+			<input className="signup__input" id="email" type="text"/>
 			<button className="signup__submit" type="submit">
 				Sign Up!
 			</button>
