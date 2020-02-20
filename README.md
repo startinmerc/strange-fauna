@@ -356,6 +356,13 @@ Version logs for the project are below...
 * Import to App for defaults
 * Replace any document.title with Helmet
 
+#### Footer Redesign
+* Add Social links
+* Add newsletter signup
+* Rearrange layout
+* Responsive design
+
+
 ---
 
 ### ToDo...
@@ -365,14 +372,9 @@ Version logs for the project are below...
 * Pagination in products (after Mongo)
 
 ### Bigger Stuff
-* React helmet for header management
-* Backend
- * Mongoose/Express/Node
- * Add User accounts
-* Scrollbar styling?
-* React Router
- * Page transitions
+
+* React Router Page transitions
 * Showing/hiding components transitions
 * A11y audit
- * Review semantic HTML
+* Review semantic HTML
 * Convert all components to functions w/ hooks
