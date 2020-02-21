@@ -102,6 +102,31 @@
 	transform: skewX(45deg) scaleX(1);
 }
 
+/*==================Email CTA==================*/
+
+.cta {
+	background-color: var(--footer);
+	color: var(--white);
+	text-align: center;
+	margin-top: -3rem;
+	padding: 1rem;
+}
+
+.cta__button {
+	padding: 1rem;
+	font-size: 1.3rem;
+}
+
+.cta__button:focus,
+.cta__button:hover {
+	background-color: var(--primary);
+	color: var(--white);
+}
+
+.cta__content {
+	font-weight: lighter;
+}
+
 /*=============Responsive - Tablet=============*/
 
 @media(max-width:800px){
