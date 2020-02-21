@@ -109,8 +109,8 @@ class Checkout extends Component {
 							}
 						</div>
 					</div>
-					<button className="summary-section">
-						<Link to="/">Pay Now</Link>
+					<button disabled className="summary-section">
+						Pay Now
 					</button>
 				</div>
 			</main>
