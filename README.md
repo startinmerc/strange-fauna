@@ -389,12 +389,8 @@ Version logs for the project are below...
 
 ### ToDo...
 
-#### Redux
 * move from cart to wish if in localstore & OoS
 * Pagination in products (after Mongo)
-
-### Bigger Stuff
-
 * React Router Page transitions
 * Showing/hiding components transitions
 * Review semantic HTML
