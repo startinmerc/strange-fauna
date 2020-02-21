@@ -32,6 +32,11 @@
 	margin-bottom: 0;
 }
 
+.question__header:hover,
+.question__header:focus {
+	background-color: var(--header);
+}
+
 .question__answer {
 	height: 0px;
 	overflow: hidden;
