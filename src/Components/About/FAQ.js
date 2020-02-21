@@ -4,7 +4,14 @@ import { Helmet } from 'react-helmet';
 function Question(){
 
 	function handleClick(e){
+		// Check to see if the button is pressed
+		let pressed = (e.target.getAttribute("aria-pressed") === "true");
+		// Change aria-pressed to the opposite state
+		e.target.setAttribute("aria-pressed", !pressed);
+		// Add expanded class to <li>
 		e.target.parentNode.classList.toggle('expanded');
+		// Set focus to revealed answer
+		if(pressed){e.target.parentNode.lastChild.focus()};
 	}
 
 	return (
