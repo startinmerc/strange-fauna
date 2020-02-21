@@ -1,11 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-function FAQ(){
+function Question(){
 
 	function handleClick(e){
 		e.target.parentNode.classList.toggle('expanded');
 	}
+
+	return (
+		<li className="question">
+			<button className="question__header display" onClick={handleClick}
+			 aria-label="Question reveal" aria-pressed="false">Question?</button>
+			<p className="question__answer">
+				Answer!<br/>
+				Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+			</p>
+		</li>
+	);
+};
+
+function FAQ(){
 
 	return (
 		<main id="faq">
@@ -14,38 +28,9 @@ function FAQ(){
 			</Helmet>
 			<h1>FAQ</h1>
 			<ul className="faq-list">
-				<li className="question">
-					<button className="question__header display"
-					 onClick={handleClick}>Question?</button>
-					<p className="question__answer">
-						Answer!<br/>
-						Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
-					</p>
-				</li>
-				<li className="question">
-					<button className="question__header display"
-					 onClick={handleClick}>Question?</button>
-					<p className="question__answer">
-						Answer!<br/>
-						Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
-					</p>
-				</li>
-				<li className="question">
-					<button className="question__header display"
-					 onClick={handleClick}>Question?</button>
-					<p className="question__answer">
-						Answer!<br/>
-						Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
-					</p>
-				</li>
-				<li className="question">
-					<button className="question__header display"
-					 onClick={handleClick}>Question?</button>
-					<p className="question__answer">
-						Answer!<br/>
-						Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
-					</p>
-				</li>
+				<Question />
+				<Question />
+				<Question />
 			</ul>
 		</main>
 	)
