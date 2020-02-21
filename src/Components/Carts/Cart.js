@@ -43,8 +43,8 @@ class Cart extends Component {
 				<div style={{textAlign: 'right'}}>
 					<p className="cart__subtotal">Subtotal: ${total}</p>
 					<p>
-						Choose delivery option:
-						<select value={this.props.delivery} onChange={this.handleChange}>
+						<label htmlFor="deliveries">Choose delivery option:</label>
+						<select value={this.props.delivery} onChange={this.handleChange} id="deliveries" name="deliveries">
 							{deliveries.map((op,i) => (<option key={`del-op-${i}`} value={op.price}>{op.name} - ${op.price}</option>))}
 						</select>
 					</p>
