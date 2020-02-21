@@ -8,6 +8,7 @@
 	transition: transform 240ms ease-out;
 }
 
+#header:focus-within .nav-section__container,
 #header:hover .nav-section__container {
 	transform: translateY(0%);
 }
@@ -49,7 +50,8 @@
 	margin-top: 0;
 }
 
-.nav-section:hover .nav-section__submenu {
+.nav-section:hover .nav-section__submenu,
+.nav-section:focus-within .nav-section__submenu {
 	transform: translateY(0%);
 }
 
