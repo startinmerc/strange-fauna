@@ -378,10 +378,12 @@ Version logs for the project are below...
 #### Accessibility Pt.3 - Aria Labeling
 * Add aria-label to icon-based links
 * Ensure all inputs labelled
+* Add aria-pressed & handler to FAQ buttons
 
 #### Accessibility Pt.4 - Focus styling
-* Add focus to current over styles (global)
-* Add focus/hover to MobileMenu icons
+* Add focus to current hover styles (global)
+* Add focus/hover to MobileMenu icons, FAQ questions
+
 
 ---
 
