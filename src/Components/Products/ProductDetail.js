@@ -81,6 +81,7 @@ function ProductDetail(props) {
 					<li key={`review-${i}`} className="review">
 						<h3>
 							<span className="review__rating">
+								<span className="sr-only">{review.score} out of 5</span>
 								<Star size='17px' fill="var(--primary)"/>
 								<Star size='17px' fill={review.score > 1 ? 'var(--primary)' : 'none'}/>
 								<Star size='17px' fill={review.score > 2 ? 'var(--primary)' : 'none'}/>
