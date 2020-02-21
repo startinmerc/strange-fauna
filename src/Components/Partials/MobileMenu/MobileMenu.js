@@ -60,7 +60,7 @@ class MobileMenu extends Component {
 						<ShoppingCart size={'2rem'} strokeWidth="2"/>
 						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
 					</Link>
-					<button aria-label="Show Menu" onClick={this.showMenu}>
+					<button aria-label="Show Menu" onClick={this.showMenu} aria-pressed="false" className="mobile-menu__show-button">
 						<Menu size={'2rem'}/>
 					</button>
 				</div>
