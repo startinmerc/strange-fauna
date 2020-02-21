@@ -25,10 +25,14 @@ class MobileMenu extends Component {
 		animateIcon([e.cart,e.wish],[this.props.cart,this.props.wish]);
 	}
 
-	showMenu(){
+	showMenu(e){
 		this.setState({expanded: true}, () => {
 			document.addEventListener('click', this.closeMenu);
 		});
+		// Check to see if the button is pressed
+		let pressed = (e.target.parentNode.getAttribute("aria-pressed") === "true");
+		// Change aria-pressed to the opposite state
+		e.target.parentNode.setAttribute("aria-pressed", !pressed);
 	}
 
 	closeMenu(){
@@ -48,7 +52,7 @@ class MobileMenu extends Component {
 		return(
 			<div id="mobile-menu">
 				<div className={`mobile-menu__dropup ${(this.state.expanded) ? 'expanded' : null}`}>
-					<li id="dropup-background"></li>
+					<li id="dropup-background" aria-hidden="true"></li>
 					{sections}
 				</div>
 				<div className="mobile-menu__content">
