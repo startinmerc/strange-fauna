@@ -14,6 +14,7 @@ function Landing() {
 
 	function handleClick(){
 		// Not great, needs to be ref when I learn!
+		window.scrollTo(0,document.body.scrollHeight);
 		document.querySelector("#email").focus();
 	}
 

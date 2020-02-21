@@ -149,4 +149,7 @@
 	.landing-section::before {
 		transform-origin: bottom;
 	}
+	.cta {
+		margin-top: 0;
+	}
 }
