@@ -18,3 +18,8 @@
 .signup__submit:focus {
 	background-color: var(--primary-mid);
 }
+
+.signup--disabled .signup__input {
+	background-color: var(--primary-mid);
+	cursor: not-allowed;
+}

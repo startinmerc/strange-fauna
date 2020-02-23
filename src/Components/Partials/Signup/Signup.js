@@ -7,6 +7,10 @@ export default function Signup(){
 	function handleSubmit(e){
 		e.preventDefault();
 		if (validateEmail(e.target.email.value)) {
+			e.target.children[2].disabled = "disabled";
+			e.target.children[3].disabled = "disabled";
+			e.target.children[3].innerText = "Signed Up!";
+			e.target.classList.add("signup--disabled");
 		}
 	};
 
@@ -22,5 +26,5 @@ export default function Signup(){
 				Sign Up!
 			</button>
 		</form>
-	)
-}
+	);
+};
