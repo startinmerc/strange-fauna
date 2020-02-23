@@ -37,6 +37,12 @@ export function isMobile(){
 	return window.innerWidth < 600;
 }
 
+export function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
+}
+
+
 // expects array of local state & array of redux state
 export function animateIcon(localState,reduxState){
 	// if new cart size differs from state
