@@ -29,7 +29,7 @@ class MiniCart extends Component {
 							 item={item} remove={
 							 	(this.props.type === 0) ? this.removeWish.bind(this, item.id) : this.removeCart.bind(this, item.id)}/>
 					// Otherwise returns text
-					)) : 'Empty!'
+					)) : <li>'Empty!'</li>
 				}
 			</ul>
 		);
