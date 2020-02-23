@@ -6,6 +6,7 @@
 	margin: 0 auto;
 	transform: translateY(-80%);
 	transition: transform 240ms ease-out;
+	padding-left: 0;
 }
 
 #header:focus-within .nav-section__container,
