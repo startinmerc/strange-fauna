@@ -385,14 +385,21 @@ Version logs for the project are below...
 * Add focus to current hover styles
 * Add focus/hover to MobileMenu icons, FAQ questions
 
+#### Header Refactor
+* Create HeaderButtonContainer component
+* Move all variables for rendering HeaderButton to parent
+* Add shoudComponentUpdate to cut down rendering
+* Reflect variable/props changes in HeaderButton & children
+* Refactor animateIcon (To redo with React.ref())
+
 ---
 
 ### ToDo...
 
 * move from cart to wish if in localstore & OoS
 * Pagination in products (after Mongo)
-* React Router Page transitions
+* React Router Page transition on productlist
 * Showing/hiding components transitions
 * Review semantic HTML
-* Code styling standards!
+* Install & config Prettier
 * Convert all components to functions w/ hooks
