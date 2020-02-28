@@ -28,12 +28,18 @@ function ProductDetail(props) {
 	function handleChange(e){
 		setQty(e.target.value);
 	}
+	// Ref
+	let header = React.createRef();
 
 	// update quantity in cart on click
 	function handleClick(e){
 		updateStock(item.id, qty);
 		props.editCart(item.id, qty);
 	}
+
+	React.useEffect(()=>{
+		header.current.focus();
+	});
 
 	return (
 		<main id="details">
@@ -45,7 +51,7 @@ function ProductDetail(props) {
 					<img src={item.photos[0]}  style={{width: '100%', height: 'auto'}} alt="product"/>
 				</div>
 				<div className="box box__text" style={{paddingTop: 0}}>
-					<h2 style={{marginTop: 0}}>{item.name}</h2>
+					<h2 ref={header} style={{marginTop: 0}}>{item.name}</h2>
 					<h3>${item.price}</h3>
 					<p>{item.description}</p>
 					<p>Currently {item.stock} in stock</p>
