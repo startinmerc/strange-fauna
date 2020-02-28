@@ -8,8 +8,8 @@ import { animateIcon } from '../../../middleware';
 
 class HeaderButton extends Component {
 
-	componentDidUpdate(e){
-		animateIcon([e.cart,e.wish],[this.props.cart,this.props.wish]);
+	shouldComponentUpdate(next){
+		return this.props.items.length !== next.items.length;
 	}
 
 	componentDidUpdate(prevProps, prevState, snapshot){
