@@ -1,11 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // Returns static about section
 
 function Disclaimer(){
-	document.title = 'Disclaimer';
+
 	return (
 		<main id="disclaimer">
+			<Helmet>
+				<title>Strange Flora - Disclaimer</title>
+			</Helmet>
 			<h1>Disclaimer</h1>
 			<p>
 				Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition. Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment.

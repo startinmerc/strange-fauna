@@ -11,9 +11,9 @@ class NavSectionContainer extends Component {
 			<NavSection key={'nav-section-'+index} {...section}/>
 		 ));
 		return(
-			<div className="nav-section__container">
+			<ul className="nav-section__container" role="navigation">
 				{sections}
-			</div>
+			</ul>
 		);
 	}
 }

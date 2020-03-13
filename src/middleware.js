@@ -37,23 +37,21 @@ export function isMobile(){
 	return window.innerWidth < 600;
 }
 
-// expects array of local state & array of redux state
-export function animateIcon(localState,reduxState){
-	// if new cart size differs from state
-	if(localState[0].length !== reduxState[0].length || localState[1].length !== reduxState[1].length){
-		let element;
-		// decide which has updated
-		if(localState[0].length !== reduxState[0].length){
-			element = document.querySelector('#header-cart');
-		} else if(localState[1].length !== reduxState[1].length){
-			element = document.querySelector('#header-wish');
-		}
-		// play updated animation & remove class on animation end
-		element.classList.add('updated');
-		element.addEventListener('animationend',()=>{
-			element.classList.remove('updated');
-		});
-	}
+export function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
+}
+
+
+// expects ID of button to animate
+export function animateIcon(elementID){
+	// find element in document (to replace with ref)
+	let element = document.querySelector(`#${elementID}`);
+	// play updated animation & remove class on animation end
+	element.classList.add('updated');
+	element.addEventListener('animationend',()=>{
+		element.classList.remove('updated');
+	});
 }
 
 // Expects item ID, quantity to update by (can be negative)

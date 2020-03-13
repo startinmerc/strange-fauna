@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './Header.css';
 import NavSectionContainer from '../../Nav/NavSectionContainer';
-import HeaderButton from './HeaderButton';
+import HeaderButtonContainer from './HeaderButtonContainer';
 
 // Returns sticky header element containing header buttons & nav section
 
@@ -16,10 +16,7 @@ class Header extends Component {
 							Strange Flora
 						</Link>
 					</h2>
-					<div className="header__buttons-container">
-						<HeaderButton type={0} />
-						<HeaderButton type={1} />
-					</div>
+					<HeaderButtonContainer />
 				</div>
 				<NavSectionContainer />
 			</header>

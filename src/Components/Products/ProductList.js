@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { getItems } from "../../middleware";
 import ProductCard from './ProductCard';
@@ -19,7 +20,6 @@ class ProductList extends Component {
 	
 	render(){
 		const header = this.props.title || `Showing ${this.props.type} products`;
-		document.title = header;
 		var list;
 
 		switch(this.props.type){
@@ -41,6 +41,9 @@ class ProductList extends Component {
 
 		return (
 			<main>
+				<Helmet>
+					<title>Strange Flora - {header}</title>
+				</Helmet>
 				<div className="product-list__header" style={{backgroundColor: `var(--${this.props.type})`}}>
 					<h2>{header}{list.length < 1 ? ' is empty' : null}</h2>
 				</div>

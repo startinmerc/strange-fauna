@@ -24,13 +24,13 @@ class AddToWish extends Component {
 		if(this.props.button){
 			return (
 				<button className={`add-to-wish--btn ${inWish ? 'cart--added' : ''}`}
-				 onClick={this.handleClick.bind(this, this.props.id)}>
+				 onClick={this.handleClick.bind(this, this.props.id)} aria-label="Add/remove from Wishlist">
 					{inWish ? 'Remove from' : 'Add to' } Wishlist
 				</button>
 		)} else {
 			return (
 				<button className={`add-to-wish ${inWish ? 'wish--added' : ''}`}
-				 onClick={this.handleClick.bind(this, this.props.id)}>
+				 onClick={this.handleClick.bind(this, this.props.id)} aria-label="Add/remove from Wishlist">
 					<Star size={30}/>
 				</button>
 		)};

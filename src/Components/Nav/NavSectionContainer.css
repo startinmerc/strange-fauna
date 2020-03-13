@@ -6,8 +6,10 @@
 	margin: 0 auto;
 	transform: translateY(-80%);
 	transition: transform 240ms ease-out;
+	padding-left: 0;
 }
 
+#header:focus-within .nav-section__container,
 #header:hover .nav-section__container {
 	transform: translateY(0%);
 }
@@ -24,6 +26,10 @@
 
 .nav-section__block-link {
 	display: block;
+}
+
+.nav--about {
+	color: var(--white);
 }
 
 /*=================Nav Submenu=================*/
@@ -45,7 +51,8 @@
 	margin-top: 0;
 }
 
-.nav-section:hover .nav-section__submenu {
+.nav-section:hover .nav-section__submenu,
+.nav-section:focus-within .nav-section__submenu {
 	transform: translateY(0%);
 }
 

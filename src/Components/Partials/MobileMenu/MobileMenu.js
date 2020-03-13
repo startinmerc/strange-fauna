@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
-import Hamburger from './Hamburger';
+import Menu from '../../SVGs/Menu';
 import { categories } from '../../../seeds';
 import { animateIcon } from '../../../middleware';
 import './MobileMenu.css';
@@ -25,10 +25,14 @@ class MobileMenu extends Component {
 		animateIcon([e.cart,e.wish],[this.props.cart,this.props.wish]);
 	}
 
-	showMenu(){
+	showMenu(e){
 		this.setState({expanded: true}, () => {
 			document.addEventListener('click', this.closeMenu);
 		});
+		// Check to see if the button is pressed
+		let pressed = (e.target.parentNode.getAttribute("aria-pressed") === "true");
+		// Change aria-pressed to the opposite state
+		e.target.parentNode.setAttribute("aria-pressed", !pressed);
 	}
 
 	closeMenu(){
@@ -39,25 +43,25 @@ class MobileMenu extends Component {
 	
 	render(){
 		const sections = categories.map((section,index)=>(
-			<li key={'nav-section-'+index} className="dropup" style={{background: section.color}}>
-				<Link to={
-					(section.title!=='About Us') ? `/products/${section.title}` : '/about'
-				}>{section.title}</Link>
+			<li key={'nav-section-'+index} className={`dropup nav--${section.section}`} style={{background: section.color}}>
+				<Link to={(section.section !=='about') ? `/products/${section.title}` : '/about'}>
+					{section.title}
+				</Link>
 			</li>
 		));
 		return(
 			<div id="mobile-menu">
 				<div className={`mobile-menu__dropup ${(this.state.expanded) ? 'expanded' : null}`}>
-					<li id="dropup-background"></li>
+					<li id="dropup-background" aria-hidden="true"></li>
 					{sections}
 				</div>
 				<div className="mobile-menu__content">
-					<Link to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
-						<Star size={'2rem'}/>
+					<Link aria-label="Link to Wishlist" to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
+						<Star size={'2rem'} strokeWidth="2"/>
 						{this.props.wish.length > 0 ? <div className="mobile-menu__quantity">({this.props.wish.length})</div> : null}
 					</Link>
-					<Link to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
-						<ShoppingCart size={'2rem'}/>
+					<Link aria-label="Link to Cart" to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
+						<ShoppingCart size={'2rem'} strokeWidth="2"/>
 						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
 					</Link>
 					<Hamburger size={'2rem'} handleClick={this.showMenu} expanded={this.state.expanded}/>
