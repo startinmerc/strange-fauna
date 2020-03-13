@@ -66,18 +66,6 @@
 	fill: none;
 }
 
-.mobile-menu__show-button {
-	box-shadow: none;
-	background-color: transparent;
-	margin: 0;
-	padding: 0;
-}
-
-.mobile-menu__show-button:hover,
-.mobile-menu__show-button:focus {
-	background-color: var(--primary-mid);
-}
-
 .mobile-menu__quantity {
 	position: absolute;
 	left: 2.2rem;
