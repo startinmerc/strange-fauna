@@ -5,19 +5,20 @@ import { removeWish } from '../../../store/actions/wish';
 import { removeCart } from '../../../store/actions/cart';
 
 // Returns MiniCart with MiniCartItem children,
-// expects array of IDs & type prop: 0 = wishlist, 1 = shopping cart.
+// expects array of IDs & type 'Cart' or 'Wishlist'.
 
 class MiniCart extends Component {
 
-	removeWish(id){
-		this.props.removeWish(id);
-	}
-
-	removeCart(id){
-		this.props.removeCart(id);
-	}
+	handleRemove(id, type){
+		if (type==='Cart') {
+			this.props.removeCart(id);
+		} else if (type==='Wishlist') {
+			this.props.removeWish(id);
+		};
+	};
 
 	render(){
+
 		return (
 			<ul className="mini-cart">
 				{
@@ -27,9 +28,10 @@ class MiniCart extends Component {
 						this.props.items.map((item)=>(
 							<MiniCartItem key={`mini-${item.type}-${item.id}`} 
 							 item={item} remove={
-							 	(this.props.type === 0) ? this.removeWish.bind(this, item.id) : this.removeCart.bind(this, item.id)}/>
+							 	this.handleRemove.bind(this, item.id, this.props.type)
+							 }/>
 					// Otherwise returns text
-					)) : 'Empty!'
+					)) : <li>'Empty!'</li>
 				}
 			</ul>
 		);

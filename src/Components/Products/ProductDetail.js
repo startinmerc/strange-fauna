@@ -28,12 +28,18 @@ function ProductDetail(props) {
 	function handleChange(e){
 		setQty(e.target.value);
 	}
+	// Ref
+	let header = React.createRef();
 
 	// update quantity in cart on click
 	function handleClick(e){
 		updateStock(item.id, qty);
 		props.editCart(item.id, qty);
 	}
+
+	React.useEffect(()=>{
+		header.current.focus();
+	});
 
 	return (
 		<main id="details">
@@ -45,9 +51,10 @@ function ProductDetail(props) {
 					<img src={item.photos[0]}  style={{width: '100%', height: 'auto'}} alt="product"/>
 				</div>
 				<div className="box box__text" style={{paddingTop: 0}}>
-					<h2 style={{marginTop: 0}}>{item.name}</h2>
+					<h2 ref={header} style={{marginTop: 0}}>{item.name}</h2>
 					<h3>${item.price}</h3>
 					<p>{item.description}</p>
+					<p>Currently {item.stock} in stock</p>
 					<label htmlFor="quantity">Quantity:</label>
 					<input type="number" name="quantity" id="quantity"
 					 value={qty} className="quantity" onChange={handleChange}
@@ -58,9 +65,8 @@ function ProductDetail(props) {
 					{props.cart.includes(item.id) ? 
 						<button onClick={handleClick}>Update Quantity</button>
 						 : null}
-					&nbsp;Currently {item.stock} in stock
-					<AddToCart id={item.id} qty={qty} stk={item.stock}/>
-					<AddToWish id={item.id} button/>
+					<br/><AddToCart id={item.id} qty={qty} stk={item.stock}/>
+					<br/><AddToWish id={item.id} button/>
 				</div>
 			</div>
 
@@ -80,17 +86,18 @@ function ProductDetail(props) {
 				{item.reviews.map((review,i) => (
 					<li key={`review-${i}`} className="review">
 						<h3>
-							<span class="review__rating">
+							<span className="review__rating">
+								<span className="sr-only">{review.score} out of 5</span>
 								<Star size='17px' fill="var(--primary)"/>
 								<Star size='17px' fill={review.score > 1 ? 'var(--primary)' : 'none'}/>
 								<Star size='17px' fill={review.score > 2 ? 'var(--primary)' : 'none'}/>
 								<Star size='17px' fill={review.score > 3 ? 'var(--primary)' : 'none'}/>
 								<Star size='17px' fill={review.score > 4 ? 'var(--primary)' : 'none'}/>
 							</span>
-							<span class="review__title">{review.title}</span>
+							<span className="review__title">{review.title}</span>
 						</h3>
-						<small class="review__author">by {review.author} on 01/01/01</small>
-						<p class="review__text">{review.content}</p>
+						<small className="review__author">by {review.author} on 01/01/01</small>
+						<p className="review__text">{review.content}</p>
 					</li>
 				))}
 			</ul>

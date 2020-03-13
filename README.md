@@ -351,23 +351,55 @@ Version logs for the project are below...
 * FAQ to button sections
 * Show/hide on click
 
+#### React Helmet
+* Install react-helmet
+* Import to App for defaults
+* Replace any document.title with Helmet
+
+#### Footer Redesign
+* Add Social links
+* Add newsletter signup
+* Rearrange layout
+* Responsive design
+
+### V0.7
+
+#### Accessibility Pt.1 - Colors
+* Run all colors through accessibility contrase checker
+* Change footer color for white contrast
+* Change About link in navs for contrast using class
+* Increase text shadow on LandingSections
+
+#### Accessibility Pt.2 - SVG Labelling
+* Add `<title>` to all SVGs
+* Add `role=img` to all decorative SVGs
+* Hide decorative SVGs
+
+#### Accessibility Pt.3 - Aria Labeling
+* Add aria-label to icon-based links
+* Ensure all inputs labelled
+* Add aria-pressed & handler to FAQ + MobileMenu buttons
+* Add sr-only alternatives to ratings
+
+#### Accessibility Pt.4 - Focus styling
+* Add focus to current hover styles
+* Add focus/hover to MobileMenu icons, FAQ questions
+
+#### Header Refactor
+* Create HeaderButtonContainer component
+* Move all variables for rendering HeaderButton to parent
+* Add shoudComponentUpdate to cut down rendering
+* Reflect variable/props changes in HeaderButton & children
+* Refactor animateIcon (To redo with React.ref())
+
 ---
 
 ### ToDo...
 
-#### Redux
 * move from cart to wish if in localstore & OoS
 * Pagination in products (after Mongo)
-
-### Bigger Stuff
-* React helmet for header management
-* Backend
- * Mongoose/Express/Node
- * Add User accounts
-* Scrollbar styling?
-* React Router
- * Page transitions
+* React Router Page transition on productlist
 * Showing/hiding components transitions
-* A11y audit
- * Review semantic HTML
+* Review semantic HTML
+* Install & config Prettier
 * Convert all components to functions w/ hooks

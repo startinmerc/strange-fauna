@@ -23,7 +23,7 @@ function EditQuantity(props){
 	return (
 		<form onSubmit={handleSubmit}>
 			<label htmlFor="quantity">Quantity:</label>
-			<input type="number" name="quantity"
+			<input type="number" name="quantity" id="quantity"
 			 value={qty} className="quantity" onChange={handleChange}
 			 disabled={props.stk < 1 ? "disabled" : null}
 			 min="1" max={props.stk}/><br/>

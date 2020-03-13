@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { changeDelivery } from '../../store/actions/other';
 import { Link } from 'react-router-dom';
@@ -21,17 +22,18 @@ class Cart extends Component {
 	}
 
 	render(){
-		// Define header
-		const header = "Your Cart";
-		document.title = header;
+
 		// Get full item info
 		let items = getItems(this.props.cart);
 		let total = getTotal(items);
 		
 		return (
 			<main id="cart">
+				<Helmet>
+					<title>Strange Flora - Cart</title>
+				</Helmet>
 				<div>
-					<h2>{header}{(items.length === 0) ? ' is empty' : null}</h2>
+					<h2>Your Cart{(items.length === 0) ? ' is empty' : null}</h2>
 				</div>
 				<div className="cart__list">
 					{items.map(item => (
@@ -41,8 +43,8 @@ class Cart extends Component {
 				<div style={{textAlign: 'right'}}>
 					<p className="cart__subtotal">Subtotal: ${total}</p>
 					<p>
-						Choose delivery option:
-						<select value={this.props.delivery} onChange={this.handleChange}>
+						<label htmlFor="deliveries">Choose delivery option:</label>
+						<select value={this.props.delivery} onChange={this.handleChange} id="deliveries" name="deliveries">
 							{deliveries.map((op,i) => (<option key={`del-op-${i}`} value={op.price}>{op.name} - ${op.price}</option>))}
 						</select>
 					</p>

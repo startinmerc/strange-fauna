@@ -1,11 +1,15 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 // Returns static about section
 
 function Returns(){
-	document.title = 'Returns';
+
 	return (
 		<main id='returns'>
+			<Helmet>
+				<title>Strange Flora - Returns</title>
+			</Helmet>
 			<h1 className="header">Returns</h1>
 			<div className="boxes">
 				<div className="box box__text">

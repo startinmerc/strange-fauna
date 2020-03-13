@@ -32,7 +32,8 @@
 	transition: filter 230ms ease-in;
 }
 
-.landing-section:hover .landing-section__image {
+.landing-section:hover .landing-section__image,
+.landing-section:focus-within .landing-section__image {
 	filter: blur(2px);
 }
 
@@ -62,7 +63,9 @@
 	display: none;
 }
 
-.landing-section__link:hover {
+.landing-section__link:hover,
+.landing-section__link:focus-within,
+.landing-section__link:focus {
 	background-color: var(--white);
 	color: var(--primary);
 }
@@ -89,12 +92,39 @@
 	transform: skewX(0deg) scaleX(0);
 }
 
+.landing-section:nth-of-type(odd):focus-within::before,
 .landing-section:nth-of-type(odd):hover::before {
 	transform: skewX(-45deg) scaleX(1);
 }
 
+.landing-section:nth-of-type(even):focus-within::before,
 .landing-section:nth-of-type(even):hover::before {
 	transform: skewX(45deg) scaleX(1);
+}
+
+/*==================Email CTA==================*/
+
+.cta {
+	background-color: var(--footer);
+	color: var(--white);
+	text-align: center;
+	margin-top: -3rem;
+	padding: 1rem;
+}
+
+.cta__button {
+	padding: 1rem;
+	font-size: 1.3rem;
+}
+
+.cta__button:focus,
+.cta__button:hover {
+	background-color: var(--primary);
+	color: var(--white);
+}
+
+.cta__content {
+	font-weight: lighter;
 }
 
 /*=============Responsive - Tablet=============*/
@@ -118,5 +148,8 @@
 	}
 	.landing-section::before {
 		transform-origin: bottom;
+	}
+	.cta {
+		margin-top: 0;
 	}
 }

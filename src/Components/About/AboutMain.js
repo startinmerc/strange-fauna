@@ -1,16 +1,18 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 
 // Returns static about element with links to other about sections
 
 class AboutMain extends React.Component {
-	componentDidMount() {
-		document.title = 'About';
-	}
+
 	render(){
 		return (
 			<main id="about">
-				<img alt="" src="https://images.unsplash.com/photo-1560241636-dcd877cb62ca?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"/>
+				<Helmet>
+					<title>Strange Flora - About Us</title>
+				</Helmet>
+				<img className="about__img" alt="" src="https://images.unsplash.com/photo-1560241636-dcd877cb62ca?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9"/>
 				<h1>About Us</h1>
 				<p>
 					Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
