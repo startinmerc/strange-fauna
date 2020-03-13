@@ -15,9 +15,21 @@
 }
 
 #mobile-menu .header-button {
-	border: none;
 	position: relative;
+}
+
+#mobile-menu .header-button__link {
+	border: none;
 	background: transparent;
+}
+
+#mobile-menu .header-button__link svg {
+	fill: var(--primary);
+	stroke: var(--black);
+}
+
+#mobile-menu .header-button__link.empty svg {
+	fill: transparent;
 }
 
 #mobile-menu .header-button::after {
@@ -50,15 +62,6 @@
 		transform: translate(-50%,-50%) scale(0);
 		opacity: 0;
 	}
-}
-
-#mobile-menu .header-button .icon {
-	fill: var(--primary);
-	stroke: var(--black);
-}
-
-#mobile-menu .header-button.empty .icon {
-	fill: none;
 }
 
 .mobile-menu__quantity {
