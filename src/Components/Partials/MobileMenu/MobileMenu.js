@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
-import Menu from '../../SVGs/Menu';
+import Hamburger from './Hamburger';
 import { categories } from '../../../seeds';
 import { animateIcon } from '../../../middleware';
 import './MobileMenu.css';
@@ -22,17 +22,13 @@ class MobileMenu extends Component {
 	}
 
 	componentDidUpdate(e){
-		animateIcon([e.cart,e.wish],[this.props.cart,this.props.wish]);
+		// call animateIcon;
 	}
 
 	showMenu(e){
 		this.setState({expanded: true}, () => {
 			document.addEventListener('click', this.closeMenu);
 		});
-		// Check to see if the button is pressed
-		let pressed = (e.target.parentNode.getAttribute("aria-pressed") === "true");
-		// Change aria-pressed to the opposite state
-		e.target.parentNode.setAttribute("aria-pressed", !pressed);
 	}
 
 	closeMenu(){
@@ -57,11 +53,11 @@ class MobileMenu extends Component {
 				</div>
 				<div className="mobile-menu__content">
 					<Link aria-label="Link to Wishlist" to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
-						<Star size={'2rem'} strokeWidth="2"/>
+						<Star size={'2rem'} strokeWidth="1"/>
 						{this.props.wish.length > 0 ? <div className="mobile-menu__quantity">({this.props.wish.length})</div> : null}
 					</Link>
 					<Link aria-label="Link to Cart" to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
-						<ShoppingCart size={'2rem'} strokeWidth="2"/>
+						<ShoppingCart size={'2rem'} strokeWidth="1"/>
 						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
 					</Link>
 					<Hamburger size={'2rem'} handleClick={this.showMenu} expanded={this.state.expanded}/>
