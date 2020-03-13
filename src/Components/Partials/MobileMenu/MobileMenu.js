@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
+import Hamburger from './Hamburger';
 import Menu from '../../SVGs/Menu';
 import { categories } from '../../../seeds';
 import { animateIcon } from '../../../middleware';
@@ -60,7 +61,7 @@ class MobileMenu extends Component {
 						<ShoppingCart size={'2rem'}/>
 						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
 					</Link>
-					<button onClick={this.showMenu}><Menu size={'2rem'}/></button>
+					<Hamburger size={'2rem'} handleClick={this.showMenu} expanded={this.state.expanded}/>
 				</div>
 			</div>
 		);
