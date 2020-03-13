@@ -5,7 +5,7 @@ import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
 import Hamburger from './Hamburger';
 import { categories } from '../../../seeds';
-import { animateIcon } from '../../../middleware';
+import MobileHeaderButton from './MobileHeaderButton';
 import './MobileMenu.css';
 
 // Returns sticky footer mobile menu with cart & wishlist buttons,
@@ -19,10 +19,6 @@ class MobileMenu extends Component {
 		}
 		this.showMenu = this.showMenu.bind(this);
 		this.closeMenu = this.closeMenu.bind(this);
-	}
-
-	componentDidUpdate(e){
-		// call animateIcon;
 	}
 
 	showMenu(e){
@@ -52,14 +48,16 @@ class MobileMenu extends Component {
 					{sections}
 				</div>
 				<div className="mobile-menu__content">
-					<Link aria-label="Link to Wishlist" to="/wishlist" id="header-wish" className={`header-button ${this.props.wish.length > 0 ? null : 'empty'}`}>
-						<Star size={'2rem'} strokeWidth="1"/>
-						{this.props.wish.length > 0 ? <div className="mobile-menu__quantity">({this.props.wish.length})</div> : null}
-					</Link>
-					<Link aria-label="Link to Cart" to="/cart" id="header-cart" className={`header-button ${this.props.cart.length > 0 ? null : 'empty'}`}>
-						<ShoppingCart size={'2rem'} strokeWidth="1"/>
-						{this.props.cart.length > 0 ? <div className="mobile-menu__quantity">({this.props.cart.length})</div> : null}
-					</Link>
+					<MobileHeaderButton 
+						headerIcon={<Star size={"2rem"} strokeWidth="1"/>}
+						id={'header-wish'}
+						url={'/wishlist'}
+						items={this.props.wish}/>
+					<MobileHeaderButton 
+						headerIcon={<ShoppingCart size={"2rem"} strokeWidth="1"/>}
+						id={'header-cart'}
+						url={'/cart'}
+						items={this.props.cart}/>
 					<Hamburger size={'2rem'} handleClick={this.showMenu} expanded={this.state.expanded}/>
 				</div>
 			</div>
