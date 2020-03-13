@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 const Hamburger = ({size=48, color="#000000", handleClick, expanded}) => {
   return (
