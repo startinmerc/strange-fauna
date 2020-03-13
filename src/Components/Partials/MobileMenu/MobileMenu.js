@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
 import Hamburger from './Hamburger';
-import Menu from '../../SVGs/Menu';
 import { categories } from '../../../seeds';
 import { animateIcon } from '../../../middleware';
 import './MobileMenu.css';
