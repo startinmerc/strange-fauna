@@ -34,7 +34,7 @@
 
 /*=============Responsive - Tablet=============*/
 
-@media(max-width: 800px){
+@media(max-width: 960px){
 	.product-list{
 		grid-template-columns: repeat(3,1fr);
 	}
