@@ -392,10 +392,17 @@ Version logs for the project are below...
 * Reflect variable/props changes in HeaderButton & children
 * Refactor animateIcon (To redo with React.ref())
 
+#### MobileMenu
+* Add Hamburger from Codepen
+* Replace old button with Hamburger
+* Create MobileHeaderButton for icons
+* Rework MobileHeaderButton styling
+
 ---
 
 ### ToDo...
 
+* Refactor MobileHeaderButton & HeaderButton?
 * move from cart to wish if in localstore & OoS
 * Pagination in products (after Mongo)
 * React Router Page transition on productlist
