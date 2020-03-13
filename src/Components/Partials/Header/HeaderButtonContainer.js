@@ -11,14 +11,14 @@ class HeaderButtonContainer extends Component {
 		return (
 			<div className="header__buttons-container">
 				<HeaderButton 
-				 headerIcon={<Star size={'24px'}/>}
+				 headerIcon={<Star size={'24px'} strokeWidth="2"/>}
 				 headerText={'Wishlist'}
 				 id={'header-wish'}
 				 url={'/wishlist'}
 				 path={"m 3,0 l 0,10 l 0,429 l 308,0 l 0,-429 l -160,0 l 0,-10"}
 				 items={getItems(this.props.wish)}/>
 				<HeaderButton 
-				 headerIcon={<ShoppingCart size={'24px'}/>}
+				 headerIcon={<ShoppingCart size={'24px'} strokeWidth="2"/>}
 				 headerText={'Cart'}
 				 id={'header-cart'}
 				 url={'/cart'}
