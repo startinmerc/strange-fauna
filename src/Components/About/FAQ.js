@@ -27,7 +27,6 @@ function Question(){
 };
 
 function FAQ(){
-
 	return (
 		<main id="faq">
 			<Helmet>
@@ -40,7 +39,7 @@ function FAQ(){
 				<Question />
 			</ul>
 		</main>
-	)
-}
+	);
+};
 
 export default FAQ;

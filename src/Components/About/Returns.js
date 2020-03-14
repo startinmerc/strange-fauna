@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 // Returns static about section
 
 function Returns(){
-
 	return (
 		<main id='returns'>
 			<Helmet>
@@ -28,7 +27,7 @@ function Returns(){
 				</div>
 			</div>
 		</main>
-	)
-}
+	);
+};
 
 export default Returns;

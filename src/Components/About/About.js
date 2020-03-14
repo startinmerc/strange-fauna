@@ -34,6 +34,6 @@ function About() {
 			</Route>
 		</Switch>
 	);
-}
+};
 
 export default About;

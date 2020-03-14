@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 // Returns static about section
 
 function Delivery(){
-
 	return (
 		<main id='delivery'>
 			<Helmet>
@@ -29,7 +28,7 @@ function Delivery(){
 				</div>
 			</div>
 		</main>
-	)
-}
+	);
+};
 
 export default Delivery;

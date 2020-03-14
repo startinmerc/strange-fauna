@@ -4,7 +4,6 @@ import { Helmet } from 'react-helmet';
 // Returns static about section
 
 function Disclaimer(){
-
 	return (
 		<main id="disclaimer">
 			<Helmet>
@@ -21,7 +20,7 @@ function Disclaimer(){
 				Capitalize on low hanging fruit to identify a ballpark value added activity to beta test. Override the digital divide with additional clickthroughs from DevOps. Nanotechnology immersion along the information highway will close the loop on focusing solely on the bottom line.
 			</p>
 		</main>
-	)
-}
+	);
+};
 
 export default Disclaimer;
