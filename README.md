@@ -393,10 +393,22 @@ Version logs for the project are below...
 * Refactor animateIcon (To redo with React.ref())
 
 #### MobileMenu
-* Add Hamburger from Codepen
+* Add Hamburger from (Codepen)[https://codepen.io/startinmerc/pen/vYOWvQM]
 * Replace old button with Hamburger
 * Create MobileHeaderButton for icons
 * Rework MobileHeaderButton styling
+
+### V0.8
+
+#### Functional Components (the easy ones)
+* Convert About components to functions
+* Convert NavSection components to functions
+* Convert Footer component to function
+* Convert most Header components to functions
+* Convert ProductCard component to function
+
+#### Functional Components (the harder ones)
+...
 
 ---
 
@@ -409,4 +421,3 @@ Version logs for the project are below...
 * Showing/hiding components transitions
 * Review semantic HTML
 * Install & config Prettier
-* Convert all components to functions w/ hooks
