@@ -1,19 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 
-function Question(){
-
-	function handleClick(e){
-		// Check to see if the button is pressed
-		let pressed = (e.target.getAttribute("aria-pressed") === "true");
-		// Change aria-pressed to the opposite state
-		e.target.setAttribute("aria-pressed", !pressed);
-		// Add expanded class to <li>
-		e.target.parentNode.classList.toggle('expanded');
-		// Set focus to revealed answer
-		if(pressed){e.target.parentNode.lastChild.focus()};
-	}
-
+function Question({handleClick}){
 	return (
 		<li className="question">
 			<button className="question__header display" onClick={handleClick}
@@ -27,6 +15,18 @@ function Question(){
 };
 
 function FAQ(){
+
+	function handleClick(e){
+		// Check to see if the button is pressed
+		let pressed = (e.target.getAttribute("aria-pressed") === "true");
+		// Change aria-pressed to the opposite state
+		e.target.setAttribute("aria-pressed", !pressed);
+		// Add expanded class to <li>
+		e.target.parentNode.classList.toggle('expanded');
+		// Set focus to revealed answer
+		if(pressed){e.target.parentNode.lastChild.focus()};
+	}
+
 	return (
 		<main id="faq">
 			<Helmet>
@@ -34,9 +34,9 @@ function FAQ(){
 			</Helmet>
 			<h1>FAQ</h1>
 			<ul className="faq-list">
-				<Question />
-				<Question />
-				<Question />
+				<Question handleClick={handleClick}/>
+				<Question handleClick={handleClick}/>
+				<Question handleClick={handleClick}/>
 			</ul>
 		</main>
 	);
