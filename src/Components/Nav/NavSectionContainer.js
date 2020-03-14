@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './NavSectionContainer.css';
 import NavSection from './NavSection';
 import { categories } from '../../seeds';

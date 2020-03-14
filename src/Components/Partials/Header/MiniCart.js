@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import MiniCartItem from './MiniCartItem';
 import { connect } from "react-redux";
 import { removeWish } from '../../../store/actions/wish';

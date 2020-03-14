@@ -24,8 +24,8 @@ class AddToCart extends Component {
 			this.props.addCart(id,qty);
 			// Take added qty from available stock
 			updateStock(id,(qty*-1));
-		}
-	}
+		};
+	};
 
 	render(){
 		// If filtered cart by props.id is non-zero
@@ -39,13 +39,13 @@ class AddToCart extends Component {
 				{inCart ? 'Remove from Cart' : this.props.stk > 0 ? 'Add to Cart' : 'Out of Stock'}
 			</button>
 		);
-	}
-}
+	};
+};
 
 function mapStateToProps(reduxState) {
 	return {
 		cart: reduxState.cart.cart
 	};
-}
+};
 
 export default connect(mapStateToProps, { addCart, removeCart })(AddToCart);

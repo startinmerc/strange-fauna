@@ -11,7 +11,7 @@ import { getItem, updateStock } from '../../middleware';
 // Expects no props,
 // Returns full product detail page
 
-function ProductDetail(props) {
+function ProductDetail({cart}) {
 	// get product id from url
 	let { id } = useParams();
 	// retrieve product info using middleware
@@ -23,7 +23,7 @@ function ProductDetail(props) {
 	// calculate average review
 	const avgReview = ((item.reviews.reduce((acc,review)=>(acc+review.score),0))/item.reviews.length).toFixed(1)
 	// find if in cart
-	const inCart = props.cart.includes(Number(id));
+	const inCart = cart.includes(Number(id));
 	// update quantity on input change
 	function handleChange(e){
 		setQty(e.target.value);
@@ -34,7 +34,7 @@ function ProductDetail(props) {
 	// update quantity in cart on click
 	function handleClick(e){
 		updateStock(item.id, qty);
-		props.editCart(item.id, qty);
+		editCart(item.id, qty);
 	}
 
 	React.useEffect(()=>{
@@ -62,7 +62,7 @@ function ProductDetail(props) {
 					 min="1" max={item.stock}/>
 					&nbsp;
 					{/*render quantity update if product in cart*/}
-					{props.cart.includes(item.id) ? 
+					{cart.includes(item.id) ? 
 						<button onClick={handleClick}>Update Quantity</button>
 						 : null}
 					<br/><AddToCart id={item.id} qty={qty} stk={item.stock}/>
@@ -103,14 +103,13 @@ function ProductDetail(props) {
 			</ul>
 		</main>
 	);
-}
+};
 
 function mapStateToProps(reduxState){
 	return {
 		// reduce cart item objects to array of ids
 		cart: reduxState.cart.cart.map((v)=>(v.id))
-	}
-}
-
+	};
+};
 
 export default connect(mapStateToProps, { editCart })(ProductDetail);

@@ -51,9 +51,9 @@ class ProductList extends Component {
 					{renderList}
 				</div>
 			</main>
-		)
-	}
-}
+		);
+	};
+};
 
 function mapStateToProps(reduxState){
 	return {

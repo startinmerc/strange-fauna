@@ -20,8 +20,8 @@ export function getItem(id){
 	// returns item object
 	return seeds.products.find(
 		(item)=>(item.id === Number(id))
-	)
-}
+	);
+};
 
 // expects array of item objects
 export function getTotal(list){
@@ -29,18 +29,18 @@ export function getTotal(list){
 	return list.reduce((acc,item)=>(
 		acc + item.price * item.qty),0
 	);
-}
+};
 
 // no variables expected
 export function isMobile(){
 	// returns boolean if screen < 600px
 	return window.innerWidth < 600;
-}
+};
 
 export function validateEmail(email) {
 	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 	return re.test(String(email).toLowerCase());
-}
+};
 
 
 // expects ID of button to animate
@@ -52,7 +52,7 @@ export function animateIcon(elementID){
 	element.addEventListener('animationend',()=>{
 		element.classList.remove('updated');
 	});
-}
+};
 
 // Expects item ID, quantity to update by (can be negative)
 export function updateStock(id,qty) {
@@ -60,4 +60,4 @@ export function updateStock(id,qty) {
 	let prod = getItem(id);
 	// Add qty to stock
 	prod.stock += Number(qty);
-}
+};

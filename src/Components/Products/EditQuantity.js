@@ -10,7 +10,7 @@ function EditQuantity(props){
 	// update 'state' on value change
 	function handleChange(e){
 		setQty(Number(e.target.value));
-	}	
+	};
 
 	// prevent page refresh, fire editCart action with
 	// id from prop, quantity from 'state'
@@ -18,7 +18,7 @@ function EditQuantity(props){
 		e.preventDefault();
 		updateStock(props.id, qty);
 		props.editCart(props.id, qty);
-	}
+	};
 
 	return (
 		<form onSubmit={handleSubmit}>
@@ -28,7 +28,7 @@ function EditQuantity(props){
 			 disabled={props.stk < 1 ? "disabled" : null}
 			 min="1" max={props.stk}/><br/>
 			<button type="submit" style={{width: '100%'}}>Change Quantity</button>
-		 </form>
+		</form>
 	);
 };
 

@@ -3,7 +3,7 @@ const products = [], landingSections = [];
 export const deliveries = [
 	{name: 'Premium', price: 50},
 	{name: 'Standard', price: 20}
-]
+];
 
 export const categories = [
 	{title: 'Mushrooms', section: 'mushroom', color: 'var(--mushroom)'},
@@ -26,7 +26,7 @@ for(let i=0;i<40;i++){
 		type: t,
 		stock: Math.floor(Math.random()*20)
 	});
-}
+};
 
 addToLanding(
 	false,
@@ -35,7 +35,7 @@ addToLanding(
 	'https://images.unsplash.com/photo-1528518290605-1fcc8dcca204?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
 	'mushroom',
 	[{title: 'Shop Now', link: '/products/mushrooms'},{title: 'Shop Later', link: '/products/mushrooms'}]
-)
+);
 addToLanding(
 	true,
 	'Berry Special',
@@ -43,7 +43,7 @@ addToLanding(
 	'https://images.unsplash.com/photo-1445197138520-6099f1c07aa0?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
 	'berry',
 	[{title: 'Shop Now', link: '/products/berries'},{title: 'Shop Later', link: '/products/berries'}]
-)
+);
 addToLanding(
 	false,
 	'Lovely Lovely Flowers',
@@ -51,7 +51,7 @@ addToLanding(
 	'https://images.unsplash.com/photo-1567748157439-651aca2ff064?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9',
 	'flower',
 	[{title: 'Shop Now', link: '/products/flowers'},{title: 'Shop Later', link: '/products/flowers'}]
-)
+);
 
 function addToLanding(dark,header,copy,image,type,links){
 	landingSections.push({
@@ -61,12 +61,12 @@ function addToLanding(dark,header,copy,image,type,links){
 		image: image,
 		links: links,
 		type: type
-	})
-}
+	});
+};
 
 const seeds = {
 	products: products,
 	landingSections: landingSections
-}
+};
 
 export default seeds;

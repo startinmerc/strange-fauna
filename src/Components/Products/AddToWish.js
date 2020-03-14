@@ -17,7 +17,7 @@ class AddToWish extends Component {
 		} else {
 			this.props.addWish(id, 1);
 		}
-	}
+	};
 
 	render(){
 		let inWish = this.props.wish.includes(this.props.id);
@@ -34,8 +34,8 @@ class AddToWish extends Component {
 					<Star size={30}/>
 				</button>
 		)};
-	}
-}
+	};
+};
 
 function mapStateToProps(reduxState) {
 	return {
