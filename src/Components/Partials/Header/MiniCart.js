@@ -7,35 +7,32 @@ import { removeCart } from '../../../store/actions/cart';
 // Returns MiniCart with MiniCartItem children,
 // expects array of IDs & type 'Cart' or 'Wishlist'.
 
-class MiniCart extends Component {
+function MiniCart({items, type, removeCart, removeWish}) {
 
-	handleRemove(id, type){
+	function handleRemove(id, type){
 		if (type==='Cart') {
-			this.props.removeCart(id);
+			removeCart(id);
 		} else if (type==='Wishlist') {
-			this.props.removeWish(id);
+			removeWish(id);
 		};
 	};
-
-	render(){
 
 		return (
 			<ul className="mini-cart">
 				{
 					// If cart is non-empty
-					(this.props.items.length > 0) ? 
+					(items.length > 0) ? 
 						// Map cart to MiniCartItems & bind remove function to item's ID 
-						this.props.items.map((item)=>(
+						items.map((item)=>(
 							<MiniCartItem key={`mini-${item.type}-${item.id}`} 
 							 item={item} remove={
-							 	this.handleRemove.bind(this, item.id, this.props.type)
+							 	handleRemove.bind(this, item.id, type)
 							 }/>
 					// Otherwise returns text
 					)) : <li>'Empty!'</li>
 				}
 			</ul>
 		);
-	};
 };
 
 export default connect(null, { removeWish, removeCart })(MiniCart);
