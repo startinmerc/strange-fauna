@@ -5,17 +5,16 @@ import { categories } from '../../seeds';
 
 // Returns element containing nav sections with hover menus
 
-class NavSectionContainer extends Component {
-	render(){
-		const sections = categories.map((section,index)=>(
-			<NavSection key={'nav-section-'+index} {...section}/>
-		 ));
-		return(
-			<ul className="nav-section__container" role="navigation">
-				{sections}
-			</ul>
-		);
-	}
+function NavSectionContainer() {
+	const sections = categories.map((section,index)=>(
+		<NavSection key={'nav-section-'+index} {...section}/>
+	 ));
+
+	return(
+		<ul className="nav-section__container" role="navigation">
+			{sections}
+		</ul>
+	);
 }
 
 export default NavSectionContainer;
