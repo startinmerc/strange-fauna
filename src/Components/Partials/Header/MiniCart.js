@@ -29,7 +29,7 @@ function MiniCart({items, type, removeCart, removeWish}) {
 							 	handleRemove.bind(this, item.id, type)
 							 }/>
 					// Otherwise returns text
-					)) : <li>'Empty!'</li>
+					)) : <li>Your {type} is empty!</li>
 				}
 			</ul>
 		);
