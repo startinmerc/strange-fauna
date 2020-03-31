@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { changeDelivery } from '../../store/actions/other';

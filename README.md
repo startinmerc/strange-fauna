@@ -406,9 +406,13 @@ Version logs for the project are below...
 * Convert Footer component to function
 * Convert most Header components to functions
 * Convert ProductCard component to function
+* Convert App component to function
 
 #### Functional Components (the harder ones)
-...
+* Convert Cart component to function
+* Convert Checkout component to function
+* Convert MobileMenu component to function
+* Convert ProductList component to function
 
 ---
 
