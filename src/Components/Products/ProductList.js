@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { getItems } from "../../middleware";
@@ -11,7 +11,7 @@ import './ProductList.css';
 
 const ProductList = ({ type, wish, title })=> {
 
-	const [products, setProducts] = useState(seeds.products);
+	const products = seeds.products;
 	const header = title || `Showing ${type} products`;
 	let list;
 
