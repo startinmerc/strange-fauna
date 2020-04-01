@@ -1,6 +1,7 @@
-import React from 'react';
+ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
+import { fetchProducts } from "../../store/actions/products";
 import { getItems } from "../../middleware";
 import ProductCard from './ProductCard';
 import seeds from '../../seeds';
@@ -9,9 +10,18 @@ import './ProductList.css';
 // Expects 'type' string as prop, either all, wish or product category, and title string
 // Returns main element with responsive grid display of products
 
-const ProductList = ({ type, wish, title })=> {
-
-	const products = seeds.products;
+const ProductList = ({ type, wish, title, fetchProducts, products })=> {
+	React.useEffect(()=>{
+		// switch(type){
+		// 	case "all":
+		// 		return fetchProducts();
+		// 	case "wish":
+		// 		return getItems(wish);
+		// 	default:
+		// 		return getCategoryProducts(type);
+		// }
+		fetchProducts()
+	},[]);
 	const header = title || `Showing ${type} products`;
 	let list;
 
@@ -50,8 +60,9 @@ const ProductList = ({ type, wish, title })=> {
 
 function mapStateToProps(reduxState){
 	return {
-		wish: reduxState.wish.wish
+		wish: reduxState.wish.wish,
+		products: reduxState.products
 	};
 };
 
-export default connect(mapStateToProps)(ProductList);
+export default connect(mapStateToProps, { fetchProducts })(ProductList);
