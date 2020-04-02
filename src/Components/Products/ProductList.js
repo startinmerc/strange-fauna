@@ -1,46 +1,31 @@
- import React from 'react';
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
-import { fetchProducts } from "../../store/actions/products";
+import { fetchProducts, fetchCategoryProducts } from "../../store/actions/products";
 import { getItems } from "../../middleware";
 import ProductCard from './ProductCard';
-import seeds from '../../seeds';
 import './ProductList.css';
 
 // Expects 'type' string as prop, either all, wish or product category, and title string
 // Returns main element with responsive grid display of products
 
-const ProductList = ({ type, wish, title, fetchProducts, products })=> {
+const ProductList = ({ type, wish, title, fetchProducts, products, fetchCategoryProducts })=> {
+
 	React.useEffect(()=>{
-		// switch(type){
-		// 	case "all":
-		// 		return fetchProducts();
-		// 	case "wish":
-		// 		return getItems(wish);
-		// 	default:
-		// 		return getCategoryProducts(type);
-		// }
-		fetchProducts()
-	},[]);
+		function getList(type){
+			if(type==="all"){
+				fetchProducts();
+			} else {
+				fetchCategoryProducts(type);
+			}
+		}
+		getList(type);
+	},[type]);
+
 	const header = title || `Showing ${type} products`;
-	let list;
 
-	switch(type){
-		case "all":
-			list = products;
-			break;
-		case "wish":
-			list = getItems(wish);
-			break;
-		default:
-			list = products.filter((p)=>{
-				return p.type === type;
-			});
-			break;
-	}
-
-	var renderList = list.map((prod, i)=>{
-		return <ProductCard detail={prod} key={`prod-${prod.id}`} delay={i} />
+	const renderList = products.map((prod, i)=>{
+		return <ProductCard detail={prod} key={prod._id} delay={i} />
 	});
 
 	return (
@@ -49,7 +34,7 @@ const ProductList = ({ type, wish, title, fetchProducts, products })=> {
 				<title>Strange Flora - {header}</title>
 			</Helmet>
 			<div className="product-list__header" style={{backgroundColor: `var(--${type})`}}>
-				<h2>{header}{list.length < 1 ? ' is empty' : null}</h2>
+				<h2>{header}{products.length < 1 ? ' is empty' : null}</h2>
 			</div>
 			<div className="product-list">
 				{renderList}
@@ -58,11 +43,11 @@ const ProductList = ({ type, wish, title, fetchProducts, products })=> {
 	);
 };
 
-function mapStateToProps(reduxState){
+function mapStateToProps(state){
 	return {
-		wish: reduxState.wish.wish,
-		products: reduxState.products
+		wish: state.wish.wish,
+		products: state.products
 	};
 };
 
-export default connect(mapStateToProps, { fetchProducts })(ProductList);
+export default connect(mapStateToProps, { fetchProducts, fetchCategoryProducts })(ProductList);
