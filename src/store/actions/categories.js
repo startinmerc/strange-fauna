@@ -1,14 +1,9 @@
 import { apiCall } from "../../services/api";
-import { LOAD_CATEGORIES, LOAD_CATEGORY_PRODUCTS } from "../actionTypes";
+import { LOAD_CATEGORIES } from "../actionTypes";
 
 export const loadCategories = categories => ({
 	type: LOAD_CATEGORIES,
 	categories
-});
-
-export const loadCategoryProducts = products => ({
-	type: LOAD_CATEGORY_PRODUCTS,
-	products
 });
 
 export const fetchCategories = () => {
@@ -19,10 +14,3 @@ export const fetchCategories = () => {
 	};
 };
 
-export const fetchCategoryProducts = category => {
-	return dispatch => {
-		return apiCall("get", `/api/categories/${category}/products`)
-			.then(res => dispatch(loadCategoryProducts(res)))
-			.catch(err => dispatch(err.message));
-	};
-};
