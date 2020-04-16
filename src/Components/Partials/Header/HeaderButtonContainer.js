@@ -5,7 +5,8 @@ import ShoppingCart from '../../SVGs/ShoppingCart';
 import { getItems, getTotal } from '../../../middleware';
 import HeaderButton from './HeaderButton';
 
-function HeaderButtonContainer({wish,cart}) {
+const HeaderButtonContainer = ({wish,cart}) => {
+
 	return (
 		<div className="header__buttons-container">
 			<HeaderButton 
@@ -14,14 +15,14 @@ function HeaderButtonContainer({wish,cart}) {
 			 id={'header-wish'}
 			 url={'/wishlist'}
 			 path={"m 3,0 l 0,10 l 0,429 l 308,0 l 0,-429 l -160,0 l 0,-10"}
-			 items={getItems(wish)}/>
+			 items={wish}/>
 			<HeaderButton 
 			 headerIcon={<ShoppingCart size={'24px'} strokeWidth="2"/>}
 			 headerText={'Cart'}
 			 id={'header-cart'}
 			 url={'/cart'}
 			 path={"m 311,0 l 0,10 l 0,429 l -308,0 l 0,-429 l 160,0 l 0,-10"}
-			 items={getItems(cart)} total={getTotal(getItems(cart))}/>
+			 items={cart} total={getTotal(getItems(cart))}/>
 		</div>
 	);
 }
