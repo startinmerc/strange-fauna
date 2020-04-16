@@ -19,6 +19,7 @@ const ProductList = ({ type, wish, title, fetchProducts, products, fetchCategory
 			}
 		}
 		getList(type);
+		return function cleanUp(){products=[];}
 	},[type]);
 
 	const header = title || `Showing ${type} products`;
