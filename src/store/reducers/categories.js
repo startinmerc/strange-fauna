@@ -1,4 +1,4 @@
-import { LOAD_CATEGORIES, LOAD_CATEGORY_PRODUCTS } from "../actionTypes";
+import { LOAD_CATEGORIES } from "../actionTypes";
 
 const categories = (state=[],action) => {
 	switch(action.type){
