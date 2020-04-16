@@ -16,12 +16,12 @@ function ProductCard({type, detail, delay=0}) {
 				<div className="product-card product-card--cart">
 					<img className="product-card__image" src={detail.photos[0]} alt={detail.name}/>
 						<p className="display">
-							<Link to={`/products/${detail.id}`}>
+							<Link to={`/products/${detail._id}`}>
 								{detail.name}
 							</Link>
 						</p>
-						<AddToCart id={detail.id} stk={detail.stock}/>
-						<EditQuantity id={detail.id} qty={detail.qty} stk={detail.stock}/>
+						<AddToCart id={detail._id} stk={detail.stock}/>
+						<EditQuantity id={detail._id} qty={detail.qty} stk={detail.stock}/>
 						<p className="product-card__price">{detail.qty} x ${detail.price}</p>
 				</div>
 			);
@@ -29,17 +29,17 @@ function ProductCard({type, detail, delay=0}) {
 			// Nav Section ProductCard
 			return (
 				<div className="product-card product-card--nav">
-					<AddToWish id={detail.id}/>
-					<Link to={`/products/${detail.id}`}>
+					<AddToWish id={detail._id}/>
+					<Link to={`/products/${detail._id}`}>
 						<img className="product-card__image" src={detail.photos[0]} alt={detail.name}/>
 					</Link>
 					<div className="product-card__text">
-						<Link to={`/products/${detail.id}`}>
+						<Link to={`/products/${detail._id}`}>
 							<h5>{detail.name}</h5>
 						</Link>
 						 <h5>${detail.price}</h5>
 					</div>
-					<AddToCart id={detail.id} stk={detail.stock}/>
+					<AddToCart id={detail._id} stk={detail.stock}/>
 				</div>
 			);
 		default:
@@ -49,17 +49,17 @@ function ProductCard({type, detail, delay=0}) {
 					backgroundColor: `var(--${detail.type})`,
 					animationDelay: `${delay*100}ms`
 				}}>
-					<AddToWish id={detail.id}/>
-					<Link to={`/products/${detail.id}`}>
+					<AddToWish id={detail._id}/>
+					<Link to={`/products/${detail._id}`}>
 						<img className="product-card__image" src={detail.photos[0]} alt={detail.name}/>
 					</Link>
 					<div className="product-card__text">
-						<Link to={`/products/${detail.id}`}>
+						<Link to={`/products/${detail._id}`}>
 							<h5>{detail.name}</h5>
 						</Link>
 						 <h5>${detail.price}</h5>
 					</div>
-					<AddToCart id={detail.id} stk={detail.stock}/>
+					<AddToCart id={detail._id} stk={detail.stock}/>
 				</div>
 			);
 	};
