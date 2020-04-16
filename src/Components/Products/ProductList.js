@@ -46,7 +46,7 @@ const ProductList = ({ type, wish, title, fetchProducts, products, fetchCategory
 function mapStateToProps(state){
 	return {
 		wish: state.wish.wish,
-		products: state.products
+		products: state.products.products
 	};
 };
 

@@ -1,13 +1,18 @@
 import { LOAD_PRODUCTS, LOAD_ONE_PRODUCT, LOAD_CATEGORY_PRODUCTS } from "../actionTypes";
 
-const products = (state=[],action) => {
+const DEFAULT_STATE = {
+	products: [],
+	foundProduct: {}
+}
+
+const products = (state=DEFAULT_STATE,action) => {
 	switch(action.type){
 		case LOAD_PRODUCTS:
-			return [...action.products];
+			return {...state, products: [...action.products]};
 		case LOAD_CATEGORY_PRODUCTS:
-			return [...action.products];
+			return {...state, products: [...action.products]};
 		case LOAD_ONE_PRODUCT:
-			return [action.product];
+			return {...state, foundProduct: action.product};
 		default:
 			return state;
 	};
