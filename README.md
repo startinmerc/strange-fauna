@@ -414,6 +414,18 @@ Version logs for the project are below...
 * Convert MobileMenu component to function
 * Convert ProductList component to function
 
+### V1.0 - BACKEND INTEGRATION
+
+#### Redux prep
+* Install thunk & axios
+* Add api call function service worker
+* Add proxy to package.json
+
+#### Get Products
+* Add Products Reducers, Actions files
+* Add fetch & load functions to get all/category products
+* UseEffect in ProductList
+
 ---
 
 ### ToDo...
