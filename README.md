@@ -426,6 +426,12 @@ Version logs for the project are below...
 * Add fetch & load functions to get all/category products
 * UseEffect in ProductList
 
+#### MiniWishPop
+* Add pop by id to mini wish item
+* Clear previous non-api functions
+* *this could be a lot better*
+
+
 ---
 
 ### ToDo...
