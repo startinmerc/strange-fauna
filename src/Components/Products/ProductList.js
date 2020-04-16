@@ -13,12 +13,15 @@ const ProductList = ({ type, wish, title, fetchProducts, products, fetchCategory
 	React.useEffect(()=>{
 		function getList(type){
 			if(type==="all"){
+				// API call to load all products to Redux state
 				fetchProducts();
 			} else {
-				fetchCategoryProducts(type);
+				// API call to load category products to Redux state
+				fetchCategoryProducts(type);				
 			}
 		}
 		getList(type);
+		// ComponentWillUnmount function to empty products array
 		return function cleanUp(){products=[];}
 	},[type]);
 
