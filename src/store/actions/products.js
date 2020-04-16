@@ -29,7 +29,7 @@ export const fetchOneProduct = product_id => {
 	return dispatch => {
 		return apiCall("get", `/api/products/${product_id}`)
 			.then(res => dispatch(loadOneProduct(res)))
-			.catch(err => dispatch(err.message));
+			.catch(err => console.log(err));
 	};
 };
 
