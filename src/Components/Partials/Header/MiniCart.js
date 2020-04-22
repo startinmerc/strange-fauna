@@ -25,7 +25,7 @@ function MiniCart({items, type, removeCart, removeWish}) {
 						// Map cart to MiniCartItems & bind remove function to item's ID 
 						items.map((item)=>(
 							<MiniCartItem key={`mini-${type}-${item.id}`} 
-							 id={item.id} remove={handleRemove}
+							 item={item} remove={handleRemove}
 							 type={type}/>
 					// Otherwise returns text
 					)) : <li>Your {type} is empty!</li>

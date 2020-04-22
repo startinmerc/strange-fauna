@@ -5,8 +5,8 @@ import { apiCall } from "../../../services/api";
 // Expects item object with product data, and remove function
 // Returns styled li with bound remove function & link to product detail
 
-const MiniCartItem = ({id, remove, type})=>{
-	const [item,updateItem] = React.useState({
+const MiniCartItem = ({item, remove, type})=>{
+	const [foundItem,updateItem] = React.useState({
 		type: "",
 		_id: "",
 		price: "",
@@ -20,22 +20,22 @@ const MiniCartItem = ({id, remove, type})=>{
 				.then(res=> updateItem(res))
 				.catch(err=> console.log(err));
 		}
-		popItem(id);
-	},[id]);
+		popItem(item.id);
+	},[item]);
 	
 	return (
 		<li className="mini-cart__item"
 		 style={{
 		 	// Background color based on product type
-		 	backgroundColor: `var(--${item.type})`,
-		 	background: `linear-gradient(90deg, var(--header) 5%, var(--${item.type}) 50%)`
+		 	backgroundColor: `var(--${foundItem.type})`,
+		 	background: `linear-gradient(90deg, var(--header) 5%, var(--${foundItem.type}) 50%)`
 		 }}>
 			<div className="mini-cart__item-text">
-				<p className="display"><Link to={`/products/${item._id}`}>{item.name}</Link></p>
-				<p>${item.price} x {item.qty}</p>
-				<p><button onClick={()=>{remove(id, type)}}>Remove</button></p>
+				<p className="display"><Link to={`/products/${item.id}`}>{foundItem.name}</Link></p>
+				<p>${foundItem.price}{(type === "Cart") ? `x ${item.qty}` : null}</p>
+				<p><button onClick={()=>{remove(item.id, type)}}>Remove</button></p>
 			</div>
-			<img className="mini-cart__item-image" src={item.photos[0]} alt="" />
+			<img className="mini-cart__item-image" src={foundItem.photos[0]} alt="" />
 		</li>
 	);
 };
