@@ -5,7 +5,7 @@ import { apiCall } from "../../../services/api";
 // Expects item object with product data, and remove function
 // Returns styled li with bound remove function & link to product detail
 
-const MiniCartItem = ({id, remove})=>{
+const MiniCartItem = ({id, remove, type})=>{
 	const [item,updateItem] = React.useState({
 		type: "",
 		_id: "",
@@ -33,7 +33,7 @@ const MiniCartItem = ({id, remove})=>{
 			<div className="mini-cart__item-text">
 				<p className="display"><Link to={`/products/${item._id}`}>{item.name}</Link></p>
 				<p>${item.price} x {item.qty}</p>
-				<p><button onClick={remove}>Remove</button></p>
+				<p><button onClick={()=>{remove(id, type)}}>Remove</button></p>
 			</div>
 			<img className="mini-cart__item-image" src={item.photos[0]} alt="" />
 		</li>
