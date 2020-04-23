@@ -21,7 +21,7 @@ const HeaderButtonContainer = ({wish,cart}) => {
 			 id={'header-cart'}
 			 url={'/cart'}
 			 path={"m 311,0 l 0,10 l 0,429 l -308,0 l 0,-429 l 160,0 l 0,-10"}
-			 items={cart} total={getTotal(getItems(cart))}/>
+			 items={cart.cart} total={cart.total}/>
 		</div>
 	);
 }
@@ -29,7 +29,7 @@ const HeaderButtonContainer = ({wish,cart}) => {
 function mapStateToProps(reduxState) {
 	return {
 		wish: reduxState.wish.wish,
-		cart: reduxState.cart.cart
+		cart: reduxState.cart
 	};
 }
 
