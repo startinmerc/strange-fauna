@@ -22,8 +22,8 @@ const ProductList = ({ type, wish, title, fetchProducts, products, fetchCategory
 		}
 		getList(type);
 		// ComponentWillUnmount function to empty products array
-		return function cleanUp(){products=[];}
-	},[type]);
+		// return function cleanUp(){products=[];}
+	},[type, fetchProducts, fetchCategoryProducts]);
 
 	const header = title || `Showing ${type} products`;
 
