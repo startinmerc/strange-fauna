@@ -20,7 +20,7 @@ function ProductCard({type, detail, delay=0}) {
 								{detail.name}
 							</Link>
 						</p>
-						<AddToCart id={detail._id} stk={detail.stock}/>
+						<AddToCart price={detail.price} id={detail._id} stk={detail.stock}/>
 						<EditQuantity id={detail._id} qty={detail.qty} stk={detail.stock}/>
 						<p className="product-card__price">{detail.qty} x ${detail.price}</p>
 				</div>
@@ -39,7 +39,7 @@ function ProductCard({type, detail, delay=0}) {
 						</Link>
 						 <h5>${detail.price}</h5>
 					</div>
-					<AddToCart id={detail._id} stk={detail.stock}/>
+					<AddToCart price={detail.price} id={detail._id} stk={detail.stock}/>
 				</div>
 			);
 		default:
@@ -59,7 +59,7 @@ function ProductCard({type, detail, delay=0}) {
 						</Link>
 						 <h5>${detail.price}</h5>
 					</div>
-					<AddToCart id={detail._id} stk={detail.stock}/>
+					<AddToCart price={detail.price} id={detail._id} stk={detail.stock}/>
 				</div>
 			);
 	};

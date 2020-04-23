@@ -13,7 +13,7 @@ class AddToCart extends Component {
 		qty: 1
 	};
 
-	handleClick(id, qty,inCart){
+	handleClick(id, qty,inCart, price){
 		if(inCart){
 			// Take obj from cart (Redux)
 			this.props.removeCart(id);
@@ -24,6 +24,7 @@ class AddToCart extends Component {
 			this.props.addCart(id,qty);
 			// Take added qty from available stock
 			updateStock(id,(qty*-1));
+			this.props.addCart(id,qty,price);
 		};
 	};
 
@@ -35,7 +36,7 @@ class AddToCart extends Component {
 		return (
 			<button className={`add-to-cart ${inCart ? 'cart--added' : ''}`}
 			 disabled={this.props.stk < 1 && !inCart ? "disabled" : null}
-			 onClick={this.handleClick.bind(this, this.props.id, this.props.qty, inCart)}>
+			 onClick={this.handleClick.bind(this, this.props.id, this.props.qty, inCart, this.props.price)}>
 				{inCart ? 'Remove from Cart' : this.props.stk > 0 ? 'Add to Cart' : 'Out of Stock'}
 			</button>
 		);
