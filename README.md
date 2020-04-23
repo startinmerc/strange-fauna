@@ -426,11 +426,17 @@ Version logs for the project are below...
 * Add fetch & load functions to get all/category products
 * UseEffect in ProductList
 
-#### MiniWishPop
-* Add pop by id to mini wish item
+#### Wishlist
+* Add pop by id to MiniCartItem
 * Clear previous non-api functions
 * *this could be a lot better*
 
+#### Cart
+* Move remove handler to MiniCartItem
+* Pass full id/qty object to MiniCartItem
+* Add price to Cart actions, reducer
+* Include total in Redux Cart, handle through reducer
+* Add price to AddToCart & props
 
 ---
 
