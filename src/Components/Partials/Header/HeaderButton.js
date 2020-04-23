@@ -17,8 +17,11 @@ class HeaderButton extends Component {
 	}
 
 	render(){
+
 		const { headerIcon, headerText, id, url, path, items, total } = this.props;
 		const isEmpty = items.length === 0;
+		const showTotal = !isEmpty && total !== undefined;
+
 		return (
 			<div className="header-button" id={id}>
 				{/*Add/remove empty class from button*/}
@@ -26,7 +29,7 @@ class HeaderButton extends Component {
 					{/*render relevant icon, text, length*/}
 					{headerIcon}{headerText}{` (${items.length})`}
 					{/*Adds subtotal if cart*/}
-					{!isEmpty && total && `: $${total}`}
+					{showTotal && `: $${total}`}
 				</Link>
 				<svg className="minicart__svg" viewBox="0 0 314 443" role="img" aria-hidden="true">
 					<path d={path} pathLength="1"/>
