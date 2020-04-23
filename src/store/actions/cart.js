@@ -1,10 +1,11 @@
 import { ADD_CART, REMOVE_CART, EDIT_CART_QTY } from "../actionTypes";
 
-export const addCart = (id,qty)=>(
+export const addCart = (id,qty,price)=>(
 	{
 		type: ADD_CART,
 		id,
-		qty
+		qty,
+		price
 	}
 );
 
