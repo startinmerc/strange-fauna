@@ -441,7 +441,22 @@ Version logs for the project are below...
 #### Display Wishlist
 * Build Wishlist component
 * Populate list from ids using apiCall
-* *also to be fixed*
+
+#### Redux Search
+* Modify fetchOneProduct to add to Products.search array
+* Add Clear function to clear results of search on component unmount
+* Add to Wishlist to replace apiCall
+
+#### GetCategories
+* API call to get category objects
+* Change backend to sort response
+* Swap static seeds in Nav
+* Swap static seeds in MobileMenu
+
+#### NavSection Products
+* Remove static seeds
+* Add fatchProducts, filter & pass to sections
+* *Needs fixing, overrides products redux state*
 
 ---
 
