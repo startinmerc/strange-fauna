@@ -12,6 +12,7 @@ const Wishlist = ({ wish, search, fetchOneProduct, clearSearch })=> {
 		async function pop(id) {
 			await fetchOneProduct(id);
 		}
+		clearSearch();
 		wish.forEach(v=>{
 			pop(v.id);
 		});
