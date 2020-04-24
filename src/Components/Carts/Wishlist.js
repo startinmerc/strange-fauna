@@ -1,31 +1,25 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
+import { fetchOneProduct, clearSearch } from "../../store/actions/products";
 import ProductCard from '../Products/ProductCard';
-import { apiCall } from "../../services/api";
-// import './ProductList.css';
 
-// Expects 'type' string as prop, either all, wish or product category, and title string
-// Returns main element with responsive grid display of products
+// Returns ProductList-style display of Wishlist items
 
-const Wishlist = ({ wish })=> {
-
-	const [popWish, updatePopWish] = React.useState([]);
+const Wishlist = ({ wish, search, fetchOneProduct, clearSearch })=> {
 
 	React.useEffect(()=>{
-		async function popItem(id){
-			await apiCall("get", `/api/products/${id}`)
-				.then(res=> updatePopWish(oldArray => [...oldArray, res]))
-				.catch(err=> console.log(err));
+		async function pop(id) {
+			await fetchOneProduct(id);
 		}
 		wish.forEach(v=>{
-			popItem(v.id);
+			pop(v.id);
 		});
-		// ComponentWillUnmount function to empty products array
-		return function cleanUp(){updatePopWish([])}
+		// ComponentWillUnmount function to empty search array
+		return function cleanUp(){clearSearch()}
 	},[wish]);
 
-	const renderList = popWish.map((prod, i)=>{
+	const renderList = search.map((prod, i)=>{
 		return <ProductCard detail={prod} key={prod._id} delay={i} />
 	});
 
@@ -46,8 +40,9 @@ const Wishlist = ({ wish })=> {
 
 function mapStateToProps(state){
 	return {
-		wish: state.wish.wish
+		wish: state.wish.wish,
+		search: state.products.search
 	};
 };
 
-export default connect(mapStateToProps)(Wishlist);
+export default connect(mapStateToProps, { fetchOneProduct, clearSearch })(Wishlist);
