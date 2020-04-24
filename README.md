@@ -438,6 +438,11 @@ Version logs for the project are below...
 * Include total in Redux Cart, handle through reducer
 * Add price to AddToCart & props
 
+#### Display Wishlist
+* Build Wishlist component
+* Populate list from ids using apiCall
+* *also to be fixed*
+
 ---
 
 ### ToDo...
@@ -449,3 +454,4 @@ Version logs for the project are below...
 * Showing/hiding components transitions
 * Review semantic HTML
 * Install & config Prettier
+* Slow scaleup of landingsection image in hover animation
