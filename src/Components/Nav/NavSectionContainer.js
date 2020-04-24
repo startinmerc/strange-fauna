@@ -1,11 +1,19 @@
 import React from 'react';
 import './NavSectionContainer.css';
 import NavSection from './NavSection';
-import { categories } from '../../seeds';
+import { connect } from "react-redux";
+import { fetchCategories } from "../../store/actions/categories";
 
 // Returns element containing nav sections with hover menus
 
-function NavSectionContainer() {
+function NavSectionContainer({categories, fetchCategories}) {
+
+	React.useEffect(()=>{
+		if(categories.length === 0){
+			fetchCategories()
+		}
+	},[categories, fetchCategories]);
+
 	const sections = categories.map((section,index)=>(
 		<NavSection key={'nav-section-'+index} {...section}/>
 	 ));
@@ -17,4 +25,10 @@ function NavSectionContainer() {
 	);
 }
 
-export default NavSectionContainer;
+function mapStateToProps(state){
+	return {
+		categories: state.categories
+	};
+};
+
+export default connect(mapStateToProps, { fetchCategories })(NavSectionContainer);
