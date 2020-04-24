@@ -1,13 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import seeds from '../../seeds';
 import ProductCard from '../Products/ProductCard'
 
 // Expects prop of section object
 // Returns element with link to section & dropdown menu of blurb & 2 product cards
 // Or list of about links
 
-function NavSection({color,section,title}) {
+function NavSection({color,section,title,products}) {
 
 	function handleClick(e){
 		e.target.blur();
@@ -30,7 +29,9 @@ function NavSection({color,section,title}) {
 		);
 	} else {
 		let link = `/products/${title}`;
-		let sectionItems = seeds.products.filter((seed)=>(seed.type === section));
+		let sectionItems = products.map(detail => (
+		 		<ProductCard type="nav" detail={detail}/>
+		 	));
 		return(
 			<li className="nav-section" style={{backgroundColor: `${color}`}}>
 				<Link onClick={handleClick} to={link} className={`nav-section__block-link nav--${section}`}>{title}</Link>
@@ -43,8 +44,7 @@ function NavSection({color,section,title}) {
 						</p>
 						<Link onClick={handleClick} to={link}>View All {title}</Link>
 					</div>
-					<ProductCard type="nav" detail={sectionItems[Math.floor(Math.random()*sectionItems.length)]}/>
-					<ProductCard type="nav" detail={sectionItems[Math.floor(Math.random()*sectionItems.length)]}/>
+					{sectionItems}
 				</div>
 			</li>
 		);
