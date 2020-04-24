@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
+import { fetchCategories } from "../../../store/actions/categories";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
 import Hamburger from './Hamburger';
-import { categories } from '../../../seeds';
 import MobileHeaderButton from './MobileHeaderButton';
 import './MobileMenu.css';
 
 // Returns sticky footer mobile menu with cart & wishlist buttons,
 // Along with popup nav of sections
 
-const MobileMenu = ({ wish, cart })=> {
+const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 
 	const [expanded,setExpanded] = useState();
+
+	React.useEffect(()=>{
+		if(categories.length === 0){
+			fetchCategories()
+		}
+	},[categories, fetchCategories]);
 
 	function showMenu(e){
 		setExpanded(true);
@@ -59,8 +65,9 @@ const MobileMenu = ({ wish, cart })=> {
 function mapStateToProps(reduxState) {
 	return {
 		wish: reduxState.wish.wish,
-		cart: reduxState.cart.cart
+		cart: reduxState.cart.cart,
+		categories: reduxState.categories
 	};
 }
 
-export default connect(mapStateToProps)(MobileMenu);
+export default connect(mapStateToProps, { fetchCategories })(MobileMenu);
