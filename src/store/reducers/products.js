@@ -1,8 +1,8 @@
-import { LOAD_PRODUCTS, LOAD_ONE_PRODUCT, LOAD_CATEGORY_PRODUCTS } from "../actionTypes";
+import { LOAD_PRODUCTS, LOAD_ONE_PRODUCT, LOAD_CATEGORY_PRODUCTS, CLEAR_SEARCH } from "../actionTypes";
 
 const DEFAULT_STATE = {
 	products: [],
-	foundProduct: {}
+	search: []
 }
 
 const products = (state=DEFAULT_STATE,action) => {
@@ -12,7 +12,9 @@ const products = (state=DEFAULT_STATE,action) => {
 		case LOAD_CATEGORY_PRODUCTS:
 			return {...state, products: [...action.products]};
 		case LOAD_ONE_PRODUCT:
-			return {...state, foundProduct: action.product};
+			return {...state, search: [...state.search, action.product]};
+		case CLEAR_SEARCH:
+			return {...state, search: DEFAULT_STATE.search};
 		default:
 			return state;
 	};
