@@ -458,6 +458,12 @@ Version logs for the project are below...
 * Add fatchProducts, filter & pass to sections
 * *Needs fixing, overrides products redux state*
 
+#### NavSection Products Pt.2
+* Add 'featured' Products attribute
+* Add getFeaturedProducts route & handler
+* Edit fetchproducts to new route
+* Add navProds to products store
+
 ---
 
 ### ToDo...
