@@ -30,7 +30,7 @@ function NavSection({color,section,title,products}) {
 	} else {
 		let link = `/products/${title}`;
 		let sectionItems = products.map(detail => (
-		 		<ProductCard type="nav" detail={detail}/>
+		 		<ProductCard type="nav" detail={detail} key={`nav-card-${detail._id}`}/>
 		 	));
 		return(
 			<li className="nav-section" style={{backgroundColor: `${color}`}}>
