@@ -2,7 +2,8 @@ import { LOAD_PRODUCTS, LOAD_NAV_PRODUCTS, LOAD_ONE_PRODUCT, LOAD_CATEGORY_PRODU
 
 const DEFAULT_STATE = {
 	products: [],
-	search: []
+	search: [],
+	navProducts: []
 }
 
 const products = (state=DEFAULT_STATE,action) => {
