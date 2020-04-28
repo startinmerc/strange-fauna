@@ -3,11 +3,11 @@ import './NavSectionContainer.css';
 import NavSection from './NavSection';
 import { connect } from "react-redux";
 import { fetchCategories } from "../../store/actions/categories";
-import { fetchProducts } from "../../store/actions/products";
+import { fetchNavProducts } from "../../store/actions/products";
 
 // Returns element containing nav sections with hover menus
 
-function NavSectionContainer({categories, fetchCategories, products, fetchProducts}) {
+function NavSectionContainer({categories, fetchCategories, products, fetchNavProducts}) {
 
 	React.useEffect(()=>{
 		if(categories.length === 0){
@@ -32,8 +32,8 @@ function NavSectionContainer({categories, fetchCategories, products, fetchProduc
 function mapStateToProps(state){
 	return {
 		categories: state.categories,
-		products: state.products.products
+		products: state.products.navProducts
 	};
 };
 
-export default connect(mapStateToProps, { fetchCategories, fetchProducts })(NavSectionContainer);
+export default connect(mapStateToProps, { fetchCategories, fetchNavProducts })(NavSectionContainer);
