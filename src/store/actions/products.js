@@ -6,6 +6,11 @@ export const loadProducts = products => ({
 	products
 });
 
+export const loadNavProducts = products => ({
+	type: LOAD_NAV_PRODUCTS,
+	products
+});
+
 export const loadCategoryProducts = products => ({
 	type: LOAD_CATEGORY_PRODUCTS,
 	products
@@ -42,5 +47,13 @@ export const fetchCategoryProducts = category => {
 		return apiCall("get", `/api/categories/${category}/products`)
 			.then(res => dispatch(loadCategoryProducts(res)))
 			.catch(err => dispatch(err.message));
+	};
+};
+
+export const fetchNavProducts = category => {
+	return dispatch => {
+		return apiCall("get", `/api/products/featured/${category}`)
+			.then(res => dispatch(loadNavProducts(res)))
+			.catch(err => console.log(err));
 	};
 };

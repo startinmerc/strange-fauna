@@ -9,6 +9,8 @@ const products = (state=DEFAULT_STATE,action) => {
 	switch(action.type){
 		case LOAD_PRODUCTS:
 			return {...state, products: [...action.products]};
+		case LOAD_NAV_PRODUCTS:
+			return {...state, navProducts: [...state.navProducts, ...action.products]};
 		case LOAD_CATEGORY_PRODUCTS:
 			return {...state, products: [...action.products]};
 		case LOAD_ONE_PRODUCT:
