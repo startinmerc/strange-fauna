@@ -10,15 +10,21 @@ import { fetchNavProducts } from "../../store/actions/products";
 function NavSectionContainer({categories, fetchCategories, products, fetchNavProducts}) {
 
 	React.useEffect(()=>{
-		if(categories.length === 0){
-			fetchCategories()
+		async function popNav(){
+			await fetchCategories();
 		}
-		fetchProducts();
-	},[categories, fetchCategories, fetchProducts]);
+		if(categories.length === 0){
+			popNav();
+		} else if(products.length < (categories.length-1)*2) {
+			categories.forEach(cat => {
+				fetchNavProducts(cat.section);
+			});
+		}
+	},[categories, fetchCategories, fetchNavProducts]);
 
 	const sections = categories.map((section,index)=>(
-		<NavSection key={'nav-section-'+index}
-			products={products.filter((v)=>(v.type === section.section)).slice(-2)}
+		<NavSection key={`nav-section-${section.section}`}
+			products={products.filter(p=>p.type === section.section)}
 		  {...section}/>
 	 ));
 
