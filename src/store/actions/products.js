@@ -1,5 +1,5 @@
 import { apiCall } from "../../services/api";
-import { LOAD_PRODUCTS, LOAD_ONE_PRODUCT, LOAD_CATEGORY_PRODUCTS, CLEAR_SEARCH } from "../actionTypes";
+import { LOAD_PRODUCTS, LOAD_NAV_PRODUCTS, LOAD_ONE_PRODUCT, LOAD_CATEGORY_PRODUCTS, CLEAR_SEARCH } from "../actionTypes";
 
 export const loadProducts = products => ({
 	type: LOAD_PRODUCTS,
