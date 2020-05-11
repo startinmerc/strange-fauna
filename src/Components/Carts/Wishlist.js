@@ -18,7 +18,7 @@ const Wishlist = ({ wish, search, fetchOneProduct, clearSearch })=> {
 		});
 		// ComponentWillUnmount function to empty search array
 		return function cleanUp(){clearSearch()}
-	},[wish]);
+	},[wish, clearSearch, fetchOneProduct]);
 
 	const renderList = search.map((prod, i)=>{
 		return <ProductCard detail={prod} key={prod._id} delay={i} />

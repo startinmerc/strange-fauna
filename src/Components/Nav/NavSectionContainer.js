@@ -20,7 +20,7 @@ function NavSectionContainer({categories, fetchCategories, products, fetchNavPro
 				fetchNavProducts(cat.section);
 			});
 		}
-	},[categories, fetchCategories, fetchNavProducts]);
+	},[categories, products, fetchCategories, fetchNavProducts]);
 
 	const sections = categories.map((section,index)=>(
 		<NavSection key={`nav-section-${section.section}`}
