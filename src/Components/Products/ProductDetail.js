@@ -2,114 +2,150 @@ import React from 'react';
 import AddToCart from './AddToCart';
 import AddToWish from './AddToWish';
 import Star from '../SVGs/Star';
-import { categories } from '../../seeds';
 import { useParams,	Link } from "react-router-dom";
 import { editCart } from '../../store/actions/cart';
+import { clearSearch, fetchOneProduct } from "../../store/actions/products";
 import { connect } from 'react-redux';
-import { getItem, updateStock } from '../../middleware';
 
 // Expects no props,
 // Returns full product detail page
 
-function ProductDetail({cart}) {
+function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundProduct}) {
 	// get product id from url
 	let { id } = useParams();
-	// retrieve product info using middleware
-	const item = getItem(id);
-	// find relevant category title based on item type
-	const cat = categories.find(cat=>(item.type === cat.section));
-	// Hook to set quantity and reducer
-	const [qty, setQty] = React.useState(item.qty || 1);
-	// calculate average review
-	const avgReview = ((item.reviews.reduce((acc,review)=>(acc+review.score),0))/item.reviews.length).toFixed(1)
-	// find if in cart
-	const inCart = cart.includes(Number(id));
-	// update quantity on input change
-	function handleChange(e){
-		setQty(e.target.value);
-	}
+
+	// Pop item from ID on load
+	React.useEffect(()=>{
+		popItem(id);
+		return ()=>{clearSearch()};
+	},[id])
+
+	// States
+	// Set quantity
+	const [qty, setQty] = React.useState(1);
+	// Vars
+	const [vars, updateVars] = React.useState({cat:"",avgReview:0,inCart:false});
 	// Ref
 	let header = React.createRef();
 
 	// update quantity in cart on click
 	function handleClick(e){
-		updateStock(item.id, qty);
-		editCart(item.id, qty);
+		editCart(foundProduct.id, qty);
 	}
 
-	React.useEffect(()=>{
-		header.current.focus();
-	});
+	// update quantity on input change
+	function handleChange(e){
+		setQty(e.target.value);
+	}
 
-	return (
-		<main id="details">
-			<h3>
-				<Link to="/">Home</Link> / <Link to={`/products/${cat.title}`}>{cat.title}</Link>
-			</h3>
-			<div className="boxes">
-				<div className="box box__image">
-					<img src={item.photos[0]}  style={{width: '100%', height: 'auto'}} alt="product"/>
-				</div>
-				<div className="box box__text" style={{paddingTop: 0}}>
-					<h2 ref={header} style={{marginTop: 0}}>{item.name}</h2>
-					<h3>${item.price}</h3>
-					<p>{item.description}</p>
-					<p>Currently {item.stock} in stock</p>
-					<label htmlFor="quantity">Quantity:</label>
-					<input type="number" name="quantity" id="quantity"
-					 value={qty} className="quantity" onChange={handleChange}
-					 disabled={item.stock < 1 && !inCart ? "disabled" : null}
-					 min="1" max={item.stock}/>
-					&nbsp;
-					{/*render quantity update if product in cart*/}
-					{cart.includes(item.id) ? 
-						<button onClick={handleClick}>Update Quantity</button>
-						 : null}
-					<br/><AddToCart id={item.id} qty={qty} stk={item.stock}/>
-					<br/><AddToWish id={item.id} button/>
-				</div>
-			</div>
+	async function popItem(id){
+		// Clear products.search field
+		clearSearch();
+		await fetchOneProduct(id);
+		// find relevant category title based on item type
+		updateVars({cat: categories.find(c=>(c.section === foundProduct.type)).title});
+		// calculate average review
+		if(foundProduct.reviews.length > 1){
+			updateVars({avgReview: ((foundProduct.reviews.reduce((acc,review)=>(acc+review.score),0))/foundProduct.reviews.length).toFixed(1)})
+		}
+	}
 
-			<div className="reviews__header">
-				<h3>Customer Reviews</h3>
-				<p>
-					<Star size='20px' fill="var(--primary)"/>
-					<Star size='20px' fill={avgReview > 1.5 ? 'var(--primary)' : 'none'}/>
-					<Star size='20px' fill={avgReview > 2.5 ? 'var(--primary)' : 'none'}/>
-					<Star size='20px' fill={avgReview > 3.5 ? 'var(--primary)' : 'none'}/>
-					<Star size='20px' fill={avgReview > 4.5 ? 'var(--primary)' : 'none'}/>
-					&nbsp;<small>({avgReview})/5</small><br/>
-					from {item.reviews.length} reviews
-				</p>
-			</div>
-			<ul className="reviews">
-				{item.reviews.map((review,i) => (
-					<li key={`review-${i}`} className="review">
-						<h3>
-							<span className="review__rating">
-								<span className="sr-only">{review.score} out of 5</span>
-								<Star size='17px' fill="var(--primary)"/>
-								<Star size='17px' fill={review.score > 1 ? 'var(--primary)' : 'none'}/>
-								<Star size='17px' fill={review.score > 2 ? 'var(--primary)' : 'none'}/>
-								<Star size='17px' fill={review.score > 3 ? 'var(--primary)' : 'none'}/>
-								<Star size='17px' fill={review.score > 4 ? 'var(--primary)' : 'none'}/>
-							</span>
-							<span className="review__title">{review.title}</span>
-						</h3>
-						<small className="review__author">by {review.author} on 01/01/01</small>
-						<p className="review__text">{review.content}</p>
-					</li>
-				))}
-			</ul>
-		</main>
-	);
+	if(foundProduct){
+		const {
+			photos,
+			price,
+			name,
+			description,
+			stock,
+			_id,
+			reviews
+		} = foundProduct;
+		return (
+			<main id="details">
+				<h3>
+					<Link to="/">Home</Link> / <Link to={`/products/${vars.cat}`}>{vars.cat}</Link>
+				</h3>
+				<div className="boxes">
+					<div className="box box__image">
+						<img src={photos[0]}  style={{width: '100%', height: 'auto'}} alt="product"/>
+					</div>
+					<div className="box box__text" style={{paddingTop: 0}}>
+						<h2 ref={header} style={{marginTop: 0}}>{name}</h2>
+						<h3>${price}</h3>
+						<p>{description}</p>
+						<p>Currently {stock} in stock</p>
+						<label htmlFor="quantity">Quantity:</label>
+						<input type="number" name="quantity" id="quantity"
+						 value={qty} className="quantity" onChange={handleChange}
+						 disabled={stock < 1 && !cart.includes(foundProduct._id) ? "disabled" : null}
+						 min="1" max={stock}/>
+						&nbsp;
+						{/*render quantity update if product in cart*/}
+						{cart.includes(foundProduct._id) ? 
+							<button onClick={handleClick} style={{marginTop: 0}}>Update Quantity</button>
+							 : null}
+						<br/><AddToCart id={_id} qty={qty} stk={stock} price={price}/>
+						<br/><AddToWish id={_id} button/>
+					</div>
+				</div>
+
+				<div className="reviews__header">
+					<h3>Customer Reviews</h3>
+					<p>
+						<Star size='20px' fill="var(--primary)"/>
+						<Star size='20px' fill={vars.avgReview > 1.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={vars.avgReview > 2.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={vars.avgReview > 3.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={vars.avgReview > 4.5 ? 'var(--primary)' : 'none'}/>
+						&nbsp;<small>({vars.avgReview})/5</small><br/>
+						from {reviews.length} reviews
+					</p>
+				</div>
+				<ul className="reviews">
+					{reviews.map((review,i) => (
+						<li key={`review-${i}`} className="review">
+							<h3>
+								<span className="review__rating">
+									<span className="sr-only">{review.score} out of 5</span>
+									<Star size='17px' fill="var(--primary)"/>
+									<Star size='17px' fill={review.score > 1 ? 'var(--primary)' : 'none'}/>
+									<Star size='17px' fill={review.score > 2 ? 'var(--primary)' : 'none'}/>
+									<Star size='17px' fill={review.score > 3 ? 'var(--primary)' : 'none'}/>
+									<Star size='17px' fill={review.score > 4 ? 'var(--primary)' : 'none'}/>
+								</span>
+								<span className="review__title">{review.title}</span>
+							</h3>
+							<small className="review__author">by {review.author} on 01/01/01</small>
+							<p className="review__text">{review.content}</p>
+						</li>
+					))}
+				</ul>
+			</main>
+		)
+	} else {
+		return (
+			<main id="details">
+				<h3>
+					<Link to="/">Home</Link>
+				</h3>
+				<div className="boxes">
+					<div className="box box__text" style={{paddingTop: 0}}>
+						Product Not Found
+					</div>
+				</div>
+			</main>
+		);
+	}
+
 };
 
 function mapStateToProps(reduxState){
 	return {
 		// reduce cart item objects to array of ids
-		cart: reduxState.cart.cart.map((v)=>(v.id))
+		cart: reduxState.cart.cart.map((v)=>(v.id)),
+		categories: reduxState.categories,
+		foundProduct: reduxState.products.search[0]
 	};
 };
 
-export default connect(mapStateToProps, { editCart })(ProductDetail);
+export default connect(mapStateToProps, { editCart, clearSearch, fetchOneProduct })(ProductDetail);
