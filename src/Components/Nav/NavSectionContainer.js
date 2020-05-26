@@ -17,7 +17,9 @@ function NavSectionContainer({categories, fetchCategories, products, fetchNavPro
 			popNav();
 		} else if(products.length < (categories.length-1)*2) {
 			categories.forEach(cat => {
-				fetchNavProducts(cat.section);
+				if(cat.section !== 'about'){
+					fetchNavProducts(cat.section);
+				}
 			});
 		}
 	},[categories, products, fetchCategories, fetchNavProducts]);
