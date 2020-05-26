@@ -456,13 +456,18 @@ Version logs for the project are below...
 #### NavSection Products
 * Remove static seeds
 * Add fatchProducts, filter & pass to sections
-* *Needs fixing, overrides products redux state*
 
 #### NavSection Products Pt.2
 * Add 'featured' Products attribute
 * Add getFeaturedProducts route & handler
 * Edit fetchproducts to new route
 * Add navProds to products store
+* Catch fetchCategoryProducts("about")
+
+#### ProductDetail
+* Add async API call to populate product detail
+* Render on page
+* Return blank detail page if no product found
 
 ---
 
