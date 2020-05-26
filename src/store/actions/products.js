@@ -46,7 +46,7 @@ export const fetchCategoryProducts = category => {
 	return dispatch => {
 		return apiCall("get", `/api/categories/${category}/products`)
 			.then(res => dispatch(loadCategoryProducts(res)))
-			.catch(err => dispatch(err.message));
+			.catch(err => console.log(err));
 	};
 };
 
