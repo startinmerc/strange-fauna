@@ -18,7 +18,7 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 	React.useEffect(()=>{
 		popItem(id);
 		return ()=>{clearSearch()};
-	},[id])
+	},[id, clearSearch])
 
 	// States
 	// Set quantity
