@@ -478,10 +478,16 @@ Version logs for the project are below...
 * Add useEffect to populate cart items from reduxState
 * Fetch delivery options & populate `<select>`
 
+#### Checkout
+* Remove seeds & set js
+* Add population from Cart
+* Change JSX to handle api data & include api fns in redux
+
 ---
 
 ### ToDo...
 
+* Refactor cart population - inc. wish?
 * Cart quantity handling
 * Refactor MobileHeaderButton & HeaderButton?
 * move from cart to wish if in localstore & OoS
