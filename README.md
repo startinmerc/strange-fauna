@@ -469,10 +469,20 @@ Version logs for the project are below...
 * Render on page
 * Return blank detail page if no product found
 
+#### Delivery API
+* Create fetchDeliveries action
+* Populate delivery options in 'other' reducer
+* Update DEFAULT_STATE
+
+#### Cart
+* Add useEffect to populate cart items from reduxState
+* Fetch delivery options & populate `<select>`
+
 ---
 
 ### ToDo...
 
+* Cart quantity handling
 * Refactor MobileHeaderButton & HeaderButton?
 * move from cart to wish if in localstore & OoS
 * Pagination in products (after Mongo)
