@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
-import { changeDelivery } from '../../store/actions/other';
+import { fetchOneProduct, clearSearch } from "../../store/actions/products";
+import { fetchDeliveries, changeDelivery } from '../../store/actions/other';
 import { Link } from 'react-router-dom';
-import { deliveries } from '../../seeds';
-import { getItems, getTotal } from '../../middleware';
 
 // Returns checkout element with local state of form content
 
-const Checkout = ({ changeDelivery, cart, delivery })=> {
+const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery, cart, delivery, search, deliveryOptions })=> {
 
 	const [noteCheckbox, setNoteCheckbox] = useState(false);
 	const [form, setForm] = useState({});
+
+	React.useEffect(()=>{
+		fetchDeliveries();
+		clearSearch();
+		cart.cart.forEach((v)=>{
+			fetchOneProduct(v.id);
+		});
+		// ComponentWillUnmount function to empty search array
+		return function cleanUp(){clearSearch()}
+	},[cart, clearSearch, fetchOneProduct, fetchDeliveries]);
+
 
 	function handleChange(e) {
 		changeDelivery(e.target.value);
@@ -28,9 +38,6 @@ const Checkout = ({ changeDelivery, cart, delivery })=> {
     });
   }
 
-	let items = getItems(cart);
-	let total = getTotal(items);
-
 	return (
 		<main id="checkout">
 			<Helmet>
@@ -39,7 +46,7 @@ const Checkout = ({ changeDelivery, cart, delivery })=> {
 			<div id="order-summary">
 				<h2>Order Summary</h2>
 				<ul className="summary-section">
-					{items.map((item)=>(<li style={{marginBottom: '0.5rem'}} key={item.id}>
+					{search.map((item)=>(<li style={{marginBottom: '0.5rem'}} key={item._id}>
 						<img src={item.photos[0]} alt={item.name}/>
 						<p style={{flexGrow: 1, marginLeft: '1rem', lineHeight: '1.5rem'}}>
 							{item.name}<br/>
@@ -49,9 +56,9 @@ const Checkout = ({ changeDelivery, cart, delivery })=> {
 						</li>))}
 				</ul>
 				<p><Link to="/cart">Edit Cart</Link></p>
-				<p style={{textAlign: 'right'}}>Subtotal: ${total}</p>
+				<p style={{textAlign: 'right'}}>Subtotal: ${cart.total}</p>
 				<p style={{textAlign: 'right'}}>Delivery: ${delivery}</p>
-				<p style={{textAlign: 'right', fontSize: '1.4rem'}} className="display">Total: ${total + Number(delivery)}</p>
+				<p style={{textAlign: 'right', fontSize: '1.4rem'}} className="display">Total: ${cart.total + Number(delivery)}</p>
 			</div>
 
 			<div id="checkout-summary">
@@ -77,12 +84,12 @@ const Checkout = ({ changeDelivery, cart, delivery })=> {
 				<div id="delivery-method" className="summary-section">
 					<h3>Delivery method</h3>
 					{
-						deliveries.map((op,i) => (
+						deliveryOptions.map((op,i) => (
 							<div className="delivery-radio" key={`delivery-option-${i}`}>
 								<label>
 									<input type="radio" value={op.price} name="delivery-option"
 									 id={`delivery-option-${i}`} checked={op.price === delivery} 
-									 onChange={handleChange}/> {op.name} - ${op.price}
+									 onChange={handleChange}/> {op.title} - ${op.price} - {op.speed} day(s) <small>{op.description}</small>
 								</label>
 							</div>
 						))
@@ -111,9 +118,11 @@ const Checkout = ({ changeDelivery, cart, delivery })=> {
 
 function mapStateToProps(reduxState) {
 	return {
-		cart: reduxState.cart.cart,
-		delivery: reduxState.other.delivery
+		cart: reduxState.cart,
+		delivery: reduxState.other.delivery,
+		deliveryOptions: reduxState.other.deliveryOptions,
+		search: reduxState.products.search
 	};
 }
 
-export default connect(mapStateToProps, { changeDelivery })(Checkout);
+export default connect(mapStateToProps, { fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery })(Checkout);
