@@ -1,7 +1,6 @@
 import React from 'react';
 import { editCart } from '../../store/actions/cart';
 import { connect } from 'react-redux';
-import { updateStock } from '../../middleware';
 
 function EditQuantity(props){
 	// add qty to 'state' hook
@@ -16,7 +15,6 @@ function EditQuantity(props){
 	// id from prop, quantity from 'state'
 	function handleSubmit(e){
 		e.preventDefault();
-		updateStock(props.id, qty);
 		props.editCart(props.id, qty);
 	};
 
