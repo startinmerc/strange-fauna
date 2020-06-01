@@ -16,9 +16,10 @@ function Landing({ sections, fetchLandingSections, emailRef }) {
 	},[fetchLandingSections])
 
 	function handleClick(){
-		// Not great, needs to be ref when I learn!
+		// Scroll to page bottom
 		window.scrollTo(0,document.body.scrollHeight);
-		document.querySelector("#email").focus();
+		// Focus on email input useRef()
+		emailRef.current.focus();
 	}
 
 	const renderedSections = sections.map(seed =>(
