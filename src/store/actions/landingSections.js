@@ -8,12 +8,12 @@ export const loadLandingSections = (landingSections)=>(
 	}
 );
 
-export const fetchDeliveries = () => {
+export const fetchLandingSections = () => {
 	return dispatch => {
-		// API call to get options
+		// API call to get landing sections
 		return apiCall("get", "/api/landingSections")
-			// Populate options
+			// Populate landing sections
 			.then(res => dispatch(loadLandingSections(res)))
-			.catch(err => dispatch(err.message));
+			.catch(err => console.log(err));
 	};
 };
