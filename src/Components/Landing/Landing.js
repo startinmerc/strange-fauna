@@ -2,16 +2,18 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import './Landing.css';
 import LandingSection from './LandingSection';
+import { connect } from "react-redux";
+import { fetchLandingSections } from "../../store/actions/landingSections";
 
 // Returns main element with landing section components
 
-function Landing() {
+function Landing({ sections, fetchLandingSections }) {
 
-	const sections = []
-
-	// seeds.landingSections.map((seed,index)=>(
-	// 	<LandingSection content={seed} key={`section-${index}`}/>
-	// ));
+	React.useEffect(()=>{
+		if (sections.length === 0) {
+			fetchLandingSections();
+		}
+	},[fetchLandingSections])
 
 	function handleClick(){
 		// Not great, needs to be ref when I learn!
@@ -19,7 +21,12 @@ function Landing() {
 		document.querySelector("#email").focus();
 	}
 
-	sections.splice(1,0,
+	const renderedSections = sections.map(seed =>(
+			<LandingSection content={seed} key={`section-${seed._id}`}/>
+		)
+	);
+
+	renderedSections.splice(1,0,
 		<div className="cta" key="cta">
 			<button className="cta__button display" onClick={handleClick}>
 				Sign up to our newsletter!
@@ -33,9 +40,15 @@ function Landing() {
 			<Helmet>
 				<title>Strange Flora</title>
 			</Helmet>
-			{sections}
+				{renderedSections}
 		</main>
 	);
 }
 
-export default Landing;
+function mapStateToProps(reduxState){
+	return {
+		sections: reduxState.landingSections
+	};
+};
+
+export default connect(mapStateToProps, { fetchLandingSections })(Landing);
