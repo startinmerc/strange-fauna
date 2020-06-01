@@ -6,11 +6,11 @@ import './Footer.css';
 
 // Returns footer element with site links & link to Strange Industries
 
-function Footer() {
+function Footer({ emailRef }) {
 	return(
 		<footer className="footer">
 			<div className="footer__column">
-				<Signup />
+				<Signup emailRef={emailRef}/>
 				<div className="footer__socials">
 					<a href="http://www.facebook.com" aria-label="Link to Facebook"><FacebookSquare size="40px"/></a>
 					<a href="http://www.twitter.com" aria-label="Link to Twitter"><TwitterSquare size="40px"/></a>

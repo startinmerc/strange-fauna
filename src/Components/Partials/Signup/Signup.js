@@ -2,7 +2,7 @@ import React from "react";
 import { validateEmail } from "../../../middleware";
 import './Signup.css';
 
-export default function Signup(){
+export default function Signup({emailRef}){
 
 	function handleSubmit(e){
 		e.preventDefault();

@@ -7,7 +7,7 @@ import { fetchLandingSections } from "../../store/actions/landingSections";
 
 // Returns main element with landing section components
 
-function Landing({ sections, fetchLandingSections }) {
+function Landing({ sections, fetchLandingSections, emailRef }) {
 
 	React.useEffect(()=>{
 		if (sections.length === 0) {
