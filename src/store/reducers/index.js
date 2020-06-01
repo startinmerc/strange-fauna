@@ -4,13 +4,15 @@ import wish from "./wish";
 import products from "./products";
 import categories from "./categories";
 import other from "./other";
+import landingSections from "./landingSections";
 
 const rootReducer = combineReducers({
 	cart,
 	wish,
 	products,
 	categories,
-	other
+	other,
+	landingSections
 });
 
 export default rootReducer;
