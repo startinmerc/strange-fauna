@@ -38,6 +38,21 @@ const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDeliver
     });
   }
 
+  const cartItems = search.map((item)=>{
+	  	let qty = cart.cart.find(i=>(i.id === item._id)).qty;
+	  	return (
+				<li style={{marginBottom: '0.5rem'}} key={item._id}>
+					<img src={item.photos[0]} alt={item.name}/>
+					<p style={{flexGrow: 1, marginLeft: '1rem', lineHeight: '1.5rem'}}>
+						{item.name}<br/>
+						{qty} x ${item.price}
+					</p>
+					<p>${item.price * qty}</p>
+				</li>
+			)
+	  }
+  );
+
 	return (
 		<main id="checkout">
 			<Helmet>
@@ -46,19 +61,12 @@ const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDeliver
 			<div id="order-summary">
 				<h2>Order Summary</h2>
 				<ul className="summary-section">
-					{search.map((item)=>(<li style={{marginBottom: '0.5rem'}} key={item._id}>
-						<img src={item.photos[0]} alt={item.name}/>
-						<p style={{flexGrow: 1, marginLeft: '1rem', lineHeight: '1.5rem'}}>
-							{item.name}<br/>
-							{item.qty} x ${item.price}
-						</p>
-						<p>${item.price * item.qty}</p>
-						</li>))}
+					{cartItems}
 				</ul>
 				<p><Link to="/cart">Edit Cart</Link></p>
 				<p style={{textAlign: 'right'}}>Subtotal: ${cart.total}</p>
 				<p style={{textAlign: 'right'}}>Delivery: ${delivery}</p>
-				<p style={{textAlign: 'right', fontSize: '1.4rem'}} className="display">Total: ${cart.total + Number(delivery)}</p>
+				<p style={{textAlign: 'right', fontSize: '1.4rem'}} className="display">Total: ${cart.total + delivery}</p>
 			</div>
 
 			<div id="checkout-summary">
