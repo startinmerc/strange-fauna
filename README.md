@@ -482,18 +482,52 @@ Version logs for the project are below...
 * Remove seeds & set js
 * Add population from Cart
 * Change JSX to handle api data & include api fns in redux
+* Include quantity to items via find fn *hacky*
+
+#### NavSectionContianer
+* Refactor API population
+
+#### LandingSection
+* Add fetch actionType
+* Add landingSection fetch action
+* Add landingSection default state, fetch reducer
+* Include in reducer index
+
+#### Landing
+* connect fetchLandingSections, sections to Landing
+* Call if sections is empty
+* Map sections to seperate const, splice in email cta
+
+#### Email Ref
+* Create emailRef hook in top App, pass to components
+* Assign emailRef to email `input` in Footer
+* Swap DOM to Ref in Landing cta
+
+#### Tidy up
+* Remove seeds.js
+* Remove seeds import & functions from middleware
+* Remove any remaining imports of seeds in components
 
 ---
 
 ### ToDo...
 
-* Refactor cart population - inc. wish?
+#### Redux
 * Cart quantity handling
+* Rename other to delivery
+* Change wish from obj to array
+
+#### Future Ideas
+* Refactor cart population - inc. wish?
 * Refactor MobileHeaderButton & HeaderButton?
 * move from cart to wish if in localstore & OoS
-* Pagination in products (after Mongo)
+* Pagination in products
 * React Router Page transition on productlist
 * Showing/hiding components transitions
 * Review semantic HTML
 * Install & config Prettier
-* Slow scaleup of landingsection image in hover animation
+* LandingSection
+ * Taller sections
+ * Full width?
+ * Image zoom on hover
+ * Loading animation
