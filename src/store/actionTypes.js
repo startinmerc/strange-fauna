@@ -20,3 +20,6 @@ export const CLEAR_SEARCH = "CLEAR_SEARCH";
 
 // Categories
 export const LOAD_CATEGORIES = "LOAD_CATEGORIES";
+
+// Landing Sections
+export const LOAD_LANDING_SECTIONS = "LOAD_LANDING_SECTIONS";
