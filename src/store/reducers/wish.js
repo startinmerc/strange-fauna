@@ -1,16 +1,14 @@
 import { ADD_WISH, REMOVE_WISH } from "../actionTypes";
 
-const DEFAULT_STATE = {
-	wish: []
-};
+const DEFAULT_STATE = [];
 
 export default (state = DEFAULT_STATE, action) => {
 	switch (action.type) {
 		case ADD_WISH:
-			return {...state, wish: [...state.wish, {id: action.id, qty: action.qty}]};
+			return [...state, action.id];
 		case REMOVE_WISH:
-			let newWish = state.wish.filter(val => val.id !== action.id);
-			return {...state, wish: newWish};
+			let newWish = state.filter(val => val !== action.id);
+			return [...newWish];
 		default:
 			return state;
 	};
