@@ -28,7 +28,7 @@ const HeaderButtonContainer = ({wish,cart}) => {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish.wish,
+		wish: reduxState.wish,
 		cart: reduxState.cart
 	};
 }

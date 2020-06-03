@@ -15,7 +15,7 @@ class AddToWish extends Component {
 			){
 			this.props.removeWish(id);
 		} else {
-			this.props.addWish(id, 1);
+			this.props.addWish(id);
 		}
 	};
 
@@ -39,8 +39,7 @@ class AddToWish extends Component {
 
 function mapStateToProps(reduxState) {
 	return {
-		// reduce wish item objects to array of ids
-		wish: reduxState.wish.wish.map((v)=>(v.id))
+		wish: reduxState.wish
 	};
 };
 

@@ -14,7 +14,7 @@ const Wishlist = ({ wish, search, fetchOneProduct, clearSearch })=> {
 		}
 		clearSearch();
 		wish.forEach(v=>{
-			pop(v.id);
+			pop(v);
 		});
 		// ComponentWillUnmount function to empty search array
 		return function cleanUp(){clearSearch()}
@@ -41,7 +41,7 @@ const Wishlist = ({ wish, search, fetchOneProduct, clearSearch })=> {
 
 function mapStateToProps(state){
 	return {
-		wish: state.wish.wish,
+		wish: state.wish,
 		search: state.products.search
 	};
 };
