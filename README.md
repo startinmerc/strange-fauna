@@ -507,6 +507,7 @@ Version logs for the project are below...
 * Remove seeds.js
 * Remove seeds import & functions from middleware
 * Remove any remaining imports of seeds in components
+* Simplify wish redux state as array
 
 ---
 
@@ -515,9 +516,9 @@ Version logs for the project are below...
 #### Redux
 * Cart quantity handling
 * Rename other to delivery
-* Change wish from obj to array
 
 #### Future Ideas
+* Hide checkout link if cart empty
 * Refactor cart population - inc. wish?
 * Refactor MobileHeaderButton & HeaderButton?
 * move from cart to wish if in localstore & OoS
