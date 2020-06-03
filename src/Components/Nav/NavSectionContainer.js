@@ -16,7 +16,7 @@ function NavSectionContainer({categories, fetchCategories, products, fetchNavPro
 		if (products.length === 0) {
 			categories.forEach(cat => fetchNavProducts(cat.section))
 		}
-	},[categories, fetchCategories, fetchNavProducts]);
+	},[categories, products, fetchCategories, fetchNavProducts]);
 
 	const sections = categories.map((section,index)=>(
 		<NavSection key={`nav-section-${section.section}`}

@@ -25,7 +25,7 @@ const MiniCartItem = ({item, remove, type})=>{
 		} else {
 			popItem(item);
 		}
-	},[item]);
+	},[item, type]);
 
 	function handleClick(){
 		if(type === "Cart"){

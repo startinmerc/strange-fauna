@@ -13,7 +13,7 @@ function Landing({ sections, fetchLandingSections, emailRef }) {
 		if (sections.length === 0) {
 			fetchLandingSections();
 		}
-	},[fetchLandingSections])
+	},[fetchLandingSections, sections])
 
 	function handleClick(){
 		// Scroll to page bottom
