@@ -3,14 +3,14 @@ import { addWish, removeWish } from '../../store/actions/wish';
 import { connect } from "react-redux";
 import Star from '../SVGs/Star';
 
-// Expects product id
-// Returns button in top corner of product card
+// Expects product id & button boolean
+// Returns button in top corner of product card OR inline button
 
 class AddToWish extends Component {
 
 	handleClick(id){
 		if(
-			// If filtered cart by props.id is non-zero 
+			// If wishlist includes props.id 
 			this.props.wish.includes(this.props.id)
 			){
 			this.props.removeWish(id);
