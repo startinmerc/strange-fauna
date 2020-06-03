@@ -20,8 +20,20 @@ const MiniCartItem = ({item, remove, type})=>{
 				.then(res=> updateItem(res))
 				.catch(err=> console.log(err));
 		}
-		popItem(item.id);
+		if(type === "Cart"){
+			popItem(item.id);
+		} else {
+			popItem(item);
+		}
 	},[item]);
+
+	function handleClick(){
+		if(type === "Cart"){
+			remove(item.id, type);
+		} else {
+			remove(item, type);
+		}
+	}
 	
 	return (
 		<li className="mini-cart__item"
@@ -33,7 +45,7 @@ const MiniCartItem = ({item, remove, type})=>{
 			<div className="mini-cart__item-text">
 				<p className="display"><Link to={`/products/${item.id}`}>{foundItem.name}</Link></p>
 				<p>${foundItem.price}{(type === "Cart") ? `x ${item.qty}` : null}</p>
-				<p><button onClick={()=>{remove(item.id, type)}}>Remove</button></p>
+				<p><button onClick={handleClick}>Remove</button></p>
 			</div>
 			<img className="mini-cart__item-image" src={foundItem.photos[0]} alt="" />
 		</li>
