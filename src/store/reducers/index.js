@@ -3,7 +3,7 @@ import cart from "./cart";
 import wish from "./wish";
 import products from "./products";
 import categories from "./categories";
-import other from "./other";
+import delivery from "./delivery";
 import landingSections from "./landingSections";
 
 const rootReducer = combineReducers({
@@ -11,7 +11,7 @@ const rootReducer = combineReducers({
 	wish,
 	products,
 	categories,
-	other,
+	delivery,
 	landingSections
 });
 

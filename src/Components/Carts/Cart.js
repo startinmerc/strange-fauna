@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { fetchOneProduct, clearSearch } from "../../store/actions/products";
-import { fetchDeliveries, changeDelivery } from '../../store/actions/other';
+import { fetchDeliveries, changeDelivery } from '../../store/actions/delivery';
 import { Link } from 'react-router-dom';
 import ProductCard from '../Products/ProductCard';
 import './Carts.css';
@@ -10,7 +10,7 @@ import './Carts.css';
 // No props expected
 // Returns cart element
 
-const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, deliveryOptions, search, fetchDeliveries })=> {
+const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, options, search, fetchDeliveries })=> {
 
 	React.useEffect(()=>{
 		fetchDeliveries();
@@ -45,7 +45,7 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, de
 				<p>
 					<label htmlFor="deliveries">Choose delivery option:</label>
 					<select value={delivery} onChange={handleChange} id="deliveries" name="deliveries">
-						{deliveryOptions.map((op,i) => (
+						{options.map((op,i) => (
 							<option key={`del-op-${i}`} value={op.price}>
 								{op.title} - {op.speed} day(s) - ${op.price}
 							</option>
@@ -62,8 +62,8 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, de
 function mapStateToProps(reduxState) {
 	return {
 		cart: reduxState.cart,
-		delivery: reduxState.other.delivery,
-		deliveryOptions: reduxState.other.deliveryOptions,
+		delivery: reduxState.delivery.delivery,
+		options: reduxState.delivery.options,
 		search: reduxState.products.search
 	};
 }

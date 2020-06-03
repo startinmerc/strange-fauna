@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { fetchOneProduct, clearSearch } from "../../store/actions/products";
-import { fetchDeliveries, changeDelivery } from '../../store/actions/other';
+import { fetchDeliveries, changeDelivery } from '../../store/actions/delivery';
 import { Link } from 'react-router-dom';
 
 // Returns checkout element with local state of form content
 
-const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery, cart, delivery, search, deliveryOptions })=> {
+const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery, cart, delivery, search, options })=> {
 
 	const [noteCheckbox, setNoteCheckbox] = useState(false);
 	const [form, setForm] = useState({});
@@ -92,7 +92,7 @@ const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDeliver
 				<div id="delivery-method" className="summary-section">
 					<h3>Delivery method</h3>
 					{
-						deliveryOptions.map((op,i) => (
+						options.map((op,i) => (
 							<div className="delivery-radio" key={`delivery-option-${i}`}>
 								<label>
 									<input type="radio" value={op.price} name="delivery-option"
@@ -127,8 +127,8 @@ const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDeliver
 function mapStateToProps(reduxState) {
 	return {
 		cart: reduxState.cart,
-		delivery: reduxState.other.delivery,
-		deliveryOptions: reduxState.other.deliveryOptions,
+		delivery: reduxState.delivery.delivery,
+		options: reduxState.delivery.options,
 		search: reduxState.products.search
 	};
 }
