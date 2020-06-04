@@ -56,21 +56,9 @@
 .landing-section__link {
 	padding: 0.4rem 0.4rem 0.3rem 0.4rem;
 	margin-right: 1rem;
-	border: 2px solid var(--white);
-	box-shadow: 2px 2px 0 var(--footer);
-	text-shadow: none;
 	transition: all 150ms ease-in;
-}
-
-.landing-section__link::before {
-	display: none;
-}
-
-.landing-section__link:hover,
-.landing-section__link:focus-within,
-.landing-section__link:focus {
 	background-color: var(--white);
-	color: var(--primary);
+	color: var(--black);
 }
 
 /*==============Odd/Even Sections==============*/
