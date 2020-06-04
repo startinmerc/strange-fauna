@@ -45,12 +45,16 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 			description,
 			stock,
 			_id,
-			reviews
+			reviews,
+			type
 		} = foundProduct;
+
+		var avgReview = "";
+
 		return (
 			<main id="details">
 				<h3>
-					<Link to="/">Home</Link> / <Link to={`/products/${vars.cat}`}>{vars.cat}</Link>
+					<Link to="/">Home</Link> / <Link to={`/products/${type.title}`}>{type.title}</Link>
 				</h3>
 				<div className="boxes">
 					<div className="box box__image">
