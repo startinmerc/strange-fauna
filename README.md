@@ -509,7 +509,7 @@ Version logs for the project are below...
 * Remove any remaining imports of seeds in components
 * Clear dependency errors
 
-####Tidy Redux
+#### Tidy Redux
 * Simplify wish redux state as array
 * Rename "other" as "delivery"
 * Add qty from cart to 'cart' type product cards
@@ -520,13 +520,29 @@ Version logs for the project are below...
 * Update var names in product actions to reflect changes
 * Use product.type as needed
 
+### V1.2
+
+#### Cart
+* Hide checkout link if cart empty
+* Remove scale animation on cards
+* Tweak CSS in ProductCard
+
+#### LandingSection
+* Change to full width
+* Reposition image as offset
+* Change hover to greyscale (redo with pseudo + opacity)
+* Change pseudo hover to block (redo to fit text width)
+
 ---
 
 ### ToDo...
 
+!! MOBILEMENU BROKEN !!
+Refactor MobileHeaderButton into HeaderButton,
+Should fix
+
 #### Future Ideas
 * Reviews
-* Hide checkout link if cart empty
 * Refactor cart population - inc. wish?
 * Refactor MobileHeaderButton & HeaderButton?
 * move from cart to wish if in localstore & OoS
