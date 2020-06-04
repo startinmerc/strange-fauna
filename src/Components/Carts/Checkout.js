@@ -7,7 +7,11 @@ import { Link } from 'react-router-dom';
 
 // Returns checkout element with local state of form content
 
-const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery, cart, delivery, search, options })=> {
+const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery, cart, delivery, search, options, history })=> {
+
+	if(cart.cart.length === 0){
+		history.push("/cart");
+	}
 
 	const [noteCheckbox, setNoteCheckbox] = useState(false);
 	const [form, setForm] = useState({});
