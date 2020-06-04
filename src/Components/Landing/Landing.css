@@ -26,18 +26,19 @@
 
 .landing-section__image {
 	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
+	top: -25px;
+	right: 0%;
+	height: 90%;
+	width: 60%;
 	background-size: cover;
 	background-position: center;
 	transition: filter 230ms ease-in;
+	transform-origin: top right;
 }
 
 .landing-section:hover .landing-section__image,
 .landing-section:focus-within .landing-section__image {
-	filter: blur(2px);
+	filter: grayscale(0.3);
 }
 
 .landing-section__text {
@@ -66,6 +67,11 @@
 .landing-section:nth-of-type(even){
 	flex-direction: row-reverse;
 	text-align: right;
+}
+
+.landing-section:nth-of-type(even) .landing-section__image {
+	left: 0%;
+	transform-origin: top left;
 }
 
 .landing-section:nth-of-type(even) .landing-section__link {
