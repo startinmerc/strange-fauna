@@ -14,14 +14,18 @@ function NavSectionContainer({categories, fetchCategories, products, fetchNavPro
 			fetchCategories();
 		}
 		if (products.length === 0) {
-			categories.forEach(cat => fetchNavProducts(cat.section))
+			categories.forEach(cat => {
+				if (cat.type !== "about"){
+					fetchNavProducts(cat._id);
+				}
+			})
 		}
 	},[categories, products, fetchCategories, fetchNavProducts]);
 
-	const sections = categories.map((section,index)=>(
-		<NavSection key={`nav-section-${section.section}`}
-			products={products.filter(p=>p.type === section.section)}
-		  {...section}/>
+	const sections = categories.map((cat,index)=>(
+		<NavSection key={`nav-section-${cat.type}`}
+			products={products.filter(p=>p.type.type === cat.type)}
+		  {...cat}/>
 	 ));
 
 	return(

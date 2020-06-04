@@ -42,9 +42,9 @@ export const fetchOneProduct = product_id => {
 	};
 };
 
-export const fetchCategoryProducts = category => {
+export const fetchCategoryProducts = type => {
 	return dispatch => {
-		return apiCall("get", `/api/categories/${category}/products`)
+		return apiCall("get", `/api/categories/${type}/products`)
 			.then(res => dispatch(loadCategoryProducts(res)))
 			.catch(err => console.log(err));
 	};

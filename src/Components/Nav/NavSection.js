@@ -6,16 +6,16 @@ import ProductCard from '../Products/ProductCard'
 // Returns element with link to section & dropdown menu of blurb & 2 product cards
 // Or list of about links
 
-function NavSection({color,section,title,products}) {
+function NavSection({color,type,title,products}) {
 
 	function handleClick(e){
 		e.target.blur();
 	}
 
-	if(section==='about') {
+	if(type==='about') {
 		return (
 			<li className="nav-section" style={{backgroundColor: `${color}`}}>
-				<Link onClick={handleClick} to='/about' className={`nav-section__block-link nav--${section}`}>
+				<Link onClick={handleClick} to='/about' className={`nav-section__block-link nav--${type}`}>
 					{title}
 				</Link>
 				<div className="nav-section__submenu about-submenu" style={{backgroundColor: `${color}`}}>
@@ -34,7 +34,7 @@ function NavSection({color,section,title,products}) {
 		 	));
 		return(
 			<li className="nav-section" style={{backgroundColor: `${color}`}}>
-				<Link onClick={handleClick} to={link} className={`nav-section__block-link nav--${section}`}>{title}</Link>
+				<Link onClick={handleClick} to={link} className={`nav-section__block-link nav--${type}`}>{title}</Link>
 				<div className="nav-section__submenu" style={{backgroundColor: `${color}`}}>
 					<div className="nav-section__submenu-content">
 						<h2>{title}</h2>
