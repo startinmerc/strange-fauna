@@ -52,7 +52,7 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 					</select>
 				</p>
 				<h2>Total: ${cart.total + delivery}</h2>
-				<Link to="/checkout">Proceed to Checkout</Link>
+				{cart.cart.length > 0 ? <Link to="/checkout">Proceed to Checkout</Link> : <><p>Your cart is empty.</p><Link to="/products/all">Browse products</Link></>}
 			</div>
 		</main>
 	)
