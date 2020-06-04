@@ -507,7 +507,17 @@ Version logs for the project are below...
 * Remove seeds.js
 * Remove seeds import & functions from middleware
 * Remove any remaining imports of seeds in components
+* Clear dependency errors
+
+####Tidy Redux
 * Simplify wish redux state as array
+* Rename "other" as "delivery"
+
+#### API Change
+* Product type switched to id ref of Category in API
+* Category.type to match Product.type
+* Update var names in product actions to reflect changes
+* Use product.type as needed
 
 ---
 
@@ -515,9 +525,9 @@ Version logs for the project are below...
 
 #### Redux
 * Cart quantity handling
-* Rename other to delivery
 
 #### Future Ideas
+* Reviews
 * Hide checkout link if cart empty
 * Refactor cart population - inc. wish?
 * Refactor MobileHeaderButton & HeaderButton?
