@@ -2,11 +2,10 @@
 
 .landing-section {
 	display: flex;
-	width: 100%;
+	width: 125%;
 	height: 60vh;
-	margin-bottom: 3rem;
+	margin: 6rem 0 6rem -12.5%;
 	position: relative;
-	overflow: hidden;
 }
 
 .landing-section::before {
