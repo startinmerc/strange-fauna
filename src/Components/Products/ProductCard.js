@@ -47,6 +47,8 @@ function ProductCard({type, detail, delay=0}) {
 			return (
 				<div className="product-card" style={{
 					backgroundColor: detail.type.color,
+					transform: "scale(0)",
+					animation: "popUp 150ms ease-in forwards",
 					animationDelay: `${delay*100}ms`
 				}}>
 					<AddToWish id={detail._id}/>
