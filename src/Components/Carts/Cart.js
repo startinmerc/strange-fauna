@@ -26,7 +26,6 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 		changeDelivery(e.target.value);
 	}
 
-
 	return (
 		<main id="cart">
 			<Helmet>
@@ -37,7 +36,7 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 			</div>
 			<div className="cart__list">
 				{search.map(item => (
-					<ProductCard detail={item} key={`prod-${item.id}`} type="cart"/>
+					<ProductCard detail={{...item, qty: cart.cart.find(v=>v.id === item._id).qty}}key={`prod-${item._id}`} type="cart"/>
 				))}
 			</div>
 			<div style={{textAlign: 'right'}}>
@@ -52,7 +51,7 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 							))}
 					</select>
 				</p>
-				<h2>Total: ${cart.total + Number(delivery)}</h2>
+				<h2>Total: ${cart.total + delivery}</h2>
 				<Link to="/checkout">Proceed to Checkout</Link>
 			</div>
 		</main>
