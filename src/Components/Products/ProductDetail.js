@@ -16,9 +16,10 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 
 	// Pop item from ID on load
 	React.useEffect(()=>{
-		popItem(id);
+		clearSearch();
+		fetchOneProduct(id);
 		return ()=>{clearSearch()};
-	},[id, clearSearch])
+	},[id, clearSearch, fetchOneProduct])
 
 	// States
 	// Set quantity
@@ -36,18 +37,6 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 	// update quantity on input change
 	function handleChange(e){
 		setQty(e.target.value);
-	}
-
-	async function popItem(id){
-		// Clear products.search field
-		clearSearch();
-		await fetchOneProduct(id);
-		// find relevant category title based on item type
-		updateVars({cat: categories.find(c=>(c.section === foundProduct.type)).title});
-		// calculate average review
-		if(foundProduct.reviews.length > 1){
-			updateVars({avgReview: ((foundProduct.reviews.reduce((acc,review)=>(acc+review.score),0))/foundProduct.reviews.length).toFixed(1)})
-		}
 	}
 
 	if(foundProduct){
