@@ -50,9 +50,9 @@ export const fetchCategoryProducts = type => {
 	};
 };
 
-export const fetchNavProducts = category => {
+export const fetchNavProducts = type_id => {
 	return dispatch => {
-		return apiCall("get", `/api/products/featured/${category}`)
+		return apiCall("get", `/api/products/featured/${type_id}`)
 			.then(res => dispatch(loadNavProducts(res)))
 			.catch(err => console.log(err));
 	};
