@@ -24,8 +24,6 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 	// States
 	// Set quantity
 	const [qty, setQty] = React.useState(1);
-	// Vars
-	const [vars, updateVars] = React.useState({cat:"",avgReview:0,inCart:false});
 	// Ref
 	let header = React.createRef();
 
@@ -82,11 +80,11 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 					<h3>Customer Reviews</h3>
 					<p>
 						<Star size='20px' fill="var(--primary)"/>
-						<Star size='20px' fill={vars.avgReview > 1.5 ? 'var(--primary)' : 'none'}/>
-						<Star size='20px' fill={vars.avgReview > 2.5 ? 'var(--primary)' : 'none'}/>
-						<Star size='20px' fill={vars.avgReview > 3.5 ? 'var(--primary)' : 'none'}/>
-						<Star size='20px' fill={vars.avgReview > 4.5 ? 'var(--primary)' : 'none'}/>
-						&nbsp;<small>({vars.avgReview})/5</small><br/>
+						<Star size='20px' fill={avgReview > 1.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={avgReview > 2.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={avgReview > 3.5 ? 'var(--primary)' : 'none'}/>
+						<Star size='20px' fill={avgReview > 4.5 ? 'var(--primary)' : 'none'}/>
+						&nbsp;<small>({avgReview})/5</small><br/>
 						from {reviews.length} reviews
 					</p>
 				</div>
