@@ -512,6 +512,7 @@ Version logs for the project are below...
 ####Tidy Redux
 * Simplify wish redux state as array
 * Rename "other" as "delivery"
+* Add qty from cart to 'cart' type product cards
 
 #### API Change
 * Product type switched to id ref of Category in API
@@ -522,9 +523,6 @@ Version logs for the project are below...
 ---
 
 ### ToDo...
-
-#### Redux
-* Cart quantity handling
 
 #### Future Ideas
 * Reviews
