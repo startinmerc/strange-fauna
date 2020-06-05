@@ -5,7 +5,7 @@ import { fetchCategories } from "../../../store/actions/categories";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
 import Hamburger from './Hamburger';
-import MobileHeaderButton from './MobileHeaderButton';
+import HeaderButton from '../Header/HeaderButton';
 import './MobileMenu.css';
 
 // Returns sticky footer mobile menu with cart & wishlist buttons,
@@ -13,7 +13,7 @@ import './MobileMenu.css';
 
 const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 
-	const [expanded,setExpanded] = useState();
+	const [expanded,setExpanded] = useState(false);
 
 	React.useEffect(()=>{
 		if(categories.length === 0){
@@ -46,12 +46,14 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 				{sections}
 			</div>
 			<div className="mobile-menu__content">
-				<MobileHeaderButton 
+				<HeaderButton 
+					mobile={true}
 					headerIcon={<Star size={"2rem"} strokeWidth="1"/>}
 					id={'header-wish'}
 					url={'/wishlist'}
 					items={wish}/>
-				<MobileHeaderButton 
+				<HeaderButton 
+					mobile={true}
 					headerIcon={<ShoppingCart size={"2rem"} strokeWidth="1"/>}
 					id={'header-cart'}
 					url={'/cart'}
@@ -64,7 +66,7 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 
 function mapStateToProps(reduxState) {
 	return {
-		wish: reduxState.wish.wish,
+		wish: reduxState.wish,
 		cart: reduxState.cart.cart,
 		categories: reduxState.categories
 	};
