@@ -24,6 +24,13 @@ class HeaderButton extends Component {
 		const isEmpty = items.length === 0;
 		// If non-empty & total supplied
 		const showTotal = !isEmpty && total !== undefined;
+		// Get basic total number
+		let totalQty = items.length;
+		// If showTotal (ie. Cart)
+		if(showTotal){
+			// Reduce items to item x quantity
+			totalQty = items.reduce((a,v)=>a.qty+v.qty);
+		}
 
 		if(mobile){
 			return (
@@ -45,7 +52,7 @@ class HeaderButton extends Component {
 					<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
 						{/*render relevant icon, text, length*/}
 						{headerIcon}
-						{headerText}{` (${items.length})`}
+						{headerText}{` (${totalQty})`}
 						{/*Adds subtotal if cart*/}
 						{showTotal && `: $${total}`}
 					</Link>
