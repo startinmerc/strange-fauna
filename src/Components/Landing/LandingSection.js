@@ -26,6 +26,8 @@ function LandingSection({content}) {
 			<div className="landing-section__text">
 				<h2 className="landing-section__header">{content.header}</h2>
 				<p className="landing-section__copy">{content.copy}</p>
+			</div>
+			<div className="landing-section__links">
 				{mappedLinks}
 			</div>
 		</section>

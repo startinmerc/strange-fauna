@@ -57,6 +57,10 @@
 	margin-bottom: 4rem;
 }
 
+.landing-section__links {
+	margin: 0 2rem;
+}
+
 .landing-section__link {
 	padding: 0.4rem 0.4rem 0.3rem 0.4rem;
 	margin-right: 1rem;
@@ -133,6 +137,9 @@
 	.landing-section__text::before {
 		display: none;
 	}
+	.landing-section__links {
+		margin: 0px 2rem 25px 2rem;
+	}
 }
 
 /*=============Responsive - Mobile=============*/
@@ -148,7 +155,7 @@
 	.landing-section__text {
 		padding: 12px;
 	}
-	.cta {
-		margin-top: 0;
+	.landing-section__links {
+		margin: 0px 12px 25px 12px;
 	}
 }
