@@ -9,7 +9,7 @@ import { animateIcon } from '../../../middleware';
 class HeaderButton extends Component {
 
 	shouldComponentUpdate(next){
-		return this.props.items.length !== next.items.length;
+		return this.props.items !== next.items;
 	}
 
 	componentDidUpdate(prevProps, prevState, snapshot){
