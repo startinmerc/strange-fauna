@@ -533,26 +533,47 @@ Version logs for the project are below...
 * Change hover to greyscale (redo with pseudo + opacity)
 * Change pseudo hover to block (redo to fit text width)
 
+#### LandingSection Pt.2
+* Move ::before to text to match text width
+* Add flex to mobile
+* Change mobile positioning, hide ::before
+* Seperate links to own container & position
+
+#### MobileHeaderButton
+* refactor into HeaderButton
+* Add mobile prop
+* remove unused MobileHeaderButton
+
+#### HeaderButton
+* Add reduce function to get total quantity of items
+* Simplify shouldUpdate to allow quantity changes
+
+### V1.3
+
+#### Redux Cart
+* Add update total to EDIT_CART
+* Add comments
+* Ensure qty is number
+* Fix updateCart in ProductDetail
+
+#### LandingSection Pt.3
+* Class based dark/light/section coloring
+ * (Hacky, but needed to get around pseudo styling in React)
+
 ---
 
 ### ToDo...
 
-!! MOBILEMENU BROKEN !!
-Refactor MobileHeaderButton into HeaderButton,
-Should fix
+#### LandingSection
+* Parallax scroll - fast images, slow section
+* Loading animation - content from left, image fade from above
 
 #### Future Ideas
 * Reviews
 * Refactor cart population - inc. wish?
-* Refactor MobileHeaderButton & HeaderButton?
 * move from cart to wish if in localstore & OoS
 * Pagination in products
 * React Router Page transition on productlist
 * Showing/hiding components transitions
 * Review semantic HTML
 * Install & config Prettier
-* LandingSection
- * Taller sections
- * Full width?
- * Image zoom on hover
- * Loading animation
