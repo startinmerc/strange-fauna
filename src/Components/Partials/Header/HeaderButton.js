@@ -19,27 +19,43 @@ class HeaderButton extends Component {
 	render(){
 
 		// Deconstruct props
-		const { headerIcon, headerText, id, url, path, items, total } = this.props;
+		const { headerIcon, headerText, id, url, path, items, total, mobile } = this.props;
 		// Boolean for empty cart
 		const isEmpty = items.length === 0;
 		// If non-empty & total supplied
 		const showTotal = !isEmpty && total !== undefined;
 
-		return (
-			<div className="header-button" id={id}>
-				{/*Add/remove empty class from button*/}
-				<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
-					{/*render relevant icon, text, length*/}
-					{headerIcon}{headerText}{` (${items.length})`}
-					{/*Adds subtotal if cart*/}
-					{showTotal && `: $${total}`}
-				</Link>
-				<svg className="minicart__svg" viewBox="0 0 314 443" role="img" aria-hidden="true">
-					<path d={path} pathLength="1"/>
-				</svg>
-				<MiniCart items={items} type={headerText}/>
-			</div>
-		);
+		if(mobile){
+			return (
+				<div className="header-button" id={id}>
+					{/*Add/remove empty class from button*/}
+					<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
+						{/*render relevant icon, text, length*/}
+						{headerIcon}
+						{ !isEmpty ?
+							<div className="mobile-menu__quantity">({items.length})</div>
+						: null}
+					</Link>
+				</div>
+			)
+		} else {
+			return (
+				<div className="header-button" id={id}>
+					{/*Add/remove empty class from button*/}
+					<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
+						{/*render relevant icon, text, length*/}
+						{headerIcon}
+						{headerText}{` (${items.length})`}
+						{/*Adds subtotal if cart*/}
+						{showTotal && `: $${total}`}
+					</Link>
+					<svg className="minicart__svg" viewBox="0 0 314 443" role="img" aria-hidden="true">
+						<path d={path} pathLength="1"/>
+					</svg>
+					<MiniCart items={items} type={headerText}/>
+				</div>
+			);
+		}
 	}
 }
 
