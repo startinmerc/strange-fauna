@@ -1,9 +1,8 @@
 /*===================Landing===================*/
 
 .landing-section {
-	display: flex;
 	width: 125%;
-	height: 60vh;
+	min-height: 60vh;
 	margin: 6rem 0 6rem -12.5%;
 	position: relative;
 }
@@ -69,7 +68,6 @@
 /*==============Odd/Even Sections==============*/
 
 .landing-section:nth-of-type(even){
-	flex-direction: row-reverse;
 	text-align: right;
 }
 
@@ -124,6 +122,14 @@
 	#landing {
 		min-width: 100vw;
 	}
+	.landing-section {
+		width: 100%;
+		margin-left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		min-height: auto;
+	}
 	.landing-section__text::before {
 		display: none;
 	}
@@ -133,9 +139,7 @@
 
 @media(max-width: 600px){
 	.landing-section {
-		margin-bottom: 0;
-		border-bottom-width: 15px;
-		border-bottom-style: solid;
+		justify-content: space-between;
 	}
 	.landing-section__header {
 		font-size: 2rem;
