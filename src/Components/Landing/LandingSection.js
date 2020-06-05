@@ -18,10 +18,7 @@ function LandingSection({content}) {
 		<Link to={link.link} key={`section-link-${i}`} className="landing-section__link">{link.title}</Link>
 	));
 	return (
-		<section style={{
-			color: `var(--${content.dark ? 'black' : 'white'})`,
-			borderBottomColor: `var(--${content.type})`, backgroundColor: `var(--${content.type})`
-		}} className="landing-section">
+		<section className={`landing-section ${content.dark ? 'dark' : null} landing-section--${content.type}`}>
 			<div className="landing-section__image" style={{backgroundImage: `url(${content.image})`}} aria-hidden="true"></div>
 			<div className="landing-section__text">
 				<h2 className="landing-section__header">{content.header}</h2>
