@@ -142,7 +142,8 @@
 		justify-content: space-between;
 	}
 	.landing-section__header {
-		font-size: 2rem;
+		font-size: 3rem;
+		margin-top: 0;
 	}
 	.landing-section__text {
 		padding: 12px;
