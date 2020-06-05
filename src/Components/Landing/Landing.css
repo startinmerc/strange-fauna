@@ -26,6 +26,8 @@
 }
 
 .landing-section__text {
+	display: inline-block;
+	position: relative;
 	padding: 2rem;
 	z-index: 1;
 }
@@ -49,6 +51,7 @@
 
 .landing-section__header {
 	font-size: 4rem;
+	margin-top: 1rem;
 }
 
 .landing-section__copy {
@@ -137,8 +140,8 @@
 	.landing-section__header {
 		font-size: 2rem;
 	}
-	.landing-section::before {
-		transform-origin: bottom;
+	.landing-section__text {
+		padding: 12px;
 	}
 	.cta {
 		margin-top: 0;
