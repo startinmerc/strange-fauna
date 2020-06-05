@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 // Expects no props,
 // Returns full product detail page
 
-function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundProduct}) {
+function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundProduct, editCart}) {
 	// get product id from url
 	let { id } = useParams();
 
@@ -29,12 +29,12 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 
 	// update quantity in cart on click
 	function handleClick(e){
-		editCart(foundProduct.id, qty);
+		editCart(foundProduct._id, qty);
 	}
 
 	// update quantity on input change
 	function handleChange(e){
-		setQty(e.target.value);
+		setQty(Number(e.target.value));
 	}
 
 	if(foundProduct){
