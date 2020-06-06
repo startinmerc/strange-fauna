@@ -53,7 +53,7 @@
 	content: '';
 	position: absolute;
 	height: calc(100% - 25px);
-	width: 100%;
+  width: calc(100% + 10vw + 2rem);
 	top: 0;
 	z-index: -1;
 	transition: transform 300ms ease-in;
@@ -105,12 +105,12 @@
 }
 
 .landing-section:nth-of-type(odd) .landing-section__text::before {
-	left: 0%;
+	left: -10vw;
 	transform-origin: left;
 }
 
 .landing-section:nth-of-type(even) .landing-section__text::before {
-	right: 0%;
+	right: -10vw;
 	transform-origin: right;
 }
 
