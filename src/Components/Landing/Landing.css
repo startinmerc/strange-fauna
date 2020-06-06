@@ -165,8 +165,12 @@
 
 @media(max-width: 600px){
 	.landing-section {
+		width: 100%;
 		padding: 0;
 		justify-content: space-between;
+	}
+	.landing-section:nth-of-type(even){
+		margin-left: 0;
 	}
 	.landing-section__header {
 		font-size: 3rem;
