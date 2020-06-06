@@ -165,6 +165,7 @@
 
 @media(max-width: 600px){
 	.landing-section {
+		padding: 0;
 		justify-content: space-between;
 	}
 	.landing-section__header {
