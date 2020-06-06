@@ -559,6 +559,8 @@ Version logs for the project are below...
 #### LandingSection Pt.3
 * Class based dark/light/section coloring
  * (Hacky, but needed to get around pseudo styling in React)
+* Reduce section width & push to sides
+* Further offset image
 
 ---
 
@@ -577,3 +579,11 @@ Version logs for the project are below...
 * Showing/hiding components transitions
 * Review semantic HTML
 * Install & config Prettier
+
+Set vars:
+```
+let root = document.documentElement;
+document.addEventListener("scroll", evt => {
+	root.style.setProperty("--scrolltop", root.scrollTop);
+});
+```
