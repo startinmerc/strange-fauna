@@ -45,7 +45,7 @@
 .landing-section__text {
 	display: inline-block;
 	position: relative;
-	padding: 2rem;
+	margin-top: 2rem;
 	z-index: 1;
 }
 
@@ -72,10 +72,6 @@
 
 .landing-section__copy {
 	margin-bottom: 4rem;
-}
-
-.landing-section__links {
-	margin: 0 2rem;
 }
 
 .landing-section__link {
