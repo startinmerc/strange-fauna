@@ -150,13 +150,13 @@
 	transform-origin: left;
 	left: calc(-3rem - 10vw + 2px);
 }
+
 /*==================Email CTA==================*/
 
 .cta {
 	background-color: var(--footer);
 	color: var(--white);
 	text-align: center;
-	margin-top: -3rem;
 	padding: 1rem;
 }
 
