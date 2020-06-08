@@ -83,6 +83,21 @@
 	font-size: 1.2rem;
 	position: relative;
 }
+
+.landing-section__links::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: calc(100% + 4.4rem + 10vw);
+	background: var(--primary);
+	top: -1.6rem;
+	transition: transform 300ms 150ms ease-in;
+	transform: scaleX(0);
+}
+
+.landing-section:focus-within .landing-section__links::before,
+.landing-section:hover .landing-section__links::before {
+	transform: scaleX(1);
 }
 
 .landing-section__link {
