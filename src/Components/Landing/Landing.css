@@ -221,6 +221,10 @@
 		left: 0;
 		transform: scaleY(1);
 		opacity: 0.2;
+		background: var(--black) !important;
+	}
+	.landing-section.dark .landing-section__text::before {
+		background: var(--white) !important;
 	}
 	}
 	.landing-section__header {
