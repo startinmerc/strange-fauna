@@ -69,12 +69,20 @@
 }
 
 .landing-section__header {
-	font-size: 4rem;
-	margin-top: 1rem;
+	font-size: 5rem;
+	margin: 1rem 0 0 0;
 }
 
 .landing-section__copy {
-	margin-bottom: 4rem;
+	font-size: 1.2rem;
+	margin: 1rem 0 3rem 0;
+}
+
+.landing-section__links {
+	padding-bottom: 3rem;
+	font-size: 1.2rem;
+	position: relative;
+}
 }
 
 .landing-section__link {
