@@ -27,9 +27,9 @@
 
 .landing-section__image {
 	position: absolute;
-	top: -25px;
-	right: -5%;
-	height: 90%;
+	top: -3rem;
+	right: -3rem;
+	height: 100%;
 	width: 60%;
 	background-size: cover;
 	background-position: center;
@@ -93,7 +93,7 @@
 }
 
 .landing-section:nth-of-type(even) .landing-section__image {
-	left: -5%;
+	left: -3rem;
 	transform-origin: top left;
 }
 
