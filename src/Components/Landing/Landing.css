@@ -226,6 +226,13 @@
 	.landing-section.dark .landing-section__text::before {
 		background: var(--white) !important;
 	}
+	.landing-section__image {
+		left: 20%;
+		width: 80%;
+	}
+	.landing-section:nth-of-type(even) .landing-section__image {
+		left: 0;
+		width: 50%;
 	}
 	.landing-section__header {
 		font-size: 3rem;
