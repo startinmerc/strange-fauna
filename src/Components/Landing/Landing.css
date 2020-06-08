@@ -185,10 +185,6 @@
 		width: calc(100% - 6rem);
 		padding-left: 3rem;
 		margin-left: 0;
-		margin-right: 0;
-		display: flex;
-		flex-direction: column;
-		justify-content: flex-start;
 	}
 	.landing-section:nth-of-type(even){
 		padding-right: 3rem;
@@ -218,6 +214,12 @@
 		margin-left: 0;
 		right: 0;
 		padding: 0;
+	}
+	.landing-section__text::before {
+		width: 100%;
+		left: 0;
+		transform: scaleY(1);
+		opacity: 0.2;
 	}
 	}
 	.landing-section__header {
