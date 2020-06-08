@@ -31,6 +31,7 @@
 	right: -3rem;
 	height: 100%;
 	width: 60%;
+	max-width: 600px;
 	background-size: cover;
 	background-position: center;
 	transition: filter 230ms ease-in;
