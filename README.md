@@ -561,24 +561,37 @@ Version logs for the project are below...
  * (Hacky, but needed to get around pseudo styling in React)
 * Reduce section width & push to sides
 * Further offset image
+* Increase x offset on mobile
+* Add section-links pseudo
+* Make section-text pseudo full & translucent on mobile for contrast
 
 ---
 
 ### ToDo...
 
-#### LandingSection
-* Parallax scroll - fast images, slow section
-* Loading animation - content from left, image fade from above
+#### Redesign
+* HeaderButton redesign
+ * Hide text until hover
+ * Get rid of minicarts?
+ * Remove border
+ * Realign?
+* Possibly add max-width to containers
 
-#### Future Ideas
+#### API Interaction
 * Reviews
 * Refactor cart population - inc. wish?
 * move from cart to wish if in localstore & OoS
 * Pagination in products
 * React Router Page transition on productlist
+
+#### Other
 * Showing/hiding components transitions
 * Review semantic HTML
-* Install & config Prettier
+
+#### GSAP
+* LandingSection
+ * Parallax scroll - fast images, slow section
+ * Loading animation - content from left, image fade from above
 
 Set vars:
 ```
