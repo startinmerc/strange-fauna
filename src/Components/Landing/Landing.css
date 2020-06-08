@@ -140,6 +140,15 @@
 	transform-origin: right;
 }
 
+.landing-section:nth-of-type(odd) .landing-section__links::before {
+	transform-origin: right;
+	right: calc(-3rem - 10vw + 2px);
+}
+
+.landing-section:nth-of-type(even) .landing-section__links::before {
+	transform-origin: left;
+	left: calc(-3rem - 10vw + 2px);
+}
 /*==================Email CTA==================*/
 
 .cta {
