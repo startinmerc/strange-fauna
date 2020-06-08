@@ -189,7 +189,8 @@
 	.landing-section:nth-of-type(even){
 		padding-right: 3rem;
 	}
-	.landing-section__text::before {
+
+	.landing-section__links::before {
 		display: none;
 	}
 	.landing-section__links {
