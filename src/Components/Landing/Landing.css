@@ -113,7 +113,8 @@
 .landing-section:nth-of-type(even){
 	text-align: right;
 	padding: 0 12.5% 0 0;
-	margin: 6rem -12.5% 6rem 0%;
+	margin: 6rem 0%;
+	right: -3rem;
 }
 
 .landing-section:nth-of-type(even) .landing-section__image {
