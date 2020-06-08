@@ -137,7 +137,7 @@
 }
 
 .landing-section:nth-of-type(even) .landing-section__text::before {
-	right: -10vw;
+	right: calc(-10vw + 2px);
 	transform-origin: right;
 }
 
