@@ -27,10 +27,12 @@ class HeaderButton extends Component {
 		// Get basic total number
 		let totalQty = items.length;
 		// If showTotal (ie. Cart)
-		if(showTotal){
-			// Reduce items to item x quantity
-			totalQty = items.reduce((a,v)=>a.qty+v.qty);
-		}
+		if(showTotal && !isEmpty){
+			totalQty = items.reduce(function(accumulator, nextValue){
+					accumulator += (nextValue.qty);
+					return accumulator;
+				}, 0);
+		};
 
 		if(mobile){
 			return (
