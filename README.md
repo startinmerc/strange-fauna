@@ -565,6 +565,20 @@ Version logs for the project are below...
 * Add section-links pseudo
 * Make section-text pseudo full & translucent on mobile for contrast
 
+#### Redux Cart Revisited
+* Add middleware function to calculate total qty, value
+* Import to Cart reducer
+* Refactor reducer to use function & clean up code
+* Simplify components using cart as needed
+
+### V1.4
+
+#### HeaderButton Redesign
+* Remove minicart for now
+* Remove border, overcomplex styling
+* Refactor elements
+* Refactor JS rendering
+
 ---
 
 ### ToDo...
@@ -572,9 +586,6 @@ Version logs for the project are below...
 #### Redesign
 * HeaderButton redesign
  * Hide text until hover
- * Get rid of minicarts?
- * Remove border
- * Realign?
 * Possibly add max-width to containers
 
 #### API Interaction
