@@ -1,8 +1,9 @@
 import { ADD_CART, REMOVE_CART, EDIT_CART_QTY } from "../actionTypes";
+import { getCartTotals } from "../../middleware";
 
 const DEFAULT_STATE = {
 	cart: [],
-	total: 0
+	total: {qty: 0, val: 0}
 }
 
 export default (state = DEFAULT_STATE, action) => {
