@@ -13,8 +13,11 @@ import './Carts.css';
 const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, options, search, fetchDeliveries, total })=> {
 
 	React.useEffect(()=>{
+		// Get delivery options
 		fetchDeliveries();
+		// Clear search store
 		clearSearch();
+		// Find details for all cart items
 		cart.forEach((v)=>{
 			fetchOneProduct(v.id);
 		});
@@ -36,6 +39,7 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 			</div>
 			<div className="cart__list">
 				{search.map(item => (
+					// Add qty from cart to ProductCard
 					<ProductCard detail={{...item, qty: cart.find(v=>v.id === item._id).qty}} key={`prod-${item._id}`} type="cart"/>
 				))}
 			</div>
@@ -52,6 +56,7 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 					</select>
 				</p>
 				<h2>Total: ${total.val + delivery}</h2>
+				{/*Change link depending on non-empty cart total*/}
 				{total.qty > 0 ? <Link to="/checkout">Proceed to Checkout</Link> : <><p>Your cart is empty.</p><Link to="/products/all">Browse products</Link></>}
 			</div>
 		</main>
