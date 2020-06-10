@@ -4,6 +4,17 @@ export function isMobile(){
 	return window.innerWidth < 600;
 };
 
+// Expects array of cart items w/ qty,price,id
+export function getCartTotals(items){
+	return items.reduce(function(acc, nxt){
+		// Add quantity to total
+		acc.qty += (nxt.qty);
+		// Add quantity x price to total
+		acc.val += (nxt.price * nxt.qty);
+		return acc;
+	}, {qty: 0, val: 0});
+}
+
 // expects email string
 export function validateEmail(email) {
 	// regex to validate email, idk
