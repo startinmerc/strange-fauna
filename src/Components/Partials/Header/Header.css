@@ -70,6 +70,10 @@
 	fill: transparent;
 }
 
+.header-button::before {
+	bottom: -2px;
+}
+
 .header-button::after {
 	content: "";
 	position: absolute;
