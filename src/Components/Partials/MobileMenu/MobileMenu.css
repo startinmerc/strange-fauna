@@ -6,62 +6,17 @@
 	box-shadow: 0px 0px 0.2rem var(--black);
 }
 
+#mobile-menu .header-button__link::after {
+	top: 50%;
+	left: 50%;
+}
+
 .mobile-menu__content {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	background: var(--header);
 	padding: 7px 0px;
-}
-
-#mobile-menu .header-button {
-	position: relative;
-}
-
-#mobile-menu .header-button__link {
-	border: none;
-	background: transparent;
-}
-
-#mobile-menu .header-button__link svg {
-	fill: var(--primary);
-	stroke: var(--black);
-}
-
-#mobile-menu .header-button__link.empty svg {
-	fill: transparent;
-}
-
-#mobile-menu .header-button::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 50px;
-	width: 50px;
-	background-color: var(--primary);
-	transform: translate(-50%,-50%) scale(0);
-	opacity: 0;
-	border-radius: 50%;
-}
-
-#mobile-menu .header-button.updated::after {
-	animation: updatePseudo 270ms linear forwards;
-}
-
-@keyframes updatePseudo {
-	0% {
-		transform: translate(-50%,-50%) scale(0);
-		opacity: 1;
-	}
-	99% {
-		transform: translate(-50%,-50%) scale(2);
-		opacity: 0;
-	}
-	100% {
-		transform: translate(-50%,-50%) scale(0);
-		opacity: 0;
-	}
 }
 
 .mobile-menu__quantity {
