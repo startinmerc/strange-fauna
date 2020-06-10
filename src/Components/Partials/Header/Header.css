@@ -50,11 +50,8 @@
 	position: relative;
 }
 
-.header-button:first-of-type {
-	margin-right: 10px;
-}
-
 .header-button {
+	margin-left: 8px;
 	font-size: 1.1rem;
 	display: flex;
 	align-items: center;
@@ -186,9 +183,9 @@
 	.header__main-container {
 		padding: 5px 5%;
 	}
-	.header-button {
-		padding: 2px;
-		width: auto;
+	.header__buttons-container {
+		flex-direction: column;
+		align-items: flex-end;
 	}
 	.header-button::before {
 		display: none;
