@@ -7,19 +7,21 @@ import { Link } from 'react-router-dom';
 
 // Returns checkout element with local state of form content
 
-const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery, cart, delivery, search, options, history })=> {
+const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDelivery, cart, delivery, search, options, history, total })=> {
 
-	if(cart.cart.length === 0){
+	// Redirect to cart page if cart is empty
+	if(total.qty === 0){
 		history.push("/cart");
 	}
 
+	// States for form values
 	const [noteCheckbox, setNoteCheckbox] = useState(false);
 	const [form, setForm] = useState({});
 
 	React.useEffect(()=>{
 		fetchDeliveries();
 		clearSearch();
-		cart.cart.forEach((v)=>{
+		cart.forEach((v)=>{
 			fetchOneProduct(v.id);
 		});
 		// ComponentWillUnmount function to empty search array
@@ -43,7 +45,7 @@ const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDeliver
   }
 
   const cartItems = search.map((item)=>{
-	  	let qty = cart.cart.find(i=>(i.id === item._id)).qty;
+	  	let qty = cart.find(i=>(i.id === item._id)).qty;
 	  	return (
 				<li style={{marginBottom: '0.5rem'}} key={item._id}>
 					<img src={item.photos[0]} alt={item.name}/>
@@ -64,13 +66,14 @@ const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDeliver
 			</Helmet>
 			<div id="order-summary">
 				<h2>Order Summary</h2>
+				<p>{total.qty} items</p>
 				<ul className="summary-section">
 					{cartItems}
 				</ul>
 				<p><Link to="/cart">Edit Cart</Link></p>
-				<p style={{textAlign: 'right'}}>Subtotal: ${cart.total}</p>
+				<p style={{textAlign: 'right'}}>Subtotal: ${total.val}</p>
 				<p style={{textAlign: 'right'}}>Delivery: ${delivery}</p>
-				<p style={{textAlign: 'right', fontSize: '1.4rem'}} className="display">Total: ${cart.total + delivery}</p>
+				<p style={{textAlign: 'right', fontSize: '1.4rem'}} className="display">Total: ${total.val + delivery}</p>
 			</div>
 
 			<div id="checkout-summary">
@@ -130,7 +133,8 @@ const Checkout = ({ fetchOneProduct, clearSearch, fetchDeliveries, changeDeliver
 
 function mapStateToProps(reduxState) {
 	return {
-		cart: reduxState.cart,
+		cart: reduxState.cart.cart,
+		total: reduxState.cart.total,
 		delivery: reduxState.delivery.delivery,
 		options: reduxState.delivery.options,
 		search: reduxState.products.search
