@@ -20,19 +20,12 @@ class HeaderButton extends Component {
 
 		// Deconstruct props
 		const { headerIcon, headerText, id, url, path, items, total, mobile } = this.props;
+		// Quantity total as wishlist length or cart.total.qty
+		const totalQty = total ? total.qty : items.length;
 		// Boolean for empty cart
 		const isEmpty = items.length === 0;
 		// If non-empty & total supplied
 		const showTotal = !isEmpty && total !== undefined;
-		// Get basic total number
-		let totalQty = items.length;
-		// If showTotal (ie. Cart)
-		if(showTotal && !isEmpty){
-			totalQty = items.reduce(function(accumulator, nextValue){
-					accumulator += (nextValue.qty);
-					return accumulator;
-				}, 0);
-		};
 
 		if(mobile){
 			return (
@@ -41,9 +34,8 @@ class HeaderButton extends Component {
 					<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
 						{/*render relevant icon, text, length*/}
 						{headerIcon}
-						{ !isEmpty ?
-							<div className="mobile-menu__quantity">({items.length})</div>
-						: null}
+						{/*show/hide quantity*/}
+						{ !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
 					</Link>
 				</div>
 			)
