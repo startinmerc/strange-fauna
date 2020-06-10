@@ -23,16 +23,14 @@ class HeaderButton extends Component {
 		// Quantity total as wishlist length or cart.total.qty
 		const totalQty = total ? total.qty : items.length;
 		// Boolean for empty cart
-		const isEmpty = items.length === 0;
-		// If non-empty & total supplied
-		const showTotal = !isEmpty && total !== undefined;
+		const isEmpty = totalQty === 0;
 
 		if(mobile){
 			return (
 				<div className="header-button" id={id}>
 					{/*Add/remove empty class from button*/}
 					<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
-						{/*render relevant icon, text, length*/}
+						{/*render relevant icon*/}
 						{headerIcon}
 						{/*show/hide quantity*/}
 						{ !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
@@ -45,10 +43,9 @@ class HeaderButton extends Component {
 					{/*Add/remove empty class from button*/}
 					<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
 						{/*render relevant icon, text, length*/}
-						{headerIcon}
-						{headerText}{` (${totalQty})`}
-						{/*Adds subtotal if cart*/}
-						{showTotal && `: $${total}`}
+						{headerIcon}{headerText}{` (${totalQty})`}
+						{/*Adds subtotal if cart & non-empty*/}
+						{total && !isEmpty > 0 ? `: $${total.val}` : null}
 					</Link>
 					<svg className="minicart__svg" viewBox="0 0 314 443" role="img" aria-hidden="true">
 						<path d={path} pathLength="1"/>
