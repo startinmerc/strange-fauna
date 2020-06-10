@@ -1,10 +1,10 @@
 /*===================Landing===================*/
 
 .landing-section {
-	width: calc(100% - 3rem);
+	width: calc(100% - 6rem);
 	min-height: 60vh;
-	padding: 0 0 0 12.5%;
-	margin: 6rem 0 6rem -12.5%;
+	padding: 0 0 0 3rem;
+	margin: 6rem 0;
 	position: relative;
 	color: var(--white);
 }
@@ -56,7 +56,7 @@
 	content: '';
 	position: absolute;
 	height: calc(100% - 25px);
-	width: calc(100% + 10vw + 2rem);
+	width: calc(100% + 7rem);
 	top: 0;
 	z-index: -1;
 	transition: transform 300ms ease-in;
@@ -91,7 +91,7 @@
 	width: calc(100% + 4.4rem + 10vw);
 	background: var(--primary);
 	top: -1.6rem;
-	transition: transform 300ms 150ms ease-in;
+	transition: transform 300ms 0ms ease-in;
 	transform: scaleX(0);
 }
 
@@ -112,9 +112,8 @@
 
 .landing-section:nth-of-type(even){
 	text-align: right;
-	padding: 0 12.5% 0 0;
-	margin: 6rem 0%;
-	right: -3rem;
+	padding: 0 3rem 0 0;
+	margin-left: 3rem;
 }
 
 .landing-section:nth-of-type(even) .landing-section__image {
@@ -132,12 +131,12 @@
 }
 
 .landing-section:nth-of-type(odd) .landing-section__text::before {
-	left: -10vw;
+	left: -6rem;
 	transform-origin: left;
 }
 
 .landing-section:nth-of-type(even) .landing-section__text::before {
-	right: calc(-10vw + 2px);
+	right: calc(-6rem	 + 2px);
 	transform-origin: right;
 }
 
