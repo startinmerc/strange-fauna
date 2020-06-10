@@ -6,7 +6,7 @@
 	box-shadow: 0px 0px 0.2rem var(--black);
 }
 
-#mobile-menu .header-button__link::after {
+#mobile-menu .header-button::after {
 	top: 50%;
 	left: 50%;
 }

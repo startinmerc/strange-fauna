@@ -25,16 +25,13 @@ class HeaderButton extends Component {
 		const isEmpty = totalQty === 0;
 
 		return (
-			<div className="header-button" id={id}>
-				{/*Add/remove empty class from button*/}
-				<Link to={url} className={`header-button__link ${isEmpty && 'empty'}`}>
-					{/*render relevant icon, text, length*/}
-					{headerIcon}{!mobile && headerText}{!mobile && ` (${totalQty})`}
-					{/*Adds subtotal if cart & non-empty*/}
-					{!mobile && total && !isEmpty > 0 ? `: $${total.val}` : null}
-					{mobile && !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
-				</Link>
-			</div>
+			<Link to={url} className={`header-button ${isEmpty && 'empty'}`} id={id}>
+				{/*render relevant icon, text, length*/}
+				{headerIcon}{!mobile && headerText}{!mobile && ` (${totalQty})`}
+				{/*Adds subtotal if cart & non-empty*/}
+				{!mobile && total && !isEmpty > 0 ? `: $${total.val}` : null}
+				{mobile && !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
+			</Link>
 		);
 	}
 }
