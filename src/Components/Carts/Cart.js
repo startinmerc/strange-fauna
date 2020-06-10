@@ -10,12 +10,12 @@ import './Carts.css';
 // No props expected
 // Returns cart element
 
-const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, options, search, fetchDeliveries })=> {
+const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, options, search, fetchDeliveries, total })=> {
 
 	React.useEffect(()=>{
 		fetchDeliveries();
 		clearSearch();
-		cart.cart.forEach((v)=>{
+		cart.forEach((v)=>{
 			fetchOneProduct(v.id);
 		});
 		// ComponentWillUnmount function to empty search array
@@ -32,15 +32,15 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 				<title>Strange Flora - Cart</title>
 			</Helmet>
 			<div>
-				<h2>Your Cart{(cart.cart.length === 0) ? ' is empty' : null}</h2>
+				<h2>Your Cart{total.qty === 0 && ' is empty'}</h2>
 			</div>
 			<div className="cart__list">
 				{search.map(item => (
-					<ProductCard detail={{...item, qty: cart.cart.find(v=>v.id === item._id).qty}}key={`prod-${item._id}`} type="cart"/>
+					<ProductCard detail={{...item, qty: cart.find(v=>v.id === item._id).qty}} key={`prod-${item._id}`} type="cart"/>
 				))}
 			</div>
 			<div style={{textAlign: 'right'}}>
-				<p className="cart__subtotal">Subtotal: ${cart.total}</p>
+				<p className="cart__subtotal">Subtotal: ${total.val}</p>
 				<p>
 					<label htmlFor="deliveries">Choose delivery option:</label>
 					<select value={delivery} onChange={handleChange} id="deliveries" name="deliveries">
@@ -51,8 +51,8 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 							))}
 					</select>
 				</p>
-				<h2>Total: ${cart.total + delivery}</h2>
-				{cart.cart.length > 0 ? <Link to="/checkout">Proceed to Checkout</Link> : <><p>Your cart is empty.</p><Link to="/products/all">Browse products</Link></>}
+				<h2>Total: ${total.val + delivery}</h2>
+				{total.qty > 0 ? <Link to="/checkout">Proceed to Checkout</Link> : <><p>Your cart is empty.</p><Link to="/products/all">Browse products</Link></>}
 			</div>
 		</main>
 	)
@@ -60,7 +60,8 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 
 function mapStateToProps(reduxState) {
 	return {
-		cart: reduxState.cart,
+		cart: reduxState.cart.cart,
+		total: reduxState.cart.total,
 		delivery: reduxState.delivery.delivery,
 		options: reduxState.delivery.options,
 		search: reduxState.products.search
