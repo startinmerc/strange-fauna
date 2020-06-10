@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Link } from "react-router-dom";
-import MiniCart from './MiniCart';
 import { animateIcon } from '../../../middleware';
 
 // Returns HeaderButton with MiniCart child,
@@ -35,10 +34,6 @@ class HeaderButton extends Component {
 					{!mobile && total && !isEmpty > 0 ? `: $${total.val}` : null}
 					{mobile && !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
 				</Link>
-				{/*<svg className="minicart__svg" viewBox="0 0 314 443" role="img" aria-hidden="true">
-					<path d={path} pathLength="1"/>
-				</svg>*/}
-				{/*<MiniCart items={items} type={headerText}/>*/}
 			</div>
 		);
 	}
