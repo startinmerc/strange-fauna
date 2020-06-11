@@ -580,13 +580,14 @@ Version logs for the project are below...
 * Refactor JS rendering
 * Hide text until hover
 
+#### LandingSections. Again.
+* Recenter sections
+* Reposition pseudos
+
 ---
 
 ### ToDo...
 
-#### Redesign
-* HeaderButton redesign
- * Hide text until hover
 #### Redesign 
 * Possibly add max-width to containers
 
