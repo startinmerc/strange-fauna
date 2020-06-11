@@ -88,7 +88,7 @@
 	content: '';
 	position: absolute;
 	height: 100%;
-	width: calc(100% + 4.4rem + 10vw);
+	width: calc(100% + 5rem);
 	background: var(--primary);
 	top: -1.6rem;
 	transition: transform 300ms 0ms ease-in;
@@ -142,12 +142,12 @@
 
 .landing-section:nth-of-type(odd) .landing-section__links::before {
 	transform-origin: right;
-	right: calc(-3rem - 10vw + 2px);
+	right: calc(-4rem);
 }
 
 .landing-section:nth-of-type(even) .landing-section__links::before {
 	transform-origin: left;
-	left: calc(-3rem - 10vw + 2px);
+	left: calc(-4rem);
 }
 
 /*==================Email CTA==================*/
