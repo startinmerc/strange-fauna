@@ -112,11 +112,10 @@
 	}
 }
 
-.header__buttons-container:hover .header-button:first-of-type {
-	transform: translateX(calc(100% - 20px));
+.header__buttons-container:hover .header-button {
+	transform: translateX(0);
 }
-
-.header-button:nth-of-type(2):hover {
+.header__buttons-container:hover .header-button:first-of-type {
 	transform: translateX(0);
 }
 

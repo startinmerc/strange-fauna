@@ -578,6 +578,7 @@ Version logs for the project are below...
 * Remove border, overcomplex styling
 * Refactor elements
 * Refactor JS rendering
+* Hide text until hover
 
 ---
 
@@ -586,6 +587,7 @@ Version logs for the project are below...
 #### Redesign
 * HeaderButton redesign
  * Hide text until hover
+#### Redesign 
 * Possibly add max-width to containers
 
 #### API Interaction
