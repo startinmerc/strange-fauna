@@ -584,6 +584,21 @@ Version logs for the project are below...
 * Recenter sections
 * Reposition pseudos
 
+#### Minicart
+* Remove any references in other components
+* Move all files to seperate folder
+
+#### HeaderButton
+* Add ref for buttons
+* Use to add/remove `.updated` class
+* Remove redundand middleware function
+* Tweak update animation & pseudo
+
+#### MobileMenu
+* Add animation for quantity mounting
+* Refactor expansion handling
+* Tweak styling
+
 ---
 
 ### ToDo...
