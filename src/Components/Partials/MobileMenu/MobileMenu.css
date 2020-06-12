@@ -35,7 +35,7 @@
 
 .mobile-menu__dropup {
 	position: absolute;
-	bottom: calc(2rem + 18px);
+	bottom: calc(2rem + 14px);
 	width: 100vw;
 	transform-origin: bottom;
 	z-index: -1;
@@ -47,7 +47,7 @@
 	top: -100vh;
 	left: 0;
 	width: 100vw;
-	height: 100vh;
+	height: 150vh;
 	background-color: #000000;
 	opacity: 0;
 	transition: opacity 210ms 110ms ease-in;
