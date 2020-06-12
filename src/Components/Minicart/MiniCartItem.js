@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { apiCall } from "../../../services/api";
+import { apiCall } from "../services/api";
 
 // Expects item object with product data, and remove function
 // Returns styled li with bound remove function & link to product detail

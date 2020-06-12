@@ -1,8 +1,8 @@
 import React from 'react';
 import MiniCartItem from './MiniCartItem';
 import { connect } from "react-redux";
-import { removeWish } from '../../../store/actions/wish';
-import { removeCart } from '../../../store/actions/cart';
+import { removeWish } from '../store/actions/wish';
+import { removeCart } from '../store/actions/cart';
 
 // Expects type 'Cart' or 'Wishlist', and cart or id array
 // Returns MiniCart with MiniCartItem children
