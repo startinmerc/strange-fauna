@@ -9,12 +9,9 @@ import ProductCard from '../Products/ProductCard';
 const Wishlist = ({ wish, search, fetchOneProduct, clearSearch })=> {
 
 	React.useEffect(()=>{
-		async function pop(id) {
-			await fetchOneProduct(id);
-		}
 		clearSearch();
 		wish.forEach(v=>{
-			pop(v);
+			fetchOneProduct(v);
 		});
 		// ComponentWillUnmount function to empty search array
 		return function cleanUp(){clearSearch()}
