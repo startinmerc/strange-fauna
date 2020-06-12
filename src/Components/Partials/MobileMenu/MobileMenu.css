@@ -11,6 +11,10 @@
 	left: 50%;
 }
 
+#mobile-menu .header-button::before {
+	display: none;
+}
+
 .mobile-menu__content {
 	display: flex;
 	justify-content: space-around;
