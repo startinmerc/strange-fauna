@@ -6,11 +6,16 @@ import { Link } from "react-router-dom";
 
 const HeaderButton = ({headerIcon, headerText, id, url, items, total, mobile})=> {
 
+	// Ref for element
 	const thisRef = React.useRef(null);
 
+	// Executes if 'items' prop changes
 	React.useEffect(()=>{
+		// Add 'updated' class to play CSS animation
 		thisRef.current.classList.add('updated');
+		// Listen for end of animation
 		thisRef.current.addEventListener('animationend',()=>{
+			// Remove 'updated' class
 			thisRef.current.classList.remove('updated');
 		});
 	},[items])
