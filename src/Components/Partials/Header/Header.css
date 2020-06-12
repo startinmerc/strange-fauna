@@ -96,6 +96,11 @@
 	border-radius: 50%;
 }
 
+#header .header-button::after {
+	height: 24px;
+	width: 24px;
+}
+
 .header-button.updated::after {
 	animation: updatePseudo 270ms linear forwards;
 }
