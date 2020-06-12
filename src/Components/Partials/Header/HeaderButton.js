@@ -1,39 +1,34 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import { animateIcon } from '../../../middleware';
 
 // Returns HeaderButton with MiniCart child,
 // Expects type prop: 0 = wishlist, 1 = shopping cart.
 
-class HeaderButton extends Component {
+const HeaderButton = ({headerIcon, headerText, id, url, items, total, mobile})=> {
 
-	shouldComponentUpdate(next){
-		return this.props.items !== next.items;
-	}
+	const thisRef = React.useRef(null);
 
-	componentDidUpdate(prevProps, prevState, snapshot){
-		animateIcon(this.props.id);
-	}
+	React.useEffect(()=>{
+		thisRef.current.classList.add('updated');
+		thisRef.current.addEventListener('animationend',()=>{
+			thisRef.current.classList.remove('updated');
+		});
+	},[items])
 
-	render(){
+	// Quantity total as wishlist length or cart.total.qty
+	const totalQty = total ? total.qty : items.length;
+	// Boolean for empty cart
+	const isEmpty = totalQty === 0;
 
-		// Deconstruct props
-		const { headerIcon, headerText, id, url, items, total, mobile } = this.props;
-		// Quantity total as wishlist length or cart.total.qty
-		const totalQty = total ? total.qty : items.length;
-		// Boolean for empty cart
-		const isEmpty = totalQty === 0;
-
-		return (
-			<Link to={url} className={`header-button ${isEmpty && 'empty'}`} id={id}>
-				{/*render relevant icon, text, length*/}
-				{headerIcon}{!mobile && headerText}{!mobile && ` (${totalQty})`}
-				{/*Adds subtotal if cart & non-empty*/}
-				{!mobile && total && !isEmpty > 0 ? `: $${total.val}` : null}
-				{mobile && !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
-			</Link>
-		);
-	}
+	return (
+		<Link to={url} className={`header-button ${isEmpty && 'empty'}`} id={id} ref={thisRef}>
+			{/*render relevant icon, text, length*/}
+			{headerIcon}{!mobile && headerText}{!mobile && ` (${totalQty})`}
+			{/*Adds subtotal if cart & non-empty*/}
+			{!mobile && total && !isEmpty > 0 ? `: $${total.val}` : null}
+			{mobile && !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
+		</Link>
+	);
 }
 
 export default HeaderButton;
