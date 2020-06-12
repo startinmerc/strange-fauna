@@ -18,7 +18,7 @@ class HeaderButton extends Component {
 	render(){
 
 		// Deconstruct props
-		const { headerIcon, headerText, id, url, path, items, total, mobile } = this.props;
+		const { headerIcon, headerText, id, url, items, total, mobile } = this.props;
 		// Quantity total as wishlist length or cart.total.qty
 		const totalQty = total ? total.qty : items.length;
 		// Boolean for empty cart
