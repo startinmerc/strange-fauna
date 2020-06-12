@@ -66,6 +66,13 @@
 	transform: translateX(calc(200% - 40px));	
 }
 
+.header-button::before {
+	bottom: 0px;
+	height: 3px;
+	left: calc(24px + 0.2rem);
+	width: calc(100% - 24px - 0.2rem);
+}
+
 .header-button .icon {
 	fill: var(--primary);
 	margin-right: 0.2rem;
@@ -74,10 +81,6 @@
 .header-button.empty .icon {
 	stroke: var(--black);
 	fill: transparent;
-}
-
-.header-button::before {
-	bottom: -2px;
 }
 
 .header-button::after {
