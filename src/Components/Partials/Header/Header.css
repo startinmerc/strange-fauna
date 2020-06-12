@@ -80,7 +80,6 @@
 }
 
 .header-button.empty .icon {
-	stroke: var(--black);
 	fill: transparent;
 }
 

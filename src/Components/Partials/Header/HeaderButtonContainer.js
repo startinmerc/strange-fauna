@@ -9,13 +9,13 @@ const HeaderButtonContainer = ({wish,cart}) => {
 	return (
 		<div className="header__buttons-container">
 			<HeaderButton 
-			 headerIcon={<Star size={'24px'} strokeWidth="2"/>}
+			 headerIcon={<Star size={'24px'} strokeWidth="2" color="var(--black)"/>}
 			 headerText={'Wishlist'}
 			 id={'header-wish'}
 			 url={'/wishlist'}
 			 items={wish}/>
 			<HeaderButton 
-			 headerIcon={<ShoppingCart size={'24px'} strokeWidth="2"/>}
+			 headerIcon={<ShoppingCart size={'24px'} strokeWidth="2" color="var(--black)"/>}
 			 headerText={'Cart'}
 			 id={'header-cart'}
 			 url={'/cart'}
