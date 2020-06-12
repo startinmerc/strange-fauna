@@ -23,13 +23,13 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 
 	function showMenu(e){
 		setExpanded(true);
-		document.addEventListener('click', closeMenu);
 	}
 
-	function closeMenu(){
-		setExpanded(false);
-		document.removeEventListener('click', closeMenu);
-	}
+	function handleClick(){
+		if (expanded) {
+			setExpanded(false);
+		};
+	};
 	
 	const sections = categories.map((section,index)=>(
 		<li key={'nav-section-'+index} className={`dropup nav--${section.section}`} style={{background: section.color}}>
@@ -40,7 +40,7 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 	));
 
 	return(
-		<div id="mobile-menu">
+		<div id="mobile-menu" onClick={handleClick}>
 			<div className={`mobile-menu__dropup ${expanded && 'expanded'}`}>
 				<li id="dropup-background" aria-hidden="true"></li>
 				{sections}
