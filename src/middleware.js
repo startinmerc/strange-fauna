@@ -22,15 +22,3 @@ export function validateEmail(email) {
 	// return boolean of validation
 	return re.test(String(email).toLowerCase());
 };
-
-
-// expects ID of button to animate
-export function animateIcon(elementID){
-	// find element in document (to replace with ref)
-	let element = document.querySelector(`#${elementID}`);
-	// play updated animation & remove class on animation end
-	element.classList.add('updated');
-	element.addEventListener('animationend',()=>{
-		element.classList.remove('updated');
-	});
-};
