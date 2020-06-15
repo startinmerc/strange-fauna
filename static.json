@@ -5,7 +5,7 @@
 	},
 	"proxies": {
 		"/api": {
-			"origin": "https://strange-flora-backend.herokuapp.com/"
+			"origin": "https://strange-flora-backend.herokuapp.com/api"
 		}
 	}
 }
