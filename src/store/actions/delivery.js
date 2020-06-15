@@ -1,4 +1,5 @@
 import { apiCall } from "../../services/api";
+import { addError } from "./errors";
 import { CHANGE_DELIVERY, LOAD_DELIVERIES } from "../actionTypes";
 
 export const changeDelivery = (delivery)=>(
@@ -21,6 +22,6 @@ export const fetchDeliveries = () => {
 		return apiCall("get", "/api/deliveries")
 			// Populate options
 			.then(res => dispatch(loadDeliveries(res)))
-			.catch(err => dispatch(err.message));
+			.catch(err => dispatch(addError(err.message)));
 	};
 };

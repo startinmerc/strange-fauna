@@ -1,4 +1,5 @@
 import { apiCall } from "../../services/api";
+import { addError } from "./errors";
 import { LOAD_LANDING_SECTIONS } from "../actionTypes";
 
 export const loadLandingSections = (landingSections)=>(
@@ -14,6 +15,6 @@ export const fetchLandingSections = () => {
 		return apiCall("get", "/api/landingSections")
 			// Populate landing sections
 			.then(res => dispatch(loadLandingSections(res)))
-			.catch(err => console.log(err));
+			.catch(err => dispatch(addError(err.message)));
 	};
 };
