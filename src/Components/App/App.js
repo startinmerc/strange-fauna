@@ -13,10 +13,13 @@ import { Route, Switch } from 'react-router-dom';
 import { isMobile } from '../../middleware';
 import { Helmet } from 'react-helmet';
 
-const App = ()=> {
+import { connect } from "react-redux";
+
+const App = ({errors})=> {
 	const emailRef = React.useRef(null);
 	return (
 		<div id="container">
+			{errors.message && <div id="errors">{errors.message}</div>}
 			<Helmet>
 				<meta charSet="utf-8" />
 				<title>Strange Fauna</title>
@@ -43,4 +46,10 @@ const App = ()=> {
 	)
 }
 
-export default App;
+function mapStateToProps(state){
+	return {
+		errors: state.errors
+	}
+}
+
+export default connect(mapStateToProps)(App);
