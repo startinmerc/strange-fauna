@@ -14,9 +14,18 @@ import { isMobile } from '../../middleware';
 import { Helmet } from 'react-helmet';
 
 import { connect } from "react-redux";
+import { fetchCategories } from "../../store/actions/categories";
 
-const App = ({errors})=> {
+const App = ({errors, fetchCategories, categories})=> {
+	React.useEffect(()=>{
+		fetchCategories();
+	},[fetchCategories])
 	const emailRef = React.useRef(null);
+	if(categories.length === 0){
+		return (
+			<h1>Loading</h1>
+		);
+	}
 	return (
 		<div id="container">
 			{errors.message && <div id="errors">{errors.message}</div>}
@@ -48,8 +57,9 @@ const App = ({errors})=> {
 
 function mapStateToProps(state){
 	return {
-		errors: state.errors
+		errors: state.errors,
+		categories: state.categories
 	}
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { fetchCategories })(App);
