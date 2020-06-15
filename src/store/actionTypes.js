@@ -23,3 +23,7 @@ export const LOAD_CATEGORIES = "LOAD_CATEGORIES";
 
 // Landing Sections
 export const LOAD_LANDING_SECTIONS = "LOAD_LANDING_SECTIONS";
+
+// Errors
+export const ADD_ERROR = "ADD_ERROR";
+export const REMOVE_ERROR = "REMOVE_ERROR";

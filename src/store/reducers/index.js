@@ -4,6 +4,7 @@ import wish from "./wish";
 import products from "./products";
 import categories from "./categories";
 import delivery from "./delivery";
+import errors from "./errors";
 import landingSections from "./landingSections";
 
 const rootReducer = combineReducers({
@@ -12,7 +13,8 @@ const rootReducer = combineReducers({
 	products,
 	categories,
 	delivery,
-	landingSections
+	landingSections,
+	errors
 });
 
 export default rootReducer;
