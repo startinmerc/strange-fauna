@@ -2,6 +2,8 @@
 
 ## [Landing Page](https://strange-flora.herokuapp.com/)
 
+### [GitHub Repo for backend](https://github.com/startinmerc/backend-strange-flora)
+
 #### A full-stack site built on:
 
 * React
@@ -10,10 +12,14 @@
 * React-Router
 * Custom CSS
 * Heroku
+* MongoDB Atlas
+* Mongoose
+* Express
 
 An eCommerce site built for my portfolio, part of the Strange Industries Network.
 The site is built on React using Node, built entirely from scratch.
 It uses extensive components and state management for full interactivity.
+Interaction with MongoDB API managed through async Redux actions.
 
 #### Site Structure Plan:
 ```
@@ -598,6 +604,32 @@ Version logs for the project are below...
 * Add animation for quantity mounting
 * Refactor expansion handling
 * Tweak styling
+
+### V2.0
+
+#### Live API
+* Add static.json with proxy
+* Add error handling through Redux store
+
+#### Heroku Launch
+* Add new Heroku project
+* Add buildpack
+* Add remote heroku branch & push
+
+#### API Call Priority
+* Call categories as first API call to trigger rendering in App
+* Catch API hang/empty store errors
+
+#### Loader
+* Add Loader component to cover API call time
+* Display in App while awaiting API
+
+### V2.1
+
+#### Smooth CTA
+* Change CTA link to scrollIntoView
+* Create IntersectionObserver to watch for email field in view
+* Focus email field when in view & disable after
 
 ---
 
