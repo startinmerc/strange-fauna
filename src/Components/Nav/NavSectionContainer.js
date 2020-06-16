@@ -13,7 +13,7 @@ function NavSectionContainer({categories, fetchCategories, products, fetchNavPro
 		if (categories.length === 0) {
 			fetchCategories();
 		}
-		if (products.length === 0) {
+		if (products.length === 0 && categories.length !== 0) {
 			categories.forEach(cat => {
 				if (cat.type !== "about"){
 					fetchNavProducts(cat._id);
