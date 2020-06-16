@@ -1,0 +1,30 @@
+@keyframes appear {
+	to {opacity: 1}
+}
+
+@keyframes blink {
+	0% {opacity: 0}
+	50% {opacity: 1}
+	70% {opacity: 1}
+	100% {opacity: 0}
+}
+
+#loader {
+	display: grid;
+	place-items: center;
+	height: 100%;
+	opacity: 0;
+	animation: appear 600ms ease-in forwards;
+	background-color: #00000010;
+	margin-top: calc(-1.2rem - 13px);
+	padding-top: calc(1.2rem + 13px);
+	margin-bottom: -20px;
+	padding-bottom: 20px;
+}
+
+#loader .loader__dot {
+	animation: blink 1200ms linear infinite;
+}
+
+#loader .loader__dot:nth-of-type(2){animation-delay: 300ms}
+#loader .loader__dot:nth-of-type(3){animation-delay: 600ms}

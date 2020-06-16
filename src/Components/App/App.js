@@ -9,6 +9,7 @@ import Cart from '../Carts/Cart';
 import Wishlist from '../Carts/Wishlist';
 import Checkout from '../Carts/Checkout';
 import About from '../About/About';
+import Loader from '../Partials/Loader/Loader';
 import { Route, Switch } from 'react-router-dom';
 import { isMobile } from '../../middleware';
 import { Helmet } from 'react-helmet';
@@ -23,7 +24,7 @@ const App = ({errors, fetchCategories, categories})=> {
 	const emailRef = React.useRef(null);
 	if(categories.length === 0){
 		return (
-			<h1>Loading</h1>
+			<Loader />
 		);
 	}
 	return (
