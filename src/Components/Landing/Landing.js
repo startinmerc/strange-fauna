@@ -17,9 +17,19 @@ function Landing({ sections, fetchLandingSections, emailRef }) {
 
 	function handleClick(){
 		// Scroll to page bottom
-		window.scrollTo(0,document.body.scrollHeight);
-		// Focus on email input useRef()
-		emailRef.current.focus();
+		emailRef.current.scrollIntoView({
+			behavior: "smooth",
+			block: "start"
+		});
+
+		// Focus on email input when in view
+		const observer = new IntersectionObserver(function(entry, observer) {
+			if(entry[0].isIntersecting){
+				emailRef.current.focus();
+				observer.disconnect();
+			}
+		}, {threshold: 0.1});
+		observer.observe(emailRef.current);
 	}
 
 	const renderedSections = sections.map(seed =>(
