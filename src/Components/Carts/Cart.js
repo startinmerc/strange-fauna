@@ -29,6 +29,17 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 		changeDelivery(e.target.value);
 	}
 
+	const cartList = search.map(item => {
+		if(cart.find(v=>v.id === item._id)){
+			return (
+				// Add qty from cart to ProductCard
+				<ProductCard detail={{...item, qty: cart.find(v=>v.id === item._id).qty}} key={`prod-${item._id}`} type="cart"/>
+			)
+		} else {
+			return null
+		}
+	});
+
 	return (
 		<main id="cart">
 			<Helmet>
@@ -38,10 +49,7 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 				<h2>Your Cart{total.qty === 0 && ' is empty'}</h2>
 			</div>
 			<div className="cart__list">
-				{search.map(item => (
-					// Add qty from cart to ProductCard
-					<ProductCard detail={{...item, qty: cart.find(v=>v.id === item._id).qty}} key={`prod-${item._id}`} type="cart"/>
-				))}
+				{cartList}
 			</div>
 			<div style={{textAlign: 'right'}}>
 				<p className="cart__subtotal">Subtotal: ${total.val}</p>
