@@ -10,7 +10,9 @@ import { fetchLandingSections } from "../../store/actions/landingSections";
 function Landing({ sections, fetchLandingSections, emailRef }) {
 
 	React.useEffect(()=>{
+		// If not already loaded
 		if (sections.length === 0) {
+			// API fetch landing sections
 			fetchLandingSections();
 		}
 	},[fetchLandingSections, sections])
@@ -22,21 +24,27 @@ function Landing({ sections, fetchLandingSections, emailRef }) {
 			block: "start"
 		});
 
-		// Focus on email input when in view
+		// Create IntersectionObserver to wait for smooth scroll to complete
 		const observer = new IntersectionObserver(function(entry, observer) {
+			// If in view
 			if(entry[0].isIntersecting){
+				// Focus on email input
 				emailRef.current.focus();
+				// Remove observer
 				observer.disconnect();
 			}
 		}, {threshold: 0.1});
+		// Add observer to emailRef
 		observer.observe(emailRef.current);
 	}
 
+	// Map sections from API
 	const renderedSections = sections.map(seed =>(
 			<LandingSection content={seed} key={`section-${seed._id}`}/>
 		)
 	);
 
+	// Insert email CTA as second item in sections array
 	renderedSections.splice(1,0,
 		<div className="cta" key="cta">
 			<button className="cta__button display" onClick={handleClick}>
