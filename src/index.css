@@ -177,6 +177,9 @@ input[type="text"]:focus {
 	main {
 		margin: 0 auto;
 	}
+	#container {
+		grid-template-rows: auto 1fr auto;
+	}
 	.boxes {
 		grid-template-columns: 1fr;
 	}
