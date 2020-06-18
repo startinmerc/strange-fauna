@@ -631,11 +631,24 @@ Version logs for the project are below...
 * Create IntersectionObserver to watch for email field in view
 * Focus email field when in view & disable after
 
+#### Header/Menu position
+* Change Header + MobileMenu to position: fixed
+* Add calculated heights to `<main>` and `<footer>` elements when needed
+* Change grid-rows at breakpoints
+
+#### MobileMenu
+* Fatten up options
+* Spread link over entire `<li>`
+
+
 ---
 
 ### ToDo...
 
 #### Redesign 
+* MobileMenu
+ * Change toggle to global state
+ * Enables animation of hiding menu
 * Possibly add max-width to containers
 
 #### API Interaction
