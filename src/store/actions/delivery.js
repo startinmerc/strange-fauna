@@ -22,6 +22,6 @@ export const fetchDeliveries = () => {
 		return apiCall("get", "/api/deliveries")
 			// Populate options
 			.then(res => dispatch(loadDeliveries(res)))
-			.catch(err => dispatch(addError(err.message)));
+			.catch(err => dispatch(addError(err)));
 	};
 };

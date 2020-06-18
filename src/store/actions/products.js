@@ -31,7 +31,7 @@ export const fetchProducts = () => {
 	return dispatch => {
 		return apiCall("get", "/api/products/all")
 			.then(res => dispatch(loadProducts(res)))
-			.catch(err => dispatch(addError(err.message)));
+			.catch(err => dispatch(addError(err)));
 	};
 };
 
@@ -39,7 +39,7 @@ export const fetchOneProduct = product_id => {
 	return dispatch => {
 		return apiCall("get", `/api/products/${product_id}`)
 			.then(res => dispatch(loadOneProduct(res)))
-			.catch(err => dispatch(addError(err.message)));
+			.catch(err => dispatch(addError(err)));
 	};
 };
 
@@ -47,7 +47,7 @@ export const fetchCategoryProducts = type => {
 	return dispatch => {
 		return apiCall("get", `/api/categories/${type}/products`)
 			.then(res => dispatch(loadCategoryProducts(res)))
-			.catch(err => dispatch(addError(err.message)));
+			.catch(err => dispatch(addError(err)));
 	};
 };
 
@@ -55,6 +55,6 @@ export const fetchNavProducts = type_id => {
 	return dispatch => {
 		return apiCall("get", `/api/products/featured/${type_id}`)
 			.then(res => dispatch(loadNavProducts(res)))
-			.catch(err => dispatch(addError(err.message)));
+			.catch(err => dispatch(addError(err)));
 	};
 };

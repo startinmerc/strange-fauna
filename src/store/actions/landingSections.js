@@ -15,6 +15,6 @@ export const fetchLandingSections = () => {
 		return apiCall("get", "/api/landingSections")
 			// Populate landing sections
 			.then(res => dispatch(loadLandingSections(res)))
-			.catch(err => dispatch(addError(err.message)));
+			.catch(err => dispatch(addError(err)));
 	};
 };
