@@ -640,6 +640,10 @@ Version logs for the project are below...
 * Fatten up options
 * Spread link over entire `<li>`
 
+#### Loader
+* Create & render Loader component before initial API call
+* Render at App level
+* Create fullscreen option
 
 ---
 
