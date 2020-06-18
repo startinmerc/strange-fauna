@@ -22,7 +22,6 @@ const App = ({errors, fetchCategories, categories})=> {
 		fetchCategories();
 	},[fetchCategories])
 	const emailRef = React.useRef(null);
-	if(categories.length === 0){
 	if(categories.length === 0 && errors.status !== 500){
 		return (
 			<Loader fullScreen={true} errors={errors}/>
