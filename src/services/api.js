@@ -23,7 +23,12 @@ export function apiCall(method, path, data){
 			})
 			// Catch errors
 			.catch(err => {
-				return reject(err.response.data.error);
+				// Catch status 500 from unreachable server
+				if(err.response.status === 500){
+					return reject({status: err.response.status, message: err.response.statusText})
+				} else {
+					return reject({status: err.response.status, message: err.response.data.error.message})
+				};
 			});
 	});
 }
