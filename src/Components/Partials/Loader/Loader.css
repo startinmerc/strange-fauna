@@ -9,7 +9,9 @@
 	100% {opacity: 0}
 }
 
-#loader {
+.loader {
+	position: absolute;
+	width: 100%;
 	display: grid;
 	place-items: center;
 	height: 100%;
@@ -22,9 +24,18 @@
 	padding-bottom: 20px;
 }
 
-#loader .loader__dot {
+.loader--full {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 0;
+}
+
+.loader .loader__dot {
 	animation: blink 1200ms linear infinite;
 }
 
-#loader .loader__dot:nth-of-type(2){animation-delay: 300ms}
-#loader .loader__dot:nth-of-type(3){animation-delay: 600ms}
+.loader .loader__dot:nth-of-type(2){animation-delay: 300ms}
+.loader .loader__dot:nth-of-type(3){animation-delay: 600ms}
