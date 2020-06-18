@@ -32,11 +32,11 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 	};
 	
 	const sections = categories.map((section,index)=>(
-		<li key={'nav-section-'+index} className={`dropup nav--${section.section}`} style={{background: section.color}}>
-			<Link to={(section.section !=='about') ? `/products/${section.title}` : '/about'}>
+		<Link to={(section.section !=='about') ? `/products/${section.title}` : '/about'}>
+			<li key={'nav-section-'+index} className={`dropup nav--${section.type}`} style={{background: section.color}}>
 				{section.title}
-			</Link>
-		</li>
+			</li>
+		</Link>
 	));
 
 	return(
