@@ -2,8 +2,9 @@
 
 #header {
 	z-index: 1000;
-	position: sticky;
+	position: fixed;
 	top: 0;
+	width: 100%;
 }
 
 .header__main-container {
