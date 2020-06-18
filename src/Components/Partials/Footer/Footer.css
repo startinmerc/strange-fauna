@@ -71,6 +71,7 @@
 @media(max-width: 600px){
 
 	.footer {
+		margin-bottom: calc(2rem + 14px);
 		grid-template-columns: 1fr;
 		grid-template-areas: "list-l" "list-r" "link";
 	}
