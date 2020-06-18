@@ -72,7 +72,7 @@
 	list-style: none;
 	width: 100%;
 	font-size: 1.3rem;
-	padding: 2px 0;
+	padding: 5px 0;
 	text-align: center;
 	transition: transform 210ms ease-in;
 }
