@@ -645,6 +645,12 @@ Version logs for the project are below...
 * Render at App level
 * Create fullscreen option
 
+### V2.2
+
+#### Error Handling
+* Contitionally catch errors in apiCall
+* Add error status code to errors redux store
+
 ---
 
 ### ToDo...
