@@ -10,7 +10,7 @@ import { connect } from 'react-redux';
 // Expects no props,
 // Returns full product detail page
 
-function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundProduct, editCart}) {
+function ProductDetail({cart, clearSearch, fetchOneProduct, foundProduct, editCart, errors}) {
 	// get product id from url
 	let { id } = useParams();
 
@@ -119,11 +119,8 @@ function ProductDetail({categories, cart, clearSearch, fetchOneProduct, foundPro
 				<h3>
 					<Link to="/">Home</Link>
 				</h3>
-				<div className="boxes">
-					<div className="box box__text" style={{paddingTop: 0}}>
-						Product Not Found
-					</div>
-				</div>
+				<div className="errors">Error: <br/> {errors.message}</div>
+				<p style={{textAlign: "center"}}>Product Not Found</p>
 			</main>
 		);
 	}
@@ -134,8 +131,8 @@ function mapStateToProps(reduxState){
 	return {
 		// reduce cart item objects to array of ids
 		cart: reduxState.cart.cart.map((v)=>(v.id)),
-		categories: reduxState.categories,
-		foundProduct: reduxState.products.search[0]
+		foundProduct: reduxState.products.search[0],
+		errors: reduxState.errors
 	};
 };
 
