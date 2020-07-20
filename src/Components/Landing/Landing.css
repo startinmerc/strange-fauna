@@ -162,6 +162,7 @@
 .cta__button {
 	padding: 1rem;
 	font-size: 1.3rem;
+	border: 2px solid var(--white);
 }
 
 .cta__button:focus,
@@ -171,7 +172,8 @@
 }
 
 .cta__content {
-	font-weight: lighter;
+	max-width: 900px;
+	margin: 1rem auto 0 auto;
 }
 
 /*=============Responsive - Tablet=============*/
