@@ -24,6 +24,7 @@ body {
 	/* Default of capitalised display font */
 	font-family: 'Cinzel', serif;
 	background-color: var(--white);
+	color: var(--black);
 }
 
 p {
@@ -45,7 +46,7 @@ main {
 
 .display {
 	/* Overrride <p> font-family */
-	font-family: 'Cinzel';
+	font-family: 'Cinzel', serif;
 }
 
 h2 {
@@ -54,10 +55,6 @@ h2 {
 
 h3 {
 	font-size: 1.5rem;
-}
-
-.display {
-	font-weight: bold;
 }
 
 a {
