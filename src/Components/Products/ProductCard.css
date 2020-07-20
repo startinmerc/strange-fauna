@@ -131,12 +131,13 @@
 }
 
 .wish--added .icon {
-	fill: yellow;
+	fill: var(--primary);
 }
 
 .product-card:hover .add-to-wish,
 .product-card:focus-within .add-to-wish {
 	opacity: 1;
+	box-shadow: none;
 }
 
 .add-to-wish:hover,
