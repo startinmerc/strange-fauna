@@ -146,10 +146,11 @@ input[type="text"]:focus {
 	border: 0;
 }
 
-#errors {
-	position: absolute;
-	top: 80px;
-	background-color: yellow;
+.errors {
+	background-color: var(--primary);
+	color: var(--white);
+	padding: 2rem 0;
+	text-align: center;
 }
 
 /*====================Boxes====================*/

@@ -29,7 +29,7 @@ const App = ({errors, fetchCategories, categories})=> {
 	}
 	return (
 		<div id="container">
-			{errors.message && <div id="errors">{errors.message}</div>}
+			{errors.message && <div className="errors">{errors.message}</div>}
 			<Helmet>
 				<meta charSet="utf-8" />
 				<title>Strange Fauna</title>
