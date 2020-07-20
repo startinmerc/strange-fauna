@@ -92,7 +92,6 @@
 
 .add-to-cart {
 	width: 100%;
-	max-width: 400px;
 }
 
 .cart--added:hover,
@@ -153,6 +152,7 @@
 
 #details button {
 	margin-top: 15px;
+	max-width: 400px;
 }
 
 #details .add-to-cart {
