@@ -47,10 +47,10 @@ function Landing({ sections, fetchLandingSections, emailRef }) {
 	// Insert email CTA as second item in sections array
 	renderedSections.splice(1,0,
 		<div className="cta" key="cta">
-			<button className="cta__button display" onClick={handleClick}>
+			<button className="cta__button" onClick={handleClick}>
 				Sign up to our newsletter!
 			</button>
-			<p className="cta__content">Sign up to get our latest products, top deals and inspiring stories straight to your inbox. Plus, get £5 off your first order over £50</p>
+			<p className="cta__content display">Sign up to get our latest products, top deals and inspiring stories straight to your inbox. Plus, get £5 off your first order over £50</p>
 		</div>
 	);
 

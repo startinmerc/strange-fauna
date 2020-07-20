@@ -22,7 +22,7 @@ function LandingSection({content}) {
 			<div className="landing-section__image" style={{backgroundImage: `url(${content.image})`}} aria-hidden="true"></div>
 			<div className="landing-section__text">
 				<h2 className="landing-section__header">{content.header}</h2>
-				<p className="landing-section__copy">{content.copy}</p>
+				<p className="landing-section__copy display">{content.copy}</p>
 			</div>
 			<div className="landing-section__links">
 				{mappedLinks}
