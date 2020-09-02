@@ -90,6 +90,11 @@
 	padding: 0;
 }
 
+.icon--hamburger:focus,
+.icon--hamburger:hover {
+	box-shadow: none;
+}
+
 .icon--hamburger line {
 	transform-origin: center;
 	transition: transform 300ms ease-in-out;
