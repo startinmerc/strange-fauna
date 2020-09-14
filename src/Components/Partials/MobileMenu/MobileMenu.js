@@ -21,7 +21,7 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 		}
 	},[categories, fetchCategories]);
 
-	function showMenu(e){
+	function showMenu(){
 		setExpanded(true);
 	}
 
