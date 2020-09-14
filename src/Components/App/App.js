@@ -24,9 +24,26 @@ const App = ({errors, fetchCategories, categories})=> {
 	const emailRef = React.useRef(null);
 	if(categories.length === 0 && errors.status !== 500){
 		return (
+			<div id="container">
+				{errors.message && <div className="errors">{errors.message}</div>}
+				<Helmet>
+					<meta charSet="utf-8" />
+					<title>Strange Fauna</title>
+					<meta name="viewport" content="width=device-width, initial-scale=1" />
+					<meta name="theme-color" content="#000000" />
+					<meta name="description" content="Vendor of commercial and private flowers and funghi" />
+					<link rel="apple-touch-icon" href="logo192.png" />
+					<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+					<title>Strange Flora</title>
+				</Helmet>
+				{isMobile() ? <MobileHeader /> : <Header />}
 			<Loader fullScreen={true} errors={errors}/>
+				<Footer emailRef={emailRef} />
+				{isMobile() ? <MobileMenu /> : null}
+			</div>
 		);
 	}
+
 	return (
 		<div id="container">
 			{errors.message && <div className="errors">{errors.message}</div>}
