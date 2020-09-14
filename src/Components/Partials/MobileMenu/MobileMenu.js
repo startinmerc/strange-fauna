@@ -31,9 +31,19 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 		};
 	};
 	
+	// Map of section list items from api call
 	const sections = categories.map((section,index)=>(
+		// Encase list in a link to either /products/category or /about
 		<Link to={(section.section !=='about') ? `/products/${section.title}` : '/about'}>
-			<li key={'nav-section-'+index} className={`dropup nav--${section.type}`} style={{background: section.color}}>
+			{/* Give key & classnames */}
+			<li key={'nav-section-' + index} className={`dropup nav--${section.type}`} style={{
+				// Section color
+				background: section.color,
+				// If expanded, delay in reverse render order, otherwise delay in order
+				transitionDelay: expanded ? `${(categories.length * 60) - (index * 60)}ms` : `${index * 60}ms`,
+				// If expanded, translate to initial position, otherwise bottom of navbar
+				transform: expanded ? "translateY(0)" : `translateY(${(categories.length * 100) - (index * 100)}%)`,
+				}}>
 				{section.title}
 			</li>
 		</Link>
