@@ -760,15 +760,18 @@ Version logs for the project are below...
 * Conditionally catch errors in apiCall
 * Add error status code to errors redux store
 
+#### Dropup restyle
+
+* Move nth-of-type stuff over to JS for flexibility of content
+* Add alternate exp/min transition delays and transforms within JS style
+* Change transition delay on .dropup to wait/anticipate animations
+
 ---
 
 ### ToDo
 
 #### Redesign
 
-* MobileMenu
-  * Change toggle to global state
-  * Enables animation of hiding menu
 * Possibly add max-width to containers
 
 #### API Interaction
