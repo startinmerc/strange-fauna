@@ -766,24 +766,36 @@ Version logs for the project are below...
 * Add alternate exp/min transition delays and transforms within JS style
 * Change transition delay on .dropup to wait/anticipate animations
 
+#### Full screen loader redesign Pt.1
+
+* Add big SVG animation for a bit more interest
+* Reposition as `<main>` element
+* Tidy up CSS
+
+#### Full screen loader redesign Pt.2
+
+[] Fade out on loaded
+[] Expand landingsections when loaded
+[] Restructure App logic to conditionally do this?
+
+#### Fix Nav API
+
+* Remove unneeded API duplicate call
+
 ---
 
 ### ToDo
 
-#### Redesign
-
-* Possibly add max-width to containers
-
 #### API Interaction
 
 * Reviews
-* Refactor cart population - inc. wish?
 * move from cart to wish if in localstore & OoS
 * Pagination in products
 * React Router Page transition on productlist
 
 #### Other
 
+* Possibly add max-width to containers
 * Showing/hiding components transitions
 * Review semantic HTML
 
