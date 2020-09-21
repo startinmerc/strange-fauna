@@ -1,8 +1,20 @@
-// no variables expected
-export function isMobile(){
-	// returns boolean if screen < 600px
-	return window.innerWidth < 600;
-};
+// Media query event listener, better performance than addEventListener
+export function isMobile(action) {
+	// Create a condition that targets viewports at least 600px wide
+	const mediaQuery = window.matchMedia('(min-width: 600px)')
+
+	function handleScreenResize(e) {
+		// Check if the media query is true
+		action(!e.matches);
+	}
+
+	// Register event listener
+	mediaQuery.addListener(handleScreenResize)
+
+	// Initial check
+	handleScreenResize(mediaQuery)
+}
+
 
 // Expects array of cart items w/ qty,price,id
 export function getCartTotals(items){

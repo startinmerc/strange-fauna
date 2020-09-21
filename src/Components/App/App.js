@@ -13,15 +13,22 @@ import Loader from '../Partials/Loader/Loader';
 import { Route, Switch } from 'react-router-dom';
 import { isMobile } from '../../middleware';
 import { Helmet } from 'react-helmet';
-
 import { connect } from "react-redux";
 import { fetchCategories } from "../../store/actions/categories";
 
 const App = ({errors, fetchCategories, categories})=> {
 	React.useEffect(()=>{
+		// API call to get categories for Nav component
 		fetchCategories();
+		// Media query to listen for mobile size for rendering components
+		isMobile(upMo);
 	},[fetchCategories])
+	// Ref for email input field
 	const emailRef = React.useRef(null);
+	// Local state for mobile size
+	const [isMo, upMo] = React.useState(false);
+
+	// If no categories loaded yet, and server hasn't 500'd:
 	if(categories.length === 0 && errors.status !== 500){
 		return (
 			<div id="container">
@@ -36,10 +43,10 @@ const App = ({errors, fetchCategories, categories})=> {
 					<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 					<title>Strange Flora</title>
 				</Helmet>
-				{isMobile() ? <MobileHeader /> : <Header />}
+				{isMo ? <MobileHeader /> : <Header />}
 			<Loader fullScreen={true} errors={errors}/>
 				<Footer emailRef={emailRef} />
-				{isMobile() ? <MobileMenu /> : null}
+				{isMo ? <MobileMenu /> : null}
 			</div>
 		);
 	}
@@ -57,7 +64,7 @@ const App = ({errors, fetchCategories, categories})=> {
 				<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 				<title>Strange Flora</title>
 			</Helmet>
-			{isMobile() ? <MobileHeader /> : <Header />}
+			{isMo ? <MobileHeader /> : <Header />}
 			<Switch>
 				<Route path="/" exact render={() => <Landing emailRef={emailRef}/>}/>
 				<Route path="/products" component={Products} />
@@ -68,7 +75,7 @@ const App = ({errors, fetchCategories, categories})=> {
 				<Route component={Landing} />
 			</Switch>
 			<Footer emailRef={emailRef}/>
-			{isMobile() ? <MobileMenu /> : null}
+			{isMo ? <MobileMenu /> : null}
 		</div>
 	)
 }
