@@ -774,24 +774,41 @@ Version logs for the project are below...
 
 #### Full screen loader redesign Pt.2
 
-[] Fade out on loaded
-[] Expand landingsections when loaded
-[] Restructure App logic to conditionally do this?
+* Return using isLoading
+* Install react-transition-group
+* Wrap Loader in TransitionGriou, CSSTransition
 
 #### Fix Nav API
 
 * Remove unneeded API duplicate call
 
+#### Fix isMobile
+
+* Remove old one-time firing function
+* Replace with eventListener for media query
+
 ---
 
 ### ToDo
 
+#### Cart to Wish
+
+* iterate over items in cart
+* look up stock through API
+* if stock > 0, add to new cart
+* if stock === 0, remove from cart and add to wish
+
 #### API Interaction
 
+* remove quantity from wish
 * Reviews
-* move from cart to wish if in localstore & OoS
 * Pagination in products
 * React Router Page transition on productlist
+
+#### Transitions
+
+* LandingSection animation as CSSTransition
+* ProductCard opacity CSSTransition
 
 #### Other
 
