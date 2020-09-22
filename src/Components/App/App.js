@@ -46,7 +46,8 @@ const App = ({errors, fetchCategories, categories})=> {
 				<title>Strange Flora</title>
 			</Helmet>
 			{isMo ? <MobileHeader /> : <Header />}
-			{isLoading ? <Loader fullScreen={true} errors={errors} /> : <Switch>
+			<Loader fullScreen={true} errors={errors} isLoading={isLoading} />
+			{!isLoading && <Switch>
 				<Route path="/" exact render={() => <Landing emailRef={emailRef} />} />
 				<Route path="/products" component={Products} />
 				<Route path="/about" component={About} />
