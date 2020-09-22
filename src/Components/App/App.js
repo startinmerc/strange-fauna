@@ -17,20 +17,22 @@ import { connect } from "react-redux";
 import { fetchCategories } from "../../store/actions/categories";
 
 const App = ({errors, fetchCategories, categories})=> {
-	React.useEffect(()=>{
-		// API call to get categories for Nav component
-		fetchCategories();
-		// Media query to listen for mobile size for rendering components
-		isMobile(upMo);
-		// Update to see if still loading
-		updateLoading(categories.length === 0 && errors.status !== 500)
-	},[fetchCategories, categories, errors])
-	// Ref for email input field
-	const emailRef = React.useRef(null);
+
 	// Local state for mobile size
 	const [isMo, upMo] = React.useState(false);
 	// Local state for is loading
 	const [isLoading, updateLoading] = React.useState(true);
+
+	React.useEffect(()=>{
+		// API call to get categories for Nav component
+		isLoading && fetchCategories();
+		// Media query to listen for mobile size for rendering components
+		isMobile(upMo);
+		// Update to see if still loading
+		updateLoading(categories.length === 0 && errors.status !== 500)
+	},[fetchCategories, categories, errors, isLoading])
+	// Ref for email input field
+	const emailRef = React.useRef(null);
 
 	return (
 		<div id="container">
@@ -54,7 +56,7 @@ const App = ({errors, fetchCategories, categories})=> {
 				<Route path="/checkout" component={Checkout} />
 				<Route path='/wishlist' component={Wishlist} />
 				<Route path='/cart' component={Cart} />
-				<Route path='/loader' render={() => <Loader fullScreen={true} errors={errors} />} />
+				<Route path='/loader' render={() => <Loader fullScreen={true} errors={errors} isLoading={true} />} />
 				<Route component={Landing} />
 			</Switch>}
 			<Footer emailRef={emailRef}/>
