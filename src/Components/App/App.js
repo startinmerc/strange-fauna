@@ -22,34 +22,15 @@ const App = ({errors, fetchCategories, categories})=> {
 		fetchCategories();
 		// Media query to listen for mobile size for rendering components
 		isMobile(upMo);
-	},[fetchCategories])
+		// Update to see if still loading
+		updateLoading(categories.length === 0 && errors.status !== 500)
+	},[fetchCategories, categories, errors])
 	// Ref for email input field
 	const emailRef = React.useRef(null);
 	// Local state for mobile size
 	const [isMo, upMo] = React.useState(false);
-
-	// If no categories loaded yet, and server hasn't 500'd:
-	if(categories.length === 0 && errors.status !== 500){
-		return (
-			<div id="container">
-				{errors.message && <div className="errors">{errors.message}</div>}
-				<Helmet>
-					<meta charSet="utf-8" />
-					<title>Strange Fauna</title>
-					<meta name="viewport" content="width=device-width, initial-scale=1" />
-					<meta name="theme-color" content="#000000" />
-					<meta name="description" content="Vendor of commercial and private flowers and funghi" />
-					<link rel="apple-touch-icon" href="logo192.png" />
-					<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-					<title>Strange Flora</title>
-				</Helmet>
-				{isMo ? <MobileHeader /> : <Header />}
-			<Loader fullScreen={true} errors={errors}/>
-				<Footer emailRef={emailRef} />
-				{isMo ? <MobileMenu /> : null}
-			</div>
-		);
-	}
+	// Local state for is loading
+	const [isLoading, updateLoading] = React.useState(true);
 
 	return (
 		<div id="container">
@@ -65,15 +46,16 @@ const App = ({errors, fetchCategories, categories})=> {
 				<title>Strange Flora</title>
 			</Helmet>
 			{isMo ? <MobileHeader /> : <Header />}
-			<Switch>
-				<Route path="/" exact render={() => <Landing emailRef={emailRef}/>}/>
+			{isLoading ? <Loader fullScreen={true} errors={errors} /> : <Switch>
+				<Route path="/" exact render={() => <Landing emailRef={emailRef} />} />
 				<Route path="/products" component={Products} />
 				<Route path="/about" component={About} />
 				<Route path="/checkout" component={Checkout} />
 				<Route path='/wishlist' component={Wishlist} />
-				<Route path='/cart' component={Cart}/>
+				<Route path='/cart' component={Cart} />
+				<Route path='/loader' render={() => <Loader fullScreen={true} errors={errors} />} />
 				<Route component={Landing} />
-			</Switch>
+			</Switch>}
 			<Footer emailRef={emailRef}/>
 			{isMo ? <MobileMenu /> : null}
 		</div>
