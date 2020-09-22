@@ -787,6 +787,12 @@ Version logs for the project are below...
 * Remove old one-time firing function
 * Replace with eventListener for media query
 
+#### Fix LOAD_CATEGORIES
+
+* Move App local states to top of component
+* Pass isLoading to useEffect
+* ONLY call getCategories if loading
+
 ---
 
 ### ToDo
