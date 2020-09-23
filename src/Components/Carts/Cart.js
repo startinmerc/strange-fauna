@@ -28,13 +28,16 @@ const Cart = ({ fetchOneProduct, clearSearch, changeDelivery, cart, delivery, op
 	function handleChange(e) {
 		changeDelivery(e.target.value);
 	}
-
+	
 	const cartList = search.map(item => {
+		// If found item's id matches id in cart
 		if(cart.find(v=>v.id === item._id)){
+			// Get qty from cart
+			let cartQty = cart.find(v => v.id === item._id).qty;
 			return (
-				// Add qty from cart to ProductCard
-				<ProductCard detail={{...item, qty: cart.find(v=>v.id === item._id).qty}} key={`prod-${item._id}`} type="cart"/>
+				<ProductCard detail={{...item, qty: cartQty}} key={`prod-${item._id}`} type="cart" />
 			)
+		// Otherwise skip
 		} else {
 			return null
 		}
