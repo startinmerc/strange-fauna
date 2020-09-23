@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Authform = ({type}) => {
+const Authform = ({history, type}) => {
 
 	const [data,updateData] = React.useState({
 		email: "",
@@ -10,6 +10,12 @@ const Authform = ({type}) => {
 
 	function handleChange(e) {
 		updateData({...data, [e.target.name]: e.target.value})
+	}
+
+	function handleSubmit(e){
+		e.preventDefault();
+		console.log(data);
+		history.push("/");
 	}
 
 	const styles = {
@@ -25,7 +31,7 @@ const Authform = ({type}) => {
 
 	return (
 		<main>
-			<form>
+			<form onSubmit={handleSubmit}>
 				<h2>{styles[type].header}</h2>
 				{type === "up" && <><label htmlFor="email">Email:</label>
 				<input type="email" id="email" name="email" placeholder="your@email.com" value={data.email} onChange={handleChange}></input></>}
