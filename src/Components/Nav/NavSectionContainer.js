@@ -2,18 +2,13 @@ import React from 'react';
 import './NavSectionContainer.css';
 import NavSection from './NavSection';
 import { connect } from "react-redux";
-import { fetchCategories } from "../../store/actions/categories";
 import { fetchNavProducts } from "../../store/actions/products";
 
 // Returns element containing nav sections with hover menus
 
-function NavSectionContainer({categories, fetchCategories, products, fetchNavProducts}) {
+function NavSectionContainer({categories, products, fetchNavProducts}) {
 
 	React.useEffect(()=>{
-		// This seems to call fetchCategories twice & overpopulate NavProducts
-		// if (categories.length === 0) {
-		// 	fetchCategories();
-		// }
 		// If there are no NavProducts and categories have been loaded
 		if (products.length === 0 && categories.length !== 0) {
 			// For each category
@@ -25,7 +20,7 @@ function NavSectionContainer({categories, fetchCategories, products, fetchNavPro
 				}
 			})
 		}
-	},[categories, products, fetchCategories, fetchNavProducts]);
+	},[categories, products, fetchNavProducts]);
 
 	// Map categories to NavSections
 	const sections = categories.map(cat=>(
@@ -49,4 +44,4 @@ function mapStateToProps(state){
 	};
 };
 
-export default connect(mapStateToProps, { fetchCategories, fetchNavProducts })(NavSectionContainer);
+export default connect(mapStateToProps, { fetchNavProducts })(NavSectionContainer);
