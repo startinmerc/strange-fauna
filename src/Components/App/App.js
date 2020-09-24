@@ -16,8 +16,9 @@ import { isMobile } from '../../middleware';
 import { Helmet } from 'react-helmet';
 import { connect } from "react-redux";
 import { fetchCategories } from "../../store/actions/categories";
+import { authUser } from "../../store/actions/auth";
 
-const App = ({errors, fetchCategories, categories})=> {
+const App = ({errors, fetchCategories, categories, authUser})=> {
 
 	// Local state for mobile size
 	const [isMo, upMo] = React.useState(false);
@@ -52,8 +53,8 @@ const App = ({errors, fetchCategories, categories})=> {
 			<Loader fullScreen={true} errors={errors} isLoading={isLoading} />
 			{!isLoading && <Switch>
 				<Route path="/" exact render={() => <Landing emailRef={emailRef} />} />
-				<Route path="/signin" exact render={props => {return(<Authform type="in" {...props}/>)}} />
-				<Route path="/signup" exact render={props => {return(<Authform type="up" {...props}/>)}} />
+				<Route path="/signin" exact render={props => {return(<Authform type="in" onAuth={authUser} {...props}/>)}} />
+				<Route path="/signup" exact render={props => {return(<Authform type="up" onAuth={authUser} {...props}/>)}} />
 				<Route path="/products" component={Products} />
 				<Route path="/about" component={About} />
 				<Route path="/checkout" component={Checkout} />
@@ -71,8 +72,9 @@ const App = ({errors, fetchCategories, categories})=> {
 function mapStateToProps(state){
 	return {
 		errors: state.errors,
-		categories: state.categories
+		categories: state.categories,
+		currentUser: state.currentUser
 	}
 }
 
-export default connect(mapStateToProps, { fetchCategories })(App);
+export default connect(mapStateToProps, { fetchCategories, authUser })(App);

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Authform = ({history, type}) => {
+const Authform = ({history, type, onAuth}) => {
 
 	const [data,updateData] = React.useState({
 		email: "",
@@ -14,8 +14,10 @@ const Authform = ({history, type}) => {
 
 	function handleSubmit(e){
 		e.preventDefault();
-		console.log(data);
-		history.push("/");
+		const authType = `sign${type}`;
+		onAuth(authType, data).then(()=>{
+			console.log("LOGGED IN");
+		})
 	}
 
 	const styles = {
