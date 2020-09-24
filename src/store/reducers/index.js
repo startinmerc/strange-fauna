@@ -6,6 +6,7 @@ import categories from "./categories";
 import delivery from "./delivery";
 import errors from "./errors";
 import landingSections from "./landingSections";
+import currentUser from "./currentUser";
 
 const rootReducer = combineReducers({
 	cart,
@@ -14,7 +15,8 @@ const rootReducer = combineReducers({
 	categories,
 	delivery,
 	landingSections,
-	errors
+	errors,
+	currentUser
 });
 
 export default rootReducer;
