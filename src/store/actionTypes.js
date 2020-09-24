@@ -27,3 +27,6 @@ export const LOAD_LANDING_SECTIONS = "LOAD_LANDING_SECTIONS";
 // Errors
 export const ADD_ERROR = "ADD_ERROR";
 export const REMOVE_ERROR = "REMOVE_ERROR";
+
+// Users
+export const SET_CURRENT_USER = "SET_CURRENT_USER";
