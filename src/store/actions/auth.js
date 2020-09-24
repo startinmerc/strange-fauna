@@ -1,10 +1,10 @@
 import { apiCall } from "../../services/api";
-import { SET_CURENT_USER } from "../actionTypes";
+import { SET_CURRENT_USER } from "../actionTypes";
 import { addError } from "./errors";
 
 export function setCurrentUser(user) {
   return {
-    type: SET_CURENT_USER,
+    type: SET_CURRENT_USER,
     user
   };
 };
