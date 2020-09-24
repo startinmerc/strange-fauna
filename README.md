@@ -793,11 +793,24 @@ Version logs for the project are below...
 * Pass isLoading to useEffect
 * ONLY call getCategories if loading
 
+### V2.3
+
+#### Authform Pt.1
+
+* Add basic Authfrom component with simple state
+* Add route to App
+
+#### Authform Pt.2
+
+* Add auth action
+* Add currentUser reducer
+* Pass Redux functions to Authform
+
 ---
 
 ### ToDo
 
-#### Cart to Wish
+#### Cart to Wish/Adjust stock
 
 * iterate over items in cart
 * look up stock through API
@@ -806,7 +819,6 @@ Version logs for the project are below...
 
 #### API Interaction
 
-* remove quantity from wish
 * Reviews
 * Pagination in products
 * React Router Page transition on productlist
@@ -835,4 +847,12 @@ let root = document.documentElement;
 document.addEventListener("scroll", evt => {
   root.style.setProperty("--scrolltop", root.scrollTop);
 });
+
+// OoS
+// "{\"cart\":{\"cart\":[{\"id\":\"5ee7765e8265482fe01a5026\",\"qty\":1,\"price\":\"48\"}],\"total\":{\"qty\":1,\"val\":48}},\"wish\":[]}"
+
+// Overstock
+// "{\"cart\":{\"cart\":[{\"id\":\"5ee7765e8265482fe01a501b\",\"qty\":10,\"price\":\"11\"}],\"total\":{\"qty\":8,\"val\":88}},\"wish\":[]}"
+
+
 ```
