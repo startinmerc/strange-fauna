@@ -51,7 +51,7 @@
 
 .header__buttons-container {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	overflow: hidden;
 	position: relative;
 }
@@ -67,7 +67,11 @@
 }
 
 .header-button:first-of-type {
-	transform: translateX(calc(200% - 40px));	
+	transform: translateX(calc(300% - 3.4rem));	
+}
+
+.header-button:nth-of-type(2) {
+	transform: translateX(calc(200% - 2.5rem));	
 }
 
 .header-button::before {
@@ -142,6 +146,9 @@
 		transform: translateX(0);
 	}
 	.header-button:first-of-type {
+		transform: translateX(0);
+	}
+	.header-button:nth-of-type(2) {
 		transform: translateX(0);
 	}
 	.header__buttons-container:hover .header-button {
