@@ -33,12 +33,12 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 		// Update to see if still loading
 		updateLoading(categories.length === 0 && errors.status !== 500)
 	},[fetchCategories, categories, errors, isLoading])
+
 	// Ref for email input field
 	const emailRef = React.useRef(null);
 
 	return (
 		<div id="container">
-			{errors.message && <div className="errors">{errors.message}</div>}
 			<Helmet>
 				<meta charSet="utf-8" />
 				<title>Strange Fauna</title>
@@ -50,6 +50,7 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 				<title>Strange Flora</title>
 			</Helmet>
 			{isMo ? <MobileHeader /> : <Header />}
+			{errors.message && <div className="errors">{errors.message}</div>}
 			<Loader fullScreen={true} errors={errors} isLoading={isLoading} />
 			{!isLoading && <Switch>
 				<Route path="/" exact render={() => <Landing emailRef={emailRef} />} />
