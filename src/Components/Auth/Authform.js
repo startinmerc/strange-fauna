@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Authform = ({history, type, onAuth}) => {
 
@@ -16,8 +17,8 @@ const Authform = ({history, type, onAuth}) => {
 		e.preventDefault();
 		const authType = `sign${type}`;
 		onAuth(authType, data).then(()=>{
-			console.log("LOGGED IN");
-		})
+			history.push("/");
+		}).catch(()=>{return;});
 	}
 
 	const styles = {
@@ -35,6 +36,7 @@ const Authform = ({history, type, onAuth}) => {
 		<main>
 			<form onSubmit={handleSubmit}>
 				<h2>{styles[type].header}</h2>
+				{type === "in" && <p>Not registered? <Link to="/signup">Sign up for an account!</Link></p>}
 				<label htmlFor="email">Email:</label>
 				<input type="email" id="email" name="email" placeholder="your@email.com" value={data.email} onChange={handleChange}></input>
 				{type === "up" && <><label htmlFor="username">Username:</label>
