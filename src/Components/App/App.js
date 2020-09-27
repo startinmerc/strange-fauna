@@ -50,7 +50,7 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 				<title>Strange Flora</title>
 			</Helmet>
 			{isMo ? <MobileHeader /> : <Header />}
-			{errors.message && <div className="errors">{errors.message}</div>}
+			{errors.message && <div className="errors"><p>Error: {errors.message}</p></div>}
 			<Loader fullScreen={true} errors={errors} isLoading={isLoading} />
 			{!isLoading && <Switch>
 				<Route path="/" exact render={() => <Landing emailRef={emailRef} />} />
