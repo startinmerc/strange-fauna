@@ -33,14 +33,15 @@ p {
 }
 
 #container {
-	display: grid;
-	grid-template-rows: 1fr auto;
+	display: flex;
+	flex-direction: column;
 	overflow-x: hidden;
 	min-height: 100vh;
 }
 
 main {
 	margin: calc(4.4rem + 14px) auto 0 auto;
+	flex-grow: 1;
 	width: 80%;
 }
 
