@@ -22,7 +22,7 @@ export function authUser(type, userData){
         resolve();
       })
       .catch(err => {
-        dispatch(addError(err.message));
+        dispatch(addError(err));
         reject();
       })
     })
