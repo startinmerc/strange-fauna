@@ -805,10 +805,23 @@ Version logs for the project are below...
 * Add auth action
 * Add currentUser reducer
 * Pass Redux functions to Authform
+* Add handleSubmit function
+
+#### Authform Pt.3
+
+* Add User SVG
+* Add User HeaderButton
+* Tweak HeaderButton to hide totals etc on user
 
 ---
 
 ### ToDo
+
+#### Errors
+
+* Reformat message div - positon relative, work out header margin
+* Handle error message/status in message
+* Does reduced coded apiCall catch work?
 
 #### Cart to Wish/Adjust stock
 
