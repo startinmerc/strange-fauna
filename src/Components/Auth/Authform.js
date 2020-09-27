@@ -1,7 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { removeError } from '../../store/actions/errors';
+import { connect } from 'react-redux';
 
-const Authform = ({history, type, onAuth}) => {
+const Authform = ({history, type, onAuth, removeError}) => {
+
+	React.useEffect(()=>{
+		return function cleanup(){
+			removeError();
+		};
+	},[removeError]);
+
 
 	const [data,updateData] = React.useState({
 		email: "",
@@ -49,4 +58,4 @@ const Authform = ({history, type, onAuth}) => {
 	)
 }
 
-export default Authform;
+export default connect(null, { removeError})(Authform);
