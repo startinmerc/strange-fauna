@@ -813,15 +813,28 @@ Version logs for the project are below...
 * Add User HeaderButton
 * Tweak HeaderButton to hide totals etc on user
 
+#### Errors, post-Authform Pt.1
+
+* Rewrite apiCall to handle message/status from api
+* Handle this object in errors action/handler
+* Show errors in Authfrom
+* Add removeError cleanup function to Authform to clear errors
+
+#### Errors, post-Authform Pt.2
+
+* Reformat message div - positon relative, work out header margin
+* Change colouring, blends in with Nav
+
 ---
 
 ### ToDo
 
-#### Errors
+#### Authform Pt.4
 
-* Reformat message div - positon relative, work out header margin
-* Handle error message/status in message
-* Does reduced coded apiCall catch work?
+* Check in mobile views
+* Add to MobileMenu
+* Tweak elements
+* Add styling
 
 #### Cart to Wish/Adjust stock
 
@@ -834,7 +847,6 @@ Version logs for the project are below...
 
 * Reviews
 * Pagination in products
-* React Router Page transition on productlist
 
 #### Transitions
 
@@ -843,8 +855,6 @@ Version logs for the project are below...
 
 #### Other
 
-* Possibly add max-width to containers
-* Showing/hiding components transitions
 * Review semantic HTML
 
 #### GSAP
