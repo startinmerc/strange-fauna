@@ -825,16 +825,21 @@ Version logs for the project are below...
 * Reformat message div - positon relative, work out header margin
 * Change colouring, blends in with Nav
 
+#### Authform Pt.4
+
+* Tweak elements
+* Add styling
+* Add to MobileMenu
+
 ---
 
 ### ToDo
 
-#### Authform Pt.4
+#### User page
 
-* Check in mobile views
-* Add to MobileMenu
-* Tweak elements
-* Add styling
+* Logout button
+* Cart
+* Wishlist
 
 #### Cart to Wish/Adjust stock
 
@@ -845,6 +850,7 @@ Version logs for the project are below...
 
 #### API Interaction
 
+* Fix duplicate nav api call
 * Reviews
 * Pagination in products
 
