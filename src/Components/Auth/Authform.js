@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { removeError } from '../../store/actions/errors';
 import { connect } from 'react-redux';
+import './Authform.css';
 
 const Authform = ({history, type, onAuth, removeError}) => {
 
@@ -33,29 +34,31 @@ const Authform = ({history, type, onAuth, removeError}) => {
 	const styles = {
 		up: {
 			header: "Sign Up",
-			submit: "Register!"
+			submit: "Register!",
+			passwordPlaceholder: "Your desired password"
 		},
 		in: {
 			header: "Sign In",
-			submit: "Sign In!"
+			submit: "Sign In!",
+			passwordPlaceholder: "Enter password"
 		}
 	}
 
 	return (
-		<main>
+		<main id="authform">
 			<form onSubmit={handleSubmit}>
 				<h2>{styles[type].header}</h2>
 				{type === "in" && <p>Not registered? <Link to="/signup">Sign up for an account!</Link></p>}
 				<label htmlFor="email">Email:</label>
 				<input type="email" id="email" name="email" placeholder="your@email.com" value={data.email} onChange={handleChange}></input>
 				{type === "up" && <><label htmlFor="username">Username:</label>
-				<input type="text" id="username" name="username" placeholder="desired username" value={data.username} onChange={handleChange}></input></>}
+				<input type="text" id="username" name="username" placeholder="Your desired username" value={data.username} onChange={handleChange}></input></>}
 				<label htmlFor="password">Password:</label>
-				<input type="password" id="password" name="password" placeholder="desired password" value={data.password} onChange={handleChange}></input>
+				<input type="password" id="password" name="password" placeholder={styles[type].passwordPlaceholder} value={data.password} onChange={handleChange}></input>
 				<button type="submit">{styles[type].submit}</button>
 			</form>
 		</main>
 	)
 }
 
-export default connect(null, { removeError})(Authform);
+export default connect(null, { removeError })(Authform);

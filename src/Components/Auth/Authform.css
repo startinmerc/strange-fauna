@@ -1,0 +1,21 @@
+#authform form {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+#authform input {
+	margin-bottom: 1rem;
+	padding: 0.3rem;
+	font-size: 1rem;
+	font-family: "Scope One", serif;
+	border: 2px solid var(--black);
+	background-color: var(--white);
+}
+
+#authform h2,
+#authform p {
+	text-align: center;
+	margin: 0;
+}
