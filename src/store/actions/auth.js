@@ -1,6 +1,6 @@
 import { apiCall } from "../../services/api";
 import { SET_CURRENT_USER } from "../actionTypes";
-import { addError } from "./errors";
+import { addError, removeError } from "./errors";
 
 export function setCurrentUser(user) {
   return {
@@ -28,6 +28,8 @@ export function authUser(type, userData){
         localStorage.setItem("jwtToken", token);
         // Set user
         dispatch(setCurrentUser(user));
+        // Clear errors
+        dispatch(removeError());
         resolve();
       })
       .catch(err => {
