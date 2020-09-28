@@ -25,7 +25,7 @@ const HeaderButtonContainer = ({wish,cart, currentUser}) => {
 			 headerIcon={<User size={'24px'} strokeWidth="2" color="var(--black)"/>}
 			 headerText={currentUser.isAuthenticated ? `${currentUser.user.username}` : "Sign In"}
 			 id={'header-user'}
-			 url={'/signin'}
+			 url={currentUser.isAuthenticated ? '/userpage' : '/signin'}
 			/>
 		</div>
 	);

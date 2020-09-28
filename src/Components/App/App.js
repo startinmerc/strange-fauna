@@ -11,6 +11,7 @@ import Checkout from '../Carts/Checkout';
 import About from '../About/About';
 import Loader from '../Partials/Loader/Loader';
 import Authform from '../Auth/Authform';
+import UserPage from "../UserPage/UserPage";
 import { Route, Switch } from 'react-router-dom';
 import { isMobile } from '../../middleware';
 import { Helmet } from 'react-helmet';
@@ -56,6 +57,7 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 				<Route path="/" exact render={() => <Landing emailRef={emailRef} />} />
 				<Route path="/signin" exact render={props => {return(<Authform type="in" onAuth={authUser} {...props}/>)}} />
 				<Route path="/signup" exact render={props => {return(<Authform type="up" onAuth={authUser} {...props}/>)}} />
+				<Route path="/userpage" component={UserPage} />
 				<Route path="/products" component={Products} />
 				<Route path="/about" component={About} />
 				<Route path="/checkout" component={Checkout} />

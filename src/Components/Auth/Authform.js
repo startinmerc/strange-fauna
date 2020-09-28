@@ -27,7 +27,7 @@ const Authform = ({history, type, onAuth, removeError}) => {
 		e.preventDefault();
 		const authType = `sign${type}`;
 		onAuth(authType, data).then(()=>{
-			history.push("/");
+			history.push("/userpage");
 		}).catch(()=>{return;});
 	}
 
