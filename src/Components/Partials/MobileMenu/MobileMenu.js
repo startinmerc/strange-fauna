@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchCategories } from "../../../store/actions/categories";
 import Star from '../../SVGs/Star';
 import ShoppingCart from '../../SVGs/ShoppingCart';
+import User from '../../SVGs/User';
 import Hamburger from './Hamburger';
 import HeaderButton from '../Header/HeaderButton';
 import './MobileMenu.css';
@@ -11,7 +12,7 @@ import './MobileMenu.css';
 // Returns sticky footer mobile menu with cart & wishlist buttons,
 // Along with popup nav of sections
 
-const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
+const MobileMenu = ({ wish, cart, fetchCategories, categories, currentUser })=> {
 
 	const [expanded,setExpanded] = useState(false);
 
@@ -68,6 +69,13 @@ const MobileMenu = ({ wish, cart, fetchCategories, categories })=> {
 					id={'header-cart'}
 					url={'/cart'}
 					items={cart}/>
+				<HeaderButton
+					mobile={true}
+					headerIcon={<User size={'24px'} strokeWidth="2" color="var(--black)" />}
+					headerText={currentUser.isAuthenticated ? `${currentUser.user.username}` : "Sign In"}
+					id={'header-user'}
+					url={'/signin'}
+				/>
 				<Hamburger size={'2rem'} handleClick={showMenu} expanded={expanded}/>
 			</div>
 		</div>
@@ -78,7 +86,8 @@ function mapStateToProps(reduxState) {
 	return {
 		wish: reduxState.wish,
 		cart: reduxState.cart.cart,
-		categories: reduxState.categories
+		categories: reduxState.categories,
+		currentUser: reduxState.currentUser
 	};
 }
 
