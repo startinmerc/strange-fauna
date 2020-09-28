@@ -9,6 +9,15 @@ export function setCurrentUser(user) {
   };
 };
 
+export function logOut() {
+  return dispatch => {
+    // clear JWT
+    localStorage.jwtToken = "";
+    // clear current user
+    dispatch(setCurrentUser({}));
+  }
+}
+
 export function authUser(type, userData){
   return dispatch => {
     return new Promise((resolve,reject) => {
