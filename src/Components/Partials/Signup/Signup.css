@@ -2,6 +2,10 @@
 	background-color: var(--footer);
 }
 
+.signup__label {
+	font-family: "Scope One", serif;
+}
+
 .signup__input {
 	margin-top: 10px;
 	width: calc(70% - 4px - 0.3rem);

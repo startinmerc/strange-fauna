@@ -191,6 +191,9 @@ input[type="text"]:focus {
 /*=============Responsive - Mobile=============*/
 
 @media(max-width: 600px){
+	.errors {
+		margin: 0 auto;
+	}
 	main {
 		margin: 0 auto;
 	}
