@@ -29,10 +29,10 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 0;
+	margin: calc(2.4rem + 14px) auto -20px auto;
 	padding: 0;
-	margin-bottom: -20px;
 	height: auto;
+	flex-grow: 1;
 }
 
 .loader--full svg {
@@ -88,4 +88,10 @@
 .loader-exit-active svg, .loader-exit-active h1, .loader-exit-active h2 {
 	opacity: 0;
 	transition: opacity 300ms ease-in;
+}
+
+@media(max-width: 600px){
+	.loader--full {
+		margin-top: 0;
+	}
 }

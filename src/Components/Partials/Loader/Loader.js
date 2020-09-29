@@ -40,7 +40,9 @@ export default function Loader({fullScreen, isLoading}){
 						</svg>}
 						<h1 className="header__title">Strange Flora</h1>
 						<h2>
-							Loading<span className="loader__dot">.</span><span className="loader__dot">.</span><span className="loader__dot">.</span>
+							Loading<span className="loader__dot">.</span>
+							<span className="loader__dot">.</span>
+							<span className="loader__dot">.</span>
 						</h2>
 					</div>
 				</CSSTransition>
