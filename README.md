@@ -831,15 +831,15 @@ Version logs for the project are below...
 * Add styling
 * Add to MobileMenu
 
----
-
-### ToDo
-
 #### User page
 
 * Logout button
 * Cart
 * Wishlist
+
+---
+
+### ToDo
 
 #### Cart to Wish/Adjust stock
 
@@ -853,6 +853,68 @@ Version logs for the project are below...
 * Fix duplicate nav api call
 * Reviews
 * Pagination in products
+
+#### isLoading
+
+* CUSTOM DATA FETCHING HOOK in apiCall method
+
+```javascript
+const useHackerNewsApi = () => {
+  const [data, setData] = useState({ hits: [] });
+  const [url, setUrl] = useState(
+    'https://hn.algolia.com/api/v1/search?query=redux',
+  );
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsError(false);
+      setIsLoading(true);
+
+      try {
+        const result = await axios(url);
+
+        setData(result.data);
+      } catch (error) {
+        setIsError(true);
+      }
+
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, [url]);
+
+  return [{ data, isLoading, isError }, setUrl];
+}
+```
+
+```js
+function App() {
+  const [query, setQuery] = useState('redux');
+  const [{ data, isLoading, isError }, doFetch] = useHackerNewsApi();
+
+  return (
+    <Fragment>
+      <form onSubmit={event => {
+        doFetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
+
+        event.preventDefault();
+      }}>
+        <input
+          type="text"
+          value={query}
+          onChange={event => setQuery(event.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      ...
+    </Fragment>
+  );
+}
+```
 
 #### Transitions
 
@@ -869,9 +931,8 @@ Version logs for the project are below...
   * Parallax scroll - fast images, slow section
   * Loading animation - content from left, image fade from above
 
-Set vars:
-
 ```javascript
+// Set vars:
 let root = document.documentElement;
 document.addEventListener("scroll", evt => {
   root.style.setProperty("--scrolltop", root.scrollTop);
