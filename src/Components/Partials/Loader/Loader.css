@@ -6,8 +6,8 @@
 }
 
 @keyframes draw {
-  0% {stroke-dashoffset: -30rem;} 
-  100% {stroke-dashoffset: 30rem;}
+  0% {stroke-dashoffset: -1;} 
+  100% {stroke-dashoffset: 1;}
 }
 
 .loader {
@@ -37,21 +37,20 @@
 
 .loader--full svg {
 	position: absolute;
-	height: 100vh;
+	height: 50%;
 	width: 100%;
 	z-index: -1;
 	text-align: center;
 }
 
-.loader--full svg text {
+.loader--full svg path {
+	font-family: 'Cinzel Decorative', serif;
 	font-size: 30rem;
   stroke: var(--primary);
-  stroke-width: 1px;
   fill: none;
-  stroke-dasharray: 30rem;
-  stroke-dashoffset: -30rem;
-	animation: draw 4s linear infinite;
-	transform: translateX(-14rem) translateY(12rem);
+  stroke-dasharray: 0.5;
+  stroke-dashoffset: -1;
+	animation: draw 16s linear infinite;
 }
 
 .loader .loader__dot {
