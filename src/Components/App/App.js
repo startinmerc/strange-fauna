@@ -32,7 +32,7 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 		// Media query to listen for mobile size for rendering components
 		isMobile(upMo);
 		// Update to see if still loading
-		updateLoading(categories.length === 0 && errors.status !== 500)
+		updateLoading(categories.length === 0 && errors.status !== 500);
 	},[fetchCategories, categories, errors, isLoading])
 
 	// Ref for email input field
@@ -48,6 +48,8 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 				<meta	name="description" content="Vendor of commercial and private flowers and funghi"/>
 				<link rel="apple-touch-icon" href="logo192.png" />
 				<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+				<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+				<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Scope+One&display=swap" rel="stylesheet"></link>
 				<title>Strange Flora</title>
 			</Helmet>
 			{isMo ? <MobileHeader /> : <Header />}

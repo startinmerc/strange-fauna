@@ -20,14 +20,14 @@ function Footer({ emailRef }) {
 			</div>
 			<div className="footer__column">
 				<ul className="footer__link-group" style={{textAlign: "right", paddingRight: "5%"}}>
-					<li className="footer__link"><Link to="/products/all">Our Products</Link></li>
+					<li className="footer__link"><h3><Link to="/products/all">Our Products</Link></h3></li>
 					<li className="footer__link-sub"><Link to="/products/mushrooms">Mushrooms</Link></li>
 					<li className="footer__link-sub"><Link to="/products/berries">Berries</Link></li>
 					<li className="footer__link-sub"><Link to="/products/flowers">Flowers</Link></li>
 					<li className="footer__link-sub"><Link to="/products/reductions">Reductions</Link></li>
 				</ul>
 				<ul className="footer__link-group" style={{paddingLeft: "5%"}}>
-					<li className="footer__link"><Link to="/about">About Us</Link></li>
+					<li className="footer__link"><h3><Link to="/about">About Us</Link></h3></li>
 					<li className="footer__link-sub"><Link to="/about/faq">FAQ</Link></li>
 					<li className="footer__link-sub"><Link to="/about/delivery">Delivery</Link></li>
 					<li className="footer__link-sub"><Link to="/about/returns">Returns</Link></li>

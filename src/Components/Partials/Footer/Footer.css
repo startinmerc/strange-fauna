@@ -43,6 +43,10 @@
 	font-size: 1.4rem;
 }
 
+.footer__link h3 {
+	margin: 0;
+}
+
 .footer__link-sub {
 	color: var(--white);
 	margin-bottom: 0.3rem

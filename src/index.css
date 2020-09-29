@@ -13,8 +13,6 @@
 	--header: #f1f1f1;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel|Scope+One&display=swap');
-
 /*==============Global HTML Styles==============*/
 
 body {
@@ -22,14 +20,13 @@ body {
 	padding: 0;
 	width: 100%;
 	/* Default of capitalised display font */
-	font-family: 'Cinzel', serif;
+	font-family: "Scope One", serif;
 	background-color: var(--white);
 	color: var(--black);
 }
 
-p {
-	/* Non-capped font for larger blocks of text */
-	font-family: "Scope One", serif;
+h1, h2, h3, h4, h5, .display {
+	font-family: 'Cinzel Decorative', cursive;
 }
 
 #container {
@@ -43,11 +40,6 @@ main {
 	margin: calc(4.4rem + 14px) auto 0 auto;
 	flex-grow: 1;
 	width: 80%;
-}
-
-.display {
-	/* Overrride <p> font-family */
-	font-family: 'Cinzel', serif;
 }
 
 h2 {
@@ -119,6 +111,11 @@ button:disabled:hover,
 button:disabled:focus {
 	background-color: var(--header);
 	box-shadow: 2px 2px 0 var(--footer);
+}
+
+select {
+	font-family: inherit;
+	font-size: inherit;
 }
 
 input[type="text"] {
