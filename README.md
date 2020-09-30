@@ -836,6 +836,12 @@ Version logs for the project are below...
 * Logout button
 * Cart
 * Wishlist
+* fill/unfill user icon
+
+#### API fixes
+
+* pass isLoading from App to fetchCategories to set
+* Tweak error checking for res data on apiCall
 
 ---
 
@@ -850,7 +856,6 @@ Version logs for the project are below...
 
 #### API Interaction
 
-* Fix duplicate nav api call
 * Reviews
 * Pagination in products
 
