@@ -37,7 +37,7 @@ const ProductList = ({ type, title, fetchProducts, products, fetchCategoryProduc
 				<title>Strange Flora - {header}</title>
 			</Helmet>
 			<div className="product-list__header" style={{backgroundColor: `var(--${type})`}}>
-				<h2>{header}{products.length < 1 ? ' is empty' : null}</h2>
+				<h2>{header}</h2>
 			</div>
 			<div className="product-list">
 				{renderList}
