@@ -10,9 +10,13 @@ import { configureStore } from "./store";
 
 const store = configureStore();
 
-// store.subscribe(()=>{
-// 	localStorage.setItem('reduxState', JSON.stringify(store.getState()));
-// });
+store.subscribe(()=>{
+	localStorage.setItem('reduxState', JSON.stringify({
+		cart: store.getState().cart,
+		wish: store.getState().wish,
+		delivery: store.getState().delivery
+	}));
+});
 
 ReactDOM.render(
 	<Provider store={store}>
