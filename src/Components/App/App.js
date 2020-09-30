@@ -68,7 +68,7 @@ const App = ({errors, fetchCategories, authUser})=> {
 				<Route component={Landing} />
 			</Switch>}
 			<Footer emailRef={emailRef}/>
-			{isMo ? <MobileMenu /> : null}
+			{(isMo && !isLoading) ? <MobileMenu /> : null}
 		</div>
 	)
 }
