@@ -849,15 +849,15 @@ Version logs for the project are below...
 * Remove fetchCategories from Mobilemenu
 * Fix key assignment to proper element of dropups
 
+#### Errors Component
+
+* Refactor `.errors` as component
+* have removeError attached to history listener
+* call ^ as cleanup fn to clear listener
+
 ---
 
 ### ToDo
-
-#### errors
-
-* abstract error as component
-* have removeError as history.listen
-* call ^ to clear as cleanup fn
 
 #### User lists
 
