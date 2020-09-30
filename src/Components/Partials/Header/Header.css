@@ -80,13 +80,8 @@
 }
 
 .header-button .icon {
-	fill: var(--primary);
 	margin-right: 0.2rem;
-	transition-delay: 170ms;
-}
-
-.header-button.empty .icon {
-	fill: transparent;
+	transition: fill 270ms ease-in 170ms;
 }
 
 .header-button::after {
