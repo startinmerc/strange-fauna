@@ -26,26 +26,36 @@ const MobileMenu = ({ wish, cart, categories, currentUser })=> {
 	};
 	
 	// Map of section list items from api call
-	const sections = categories.map((section,index)=>(
+	const sections = categories.map((section, index) => (
 		// Encase list in a link to either /products/category or /about
-		<Link to={(section.section !=='about') ? `/products/${section.title}` : '/about'}>
+		<Link
+			to={section.section !== "about" ? `/products/${section.title}` : "/about"}
+			key={`nav-section-${index}`}
+		>
 			{/* Give key & classnames */}
-			<li key={'nav-section-' + index} className={`dropup nav--${section.type}`} style={{
-				// Section color
-				background: section.color,
-				// If expanded, delay in reverse render order, otherwise delay in order
-				transitionDelay: expanded ? `${(categories.length * 60) - (index * 60)}ms` : `${index * 60}ms`,
-				// If expanded, translate to initial position, otherwise bottom of navbar
-				transform: expanded ? "translateY(0)" : `translateY(${(categories.length * 100) - (index * 100)}%)`,
-				}}>
+			<li
+				className={`dropup nav--${section.type}`}
+				style={{
+					// Section color
+					background: section.color,
+					// If expanded, delay in reverse render order, otherwise delay in order
+					transitionDelay: expanded
+						? `${categories.length * 60 - index * 60}ms`
+						: `${index * 60}ms`,
+					// If expanded, translate to initial position, otherwise bottom of navbar
+					transform: expanded
+						? "translateY(0)"
+						: `translateY(${categories.length * 100 - index * 100}%)`,
+				}}
+			>
 				{section.title}
 			</li>
 		</Link>
 	));
 
-	return(
+	return (
 		<div id="mobile-menu" onClick={handleClick}>
-			<div className={`mobile-menu__dropup ${expanded && 'expanded'}`}>
+			<div className={`mobile-menu__dropup ${expanded && "expanded"}`}>
 				<li id="dropup-background" aria-hidden="true"></li>
 				{sections}
 			</div>
