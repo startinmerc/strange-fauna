@@ -28,12 +28,11 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 
 	React.useEffect(()=>{
 		// API call to get categories for Nav component
-		isLoading && fetchCategories();
+		// Pass in fn to toggle loading
+		isLoading && fetchCategories(updateLoading);
 		// Media query to listen for mobile size for rendering components
 		isMobile(upMo);
-		// Update to see if still loading
-		updateLoading(categories.length === 0 && errors.status !== 500);
-	},[fetchCategories, categories, errors, isLoading])
+	},[fetchCategories, isLoading])
 
 	// Ref for email input field
 	const emailRef = React.useRef(null);

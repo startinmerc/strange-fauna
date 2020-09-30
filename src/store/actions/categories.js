@@ -7,10 +7,15 @@ export const loadCategories = categories => ({
 	categories
 });
 
-export const fetchCategories = () => {
+export const fetchCategories = (setLoading) => {
 	return dispatch => {
+		setLoading(true);
 		return apiCall("get", "/api/categories/all")
-			.then(res => dispatch(loadCategories(res)))
-			.catch(err => dispatch(addError(err)));
+			.then(res => {
+				setLoading(false);
+				dispatch(loadCategories(res))})
+			.catch(err => {
+				setLoading(false);
+				dispatch(addError(err))});
 	};
 };
