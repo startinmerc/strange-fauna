@@ -50,26 +50,42 @@ const MobileMenu = ({ wish, cart, categories, currentUser })=> {
 				{sections}
 			</div>
 			<div className="mobile-menu__content">
-				<HeaderButton 
-					mobile={true}
-					headerIcon={<Star size={"2rem"} strokeWidth="1"/>}
-					id={'header-wish'}
-					url={'/wishlist'}
-					items={wish}/>
-				<HeaderButton 
-					mobile={true}
-					headerIcon={<ShoppingCart size={"2rem"} strokeWidth="1"/>}
-					id={'header-cart'}
-					url={'/cart'}
-					items={cart}/>
 				<HeaderButton
 					mobile={true}
-					headerIcon={<User size={'24px'} strokeWidth="2" color="var(--black)" />}
-					headerText={currentUser.isAuthenticated ? `${currentUser.user.username}` : "Sign In"}
-					id={'header-user'}
-					url={'/signin'}
+					headerIcon={
+						<Star size={"2rem"} strokeWidth="1" fill={!!wish.length > 0} />
+					}
+					id={"header-wish"}
+					url={"/wishlist"}
+					items={wish}
 				/>
-				<Hamburger size={'2rem'} handleClick={showMenu} expanded={expanded}/>
+				<HeaderButton
+					mobile={true}
+					headerIcon={
+						<ShoppingCart
+							size={"2rem"}
+							strokeWidth="1"
+							fill={!!cart.length > 0}
+						/>
+					}
+					id={"header-cart"}
+					url={"/cart"}
+					items={cart}
+				/>
+				<HeaderButton
+					mobile={true}
+					headerIcon={
+						<User
+							size={"24px"}
+							strokeWidth="2"
+							color="var(--black)"
+							fill={currentUser.isAuthenticated}
+						/>
+					}
+					id={"header-user"}
+					url={currentUser.isAuthenticated ? "/userpage" : "/signin"}
+				/>
+				<Hamburger size={"2rem"} handleClick={showMenu} expanded={expanded} />
 			</div>
 		</div>
 	);
