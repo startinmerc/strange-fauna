@@ -26,7 +26,7 @@ export function apiCall(method, path, data){
 					return reject(
 						{
 							status: err.response.status,
-							message: err.response.data.error.message || err.response.statusText
+							message: (typeof err.response.data.error === "undefined") ? err.response.statusText : err.response.data.error.message
 						}
 					)
 			});
