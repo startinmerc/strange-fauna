@@ -885,6 +885,8 @@ Version logs for the project are below...
 
 * Review file structure
 * Review semantic HTML
+* Change icons
+* Add background-image gradients to colour blocks
 
 #### GSAP
 
