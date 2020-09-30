@@ -12,6 +12,7 @@ import About from '../About/About';
 import Loader from '../Partials/Loader/Loader';
 import Authform from '../Auth/Authform';
 import UserPage from "../UserPage/UserPage";
+import Errors from "../Errors/Errors";
 import { Route, Switch } from 'react-router-dom';
 import { isMobile } from '../../middleware';
 import { Helmet } from 'react-helmet';
@@ -52,7 +53,7 @@ const App = ({errors, fetchCategories, authUser})=> {
 				<title>Strange Flora</title>
 			</Helmet>
 			{isMo ? <MobileHeader /> : <Header />}
-			{errors.message && <div className="errors"><p>Error: {errors.message}</p></div>}
+			{errors.message && <Errors errors={errors}/>}
 			<Loader fullScreen={true} errors={errors} isLoading={isLoading} />
 			{!isLoading && <Switch>
 				<Route path="/" exact render={() => <Landing emailRef={emailRef} />} />
