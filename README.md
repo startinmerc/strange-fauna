@@ -843,9 +843,26 @@ Version logs for the project are below...
 * pass isLoading from App to fetchCategories to set
 * Tweak error checking for res data on apiCall
 
+#### MobileMenu fixes
+
+* Add fill prop to MobileMenu icons
+* Remove fetchCategories from Mobilemenu
+* Fix key assignment to proper element of dropups
+
 ---
 
 ### ToDo
+
+#### errors
+
+* abstract error as component
+* have removeError as history.listen
+* call ^ to clear as cleanup fn
+
+#### User lists
+
+* join local & api user lists on login
+* clear all on logout
 
 #### Cart to Wish/Adjust stock
 
@@ -859,68 +876,6 @@ Version logs for the project are below...
 * Reviews
 * Pagination in products
 
-#### isLoading
-
-* CUSTOM DATA FETCHING HOOK in apiCall method
-
-```javascript
-const useHackerNewsApi = () => {
-  const [data, setData] = useState({ hits: [] });
-  const [url, setUrl] = useState(
-    'https://hn.algolia.com/api/v1/search?query=redux',
-  );
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      setIsError(false);
-      setIsLoading(true);
-
-      try {
-        const result = await axios(url);
-
-        setData(result.data);
-      } catch (error) {
-        setIsError(true);
-      }
-
-      setIsLoading(false);
-    };
-
-    fetchData();
-  }, [url]);
-
-  return [{ data, isLoading, isError }, setUrl];
-}
-```
-
-```js
-function App() {
-  const [query, setQuery] = useState('redux');
-  const [{ data, isLoading, isError }, doFetch] = useHackerNewsApi();
-
-  return (
-    <Fragment>
-      <form onSubmit={event => {
-        doFetch(`http://hn.algolia.com/api/v1/search?query=${query}`);
-
-        event.preventDefault();
-      }}>
-        <input
-          type="text"
-          value={query}
-          onChange={event => setQuery(event.target.value)}
-        />
-        <button type="submit">Search</button>
-      </form>
-
-      ...
-    </Fragment>
-  );
-}
-```
-
 #### Transitions
 
 * LandingSection animation as CSSTransition
@@ -928,6 +883,7 @@ function App() {
 
 #### Other
 
+* Review file structure
 * Review semantic HTML
 
 #### GSAP
@@ -937,17 +893,12 @@ function App() {
   * Loading animation - content from left, image fade from above
 
 ```javascript
-// Set vars:
-let root = document.documentElement;
-document.addEventListener("scroll", evt => {
-  root.style.setProperty("--scrolltop", root.scrollTop);
-});
+function setVars() {
+  let root = document.documentElement;
+  root.style.setProperty("--headerHeight", `${root.getElementById("header").height}px`);
+}
 
-// OoS
-// "{\"cart\":{\"cart\":[{\"id\":\"5ee7765e8265482fe01a5026\",\"qty\":1,\"price\":\"48\"}],\"total\":{\"qty\":1,\"val\":48}},\"wish\":[]}"
+let OoS = localStorage.reduxState = "{\"cart\":{\"cart\":[{\"id\":\"5ee7765e8265482fe01a5026\",\"qty\":1,\"price\":\"48\"}],\"total\":{\"qty\":1,\"val\":48}},\"wish\":[]}"
 
-// Overstock
-// "{\"cart\":{\"cart\":[{\"id\":\"5ee7765e8265482fe01a501b\",\"qty\":10,\"price\":\"11\"}],\"total\":{\"qty\":8,\"val\":88}},\"wish\":[]}"
-
-
+let Overstock = localStorage.reduxState = "{\"cart\":{\"cart\":[{\"id\":\"5ee7765e8265482fe01a501b\",\"qty\":10,\"price\":\"11\"}],\"total\":{\"qty\":8,\"val\":88}},\"wish\":[]}"
 ```
