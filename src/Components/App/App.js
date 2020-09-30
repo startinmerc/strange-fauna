@@ -19,7 +19,7 @@ import { connect } from "react-redux";
 import { fetchCategories } from "../../store/actions/categories";
 import { authUser } from "../../store/actions/auth";
 
-const App = ({errors, fetchCategories, categories, authUser})=> {
+const App = ({errors, fetchCategories, authUser})=> {
 
 	// Local state for mobile size
 	const [isMo, upMo] = React.useState(false);
@@ -76,7 +76,6 @@ const App = ({errors, fetchCategories, categories, authUser})=> {
 function mapStateToProps(state){
 	return {
 		errors: state.errors,
-		categories: state.categories,
 		currentUser: state.currentUser
 	}
 }
