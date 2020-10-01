@@ -26,6 +26,9 @@ export function authUser(type, userData){
       .then(({token, ...user}) => {
         // Set auth token recieved from server
         localStorage.setItem("jwtToken", token);
+        // Add user's carts to localStorage
+        user.cart.forEach(i => addCart(i));
+        user.wish.forEach(i => addWish(i));
         // Set user
         dispatch(setCurrentUser(user));
         // Clear errors
