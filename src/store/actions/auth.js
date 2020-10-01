@@ -1,6 +1,8 @@
 import { apiCall } from "../../services/api";
 import { SET_CURRENT_USER } from "../actionTypes";
 import { addError, removeError } from "./errors";
+import { addCart, clearCart } from "./cart";
+import { addWish, clearWish } from "./wish";
 
 export function setCurrentUser(user) {
   return {
@@ -11,8 +13,11 @@ export function setCurrentUser(user) {
 
 export function logOut() {
   return dispatch => {
-    // clear JWT
+    // Clear JWT
     localStorage.jwtToken = "";
+    // Clear cart/wishlist
+    dispatch(clearWish());
+    dispatch(clearCart());
     // clear current user
     dispatch(setCurrentUser({}));
   }

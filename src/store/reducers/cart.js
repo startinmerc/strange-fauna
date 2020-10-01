@@ -1,4 +1,4 @@
-import { ADD_CART, REMOVE_CART, EDIT_CART_QTY } from "../actionTypes";
+import { ADD_CART, REMOVE_CART, EDIT_CART_QTY, CLEAR_CART } from "../actionTypes";
 import { getCartTotals } from "../../middleware";
 
 const DEFAULT_STATE = {
@@ -39,6 +39,8 @@ export default (state = DEFAULT_STATE, action) => {
 			let newEditTotal = getCartTotals(newEditCart);
 			// Return new state
 			return {total: newEditTotal, cart: newEditCart};
+		case CLEAR_CART:
+			return DEFAULT_STATE;
 		default:
 			return state;
 	};

@@ -1,11 +1,13 @@
 // Wishlist
 export const ADD_WISH = "ADD_WISH";
 export const REMOVE_WISH = "REMOVE_WISH";
+export const CLEAR_WISH = "CLEAR_WISH";
 
 // Cart
 export const ADD_CART = "ADD_CART";
 export const REMOVE_CART = "REMOVE_CART";
 export const EDIT_CART_QTY = "EDIT_CART_QTY";
+export const CLEAR_CART = "CLEAR_CART";
 
 // Other / Deliveries
 export const LOAD_DELIVERIES = "LOAD_DELIVERIES";
