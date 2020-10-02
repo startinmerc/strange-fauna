@@ -855,14 +855,18 @@ Version logs for the project are below...
 * have removeError attached to history listener
 * call ^ as cleanup fn to clear listener
 
----
-
-### ToDo
-
 #### User lists
 
 * join local & api user lists on login
 * clear all on logout
+* update user on db with local wish/store on logout
+
+---
+
+### ToDo
+
+* add to user's carts if logged in
+* likewise remove
 
 #### Cart to Wish/Adjust stock
 
@@ -873,6 +877,7 @@ Version logs for the project are below...
 
 #### API Interaction
 
+* Make nav population a single API call
 * Reviews
 * Pagination in products
 
@@ -887,6 +892,7 @@ Version logs for the project are below...
 * Review semantic HTML
 * Change icons
 * Add background-image gradients to colour blocks
+* Landingsection copy to para font
 
 #### GSAP
 
