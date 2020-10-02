@@ -1,13 +1,13 @@
 /*===============Global Variables===============*/
 
 :root {
-	--mushroom: #DBCFB0;
-	--berry: #BFC8AD;
-	--flower: #90B494;
-	--reduction: #718F94;
+	--mushroom: #dbcfb0;
+	--berry: #bfc8ad;
+	--flower: #90b494;
+	--reduction: #718f94;
 	--primary: #545775;
 	--primary-mid: #a6a7b7;
-	--white: #FCFCFF;
+	--white: #fcfcff;
 	--black: #101016;
 	--footer: #575757;
 	--header: #f1f1f1;
@@ -25,8 +25,13 @@ body {
 	color: var(--black);
 }
 
-h1, h2, h3, h4, h5, .display {
-	font-family: 'Cinzel Decorative', serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+.display {
+	font-family: "Cinzel Decorative", serif;
 }
 
 #container {
@@ -57,7 +62,7 @@ a {
 }
 
 a::before {
-	content: '';
+	content: "";
 	position: absolute;
 	width: 100%;
 	height: 1px;
@@ -173,10 +178,9 @@ input[type="text"]:focus {
 	text-align: right;
 }
 
-
 /*=============Responsive - Tablet=============*/
 
-@media(max-width: 800px){
+@media (max-width: 800px) {
 	main {
 		width: 96%;
 	}
@@ -187,7 +191,7 @@ input[type="text"]:focus {
 
 /*=============Responsive - Mobile=============*/
 
-@media(max-width: 600px){
+@media (max-width: 600px) {
 	.errors {
 		margin: 0 auto;
 	}

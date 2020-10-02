@@ -1,8 +1,8 @@
 import axios from "axios";
 
-export function setTokenHeader(token){
+export function setTokenHeader(token) {
 	// if token exists
-	if(token){
+	if (token) {
 		// push token to header
 		axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
 	} else {
@@ -13,22 +13,25 @@ export function setTokenHeader(token){
 
 // Create new Promise of API call as axios http request
 // Expects METHOD, PATH, DATA (optional)
-export function apiCall(method, path, data){
+export function apiCall(method, path, data) {
 	return new Promise((resolve, reject) => {
 		// Create axios request with supplied data
-		return axios[method](path,data)
-			.then(res => {
-				// Then return resolved data
-				return resolve(res.data);
-			})
-			// Catch errors
-			.catch(err => {
-					return reject(
-						{
-							status: err.response.status,
-							message: (typeof err.response.data.error === "undefined") ? err.response.statusText : err.response.data.error.message
-						}
-					)
-			});
+		return (
+			axios[method](path, data)
+				.then((res) => {
+					// Then return resolved data
+					return resolve(res.data);
+				})
+				// Catch errors
+				.catch((err) => {
+					return reject({
+						status: err.response.status,
+						message:
+							typeof err.response.data.error === "undefined"
+								? err.response.statusText
+								: err.response.data.error.message,
+					});
+				})
+		);
 	});
 }
