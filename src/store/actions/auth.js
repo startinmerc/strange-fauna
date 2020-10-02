@@ -11,17 +11,24 @@ export function setCurrentUser(user) {
 	};
 }
 
-export function logOut() {
+// needs user id & lists
+export function logOut(user_id, lists) {
 	return (dispatch) => {
-		// Clear JWT
-		localStorage.jwtToken = "";
-		// Clear cart/wishlist
-		dispatch(clearWish());
-		dispatch(clearCart());
-		// clear current user
-		dispatch(setCurrentUser({}));
+		return apiCall("put", `/api/users/${user_id}`, lists)
+		.then((res)=>{
+			// Clear JWT
+			localStorage.jwtToken = "";
+			// Clear cart/wishlist
+			dispatch(clearWish());
+			dispatch(clearCart());
+			// clear current user
+			dispatch(setCurrentUser({}));
+		})
+		.catch((err)=>{
+			dispatch(addError(err));
+		});
 	};
-}
+};
 
 export function authUser(type, userData) {
 	return (dispatch) => {
@@ -32,7 +39,7 @@ export function authUser(type, userData) {
 					// Set auth token recieved from server
 					localStorage.setItem("jwtToken", token);
 					// Add user's carts to localStorage
-					user.cart.forEach((i) => dispatch(addCart(i)));
+					user.cart.forEach((i) => dispatch(addCart(i.id,i.qty,i.price)));
 					user.wish.forEach((i) => dispatch(addWish(i)));
 					// Set user
 					dispatch(setCurrentUser(user));
