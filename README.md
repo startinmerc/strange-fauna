@@ -865,10 +865,10 @@ Version logs for the project are below...
 
 ### ToDo
 
-* add to user's carts if logged in
-* likewise remove
-
 #### Cart to Wish/Adjust stock
+
+* check if stock > 0 on addToCart
+* pass to add wish & raise error if so
 
 * iterate over items in cart
 * look up stock through API
