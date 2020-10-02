@@ -16,7 +16,7 @@ const rootReducer = combineReducers({
 	delivery,
 	landingSections,
 	errors,
-	currentUser
+	currentUser,
 });
 
 export default rootReducer;

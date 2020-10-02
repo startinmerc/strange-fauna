@@ -1,12 +1,12 @@
 import { LOAD_CATEGORIES } from "../actionTypes";
 
-const categories = (state=[],action) => {
-	switch(action.type){
+const categories = (state = [], action) => {
+	switch (action.type) {
 		case LOAD_CATEGORIES:
 			return [...action.categories];
 		default:
 			return state;
-	};
+	}
 };
 
 export default categories;

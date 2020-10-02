@@ -2,20 +2,22 @@ import { apiCall } from "../../services/api";
 import { addError } from "./errors";
 import { LOAD_CATEGORIES } from "../actionTypes";
 
-export const loadCategories = categories => ({
+export const loadCategories = (categories) => ({
 	type: LOAD_CATEGORIES,
-	categories
+	categories,
 });
 
 export const fetchCategories = (setLoading) => {
-	return dispatch => {
+	return (dispatch) => {
 		setLoading(true);
 		return apiCall("get", "/api/categories/all")
-			.then(res => {
+			.then((res) => {
 				setLoading(false);
-				dispatch(loadCategories(res))})
-			.catch(err => {
+				dispatch(loadCategories(res));
+			})
+			.catch((err) => {
 				setLoading(false);
-				dispatch(addError(err))});
+				dispatch(addError(err));
+			});
 	};
 };

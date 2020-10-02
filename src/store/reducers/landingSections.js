@@ -8,5 +8,5 @@ export default (state = DEFAULT_STATE, action) => {
 			return [...action.landingSections];
 		default:
 			return state;
-	};
+	}
 };

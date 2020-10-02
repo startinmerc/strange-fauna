@@ -2,7 +2,7 @@ import { ADD_ERROR, REMOVE_ERROR } from "../actionTypes";
 
 const DEFAULT_STATE = {
 	message: null,
-	status: null
+	status: null,
 };
 
 export default (state = DEFAULT_STATE, action) => {
