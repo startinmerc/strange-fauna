@@ -3,10 +3,10 @@ import { connect } from "react-redux";
 import { Link } from 'react-router-dom';
 import { logOut } from "../../store/actions/auth";
 
-const UserPage = ({currentUser, logOut}) => {
+const UserPage = ({currentUser, logOut, wish, cart}) => {
 
 	function handleClick() {
-		logOut();
+		logOut(currentUser.user.id, {wish: wish, cart: cart.cart});
 	}
 
 	return (
@@ -21,7 +21,9 @@ const UserPage = ({currentUser, logOut}) => {
 
 function mapStateToProps(reduxState) {
 	return {
-		currentUser: reduxState.currentUser
+		currentUser: reduxState.currentUser,
+		wish: reduxState.wish,
+		cart: reduxState.cart,
 	};
 }
 
