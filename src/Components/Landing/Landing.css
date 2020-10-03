@@ -13,38 +13,6 @@
 	color: var(--black);
 }
 
-.landing-section--mushroom {
-	background: var(--mushroom);
-}
-.landing-section--berry {
-	background: var(--berry);
-}
-.landing-section--flower {
-	background: var(--flower);
-}
-.landing-section--reduction {
-	background: var(--reduction);
-}
-.landing-section--primary {
-	background: var(--primary);
-}
-
-.landing-section--mushroom .landing-section__text::before {
-	background: var(--berry);
-}
-.landing-section--berry .landing-section__text::before {
-	background: var(--mushroom);
-}
-.landing-section--flower .landing-section__text::before {
-	background: var(--reduction);
-}
-.landing-section--reduction .landing-section__text::before {
-	background: var(--flower);
-}
-.landing-section--primary .landing-section__text::before {
-	background: var(--header);
-}
-
 .landing-section__image {
 	position: absolute;
 	top: -3rem;
@@ -81,6 +49,37 @@
 	z-index: -1;
 	transition: transform 300ms ease-in;
 	transform: scaleX(0);
+}
+
+.landing-section__text.bg-pseudo-berry::before {
+	background-color: var(--berry);
+	background-image: var(--lighten-to-left)
+}
+.landing-section__text.bg-pseudo-mushroom::before {
+	background-color: var(--mushroom);
+	background-image: var(--lighten-to-left)
+}
+.landing-section__text.bg-pseudo-reduction::before {
+	background-color: var(--reduction);
+	background-image: var(--darken-to-left);
+}
+.landing-section__text.bg-pseudo-flower::before {
+	background-color: var(--flower);
+	background-image: var(--darken-to-left);
+}
+.landing-section__text.bg-pseudo-header::before {
+	background-color: var(--header);
+	background-image: var(--darken-to-left);
+}
+
+.landing-section__text.bg-pseudo-berry.to-left::before,
+.landing-section__text.bg-pseudo-mushroom.to-left::before {
+	background-image: var(--lighten-to-right)
+}
+.landing-section__text.bg-pseudo-reduction.to-left::before,
+.landing-section__text.bg-pseudo-flower.to-left::before,
+.landing-section__text.bg-pseudo-header.to-left::before {
+	background-image: var(--darken-to-right);
 }
 
 .landing-section:focus-within .landing-section__text::before,
