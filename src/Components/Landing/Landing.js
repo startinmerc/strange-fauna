@@ -41,8 +41,8 @@ function Landing({ sections, fetchLandingSections, emailRef }) {
 	}
 
 	// Map sections from API
-	const renderedSections = sections.map((seed) => (
-		<LandingSection content={seed} key={`section-${seed._id}`} />
+	const renderedSections = sections.map((seed, index) => (
+		<LandingSection content={seed} key={`section-${seed._id}`} index={index} />
 	));
 
 	// Insert email CTA as second item in sections array
