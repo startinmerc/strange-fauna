@@ -76,8 +76,7 @@
 
 /*=============Responsive - Tablet=============*/
 
-@media(max-width: 800px){
-
+@media (max-width: 800px) {
 	.nav-section__container {
 		width: 100%;
 		transform: translateY(0);
@@ -86,9 +85,8 @@
 	.nav-section__submenu {
 		top: 100%;
 	}
-	
+
 	.nav-section {
 		font-size: 1rem;
 	}
-
 }

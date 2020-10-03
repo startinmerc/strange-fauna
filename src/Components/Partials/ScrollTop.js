@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 // Resets scroll to page top on React Router page navigation
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+	const { pathname } = useLocation();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [pathname]);
 
-  return null;
+	return null;
 }

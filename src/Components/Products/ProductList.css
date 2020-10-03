@@ -34,9 +34,9 @@
 
 /*=============Responsive - Tablet=============*/
 
-@media(max-width: 960px){
-	.product-list{
-		grid-template-columns: repeat(3,1fr);
+@media (max-width: 960px) {
+	.product-list {
+		grid-template-columns: repeat(3, 1fr);
 	}
 	.product-list__header {
 		margin: 0 calc(-2% - 1px) 20px calc(-2% - 1px);
@@ -46,10 +46,10 @@
 
 /*=============Responsive - Mobile=============*/
 
-@media(max-width: 600px){
+@media (max-width: 600px) {
 	.product-list {
 		grid-gap: 1px;
-		grid-template-columns: repeat(2,1fr);
+		grid-template-columns: repeat(2, 1fr);
 	}
 	.product-list__header h2 {
 		margin: 0;

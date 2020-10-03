@@ -33,7 +33,7 @@
 }
 
 #delivery-address span {
-	color: #D60000;
+	color: #d60000;
 }
 
 #delivery-address label {
@@ -80,12 +80,13 @@
 	width: auto;
 }
 
-@media(max-width: 600px){
+@media (max-width: 600px) {
 	#checkout {
 		flex-direction: column;
 	}
-	#checkout-summary, #order-summary {
-		margin: 1rem 0 ;
+	#checkout-summary,
+	#order-summary {
+		margin: 1rem 0;
 	}
 	.cart.product-card-image {
 		width: 40%;

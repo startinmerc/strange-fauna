@@ -9,7 +9,8 @@
 @keyframes popUp {
 	from {
 		transform: scale(0);
-	} to {
+	}
+	to {
 		transform: scale(1);
 	}
 }
@@ -212,7 +213,7 @@
 
 .review__rating {
 	font-family: monospace;
-	margin-right: 1rem
+	margin-right: 1rem;
 }
 
 .review h3 {
@@ -222,7 +223,7 @@
 
 /*=============Responsive - Mobile=============*/
 
-@media(max-width: 600px){
+@media (max-width: 600px) {
 	.product-card {
 		padding: 2px;
 		margin: 2px;

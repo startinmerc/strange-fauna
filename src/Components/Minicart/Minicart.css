@@ -74,7 +74,7 @@
 
 /*=============Responsive - Tablet=============*/
 
-@media(max-width: 800px){
+@media (max-width: 800px) {
 	.mini-cart {
 		display: none;
 	}

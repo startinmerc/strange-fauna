@@ -67,11 +67,11 @@
 }
 
 .header-button:first-of-type {
-	transform: translateX(calc(300% - 3.4rem));	
+	transform: translateX(calc(300% - 3.4rem));
 }
 
 .header-button:nth-of-type(2) {
-	transform: translateX(calc(200% - 2.5rem));	
+	transform: translateX(calc(200% - 2.5rem));
 }
 
 .header-button::before {
@@ -92,7 +92,7 @@
 	height: 50px;
 	width: 50px;
 	background-color: var(--primary);
-	transform: translate(-50%,-50%) scale(0);
+	transform: translate(-50%, -50%) scale(0);
 	opacity: 0;
 	border-radius: 50%;
 }
@@ -108,15 +108,15 @@
 
 @keyframes updatePseudo {
 	0% {
-		transform: translate(-50%,-50%) scale(0);
+		transform: translate(-50%, -50%) scale(0);
 		opacity: 1;
 	}
 	99% {
-		transform: translate(-50%,-50%) scale(2);
+		transform: translate(-50%, -50%) scale(2);
 		opacity: 0;
 	}
 	100% {
-		transform: translate(-50%,-50%) scale(0);
+		transform: translate(-50%, -50%) scale(0);
 		opacity: 0;
 	}
 }
@@ -130,7 +130,7 @@
 
 /*=============Responsive - Tablet=============*/
 
-@media(max-width: 800px){
+@media (max-width: 800px) {
 	.header__main-container {
 		padding: 5px 5%;
 	}

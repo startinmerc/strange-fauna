@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Star from '../../SVGs/Star';
-import ShoppingCart from '../../SVGs/ShoppingCart';
-import User from '../../SVGs/User';
-import Hamburger from './Hamburger';
-import HeaderButton from '../Header/HeaderButton';
-import './MobileMenu.css';
+import Star from "../../SVGs/Star";
+import ShoppingCart from "../../SVGs/ShoppingCart";
+import User from "../../SVGs/User";
+import Hamburger from "./Hamburger";
+import HeaderButton from "../Header/HeaderButton";
+import "./MobileMenu.css";
 
 // Returns sticky footer mobile menu with cart & wishlist buttons,
 // Along with popup nav of sections
 
-const MobileMenu = ({ wish, cart, categories, currentUser })=> {
+const MobileMenu = ({ wish, cart, categories, currentUser }) => {
+	const [expanded, setExpanded] = useState(false);
 
-	const [expanded,setExpanded] = useState(false);
-
-	function showMenu(){
+	function showMenu() {
 		setExpanded(true);
 	}
 
-	function handleClick(){
+	function handleClick() {
 		if (expanded) {
 			setExpanded(false);
-		};
-	};
-	
+		}
+	}
+
 	// Map of section list items from api call
 	const sections = categories.map((section, index) => (
 		// Encase list in a link to either /products/category or /about
@@ -99,14 +98,14 @@ const MobileMenu = ({ wish, cart, categories, currentUser })=> {
 			</div>
 		</div>
 	);
-}
+};
 
 function mapStateToProps(reduxState) {
 	return {
 		wish: reduxState.wish,
 		cart: reduxState.cart.cart,
 		categories: reduxState.categories,
-		currentUser: reduxState.currentUser
+		currentUser: reduxState.currentUser,
 	};
 }
 

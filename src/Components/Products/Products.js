@@ -1,41 +1,37 @@
-import React from 'react';
-import {
-	Switch,
-	Route,
-	useRouteMatch
-} from "react-router-dom";
-import ProductList from './ProductList';
-import ProductDetail from './ProductDetail';
+import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
+import ProductList from "./ProductList";
+import ProductDetail from "./ProductDetail";
 
 // Acts as switch for React Router
 
-function Products(){
+function Products() {
 	let match = useRouteMatch();
 	return (
 		<Switch>
 			<Route path={`${match.url}/all`}>
-				<ProductList type="all"/>
+				<ProductList type="all" />
 			</Route>
 			<Route path={`${match.url}/mushrooms`}>
-				<ProductList type="mushroom"/>
+				<ProductList type="mushroom" />
 			</Route>
 			<Route path={`${match.url}/berries`}>
-				<ProductList type="berry"/>
+				<ProductList type="berry" />
 			</Route>
 			<Route path={`${match.url}/flowers`}>
-				<ProductList type="flower"/>
+				<ProductList type="flower" />
 			</Route>
 			<Route path={`${match.url}/reductions`}>
-				<ProductList type="reduction"/>
+				<ProductList type="reduction" />
 			</Route>
 			<Route path={`${match.url}/:id`}>
-				<ProductDetail/>
+				<ProductDetail />
 			</Route>
 			<Route path={`${match.url}/`}>
-				<ProductList type="all"/>
+				<ProductList type="all" />
 			</Route>
 		</Switch>
 	);
-};
+}
 
 export default Products;

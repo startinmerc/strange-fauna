@@ -3,8 +3,7 @@ import { removeError } from "../../store/actions/errors";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
-function Errors({errors=null, removeError}) {
-
+function Errors({ errors = null, removeError }) {
 	// Get hustory
 	let history = useHistory();
 
@@ -15,21 +14,21 @@ function Errors({errors=null, removeError}) {
 		removeError();
 	});
 
-	React.useEffect(()=>{
+	React.useEffect(() => {
 		// Unmount function
-		return function cleanup(){
+		return function cleanup() {
 			// Remove history listener
 			unlisten();
 		};
-	},[unlisten]);
+	}, [unlisten]);
 
-		return (
-			<div className="errors">
-				<p>
-					Error {errors.status}: {errors.message}
-				</p>
-			</div>
-		);
+	return (
+		<div className="errors">
+			<p>
+				Error {errors.status}: {errors.message}
+			</p>
+		</div>
+	);
 }
 
 export default connect(null, { removeError })(Errors);

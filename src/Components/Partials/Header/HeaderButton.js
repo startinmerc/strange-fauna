@@ -1,24 +1,31 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 
 // Returns HeaderButton with MiniCart child,
 // Expects type prop: 0 = wishlist, 1 = shopping cart.
 
-const HeaderButton = ({headerIcon, headerText, id, url, items = "", total, mobile})=> {
-
+const HeaderButton = ({
+	headerIcon,
+	headerText,
+	id,
+	url,
+	items = "",
+	total,
+	mobile,
+}) => {
 	// Ref for element
 	const thisRef = React.useRef(null);
 
 	// Executes if 'items' prop changes
-	React.useEffect(()=>{
+	React.useEffect(() => {
 		// Add 'updated' class to play CSS animation
-		thisRef.current.classList.add('updated');
+		thisRef.current.classList.add("updated");
 		// Listen for end of animation
-		thisRef.current.addEventListener('animationend',()=>{
+		thisRef.current.addEventListener("animationend", () => {
 			// Remove 'updated' class
-			thisRef.current.classList.remove('updated');
+			thisRef.current.classList.remove("updated");
 		});
-	},[items])
+	}, [items]);
 
 	// Quantity total as wishlist length or cart.total.qty
 	const totalQty = total ? total.qty : items.length;
@@ -26,14 +33,23 @@ const HeaderButton = ({headerIcon, headerText, id, url, items = "", total, mobil
 	const isEmpty = totalQty === 0;
 
 	return (
-		<Link to={url} className={`header-button ${isEmpty && 'empty'}`} id={id} ref={thisRef}>
+		<Link
+			to={url}
+			className={`header-button ${isEmpty && "empty"}`}
+			id={id}
+			ref={thisRef}
+		>
 			{/*render relevant icon, text, length (if needed)*/}
-			{headerIcon}{!mobile && headerText}{(!mobile && items) && ` (${totalQty})`}
+			{headerIcon}
+			{!mobile && headerText}
+			{!mobile && items && ` (${totalQty})`}
 			{/*Adds subtotal if cart & non-empty*/}
 			{!mobile && total && !isEmpty > 0 ? `: $${total.val}` : null}
-			{mobile && !isEmpty && <div className="mobile-menu__quantity">({totalQty})</div>}
+			{mobile && !isEmpty && (
+				<div className="mobile-menu__quantity">({totalQty})</div>
+			)}
 		</Link>
 	);
-}
+};
 
 export default HeaderButton;

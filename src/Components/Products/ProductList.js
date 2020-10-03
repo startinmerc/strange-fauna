@@ -1,18 +1,26 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
-import { fetchProducts, fetchCategoryProducts } from "../../store/actions/products";
-import ProductCard from './ProductCard';
-import './ProductList.css';
+import {
+	fetchProducts,
+	fetchCategoryProducts,
+} from "../../store/actions/products";
+import ProductCard from "./ProductCard";
+import "./ProductList.css";
 
 // Expects 'type' string as prop, either all or product category, and title string
 // Returns main element with responsive grid display of products
 
-const ProductList = ({ type, title, fetchProducts, products, fetchCategoryProducts })=> {
-
-	React.useEffect(()=>{
-		function getList(type){
-			if(type==="all"){
+const ProductList = ({
+	type,
+	title,
+	fetchProducts,
+	products,
+	fetchCategoryProducts,
+}) => {
+	React.useEffect(() => {
+		function getList(type) {
+			if (type === "all") {
 				// API call to load all products to Redux state
 				fetchProducts();
 			} else {
@@ -23,12 +31,12 @@ const ProductList = ({ type, title, fetchProducts, products, fetchCategoryProduc
 		getList(type);
 		// ComponentWillUnmount function to empty products array
 		// return function cleanUp(){products=[];}
-	},[type, fetchProducts, fetchCategoryProducts]);
+	}, [type, fetchProducts, fetchCategoryProducts]);
 
 	const header = title || `Showing ${type} products`;
 
-	const renderList = products.map((prod, i)=>{
-		return <ProductCard detail={prod} key={prod._id} delay={i} />
+	const renderList = products.map((prod, i) => {
+		return <ProductCard detail={prod} key={prod._id} delay={i} />;
 	});
 
 	return (
@@ -36,20 +44,24 @@ const ProductList = ({ type, title, fetchProducts, products, fetchCategoryProduc
 			<Helmet>
 				<title>Strange Flora - {header}</title>
 			</Helmet>
-			<div className="product-list__header" style={{backgroundColor: `var(--${type})`}}>
+			<div
+				className="product-list__header"
+				style={{ backgroundColor: `var(--${type})` }}
+			>
 				<h2>{header}</h2>
 			</div>
-			<div className="product-list">
-				{renderList}
-			</div>
+			<div className="product-list">{renderList}</div>
 		</main>
 	);
 };
 
-function mapStateToProps(state){
+function mapStateToProps(state) {
 	return {
-		products: state.products.products
+		products: state.products.products,
 	};
-};
+}
 
-export default connect(mapStateToProps, { fetchProducts, fetchCategoryProducts })(ProductList);
+export default connect(mapStateToProps, {
+	fetchProducts,
+	fetchCategoryProducts,
+})(ProductList);

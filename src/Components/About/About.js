@@ -1,15 +1,11 @@
-import React from 'react';
-import {
-	Switch,
-	Route,
-	useRouteMatch
-} from "react-router-dom";
-import Delivery from './Delivery';
-import Disclaimer from './Disclaimer';
-import FAQ from './FAQ';
-import Returns from './Returns';
-import AboutMain from './AboutMain';
-import './About.css';
+import React from "react";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
+import Delivery from "./Delivery";
+import Disclaimer from "./Disclaimer";
+import FAQ from "./FAQ";
+import Returns from "./Returns";
+import AboutMain from "./AboutMain";
+import "./About.css";
 
 // Switch for about pages
 
@@ -34,6 +30,6 @@ function About() {
 			</Route>
 		</Switch>
 	);
-};
+}
 
 export default About;
