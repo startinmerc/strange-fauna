@@ -44,10 +44,7 @@ const ProductList = ({
 			<Helmet>
 				<title>Strange Flora - {header}</title>
 			</Helmet>
-			<div
-				className="product-list__header"
-				style={{ backgroundColor: `var(--${type})` }}
-			>
+			<div className={`product-list__header to-right bg-${type}`}>
 				<h2>{header}</h2>
 			</div>
 			<div className="product-list">{renderList}</div>

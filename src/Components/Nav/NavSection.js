@@ -78,8 +78,7 @@ function NavSection({ color, type, title, products }) {
 					{title}
 				</Link>
 				<div
-					className="nav-section__submenu"
-					style={{ backgroundColor: `${color}` }}
+					className={`nav-section__submenu to-left bg-${type}`}
 				>
 					<div className="nav-section__submenu-content">
 						<h2>{title}</h2>
