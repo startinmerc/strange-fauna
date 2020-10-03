@@ -861,6 +861,14 @@ Version logs for the project are below...
 * clear all on logout
 * update user on db with local wish/store on logout
 
+#### Background Gradients
+
+* Add classes for background colors
+* Add classes for left/right light/dark gradients
+* Reassign block backgrounds as classes
+* Pass index through LandingSection map for gradient direction
+* Add classes to style pseudos
+
 ---
 
 ### ToDo
@@ -891,8 +899,6 @@ Version logs for the project are below...
 * Review file structure
 * Review semantic HTML
 * Change icons
-* Add background-image gradients to colour blocks
-* Landingsection copy to para font
 
 #### GSAP
 
