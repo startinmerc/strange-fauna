@@ -13,13 +13,76 @@
 	--header: #f1f1f1;
 }
 
+/* Gradients */
+
+:root {
+	--lighten-to-left: linear-gradient(
+		-104deg,
+		rgba(255, 255, 255, 0) 70%,
+		rgba(255, 255, 255, 0.3) 100%
+	);
+	--lighten-to-right: linear-gradient(
+		104deg,
+		rgba(255, 255, 255, 0) 70%,
+		rgba(255, 255, 255, 0.3) 100%
+	);
+	--darken-to-left: linear-gradient(
+		-104deg,
+		rgba(0, 0, 0, 0) 50%,
+		rgba(0, 0, 0, 0.2) 100%
+	);
+	--darken-to-right: linear-gradient(
+		104deg,
+		rgba(0, 0, 0, 0) 50%,
+		rgba(0, 0, 0, 0.2) 100%
+	);
+}
+
+.bg-mushroom {
+	background-color: var(--mushroom);
+}
+.bg-berry {
+	background-color: var(--berry);
+}
+/* Odd Section Background */
+.bg-mushroom.to-left,
+.bg-berry.to-left {
+	background-image: var(--lighten-to-left);
+}
+/* Even Section Background */
+.bg-mushroom.to-right,
+.bg-berry.to-right {
+	background-image: var(--lighten-to-right);
+}
+
+.bg-reduction {
+	background-color: var(--reduction);
+}
+.bg-flower {
+	background-color: var(--flower);
+}
+.bg-primary {
+	background-color: var(--primary);
+}
+/* Odd Section Background */
+.bg-reduction.to-left,
+.bg-primary.to-left,
+.bg-flower.to-left {
+	background-image: var(--darken-to-left);
+}
+/* Even Section Background */
+.bg-reduction.to-right,
+.bg-primary.to-right,
+.bg-flower.to-right {
+	background-image: var(--darken-to-right);
+}
+
 /*==============Global HTML Styles==============*/
 
 body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	/* Default of capitalised display font */
 	font-family: "Scope One", serif;
 	background-color: var(--white);
 	color: var(--black);
