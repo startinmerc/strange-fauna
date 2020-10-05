@@ -50,7 +50,7 @@ function Landing({ sections, fetchLandingSections, emailRef }) {
 		1,
 		0,
 		<div className="cta" key="cta">
-			<button className="cta__button display" onClick={handleClick}>
+			<button className="button--large display" onClick={handleClick}>
 				Sign up to our newsletter!
 			</button>
 			<p className="cta__content">

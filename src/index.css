@@ -163,11 +163,6 @@ button {
 	margin: 2px 0;
 	cursor: pointer;
 }
-
-button:hover,
-button:focus {
-	background-color: var(--header);
-	box-shadow: 1px 1px 0 var(--footer);
 }
 
 button:disabled,

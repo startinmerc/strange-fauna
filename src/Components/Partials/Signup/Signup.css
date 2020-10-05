@@ -13,13 +13,7 @@
 
 .signup__submit {
 	width: calc(30% - 0.3rem);
-	border: 2px solid var(--black);
 	padding: 0.3rem;
-}
-
-.signup__submit:hover,
-.signup__submit:focus {
-	background-color: var(--primary-mid);
 }
 
 .signup--disabled .signup__input {

@@ -92,26 +92,6 @@
 	justify-content: space-between;
 }
 
-/*=============Add To Cart Button=============*/
-
-.add-to-cart {
-	width: 100%;
-}
-
-.cart--added:hover,
-.cart--added:focus {
-	background-color: var(--primary-mid);
-}
-
-.cart--added {
-	background-color: var(--primary);
-	color: var(--white);
-}
-
-.add-to-cart:active {
-	background-color: var(--primary-mid);
-}
-
 /*=============Add To Wish Button=============*/
 
 .add-to-wish {
@@ -147,7 +127,8 @@
 
 .add-to-wish:hover,
 .add-to-wish:focus {
-	background-color: var(--white);
+	/* Not ideal, but specifity issues & all that... */
+	background-color: var(--white) !important;
 }
 
 .add-to-wish:active .icon {
@@ -155,16 +136,6 @@
 }
 
 /*================Product Detail================*/
-
-#details button {
-	margin-top: 15px;
-	max-width: 400px;
-}
-
-#details .add-to-cart {
-	padding: 1rem 0;
-	border: 2px solid var(--black);
-}
 
 #details .boxes {
 	grid-template-columns: auto 1fr;
@@ -181,13 +152,6 @@
 
 .quantity:focus {
 	background-color: var(--primary-mid);
-}
-
-.add-to-wish--btn {
-	width: 100%;
-	padding: 0.2rem 0;
-	border: 2px solid var(--black);
-	max-width: 400px;
 }
 
 .reviews {
@@ -236,24 +200,14 @@
 	.product-card h5 {
 		font-size: 1rem;
 	}
-	.add-to-cart {
-		margin: 0;
-		padding: 0;
-		font-size: 0.9rem;
-	}
 	.add-to-wish {
-		position: absolute;
 		opacity: 1;
-		border: none;
 		height: 2rem;
 		width: 2rem;
-		background: transparent;
-		cursor: pointer;
-		transition: all 230ms ease-in;
 	}
 	.product-card .star {
-		height: 1.2rem;
-		width: 1.2rem;
+		height: 2rem;
+		width: 2rem;
 	}
 	#details .boxes {
 		display: inline-block;

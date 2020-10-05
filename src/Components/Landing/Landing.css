@@ -194,18 +194,6 @@
 	padding: 1rem;
 }
 
-.cta__button {
-	padding: 1rem;
-	font-size: 1.3rem;
-	border: 2px solid var(--white);
-}
-
-.cta__button:focus,
-.cta__button:hover {
-	background-color: var(--primary);
-	color: var(--white);
-}
-
 .cta__content {
 	max-width: 900px;
 	margin: 1rem auto 0 auto;
