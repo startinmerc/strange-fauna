@@ -19,15 +19,6 @@
 	padding-left: 10px;
 }
 
-.product-list .product-card {
-	display: flex;
-	flex-direction: column;
-}
-
-.product-list .add-to-cart {
-	margin-top: auto;
-}
-
 .product-list .product-card__text {
 	margin-bottom: 2px;
 }
