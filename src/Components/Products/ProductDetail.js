@@ -105,9 +105,15 @@ function ProductDetail({
 							</button>
 						) : null}
 						<br />
-						<AddToCart id={_id} qty={qty} stk={stock} price={price} />
+						<AddToCart
+							id={_id}
+							qty={qty}
+							stk={stock}
+							price={price}
+							classes="button--large button--wide button--details"
+						/>
 						<br />
-						<AddToWish id={_id} button />
+						<AddToWish id={_id} button classes="button--wide button--details" />
 					</div>
 				</div>
 

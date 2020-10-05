@@ -162,7 +162,7 @@ button {
 	transition: all 210ms ease-in;
 	margin: 2px 0;
 	cursor: pointer;
-}
+	border: 2px solid var(--black);
 }
 
 button:disabled,
@@ -172,10 +172,35 @@ button[disabled] {
 	color: var(--footer);
 }
 
-button:disabled:hover,
-button:disabled:focus {
-	background-color: var(--header);
-	box-shadow: 2px 2px 0 var(--footer);
+button:not(:disabled):hover,
+button:not(:disabled):focus {
+	background-color: var(--primary);
+	color: var(--white);
+	box-shadow: 1px 1px 0 var(--footer);
+}
+
+.button--large {
+	padding: 1rem;
+	font-size: 1.3rem;
+}
+
+.button--wide {
+	width: 100%;
+}
+
+.button--added {
+	background-color: var(--primary);
+	color: var(--white);
+}
+
+.button--details {
+	margin-top: 15px;
+	max-width: 400px;
+}
+
+.button--added:hover,
+.button--added:focus {
+	background-color: var(--primary-mid);
 }
 
 select {
