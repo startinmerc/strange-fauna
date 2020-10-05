@@ -21,7 +21,7 @@ export default function Signup({ emailRef }) {
 				please allow 24hrs to receive your code.
 			</label>
 			<br />
-			<input className="signup__input" id="email" type="text" ref={emailRef} />
+			<input className="signup__input" id="email" type="email" ref={emailRef} />
 			<button className="signup__submit" type="submit">
 				Sign Up!
 			</button>
