@@ -38,6 +38,8 @@
 	);
 }
 
+/* =================Backgrounds================= */
+
 .bg-mushroom {
 	background-color: var(--mushroom);
 }
@@ -186,6 +188,8 @@ select {
 	font-size: inherit;
 }
 
+input[type="email"],
+input[type="password"],
 input[type="text"] {
 	padding: 0.3rem;
 	font-size: 1rem;
@@ -194,6 +198,8 @@ input[type="text"] {
 	background-color: var(--white);
 }
 
+input[type="email"]:focus,
+input[type="password"]:focus,
 input[type="text"]:focus {
 	background-color: var(--primary-mid);
 }
