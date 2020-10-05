@@ -861,6 +861,8 @@ Version logs for the project are below...
 * clear all on logout
 * update user on db with local wish/store on logout
 
+### V2.4
+
 #### Background Gradients
 
 * Add classes for background colors
@@ -869,19 +871,22 @@ Version logs for the project are below...
 * Pass index through LandingSection map for gradient direction
 * Add classes to style pseudos
 
+#### Button refactor
+
+* Remove all button style variations
+* Reset to a universal default style
+* Add classes for button variation
+* Add to components, pass as props if needed
+* Handle exceptions
+
 ---
 
 ### ToDo
 
 #### Cart to Wish/Adjust stock
 
-* check if stock > 0 on addToCart
+* check if stock > 0 on login & cart component load
 * pass to add wish & raise error if so
-
-* iterate over items in cart
-* look up stock through API
-* if stock > 0, add to new cart
-* if stock === 0, remove from cart and add to wish
 
 #### API Interaction
 
@@ -896,9 +901,25 @@ Version logs for the project are below...
 
 #### Other
 
+* Install, config prop-types
+
+```js
+Header.propTypes = {
+  name: PropTypes.string
+};
+
+// Same approach for defaultProps too
+Header.defaultProps = {
+  name: "Alan"
+};
+```
+
+* Convert FAQ to details/summaries
 * Review file structure
 * Review semantic HTML
 * Change icons
+* Pass fill style to add-to-wish instead of class? or would it remove transition?
+* AddToCart, AddToWish to functional component
 
 #### GSAP
 
