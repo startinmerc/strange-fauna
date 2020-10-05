@@ -13,7 +13,7 @@ function Delivery() {
 			<div className="boxes">
 				<div className="box box__text">
 					<h3>Delivery Options</h3>
-					<h5>FREE NEXT-DAY DELIVERY</h5>
+					<h5>Free Next-Day Delivery</h5>
 					<p>
 						Great news! Place your order before 10pm Monday-Friday and you’ll
 						qualify for Free Next-Day Delivery with our Royal Mail Tracked
@@ -24,7 +24,7 @@ function Delivery() {
 						However there is a small chance the delivery may arrive a day later
 						than expected.
 					</p>
-					<h5>£5 PREMIUM DELIVERY</h5>
+					<h5>£5 Premium Delivery</h5>
 					<p>
 						Want extra peace of mind? Select our Premium Delivery service, which
 						uses a DPD courier to guarantee delivery on your chosen day (between
