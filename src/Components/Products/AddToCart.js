@@ -9,6 +9,7 @@ class AddToCart extends Component {
 	// default 1 qty for adding to cart
 	static defaultProps = {
 		qty: 1,
+		classes: "",
 	};
 
 	handleClick(id, qty, inCart, price) {
@@ -27,7 +28,7 @@ class AddToCart extends Component {
 			this.props.cart.filter((item) => item.id === this.props.id).length > 0;
 		return (
 			<button
-				className={`add-to-cart ${inCart ? "cart--added" : ""}`}
+				className={`${inCart ? "button--added" : ""} ${this.props.classes}`}
 				disabled={this.props.stk < 1 && !inCart ? "disabled" : null}
 				onClick={this.handleClick.bind(
 					this,

@@ -7,6 +7,10 @@ import Star from "../SVGs/Star";
 // Returns button in top corner of product card OR inline button
 
 class AddToWish extends Component {
+	// default classes
+	static defaultProps = {
+		classes: ""
+	}
 	handleClick(id) {
 		if (
 			// If wishlist includes props.id
@@ -23,7 +27,7 @@ class AddToWish extends Component {
 		if (this.props.button) {
 			return (
 				<button
-					className={`add-to-wish--btn ${inWish ? "cart--added" : ""}`}
+					className={`${inWish ? "button--added" : ""} ${this.props.classes}`}
 					onClick={this.handleClick.bind(this, this.props.id)}
 					aria-label="Add/remove from Wishlist"
 				>
