@@ -6,7 +6,7 @@ const Hamburger = ({ size = 48, color = "#000000", handleClick, expanded }) => {
 			onClick={() => {
 				handleClick();
 			}}
-			style={{ height: size, width: size }}
+			style={{ height: size, width: size, border: "none" }}
 			className={`${expanded && "expanded"} icon--hamburger`}
 		>
 			<svg
