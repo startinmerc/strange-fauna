@@ -7,10 +7,13 @@
 	width: calc(70% - 4px - 0.3rem);
 }
 
+#email {
+	border-right: none;
+}
+
 .signup__submit {
 	width: calc(30% - 0.3rem);
 	border: 2px solid var(--black);
-	border-left: 0;
 	padding: 0.3rem;
 }
 
