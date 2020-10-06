@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { connect } from "react-redux";
 import { fetchOneProduct, clearSearch } from "../../store/actions/products";
-import ProductCard from "../Products/ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 
 // Returns ProductList-style display of Wishlist items
 

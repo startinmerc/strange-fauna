@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductCard from "../Products/ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 
 // Expects prop of section object
 // Returns element with link to section & dropdown menu of blurb & 2 product cards

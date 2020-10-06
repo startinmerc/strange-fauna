@@ -1,11 +1,12 @@
 import React from "react";
-import AddToCart from "./AddToCart";
-import AddToWish from "./AddToWish";
+import AddToCart from "../ProductCard/AddToCart";
+import AddToWish from "../ProductCard/AddToWish";
 import Star from "../SVGs/Star";
 import { useParams, Link } from "react-router-dom";
 import { editCart } from "../../store/actions/cart";
 import { clearSearch, fetchOneProduct } from "../../store/actions/products";
 import { connect } from "react-redux";
+import "./ProductDetail.css";
 
 // Expects no props,
 // Returns full product detail page

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { fetchOneProduct, clearSearch } from "../../store/actions/products";
 import { fetchDeliveries, changeDelivery } from "../../store/actions/delivery";
 import { Link } from "react-router-dom";
-import ProductCard from "../Products/ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 import "./Carts.css";
 
 // No props expected

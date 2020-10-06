@@ -5,7 +5,7 @@ import {
 	fetchProducts,
 	fetchCategoryProducts,
 } from "../../store/actions/products";
-import ProductCard from "./ProductCard";
+import ProductCard from "../ProductCard/ProductCard";
 import "./ProductList.css";
 
 // Expects 'type' string as prop, either all or product category, and title string
