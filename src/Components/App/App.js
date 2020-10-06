@@ -42,7 +42,7 @@ const App = ({ errors, fetchCategories, authUser }) => {
 				<meta charSet="utf-8" />
 				<title>Strange Fauna</title>
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
-				<meta name="theme-color" content="#000000" />
+				<meta name="theme-color" content="#545775" />
 				<meta
 					name="description"
 					content="Vendor of commercial and private flowers and funghi"
@@ -56,7 +56,7 @@ const App = ({ errors, fetchCategories, authUser }) => {
 				></link>
 				<title>Strange Flora</title>
 			</Helmet>
-			<Header mobile={isMo}/>
+			<Header mobile={isMo} />
 			{errors.message && <Errors errors={errors} />}
 			<Loader fullScreen={true} errors={errors} isLoading={isLoading} />
 			{!isLoading && (
