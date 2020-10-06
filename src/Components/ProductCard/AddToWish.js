@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { addWish, removeWish } from "../../store/actions/wish";
 import { connect } from "react-redux";
 import Star from "../SVGs/Star";
@@ -6,45 +6,44 @@ import Star from "../SVGs/Star";
 // Expects product id & button boolean
 // Returns button in top corner of product card OR inline button
 
-class AddToWish extends Component {
-	// default classes
-	static defaultProps = {
-		classes: ""
-	}
-	handleClick(id) {
-		if (
-			// If wishlist includes props.id
-			this.props.wish.includes(this.props.id)
-		) {
-			this.props.removeWish(id);
+function AddToWish({
+	addWish,
+	button = false,
+	classes = "",
+	id,
+	removeWish,
+	wish,
+}) {
+	const inWish = wish.includes(id);
+
+	function handleClick() {
+		if (inWish) {
+			removeWish(id);
 		} else {
-			this.props.addWish(id);
+			addWish(id);
 		}
 	}
 
-	render() {
-		let inWish = this.props.wish.includes(this.props.id);
-		if (this.props.button) {
-			return (
-				<button
-					className={`${inWish ? "button--added" : ""} ${this.props.classes}`}
-					onClick={this.handleClick.bind(this, this.props.id)}
-					aria-label="Add/remove from Wishlist"
-				>
-					{inWish ? "Remove from" : "Add to"} Wishlist
-				</button>
-			);
-		} else {
-			return (
-				<button
-					className={`add-to-wish ${inWish ? "wish--added" : ""}`}
-					onClick={this.handleClick.bind(this, this.props.id)}
-					aria-label="Add/remove from Wishlist"
-				>
-					<Star size={30} />
-				</button>
-			);
-		}
+	if (button) {
+		return (
+			<button
+				className={`${inWish ? "button--added" : ""} ${classes}`}
+				onClick={handleClick}
+				aria-label="Add/remove from Wishlist"
+			>
+				{inWish ? "Remove from" : "Add to"} Wishlist
+			</button>
+		);
+	} else {
+		return (
+			<button
+				className={`add-to-wish ${inWish ? "wish--added" : ""}`}
+				onClick={handleClick}
+				aria-label="Add/remove from Wishlist"
+			>
+				<Star size={30} />
+			</button>
+		);
 	}
 }
 
