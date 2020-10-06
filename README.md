@@ -879,6 +879,17 @@ Version logs for the project are below...
 * Add to components, pass as props if needed
 * Handle exceptions
 
+#### File structure refactor
+
+* Move "partials" out to individual folders
+* Split ProductCard/Detail/List to individual folders
+* Refactor Header & MobileHeader to single component
+
+#### Convert last Class components
+
+* Convert AddToCart to functional component
+* Convert AddToWish to functional component
+
 ---
 
 ### ToDo
@@ -915,11 +926,9 @@ Header.defaultProps = {
 ```
 
 * Convert FAQ to details/summaries
-* Review file structure
 * Review semantic HTML
 * Change icons
 * Pass fill style to add-to-wish instead of class? or would it remove transition?
-* AddToCart, AddToWish to functional component
 
 #### GSAP
 
