@@ -1,15 +1,14 @@
 import React from "react";
-import Header from "../Partials/Header/Header";
-import MobileHeader from "../Partials/Header/MobileHeader";
-import Footer from "../Partials/Footer/Footer";
-import MobileMenu from "../Partials/MobileMenu/MobileMenu";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import Landing from "../Landing/Landing";
 import Products from "../Products/Products";
 import Cart from "../Carts/Cart";
 import Wishlist from "../Carts/Wishlist";
 import Checkout from "../Carts/Checkout";
 import About from "../About/About";
-import Loader from "../Partials/Loader/Loader";
+import Loader from "../Loader/Loader";
 import Authform from "../Auth/Authform";
 import UserPage from "../UserPage/UserPage";
 import Errors from "../Errors/Errors";
@@ -57,7 +56,7 @@ const App = ({ errors, fetchCategories, authUser }) => {
 				></link>
 				<title>Strange Flora</title>
 			</Helmet>
-			{isMo ? <MobileHeader /> : <Header />}
+			<Header mobile={isMo}/>
 			{errors.message && <Errors errors={errors} />}
 			<Loader fullScreen={true} errors={errors} isLoading={isLoading} />
 			{!isLoading && (

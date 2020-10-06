@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-// Returns basic non-sticky header for use on mobile devices
+
 
 function Header() {
 	return (

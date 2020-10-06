@@ -1,5 +1,5 @@
 import React from "react";
-import { validateEmail } from "../../../middleware";
+import { validateEmail } from "../../middleware";
 import "./Signup.css";
 
 export default function Signup({ emailRef }) {

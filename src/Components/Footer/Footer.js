@@ -6,7 +6,7 @@ import {
 	TwitterSquare,
 	InstagramSquare,
 	YoutubeSquare,
-} from "../../SVGs/Socials";
+} from "../SVGs/Socials";
 import "./Footer.css";
 
 // Returns footer element with site links & link to Strange Industries

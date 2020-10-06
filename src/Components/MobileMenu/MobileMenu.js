@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import Star from "../../SVGs/Star";
-import ShoppingCart from "../../SVGs/ShoppingCart";
-import User from "../../SVGs/User";
+import Star from "../SVGs/Star";
+import ShoppingCart from "../SVGs/ShoppingCart";
+import User from "../SVGs/User";
 import Hamburger from "./Hamburger";
 import HeaderButton from "../Header/HeaderButton";
 import "./MobileMenu.css";

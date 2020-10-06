@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import Star from "../../SVGs/Star";
-import ShoppingCart from "../../SVGs/ShoppingCart";
-import User from "../../SVGs/User";
+import Star from "../SVGs/Star";
+import ShoppingCart from "../SVGs/ShoppingCart";
+import User from "../SVGs/User";
 import HeaderButton from "./HeaderButton";
 
 const HeaderButtonContainer = ({ wish, cart, currentUser }) => {
