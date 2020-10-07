@@ -88,12 +88,4 @@
 	#order-summary {
 		margin: 1rem 0;
 	}
-	.cart.product-card-image {
-		width: 40%;
-		margin-bottom: 8px;
-	}
-	.cart.product-card-body {
-		margin-left: 3%;
-		width: 57%;
-	}
 }
