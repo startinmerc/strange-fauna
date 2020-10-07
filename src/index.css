@@ -13,7 +13,7 @@
 	--header: #f1f1f1;
 }
 
-/* Gradients */
+/*==================Gradients==================*/
 
 :root {
 	--lighten-to-left: linear-gradient(
@@ -38,7 +38,7 @@
 	);
 }
 
-/* =================Backgrounds================= */
+/*==================Backgrounds==================*/
 
 .bg-mushroom {
 	background-color: var(--mushroom);
@@ -120,6 +120,8 @@ h3 {
 	font-size: 1.5rem;
 }
 
+/*====================Links====================*/
+
 a {
 	color: inherit;
 	text-decoration: none;
@@ -150,6 +152,8 @@ a:active::before {
 	transform: scaleY(10);
 	opacity: 0.5;
 }
+
+/*==================Buttons==================*/
 
 button {
 	font-family: inherit;
@@ -203,6 +207,8 @@ button:not(:disabled):focus {
 	background-color: var(--primary-mid);
 }
 
+/*====================Inputs====================*/
+
 select {
 	font-family: inherit;
 	font-size: inherit;
@@ -223,6 +229,8 @@ input[type="password"]:focus,
 input[type="text"]:focus {
 	background-color: var(--primary-mid);
 }
+
+/*===============Utilitiy Classes===============*/
 
 .sr-only {
 	position: absolute;
@@ -272,6 +280,7 @@ input[type="text"]:focus {
 @media (max-width: 800px) {
 	main {
 		width: 96%;
+		margin: calc(5.4rem + 24px) auto 0 auto;
 	}
 	.errors {
 		margin-top: calc(6.4rem + 14px);
