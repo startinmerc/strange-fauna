@@ -202,7 +202,7 @@ const Checkout = ({
 						)}
 					</div>
 				</div>
-				<button disabled className="summary-section">
+				<button disabled className="button--wide">
 					Pay Now
 				</button>
 			</div>

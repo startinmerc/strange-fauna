@@ -10,10 +10,6 @@
 	margin-top: 0;
 }
 
-.summary-section {
-	margin: 10px 0;
-}
-
 #checkout-summary {
 	background-color: var(--header);
 	padding: 1rem;
@@ -46,6 +42,10 @@
 	flex-direction: column;
 }
 
+#delivery-options {
+	margin-bottom: 1rem;
+}
+
 #order-summary {
 	background-color: var(--header);
 	padding: 1rem;
@@ -68,6 +68,8 @@
 	height: 5rem;
 	width: auto;
 }
+
+/*==============Responsive - Mobile==============*/
 
 @media (max-width: 600px) {
 	#checkout {
