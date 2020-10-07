@@ -143,6 +143,14 @@
 	color: var(--black);
 }
 
+.landing-section__link::before {
+	height: 0.4rem;
+}
+
+.landing-section__link:active::before {
+	transform: scaleY(6)
+}
+
 /*==============Odd/Even Sections==============*/
 
 .landing-section:nth-of-type(even) {
