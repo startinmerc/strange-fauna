@@ -67,8 +67,8 @@ const Cart = ({
 				<h2>Your Cart{total.qty === 0 && " is empty"}</h2>
 			</div>
 			<div className="cart__list">{cartList}</div>
-			<div style={{ textAlign: "right" }}>
-				<p className="cart__subtotal">Subtotal: ${total.val}</p>
+			<div className="text--right">
+				<p style={{textAlign: "right"}}>Subtotal: ${total.val}</p>
 				<p>
 					<label htmlFor="deliveries">Choose delivery option:</label>
 					<select

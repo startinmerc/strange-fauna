@@ -82,14 +82,9 @@ const Checkout = ({
 				<p>
 					<Link to="/cart">Edit Cart</Link>
 				</p>
-				<p style={{ textAlign: "right" }}>Subtotal: ${total.val}</p>
-				<p style={{ textAlign: "right" }}>Delivery: ${delivery}</p>
-				<p
-					style={{ textAlign: "right", fontSize: "1.4rem" }}
-					className="display"
-				>
-					Total: ${total.val + delivery}
-				</p>
+				<p className="text--right">Subtotal: ${total.val}</p>
+				<p className="text--right">Delivery: ${delivery}</p>
+				<h3 className="text--right">Total: ${total.val + delivery}</h3>
 			</div>
 
 			<div id="checkout-summary">

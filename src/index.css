@@ -253,6 +253,10 @@ input[type="text"]:focus {
 	margin-bottom: calc(-4.4rem - 14px);
 }
 
+.text--right {
+	text-align: right;
+}
+
 /*====================Boxes====================*/
 
 .boxes {

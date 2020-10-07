@@ -33,8 +33,8 @@ function Footer({ emailRef }) {
 			</div>
 			<div className="footer__column">
 				<ul
-					className="footer__link-group"
-					style={{ textAlign: "right", paddingRight: "5%" }}
+					className="footer__link-group text--right"
+					style={{ paddingRight: "5%" }}
 				>
 					<li className="footer__link">
 						<h3>
