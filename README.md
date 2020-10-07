@@ -890,6 +890,13 @@ Version logs for the project are below...
 * Convert AddToCart to functional component
 * Convert AddToWish to functional component
 
+#### Restyle Cart
+
+* Convert cart product cards to grid
+* Reposition card elements
+* Restyle as needed, in tandem with mobile view
+* Refactor ProductCard CSS
+
 ---
 
 ### ToDo
