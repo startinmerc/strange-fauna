@@ -242,7 +242,6 @@
 	}
 	.landing-section__text::before {
 		width: 100%;
-		left: 0;
 		transform: scaleY(1);
 		opacity: 0.2;
 		background: var(--black) !important;
