@@ -19,7 +19,7 @@ function EditQuantity(props) {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form onSubmit={handleSubmit} className="edit-quantity">
 			<label htmlFor="quantity">Quantity:</label>
 			<input
 				type="number"
@@ -32,8 +32,7 @@ function EditQuantity(props) {
 				min="1"
 				max={props.stk}
 			/>
-			<br />
-			<button type="submit" style={{ width: "100%" }}>
+			<button type="submit">
 				Change Quantity
 			</button>
 		</form>

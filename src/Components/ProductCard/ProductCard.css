@@ -156,3 +156,14 @@
 		width: 2rem;
 	}
 }
+
+/*==============Edit Quantity Form==============*/
+
+.edit-quantity {
+	display: flex;
+	align-items: center;
+}
+
+.edit-quantity input {
+	margin-right: 5px;
+}
