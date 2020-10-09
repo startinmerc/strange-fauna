@@ -108,9 +108,9 @@ function ProductDetail({
 						<br />
 						<AddToCart
 							id={_id}
-							qty={qty}
-							stk={stock}
-							price={price}
+							qty={Number(qty)}
+							stk={Number(stock)}
+							price={Number(price)}
 							classes="button--large button--wide button--details"
 						/>
 						<br />
@@ -121,24 +121,24 @@ function ProductDetail({
 				<div className="reviews__header">
 					<h3>Customer Reviews</h3>
 					<p>
-						<Star size="20px" fill="var(--primary)" />
+						<Star size={20} fill={true} />
 						<Star
-							size="20px"
-							fill={avgReview > 1.5 ? "var(--primary)" : "none"}
+							size={20}
+							fill={avgReview > 1.5}
 						/>
 						<Star
-							size="20px"
-							fill={avgReview > 2.5 ? "var(--primary)" : "none"}
+							size={20}
+							fill={avgReview > 2.5}
 						/>
 						<Star
-							size="20px"
-							fill={avgReview > 3.5 ? "var(--primary)" : "none"}
+							size={20}
+							fill={avgReview > 3.5}
 						/>
 						<Star
-							size="20px"
-							fill={avgReview > 4.5 ? "var(--primary)" : "none"}
+							size={20}
+							fill={avgReview > 4.5}
 						/>
-						&nbsp;<small>({avgReview})/5</small>
+						&nbsp;<small>({avgReview || 0})/5</small>
 						<br />
 						from {reviews.length} reviews
 					</p>
