@@ -897,6 +897,12 @@ Version logs for the project are below...
 * Restyle as needed, in tandem with mobile view
 * Refactor ProductCard CSS
 
+#### Refactor getCategories
+
+* Add new route in api to return cats & featured prods in 1 call
+* Create new action to handle new route
+* Remove unneeded calls from components
+
 ---
 
 ### ToDo
@@ -906,11 +912,16 @@ Version logs for the project are below...
 * check if stock > 0 on login & cart component load
 * pass to add wish & raise error if so
 
-#### API Interaction
+#### Reviews
 
-* Make nav population a single API call
-* Reviews
-* Pagination in products
+* Add post route for reviews with auth
+* Add review posting - seperate component? or within productDetail?
+
+#### Pagination in products
+
+* Create new product/category route which accepts page num, page size
+* Add redux action to new route which takes category, page num, page size
+* ProductList needs startIndex, endIndex, pages, currentPage, totalPages
 
 #### Transitions
 
@@ -919,6 +930,9 @@ Version logs for the project are below...
 
 #### Other
 
+* Review semantic HTML inc. component refactoring (containers), details/summary(?)
+* Change icons
+* Pass fill style to add-to-wish instead of class? or would it remove transition?
 * Install, config prop-types
 
 ```js
@@ -931,11 +945,6 @@ Header.defaultProps = {
   name: "Alan"
 };
 ```
-
-* Convert FAQ to details/summaries
-* Review semantic HTML
-* Change icons
-* Pass fill style to add-to-wish instead of class? or would it remove transition?
 
 #### GSAP
 
