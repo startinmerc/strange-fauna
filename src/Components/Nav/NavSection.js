@@ -6,7 +6,7 @@ import ProductCard from "../ProductCard/ProductCard";
 // Returns element with link to section & dropdown menu of blurb & 2 product cards
 // Or list of about links
 
-function NavSection({ color, type, title, products }) {
+function NavSection({ color, type, title, products=[] }) {
 	function handleClick(e) {
 		e.target.blur();
 	}
