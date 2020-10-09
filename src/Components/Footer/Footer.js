@@ -19,16 +19,16 @@ function Footer({ emailRef }) {
 				<Signup emailRef={emailRef} />
 				<div className="footer__socials">
 					<a href="http://www.facebook.com" aria-label="Link to Facebook">
-						<FacebookSquare size="40px" />
+						<FacebookSquare size={40} />
 					</a>
 					<a href="http://www.twitter.com" aria-label="Link to Twitter">
-						<TwitterSquare size="40px" />
+						<TwitterSquare size={40} />
 					</a>
 					<a href="http://www.instagram.com" aria-label="Link to Instagram">
-						<InstagramSquare size="40px" />
+						<InstagramSquare size={40} />
 					</a>
 					<a href="http://www.youtube.com" aria-label="Link to Youtube">
-						<YoutubeSquare size="40px" />
+						<YoutubeSquare size={40} />
 					</a>
 				</div>
 			</div>
