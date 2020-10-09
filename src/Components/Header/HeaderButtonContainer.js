@@ -10,7 +10,7 @@ const HeaderButtonContainer = ({ wish, cart, currentUser }) => {
 		<div className="header__buttons-container">
 			<HeaderButton
 				headerIcon={
-					<Star size={"24px"} strokeWidth="2" fill={!!wish.length > 0} />
+					<Star size={24} strokeWidth="2" fill={!!wish.length > 0} />
 				}
 				headerText={"Wishlist"}
 				id={"header-wish"}
@@ -20,7 +20,7 @@ const HeaderButtonContainer = ({ wish, cart, currentUser }) => {
 			<HeaderButton
 				headerIcon={
 					<ShoppingCart
-						size={"24px"}
+						size={24}
 						strokeWidth="2"
 						fill={!!cart.cart.length > 0}
 					/>
@@ -34,7 +34,7 @@ const HeaderButtonContainer = ({ wish, cart, currentUser }) => {
 			<HeaderButton
 				headerIcon={
 					<User
-						size={"24px"}
+						size={24}
 						strokeWidth="2"
 						fill={currentUser.isAuthenticated}
 					/>

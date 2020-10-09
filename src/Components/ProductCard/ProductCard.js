@@ -23,10 +23,10 @@ function ProductCard({ type, detail, delay = 0 }) {
 					<p className="display">
 						<Link to={`/products/${detail._id}`}>{detail.name}</Link>
 					</p>
-					<AddToCart price={detail.price} id={detail._id} stk={detail.stock} />
-					<EditQuantity id={detail._id} qty={detail.qty} stk={detail.stock} />
+					<AddToCart price={Number(detail.price)} id={detail._id} stk={Number(detail.stock)} />
+					<EditQuantity id={detail._id} qty={Number(detail.qty)} stk={Number(detail.stock)} />
 					<p className="product-card__price">
-						{detail.qty} x ${detail.price}
+						{Number(detail.qty)} x ${Number(detail.price)}
 					</p>
 				</div>
 			);
@@ -46,9 +46,9 @@ function ProductCard({ type, detail, delay = 0 }) {
 						<Link to={`/products/${detail._id}`}>
 							<h5>{detail.name}</h5>
 						</Link>
-						<h5>${detail.price}</h5>
+						<h5>${Number(detail.price)}</h5>
 					</div>
-					<AddToCart price={detail.price} id={detail._id} stk={detail.stock} />
+					<AddToCart price={Number(detail.price)} id={detail._id} stk={Number(detail.stock)} />
 				</div>
 			);
 		default:
@@ -75,9 +75,9 @@ function ProductCard({ type, detail, delay = 0 }) {
 						<Link to={`/products/${detail._id}`}>
 							<h5>{detail.name}</h5>
 						</Link>
-						<h5>${detail.price}</h5>
+						<h5>${Number(detail.price)}</h5>
 					</div>
-					<AddToCart price={detail.price} id={detail._id} stk={detail.stock} />
+					<AddToCart price={Number(detail.price)} id={detail._id} stk={Number(detail.stock)} />
 				</div>
 			);
 	}
