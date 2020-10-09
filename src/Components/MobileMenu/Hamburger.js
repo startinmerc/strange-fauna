@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Hamburger = ({
 	size = 48,
@@ -29,6 +30,14 @@ const Hamburger = ({
 			</svg>
 		</button>
 	);
+};
+
+Hamburger.propTypes = {
+	size: PropTypes.number,
+	color: PropTypes.string,
+	strokeWidth: PropTypes.string,
+	handleClick: PropTypes.func,
+	expanded: PropTypes.bool,
 };
 
 export default Hamburger;

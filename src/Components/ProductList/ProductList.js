@@ -6,6 +6,7 @@ import {
 	fetchCategoryProducts,
 } from "../../store/actions/products";
 import ProductCard from "../ProductCard/ProductCard";
+import PropTypes from "prop-types";
 import "./ProductList.css";
 
 // Expects 'type' string as prop, either all or product category, and title string
@@ -57,6 +58,11 @@ function mapStateToProps(state) {
 		products: state.products.products,
 	};
 }
+
+ProductList.propTypes = {
+	type: PropTypes.oneOf(["mushroom","berry","flower","reduction","all"]),
+	title: PropTypes.string,
+};
 
 export default connect(mapStateToProps, {
 	fetchProducts,

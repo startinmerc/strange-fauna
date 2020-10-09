@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import "./Landing.css";
 import LandingSection from "./LandingSection";
@@ -75,5 +76,12 @@ function mapStateToProps(reduxState) {
 		sections: reduxState.landingSections,
 	};
 }
+
+Landing.propTypes = {
+	emailRef: PropTypes.oneOfType([
+		PropTypes.func,
+		PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+	]),
+};
 
 export default connect(mapStateToProps, { fetchLandingSections })(Landing);

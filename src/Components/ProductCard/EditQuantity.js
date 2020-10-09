@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { editCart } from "../../store/actions/cart";
 import { connect } from "react-redux";
 
@@ -32,11 +33,15 @@ function EditQuantity(props) {
 				min="1"
 				max={props.stk}
 			/>
-			<button type="submit">
-				Change Quantity
-			</button>
+			<button type="submit">Change Quantity</button>
 		</form>
 	);
 }
+
+EditQuantity.propTypes = {
+	id: PropTypes.string,
+	qty: PropTypes.number,
+	stk: PropTypes.number,
+};
 
 export default connect(null, { editCart })(EditQuantity);

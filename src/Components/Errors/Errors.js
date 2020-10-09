@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { removeError } from "../../store/actions/errors";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
@@ -30,5 +31,10 @@ function Errors({ errors = null, removeError }) {
 		</div>
 	);
 }
+
+Errors.propTypes = {
+	errors: PropTypes.object,
+	removeError: PropTypes.func,
+};
 
 export default connect(null, { removeError })(Errors);

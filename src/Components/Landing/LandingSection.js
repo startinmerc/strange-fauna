@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 /* 
@@ -43,7 +44,9 @@ function LandingSection({ content, index }) {
 				style={{ backgroundImage: `url(${content.image})` }}
 				aria-hidden="true"
 			></div>
-			<div className={`landing-section__text ${secondaries[content.type]} ${dir}`}>
+			<div
+				className={`landing-section__text ${secondaries[content.type]} ${dir}`}
+			>
 				<h2 className="landing-section__header">{content.header}</h2>
 				<p className="landing-section__copy">{content.copy}</p>
 			</div>
@@ -51,5 +54,10 @@ function LandingSection({ content, index }) {
 		</section>
 	);
 }
+
+LandingSection.propTypes = {
+	content: PropTypes.object,
+	index: PropTypes.number,
+};
 
 export default LandingSection;

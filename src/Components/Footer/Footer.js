@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Signup from "../Signup/Signup";
 import {
@@ -89,5 +90,12 @@ function Footer({ emailRef }) {
 		</footer>
 	);
 }
+
+Footer.propTypes = {
+	emailRef: PropTypes.oneOfType([
+		PropTypes.func,
+		PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+	]),
+};
 
 export default Footer;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { removeError } from "../../store/actions/errors";
 import { connect } from "react-redux";
@@ -90,6 +91,13 @@ const Authform = ({ history, type, onAuth, removeError }) => {
 			</form>
 		</main>
 	);
+};
+
+Authform.propTypes = {
+	history: PropTypes.object,
+	type: PropTypes.oneOf(["up","in"]),
+	onAuth: PropTypes.func,
+	removeError: PropTypes.func,
 };
 
 export default connect(null, { removeError })(Authform);

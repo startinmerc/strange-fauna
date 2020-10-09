@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { addWish, removeWish } from "../../store/actions/wish";
 import { connect } from "react-redux";
 import Star from "../SVGs/Star";
@@ -52,5 +53,9 @@ function mapStateToProps(reduxState) {
 		wish: reduxState.wish,
 	};
 }
+
+AddToWish.propTypes = {
+	id: PropTypes.string,
+};
 
 export default connect(mapStateToProps, { addWish, removeWish })(AddToWish);

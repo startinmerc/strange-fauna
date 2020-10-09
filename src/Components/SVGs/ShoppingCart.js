@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ShoppingCart = ({
 	size = 48,
@@ -25,5 +26,12 @@ const ShoppingCart = ({
 		<path d="M2.5 2.5h3l2.7 12.4a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6l1.6-8.4H7.1" />
 	</svg>
 );
+
+ShoppingCart.propTypes = {
+	size: PropTypes.number,
+	fill: PropTypes.bool,
+	color: PropTypes.string,
+	strokeWidth: PropTypes.string,
+};
 
 export default ShoppingCart;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
 
@@ -97,5 +98,14 @@ function NavSection({ color, type, title, products=[] }) {
 		);
 	}
 }
+
+NavSection.propTypes = {
+	color: PropTypes.string,
+	type: PropTypes.oneOf([
+		"mushroom","berry","flower","reduction","about"
+	]),
+	title: PropTypes.string,
+	products: PropTypes.array,
+};
 
 export default NavSection;

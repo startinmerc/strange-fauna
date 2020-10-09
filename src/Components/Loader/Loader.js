@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./Loader.css";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -52,3 +53,8 @@ export default function Loader({ fullScreen, isLoading }) {
 		</TransitionGroup>
 	);
 }
+
+Loader.propTypes = {
+	fullScreen: PropTypes.bool,
+	isLoading: PropTypes.bool,
+};

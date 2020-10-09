@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { addCart, removeCart } from "../../store/actions/cart";
 import { connect } from "react-redux";
 
@@ -44,5 +45,11 @@ function mapStateToProps(reduxState) {
 		cart: reduxState.cart.cart,
 	};
 }
+
+AddToCart.propTypes = {
+	id: PropTypes.string,
+	price: PropTypes.number,
+	stk: PropTypes.number,
+};
 
 export default connect(mapStateToProps, { addCart, removeCart })(AddToCart);

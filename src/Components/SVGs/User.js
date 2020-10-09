@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const User = ({
 	size = 48,
@@ -24,5 +25,12 @@ const User = ({
 		<circle cx="12" cy="7" r="4"></circle>
 	</svg>
 );
+
+User.propTypes = {
+	size: PropTypes.number,
+	fill: PropTypes.bool,
+	color: PropTypes.string,
+	strokeWidth: PropTypes.string,
+}
 
 export default User;

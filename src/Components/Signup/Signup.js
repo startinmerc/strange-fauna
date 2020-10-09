@@ -1,5 +1,6 @@
 import React from "react";
 import { validateEmail } from "../../middleware";
+import PropTypes from "prop-types";
 import "./Signup.css";
 
 export default function Signup({ emailRef }) {
@@ -28,3 +29,10 @@ export default function Signup({ emailRef }) {
 		</form>
 	);
 }
+
+Signup.propTypes = {
+	emailRef: PropTypes.oneOfType([
+		PropTypes.func,
+		PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) }),
+	]),
+};

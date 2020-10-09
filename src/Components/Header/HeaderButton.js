@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import { Link } from "react-router-dom";
 
 // Returns HeaderButton with MiniCart child,
@@ -51,5 +52,15 @@ const HeaderButton = ({
 		</Link>
 	);
 };
+
+HeaderButton.propTypes = {
+	headerIcon: PropTypes.element,
+	headerText: PropTypes.string,
+	id: PropTypes.string,
+	url: PropTypes.string,
+	items: PropTypes.array,
+	total: PropTypes.object,
+	mobile: PropTypes.bool,
+}
 
 export default HeaderButton;

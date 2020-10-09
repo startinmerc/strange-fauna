@@ -3,6 +3,7 @@ import AddToCart from "./AddToCart";
 import AddToWish from "./AddToWish";
 import EditQuantity from "./EditQuantity";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./ProductCard.css";
 
 // Expects 'type' for renderinf and 'detail' object with product detail
@@ -81,5 +82,13 @@ function ProductCard({ type, detail, delay = 0 }) {
 			);
 	}
 }
+
+ProductCard.propTypes = {
+	type: PropTypes.oneOf([
+		"cart","nav",undefined
+	]),
+	detail: PropTypes.object,
+	delay: PropTypes.number,
+};
 
 export default ProductCard;
