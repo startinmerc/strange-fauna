@@ -1,6 +1,12 @@
 import React from "react";
 
-const Hamburger = ({ size = 48, color = "#000000", handleClick, expanded }) => {
+const Hamburger = ({
+	size = 48,
+	color = "var(--black)",
+	strokeWidth = "1",
+	handleClick,
+	expanded,
+}) => {
 	return (
 		<button
 			onClick={() => {
@@ -15,7 +21,7 @@ const Hamburger = ({ size = 48, color = "#000000", handleClick, expanded }) => {
 				xmlns="http://www.w3.org/2000/svg"
 				stroke={color}
 				fill="none"
-				strokeWidth="1"
+				strokeWidth={strokeWidth}
 			>
 				<line x1="3" y1="12" x2="21" y2="12"></line>
 				<line x1="3" y1="6" x2="21" y2="6"></line>

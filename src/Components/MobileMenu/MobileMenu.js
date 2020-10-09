@@ -62,7 +62,7 @@ const MobileMenu = ({ wish, cart, categories, currentUser }) => {
 				<HeaderButton
 					mobile={true}
 					headerIcon={
-						<Star size={"2rem"} strokeWidth="1" fill={!!wish.length > 0} />
+						<Star size={36} strokeWidth="1" fill={!!wish.length > 0} />
 					}
 					id={"header-wish"}
 					url={"/wishlist"}
@@ -71,11 +71,7 @@ const MobileMenu = ({ wish, cart, categories, currentUser }) => {
 				<HeaderButton
 					mobile={true}
 					headerIcon={
-						<ShoppingCart
-							size={"2rem"}
-							strokeWidth="1"
-							fill={!!cart.length > 0}
-						/>
+						<ShoppingCart size={36} strokeWidth="1" fill={!!cart.length > 0} />
 					}
 					id={"header-cart"}
 					url={"/cart"}
@@ -85,8 +81,8 @@ const MobileMenu = ({ wish, cart, categories, currentUser }) => {
 					mobile={true}
 					headerIcon={
 						<User
-							size={"24px"}
-							strokeWidth="2"
+							size={36}
+							strokeWidth="1"
 							color="var(--black)"
 							fill={currentUser.isAuthenticated}
 						/>
@@ -94,7 +90,12 @@ const MobileMenu = ({ wish, cart, categories, currentUser }) => {
 					id={"header-user"}
 					url={currentUser.isAuthenticated ? "/userpage" : "/signin"}
 				/>
-				<Hamburger size={"2rem"} handleClick={showMenu} expanded={expanded} />
+				<Hamburger
+					size={36}
+					handleClick={showMenu}
+					expanded={expanded}
+					strokeWidth="1"
+				/>
 			</div>
 		</div>
 	);
