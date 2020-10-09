@@ -36,3 +36,10 @@ export function validateEmail(email) {
 	// return boolean of validation
 	return re.test(String(email).toLowerCase());
 }
+
+// Email RegEx
+export const regEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i;
+// CSS Variable RegEx
+export const regCssVar = /^var\(--(.*?)\)$/;
+// Mongoose_id RegEx
+export const regMongoId = /^[a-f\d]{24}$/i;
