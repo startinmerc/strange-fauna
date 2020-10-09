@@ -43,3 +43,29 @@ export const regEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".
 export const regCssVar = /^var\(--(.*?)\)$/;
 // Mongoose_id RegEx
 export const regMongoId = /^[a-f\d]{24}$/i;
+
+export function propTypeCSSVar(props, propName, componentName) {
+	if (!regCssVar.test(props[propName]) && props[propName] !== undefined) {
+		return new Error(
+			"Invalid prop `" +
+				propName +
+				"` supplied to" +
+				" `" +
+				componentName +
+				"`. Validation failed."
+		);
+	}
+}
+
+export function propTypeMongoId(props, propName, componentName) {
+	if (!regMongoId.test(props[propName]) && props[propName] !== undefined) {
+		return new Error(
+			"Invalid prop `" +
+				propName +
+				"` supplied to" +
+				" `" +
+				componentName +
+				"`. Validation failed."
+		);
+	}
+}
