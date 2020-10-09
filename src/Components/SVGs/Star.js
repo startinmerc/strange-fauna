@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { propTypeCSSVar } from "../../middleware";
 
 const Star = ({
 	size = 48,
@@ -28,7 +29,9 @@ const Star = ({
 Star.propTypes = {
 	size: PropTypes.number,
 	fill: PropTypes.bool,
-	color: PropTypes.string,
+	color: function (props, propName, componentName) {
+		propTypeCSSVar(props, propName, componentName);
+	},
 	strokeWidth: PropTypes.string,
 };
 

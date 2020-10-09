@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { propTypeCSSVar } from "../../middleware";
 import { Link } from "react-router-dom";
 import ProductCard from "../ProductCard/ProductCard";
 
@@ -7,7 +8,7 @@ import ProductCard from "../ProductCard/ProductCard";
 // Returns element with link to section & dropdown menu of blurb & 2 product cards
 // Or list of about links
 
-function NavSection({ color, type, title, products=[] }) {
+function NavSection({ color, type, title, products = [] }) {
 	function handleClick(e) {
 		e.target.blur();
 	}
@@ -78,9 +79,7 @@ function NavSection({ color, type, title, products=[] }) {
 				>
 					{title}
 				</Link>
-				<div
-					className={`nav-section__submenu to-left bg-${type}`}
-				>
+				<div className={`nav-section__submenu to-left bg-${type}`}>
 					<div className="nav-section__submenu-content">
 						<h2>{title}</h2>
 						<p>
@@ -100,10 +99,10 @@ function NavSection({ color, type, title, products=[] }) {
 }
 
 NavSection.propTypes = {
-	color: PropTypes.string,
-	type: PropTypes.oneOf([
-		"mushroom","berry","flower","reduction","about"
-	]),
+	color: function (props, propName, componentName) {
+		propTypeCSSVar(props, propName, componentName);
+	},
+	type: PropTypes.oneOf(["mushroom", "berry", "flower", "reduction", "about"]),
 	title: PropTypes.string,
 	products: PropTypes.array,
 };

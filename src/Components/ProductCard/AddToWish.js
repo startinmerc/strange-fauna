@@ -1,8 +1,8 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { addWish, removeWish } from "../../store/actions/wish";
 import { connect } from "react-redux";
 import Star from "../SVGs/Star";
+import { propTypeMongoId } from "../../middleware";
 
 // Expects product id & button boolean
 // Returns button in top corner of product card OR inline button
@@ -55,7 +55,9 @@ function mapStateToProps(reduxState) {
 }
 
 AddToWish.propTypes = {
-	id: PropTypes.string,
+	id: function (props, propName, componentName) {
+		propTypeMongoId(props, propName, componentName);
+	},
 };
 
 export default connect(mapStateToProps, { addWish, removeWish })(AddToWish);

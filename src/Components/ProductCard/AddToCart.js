@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { addCart, removeCart } from "../../store/actions/cart";
 import { connect } from "react-redux";
+import { propTypeMongoId } from "../../middleware";
 
 // Expects product id
 // Returns add to cart button with conditional formatting
@@ -47,7 +48,9 @@ function mapStateToProps(reduxState) {
 }
 
 AddToCart.propTypes = {
-	id: PropTypes.string,
+	id: function (props, propName, componentName) {
+		propTypeMongoId(props, propName, componentName);
+	},
 	price: PropTypes.number,
 	stk: PropTypes.number,
 };

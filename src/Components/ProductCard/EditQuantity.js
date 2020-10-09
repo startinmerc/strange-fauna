@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { editCart } from "../../store/actions/cart";
 import { connect } from "react-redux";
+import { propTypeMongoId } from "../../middleware";
 
 function EditQuantity(props) {
 	// add qty to 'state' hook
@@ -39,7 +40,9 @@ function EditQuantity(props) {
 }
 
 EditQuantity.propTypes = {
-	id: PropTypes.string,
+	id: function (props, propName, componentName) {
+		propTypeMongoId(props, propName, componentName);
+	},
 	qty: PropTypes.number,
 	stk: PropTypes.number,
 };

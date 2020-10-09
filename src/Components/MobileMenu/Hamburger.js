@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { propTypeCSSVar } from "../../middleware";
 
 const Hamburger = ({
 	size = 48,
@@ -34,10 +35,13 @@ const Hamburger = ({
 
 Hamburger.propTypes = {
 	size: PropTypes.number,
-	color: PropTypes.string,
+	color: function (props, propName, componentName) {
+		propTypeCSSVar(props, propName, componentName);
+	},
 	strokeWidth: PropTypes.string,
 	handleClick: PropTypes.func,
 	expanded: PropTypes.bool,
 };
 
 export default Hamburger;
+
