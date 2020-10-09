@@ -903,6 +903,20 @@ Version logs for the project are below...
 * Create new action to handle new route
 * Remove unneeded calls from components
 
+#### PropTypes Pt.1
+
+* Install prop-types
+* Import into components
+* Add propTypes to supplied props
+* Fix raised errors
+
+#### PropTypes Pt.2
+
+* Put RegExs in middleware for props
+* Import RegExs where needed
+* Include in PropTypes
+* Fix raised errors
+
 ---
 
 ### ToDo
@@ -933,18 +947,9 @@ Version logs for the project are below...
 * Review semantic HTML inc. component refactoring (containers), details/summary(?)
 * Change icons
 * Pass fill style to add-to-wish instead of class? or would it remove transition?
-* Install, config prop-types
-
-```js
-Header.propTypes = {
-  name: PropTypes.string
-};
-
-// Same approach for defaultProps too
-Header.defaultProps = {
-  name: "Alan"
-};
-```
+* Class backgrounds in ProductCards
+* Possible PC refactor of nav/default
+* Destructure LandingSection data for PropTypes
 
 #### GSAP
 
