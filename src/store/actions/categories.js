@@ -35,10 +35,7 @@ export const fetchCategories = (setLoading) => {
 				// 1st array is categories, dispatch
 				dispatch(loadCategories(res[0]));
 				// 2nd array is featured products
-				let formatProds = [];
-				// Reformat to single array
-				res[1].forEach((v) => formatProds.push(...v));
-				dispatch(loadNavProducts(formatProds));
+				dispatch(loadNavProducts(res[1]));
 			})
 			.catch((err) => {
 				setLoading(false);

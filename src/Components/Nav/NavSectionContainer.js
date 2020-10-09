@@ -7,11 +7,11 @@ import { connect } from "react-redux";
 
 function NavSectionContainer({ categories, products }) {
 	// Map categories to NavSections
-	const sections = categories.map((cat) => (
+	const sections = categories.map((cat,ind) => (
 		<NavSection
 			key={`nav-section-${cat.type}`}
-			// Filter NavProducts by category to get relevant products & pass prop
-			products={products.filter((p) => p.type.type === cat.type)}
+			// Get relevant navProducts
+			products={products[ind]}
 			{...cat}
 		/>
 	));
