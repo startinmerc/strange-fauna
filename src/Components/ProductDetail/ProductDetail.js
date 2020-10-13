@@ -47,6 +47,14 @@ function ProductDetail({
 		setQty(Number(e.target.value));
 	}
 
+	function getAverageReview(reviews){
+		let num = 0, length = reviews.length;
+		reviews.forEach(v=>{
+			num += v.score;
+		})
+		return num/length;
+	}
+
 	if (foundProduct) {
 		const {
 			photos,
@@ -59,7 +67,7 @@ function ProductDetail({
 			type,
 		} = foundProduct;
 
-		var avgReview = "";
+		var avgReview = reviews.length > 1 ? "" : getAverageReview(reviews);
 
 		return (
 			<main id="details">
