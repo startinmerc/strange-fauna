@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, useRouteMatch } from "react-router-dom";
 import ProductList from "../ProductList/ProductList";
 import ProductDetail from "../ProductDetail/ProductDetail";
+import ReviewForm from "../ReviewForm/ReviewForm";
 
 // Acts as switch for React Router
 
@@ -23,6 +24,9 @@ function Products() {
 			</Route>
 			<Route path={`${match.url}/reductions`}>
 				<ProductList type="reduction" />
+			</Route>
+			<Route path={`${match.url}/:id/review`}>
+				<ReviewForm />
 			</Route>
 			<Route path={`${match.url}/:id`}>
 				<ProductDetail />
