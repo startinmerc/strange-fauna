@@ -18,6 +18,7 @@ function ProductDetail({
 	foundProduct,
 	editCart,
 	errors,
+	currentUser,
 }) {
 	// get product id from url
 	let { id } = useParams();
@@ -47,12 +48,13 @@ function ProductDetail({
 		setQty(Number(e.target.value));
 	}
 
-	function getAverageReview(reviews){
-		let num = 0, length = reviews.length;
-		reviews.forEach(v=>{
+	function getAverageReview(reviews) {
+		let num = 0,
+			length = reviews.length;
+		reviews.forEach((v) => {
 			num += v.score;
-		})
-		return num/length;
+		});
+		return num / length;
 	}
 
 	if (foundProduct) {
@@ -128,24 +130,17 @@ function ProductDetail({
 
 				<div className="reviews__header">
 					<h3>Customer Reviews</h3>
+					{!currentUser.isAuthenticated && (
+						<p>
+							<Link to={`/products/${_id}/review`}>Add review</Link>
+						</p>
+					)}
 					<p>
 						<Star size={20} fill={true} />
-						<Star
-							size={20}
-							fill={avgReview > 1.5}
-						/>
-						<Star
-							size={20}
-							fill={avgReview > 2.5}
-						/>
-						<Star
-							size={20}
-							fill={avgReview > 3.5}
-						/>
-						<Star
-							size={20}
-							fill={avgReview > 4.5}
-						/>
+						<Star size={20} fill={avgReview > 1.5} />
+						<Star size={20} fill={avgReview > 2.5} />
+						<Star size={20} fill={avgReview > 3.5} />
+						<Star size={20} fill={avgReview > 4.5} />
 						&nbsp;<small>({avgReview || 0})/5</small>
 						<br />
 						from {reviews.length} reviews
@@ -207,6 +202,7 @@ function mapStateToProps(reduxState) {
 		cart: reduxState.cart.cart.map((v) => v.id),
 		foundProduct: reduxState.products.search[0],
 		errors: reduxState.errors,
+		currentUser: reduxState.currentUser,
 	};
 }
 
