@@ -152,28 +152,16 @@ function ProductDetail({
 							<h3>
 								<span className="review__rating">
 									<span className="sr-only">{review.score} out of 5</span>
-									<Star size="17px" fill="var(--primary)" />
-									<Star
-										size="17px"
-										fill={review.score > 1 ? "var(--primary)" : "none"}
-									/>
-									<Star
-										size="17px"
-										fill={review.score > 2 ? "var(--primary)" : "none"}
-									/>
-									<Star
-										size="17px"
-										fill={review.score > 3 ? "var(--primary)" : "none"}
-									/>
-									<Star
-										size="17px"
-										fill={review.score > 4 ? "var(--primary)" : "none"}
-									/>
+									<Star size={17} fill={true} />
+									<Star size={17} fill={review.score > 1} />
+									<Star size={17} fill={review.score > 2} />
+									<Star size={17} fill={review.score > 3} />
+									<Star size={17} fill={review.score > 4} />
 								</span>
 								<span className="review__title">{review.title}</span>
 							</h3>
 							<small className="review__author">
-								by {review.author} on 01/01/01
+								by {review.user.username} on {review.createdAt}
 							</small>
 							<p className="review__text">{review.content}</p>
 						</li>
