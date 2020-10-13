@@ -2,6 +2,7 @@ import React from "react";
 import AddToCart from "../ProductCard/AddToCart";
 import AddToWish from "../ProductCard/AddToWish";
 import Star from "../SVGs/Star";
+import dayjs from "dayjs";
 import { useParams, Link } from "react-router-dom";
 import { editCart } from "../../store/actions/cart";
 import { clearSearch, fetchOneProduct } from "../../store/actions/products";
@@ -161,7 +162,8 @@ function ProductDetail({
 								<span className="review__title">{review.title}</span>
 							</h3>
 							<small className="review__author">
-								by {review.user.username} on {review.createdAt}
+								by {review.user.username} on{" "}
+								{dayjs(review.createdAt).format("DD/MM/YYYY")}
 							</small>
 							<p className="review__text">{review.content}</p>
 						</li>
