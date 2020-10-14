@@ -1,10 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { clearSearch, fetchOneProduct } from "../../store/actions/products";
+import { clearSearch, fetchOneProduct, postReview } from "../../store/actions/products";
 
-const ReviewForm = ({ userId, foundProduct, clearSearch, fetchOneProduct }) => {
+const ReviewForm = ({ userId, foundProduct, clearSearch, fetchOneProduct, postReview }) => {
 	let { id } = useParams();
+	let history = useHistory();
 
 	React.useEffect(() => {
 		if (!foundProduct) {
@@ -23,11 +24,8 @@ const ReviewForm = ({ userId, foundProduct, clearSearch, fetchOneProduct }) => {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		console.log(`Product: ${id}`);
-		console.log(`User: ${userId}`);
-		console.log(`Title: ${data.title}`);
-		console.log(`Score: ${data.score}`);
-		console.log(`Text: ${data.content}`);
+		postReview(id, userId, data);
+		history.push(`/products/${id}`);
 	}
 
 	function handleChange(e) {
@@ -51,7 +49,7 @@ const ReviewForm = ({ userId, foundProduct, clearSearch, fetchOneProduct }) => {
 					></input>
 				</div>
 				<div>
-          {/* To change to radios */}
+					{/* To change to radios */}
 					<label htmlFor="score">Review Score</label>
 					<input
 						placeholder="0"
@@ -86,6 +84,6 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { clearSearch, fetchOneProduct })(
+export default connect(mapStateToProps, { clearSearch, fetchOneProduct, postReview })(
 	ReviewForm
 );
