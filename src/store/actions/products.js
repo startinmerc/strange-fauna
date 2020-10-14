@@ -63,3 +63,14 @@ export const fetchNavProducts = (type_id) => {
 			.catch((err) => dispatch(addError(err)));
 	};
 };
+
+export const postReview = (product, user, data) => {
+	return (dispatch) => {
+		return apiCall("post", `/api/users/${user}/reviews`, {
+			product: product,
+			...data,
+		})
+			.then((res) => console.log(res))
+			.catch((err) => dispatch(addError(err)));
+	};
+};
