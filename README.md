@@ -917,7 +917,34 @@ Version logs for the project are below...
 * Include in PropTypes
 * Fix raised errors
 
+### V2.5
+
+#### Reviews Backend
+
+* Add review handlers in API
+* Populate reviews in getProduct
+* Populate review authors
+
+#### Reviews Form
+
+* Add basic ReviewForm component
+* Add component path to Product
+* Add link from ProductDetail to ReviewForm when logged in
+
+#### Reviews Form Redux
+
+* Add postReview action
+* Add deleteReview action
+
 ---
+
+#### Reviews Form Advanced
+
+* Make modular - full page / part of ProductDetail
+* Extract review to seperate component
+* Hide post review link if review already left
+* Edit route
+* Move get route out of auth
 
 ### ToDo
 
@@ -925,11 +952,6 @@ Version logs for the project are below...
 
 * check if stock > 0 on login & cart component load
 * pass to add wish & raise error if so
-
-#### Reviews
-
-* Add post route for reviews with auth
-* Add review posting - seperate component? or within productDetail?
 
 #### Pagination in products
 
@@ -950,6 +972,7 @@ Version logs for the project are below...
 * Class backgrounds in ProductCards
 * Possible PC refactor of nav/default
 * Destructure LandingSection data for PropTypes
+* Full width productDetail buttons on mobile
 
 #### GSAP
 
