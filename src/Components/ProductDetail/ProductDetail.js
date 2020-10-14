@@ -70,7 +70,7 @@ function ProductDetail({
 			type,
 		} = foundProduct;
 
-		var avgReview = reviews.length > 1 ? "" : getAverageReview(reviews);
+		var avgReview = reviews.length < 1 ? "" : getAverageReview(reviews);
 
 		return (
 			<main id="details">
@@ -131,7 +131,7 @@ function ProductDetail({
 
 				<div className="reviews__header">
 					<h3>Customer Reviews</h3>
-					{!currentUser.isAuthenticated && (
+					{currentUser.isAuthenticated && (
 						<p>
 							<Link to={`/products/${_id}/review`}>Add review</Link>
 						</p>
