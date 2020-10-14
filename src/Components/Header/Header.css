@@ -130,7 +130,7 @@
 
 /*=============Responsive - Tablet=============*/
 
-@media (max-width: 800px) {
+@media (max-width: 910px) {
 	.header__main-container {
 		padding: 5px 2% 5px calc(2% - 10px);
 	}
