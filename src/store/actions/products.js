@@ -70,7 +70,15 @@ export const postReview = (product, user, data) => {
 			product: product,
 			...data,
 		})
-			.then((res) => console.log(res))
+			.then((res) => {})
+			.catch((err) => dispatch(addError(err)));
+	};
+};
+
+export const deleteReview = (user,message) => {
+	return (dispatch) => {
+		return apiCall("delete", `api/users/${user}/reviews/${message}`)
+			.then((res) => {})
 			.catch((err) => dispatch(addError(err)));
 	};
 };
