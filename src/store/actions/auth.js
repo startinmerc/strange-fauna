@@ -1,4 +1,4 @@
-import { apiCall } from "../../services/api";
+import { apiCall, setTokenHeader } from "../../services/api";
 import { SET_CURRENT_USER } from "../actionTypes";
 import { addError, removeError } from "./errors";
 import { addCart, clearCart } from "./cart";
@@ -53,4 +53,8 @@ export function authUser(type, userData) {
 				});
 		});
 	};
+}
+
+export function setAuthorizationToken(token) {
+	setTokenHeader(token);
 }

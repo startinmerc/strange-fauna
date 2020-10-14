@@ -7,6 +7,8 @@ import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import ScrollTop from "./Components/Partials/ScrollTop";
 import { configureStore } from "./store";
+import jwtDecode from "jwt-decode";
+import { setAuthorizationToken, setCurrentUser } from "./store/actions/auth";
 
 const store = configureStore();
 
@@ -20,6 +22,18 @@ store.subscribe(() => {
 		})
 	);
 });
+
+if (localStorage.jwtToken) {
+	// set Auth token if one is present in ls
+	setAuthorizationToken(localStorage.jwtToken);
+	try {
+		// decode jwtToken, set decoded data as current user
+		store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
+	} catch (e) {
+		// clear user if unsucessful
+		store.dispatch(setCurrentUser({}));
+	}
+}
 
 ReactDOM.render(
 	<Provider store={store}>
