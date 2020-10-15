@@ -2,12 +2,12 @@ import React from "react";
 import AddToCart from "../ProductCard/AddToCart";
 import AddToWish from "../ProductCard/AddToWish";
 import Star from "../SVGs/Star";
-import dayjs from "dayjs";
 import { useParams, Link } from "react-router-dom";
 import { editCart } from "../../store/actions/cart";
 import { clearSearch, fetchOneProduct } from "../../store/actions/products";
 import { connect } from "react-redux";
 import "./ProductDetail.css";
+import Review from "../Review/Review";
 
 // Expects no props,
 // Returns full product detail page
@@ -149,24 +149,7 @@ function ProductDetail({
 				</div>
 				<ul className="reviews">
 					{reviews.map((review, i) => (
-						<li key={`review-${i}`} className="review">
-							<h3>
-								<span className="review__rating">
-									<span className="sr-only">{review.score} out of 5</span>
-									<Star size={17} fill={true} />
-									<Star size={17} fill={review.score > 1} />
-									<Star size={17} fill={review.score > 2} />
-									<Star size={17} fill={review.score > 3} />
-									<Star size={17} fill={review.score > 4} />
-								</span>
-								<span className="review__title">{review.title}</span>
-							</h3>
-							<small className="review__author">
-								by {review.user.username} on{" "}
-								{dayjs(review.createdAt).format("DD/MM/YYYY")}
-							</small>
-							<p className="review__text">{review.content}</p>
-						</li>
+						<Review review={review} i={i} currentUser={currentUser} />
 					))}
 				</ul>
 			</main>
