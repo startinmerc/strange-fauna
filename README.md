@@ -935,14 +935,23 @@ Version logs for the project are below...
 
 * Add postReview action
 * Add deleteReview action
+* Add push/pop action+handlers to update Redux state
+
+#### Refactoring
+
+* Move Review to seperate component
+* Hide post review link if review already left
+
+#### Modular form
+
+* Create seperate ReviewForm to embed on ProductDetail page
+* -Refactor both review forms
+* -Style forms
 
 ---
 
 #### Reviews Form Advanced
 
-* Make modular - full page / part of ProductDetail
-* Extract review to seperate component
-* Hide post review link if review already left
 * Edit route
 * Move get route out of auth
 
