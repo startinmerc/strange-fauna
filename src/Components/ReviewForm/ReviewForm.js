@@ -1,9 +1,19 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import { clearSearch, fetchOneProduct, postReview } from "../../store/actions/products";
+import {
+	clearSearch,
+	fetchOneProduct,
+	postReview,
+} from "../../store/actions/products";
 
-const ReviewForm = ({ userId, foundProduct, clearSearch, fetchOneProduct, postReview }) => {
+const ReviewForm = ({
+	userId,
+	foundProduct,
+	clearSearch,
+	fetchOneProduct,
+	postReview,
+}) => {
 	let { id } = useParams();
 	let history = useHistory();
 
@@ -36,7 +46,7 @@ const ReviewForm = ({ userId, foundProduct, clearSearch, fetchOneProduct, postRe
 		<main id="review-form">
 			<form onSubmit={handleSubmit}>
 				<h2>Review Form</h2>
-				{foundProduct && <h3>{foundProduct.name}</h3>}
+				<h3>{foundProduct && foundProduct.name}</h3>
 				<div>
 					<label htmlFor="title">Review Title</label>
 					<input
@@ -84,6 +94,8 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { clearSearch, fetchOneProduct, postReview })(
-	ReviewForm
-);
+export default connect(mapStateToProps, {
+	clearSearch,
+	fetchOneProduct,
+	postReview,
+})(ReviewForm);
