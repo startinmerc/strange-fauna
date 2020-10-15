@@ -8,6 +8,7 @@ import { clearSearch, fetchOneProduct } from "../../store/actions/products";
 import { connect } from "react-redux";
 import "./ProductDetail.css";
 import Review from "../Review/Review";
+import ReviewFormModal from "../ReviewForm/ReviewForm";
 
 // Expects no props,
 // Returns full product detail page
@@ -71,7 +72,9 @@ function ProductDetail({
 		} = foundProduct;
 
 		var avgReview = reviews.length < 1 ? "" : getAverageReview(reviews);
-		var leftReview = reviews.filter((v) => v._id === currentUser.user.id).length === 0;
+		var leftReview =
+			reviews.filter((v) => v._id === currentUser.user.id).length <
+			reviews.length;
 
 		return (
 			<main id="details">
@@ -132,10 +135,8 @@ function ProductDetail({
 
 				<div className="reviews__header">
 					<h3>Customer Reviews</h3>
-					{(currentUser.isAuthenticated && !leftReview) && (
-						<p>
-							<Link to={`/products/${_id}/review`}>Add review</Link>
-						</p>
+					{currentUser.isAuthenticated && !leftReview && (
+						<ReviewFormModal id={_id} modal={true} />
 					)}
 					<p>
 						<Star size={20} fill={true} />
