@@ -80,7 +80,7 @@ const ReviewForm = ({ userId, foundProduct, clearSearch, fetchOneProduct, postRe
 function mapStateToProps(state) {
 	return {
 		userId: state.currentUser.user.id,
-		foundProduct: state.products.search[0],
+		foundProduct: state.products.search,
 	};
 }
 

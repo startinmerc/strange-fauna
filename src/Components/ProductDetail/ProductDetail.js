@@ -190,7 +190,7 @@ function mapStateToProps(reduxState) {
 	return {
 		// reduce cart item objects to array of ids
 		cart: reduxState.cart.cart.map((v) => v.id),
-		foundProduct: reduxState.products.search[0],
+		foundProduct: reduxState.products.search,
 		errors: reduxState.errors,
 		currentUser: reduxState.currentUser,
 	};

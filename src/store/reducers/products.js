@@ -8,7 +8,7 @@ import {
 
 const DEFAULT_STATE = {
 	products: [],
-	search: [],
+	search: null,
 	navProducts: [],
 };
 
@@ -24,7 +24,7 @@ const products = (state = DEFAULT_STATE, action) => {
 		case LOAD_CATEGORY_PRODUCTS:
 			return { ...state, products: [...action.products] };
 		case LOAD_ONE_PRODUCT:
-			return { ...state, search: [...state.search, action.product] };
+			return { ...state, search: action.product };
 		case CLEAR_SEARCH:
 			return { ...state, search: DEFAULT_STATE.search };
 		default:
