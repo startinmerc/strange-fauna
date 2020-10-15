@@ -10,7 +10,7 @@ function Review({ i, review, currentUser, deleteReview }) {
 	}
 
 	return (
-		<li key={`review-${i}`} className="review">
+		<li className="review">
 			<h3>
 				<span className="review__rating">
 					<span className="sr-only">{review.score} out of 5</span>
