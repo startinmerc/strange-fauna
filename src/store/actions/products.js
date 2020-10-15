@@ -6,6 +6,8 @@ import {
 	LOAD_ONE_PRODUCT,
 	LOAD_CATEGORY_PRODUCTS,
 	CLEAR_SEARCH,
+	PUSH_REVIEW,
+	REMOVE_REVIEW,
 } from "../actionTypes";
 
 export const loadProducts = (products) => ({
@@ -30,6 +32,16 @@ export const loadOneProduct = (product) => ({
 
 export const clearSearch = () => ({
 	type: CLEAR_SEARCH,
+});
+
+export const pushReview = (review) => ({
+	type: PUSH_REVIEW,
+	review: review,
+});
+
+export const popReview = (review) => ({
+	type: REMOVE_REVIEW,
+	review: review,
 });
 
 export const fetchProducts = () => {
@@ -70,15 +82,15 @@ export const postReview = (product, user, data) => {
 			product: product,
 			...data,
 		})
-			.then((res) => {})
+			.then((res) => dispatch(pushReview(res)))
 			.catch((err) => dispatch(addError(err)));
 	};
 };
 
-export const deleteReview = (user,message) => {
+export const deleteReview = (user, message) => {
 	return (dispatch) => {
-		return apiCall("delete", `api/users/${user}/reviews/${message}`)
-			.then((res) => {})
+		return apiCall("delete", `/api/users/${user}/reviews/${message}`)
+			.then((res) => dispatch(popReview(res)))
 			.catch((err) => dispatch(addError(err)));
 	};
 };

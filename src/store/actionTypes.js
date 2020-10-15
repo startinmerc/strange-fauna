@@ -20,6 +20,10 @@ export const LOAD_ONE_PRODUCT = "LOAD_ONE_PRODUCT";
 export const LOAD_CATEGORY_PRODUCTS = "LOAD_CATEGORY_PRODUCTS";
 export const CLEAR_SEARCH = "CLEAR_SEARCH";
 
+// Reviews
+export const PUSH_REVIEW = "PUSH_REVIEW";
+export const REMOVE_REVIEW = "REMOVE_REVIEW";
+
 // Categories
 export const LOAD_CATEGORIES = "LOAD_CATEGORIES";
 

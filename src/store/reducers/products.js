@@ -4,6 +4,8 @@ import {
 	LOAD_ONE_PRODUCT,
 	LOAD_CATEGORY_PRODUCTS,
 	CLEAR_SEARCH,
+	PUSH_REVIEW,
+	REMOVE_REVIEW,
 } from "../actionTypes";
 
 const DEFAULT_STATE = {
@@ -27,6 +29,18 @@ const products = (state = DEFAULT_STATE, action) => {
 			return { ...state, search: action.product };
 		case CLEAR_SEARCH:
 			return { ...state, search: DEFAULT_STATE.search };
+		case PUSH_REVIEW:
+			// Add to redux state in sync with api
+			let newPushSearch = state.search;
+			newPushSearch.reviews.push(action.review);
+			return { ...state, search: newPushSearch };
+		case REMOVE_REVIEW:
+			// Remove from redux state in sync with api
+			let newRemoveSearch = state.search;
+			newRemoveSearch.reviews = state.search.reviews.filter(
+				(v) => v._id !== action.review._id
+			);
+			return { ...state, search: newRemoveSearch };
 		default:
 			return state;
 	}
