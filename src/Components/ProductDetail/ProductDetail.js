@@ -8,7 +8,7 @@ import { clearSearch, fetchOneProduct } from "../../store/actions/products";
 import { connect } from "react-redux";
 import "./ProductDetail.css";
 import Review from "../Review/Review";
-import ReviewFormModal from "../ReviewForm/ReviewForm";
+import ReviewFormModal from "../ReviewForm/ReviewFormModal";
 
 // Expects no props,
 // Returns full product detail page

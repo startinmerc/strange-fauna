@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { postReview } from "../../store/actions/products";
 
-const ReviewForm = ({ userId, postReview, id }) => {
+const ReviewFormModal = ({ userId, postReview, id }) => {
 	const [data, updateData] = React.useState({
 		title: "",
 		score: "",
@@ -76,4 +76,4 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps, { postReview })(ReviewForm);
+export default connect(mapStateToProps, { postReview })(ReviewFormModal);
