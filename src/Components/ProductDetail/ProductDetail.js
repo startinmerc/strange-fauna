@@ -71,6 +71,7 @@ function ProductDetail({
 		} = foundProduct;
 
 		var avgReview = reviews.length < 1 ? "" : getAverageReview(reviews);
+		var leftReview = reviews.filter((v) => v._id === currentUser.user.id).length === 0;
 
 		return (
 			<main id="details">
@@ -131,7 +132,7 @@ function ProductDetail({
 
 				<div className="reviews__header">
 					<h3>Customer Reviews</h3>
-					{currentUser.isAuthenticated && (
+					{(currentUser.isAuthenticated && !leftReview) && (
 						<p>
 							<Link to={`/products/${_id}/review`}>Add review</Link>
 						</p>
