@@ -1,11 +1,12 @@
 import React from "react";
 import { connect } from "react-redux";
 import { postReview } from "../../store/actions/products";
+import Star from "../SVGs/Star";
 
 const ReviewFormModal = ({ userId, postReview, id }) => {
 	const [data, updateData] = React.useState({
 		title: "",
-		score: "",
+		score: 0,
 		content: "",
 	});
 
@@ -28,8 +29,62 @@ const ReviewFormModal = ({ userId, postReview, id }) => {
 			</button>
 			{showForm && (
 				<form onSubmit={handleSubmit}>
-					<div>
-						<label htmlFor="title">Review Title</label>
+					<div className="review-form__section">
+						{/* To change to radios */}
+						<label htmlFor="score">Review Score:</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={1}
+								checked={data.score === "1"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 1} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={2}
+								checked={data.score === "2"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 2} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={3}
+								checked={data.score === "3"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 3} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={4}
+								checked={data.score === "4"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 4} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={5}
+								checked={data.score === "5"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 5} />
+						</label>
+					</div>
+					<div className="review-form__section">
+						<label htmlFor="title">Review Title:</label>
 						<input
 							placeholder="review title"
 							value={data.title}
@@ -39,20 +94,8 @@ const ReviewFormModal = ({ userId, postReview, id }) => {
 							id="title"
 						></input>
 					</div>
-					<div>
-						{/* To change to radios */}
-						<label htmlFor="score">Review Score</label>
-						<input
-							placeholder="0"
-							value={data.score}
-							onChange={handleChange}
-							type="number"
-							name="score"
-							id="score"
-						></input>
-					</div>
-					<div>
-						<label htmlFor="content">Review Content</label>
+					<div className="review-form__section">
+						<label htmlFor="content">Review Content:</label>
 						<input
 							placeholder="review content"
 							value={data.content}

@@ -52,6 +52,20 @@
 	margin-bottom: 0.03rem;
 }
 
+.radio--star input {
+	border: 0;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	white-space: nowrap;
+	clip: rect(0, 0, 0, 0);
+}
+.radio--star:hover svg {
+	stroke-width: 2;
+}
+
 /*=============Responsive - Mobile=============*/
 
 @media (max-width: 600px) {
