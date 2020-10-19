@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { postReview } from "../../store/actions/products";
 import "./ReviewFormModal.css";
 import Star from "../SVGs/Star";
+import { propTypeMongoId } from "../../middleware";
 
 const ReviewFormModal = ({ userId, postReview, id }) => {
 	const [data, updateData] = React.useState({
@@ -123,5 +124,11 @@ function mapStateToProps(state) {
 		foundProduct: state.products.search,
 	};
 }
+
+ReviewFormModal.propTypes = {
+	id: function (props, propName, componentName) {
+		propTypeMongoId(props, propName, componentName);
+	},
+};
 
 export default connect(mapStateToProps, { postReview })(ReviewFormModal);
