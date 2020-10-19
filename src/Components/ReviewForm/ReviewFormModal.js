@@ -33,59 +33,61 @@ const ReviewFormModal = ({ userId, postReview, id }) => {
 					<div className="review-form__section">
 						{/* To change to radios */}
 						<label htmlFor="score">Review Score:</label>
-						<label className="radio--star">
-							<input
-								type="radio"
-								name="score"
-								value={1}
-								checked={data.score === "1"}
-								onChange={handleChange}
-							/>
-							<Star size={20} fill={data.score >= 1} />
+						<div>
+							<label className="radio--star">
+								<input
+									type="radio"
+									name="score"
+									value={1}
+									checked={data.score === "1"}
+									onChange={handleChange}
+								/>
+								<Star size={20} fill={data.score >= 1} />
+							</label>
+							<label className="radio--star">
+								<input
+									type="radio"
+									name="score"
+									value={2}
+									checked={data.score === "2"}
+									onChange={handleChange}
+								/>
+								<Star size={20} fill={data.score >= 2} />
+							</label>
+							<label className="radio--star">
+								<input
+									type="radio"
+									name="score"
+									value={3}
+									checked={data.score === "3"}
+									onChange={handleChange}
+								/>
+								<Star size={20} fill={data.score >= 3} />
+							</label>
+							<label className="radio--star">
+								<input
+									type="radio"
+									name="score"
+									value={4}
+									checked={data.score === "4"}
+									onChange={handleChange}
+								/>
+								<Star size={20} fill={data.score >= 4} />
+							</label>
+							<label className="radio--star">
+								<input
+									type="radio"
+									name="score"
+									value={5}
+									checked={data.score === "5"}
+									onChange={handleChange}
+								/>
+								<Star size={20} fill={data.score >= 5} />
+							</label>
+						</div>
+						<label htmlFor="title" style={{ marginLeft: "5px" }}>
+							Review Title:
 						</label>
-						<label className="radio--star">
-							<input
-								type="radio"
-								name="score"
-								value={2}
-								checked={data.score === "2"}
-								onChange={handleChange}
-							/>
-							<Star size={20} fill={data.score >= 2} />
-						</label>
-						<label className="radio--star">
-							<input
-								type="radio"
-								name="score"
-								value={3}
-								checked={data.score === "3"}
-								onChange={handleChange}
-							/>
-							<Star size={20} fill={data.score >= 3} />
-						</label>
-						<label className="radio--star">
-							<input
-								type="radio"
-								name="score"
-								value={4}
-								checked={data.score === "4"}
-								onChange={handleChange}
-							/>
-							<Star size={20} fill={data.score >= 4} />
-						</label>
-						<label className="radio--star">
-							<input
-								type="radio"
-								name="score"
-								value={5}
-								checked={data.score === "5"}
-								onChange={handleChange}
-							/>
-							<Star size={20} fill={data.score >= 5} />
-						</label>
-					</div>
-					<div className="review-form__section">
-						<label htmlFor="title">Review Title:</label>
 						<input
 							placeholder="review title"
 							value={data.title}
@@ -106,7 +108,9 @@ const ReviewFormModal = ({ userId, postReview, id }) => {
 							id="content"
 						></input>
 					</div>
-					<button type="submit">Submit</button>
+					<button type="submit" className="button--wide">
+						Submit
+					</button>
 				</form>
 			)}
 		</div>
