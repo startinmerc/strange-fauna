@@ -150,10 +150,9 @@ function ProductDetail({
 					</p>
 				</div>
 				<ul className="reviews">
-					{reviews.map((review, i) => (
+					{reviews.map((review) => (
 						<Review
 							review={review}
-							i={i}
 							currentUser={currentUser}
 							key={`review-${review._id}`}
 						/>

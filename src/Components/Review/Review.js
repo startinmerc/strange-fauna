@@ -4,7 +4,7 @@ import Star from "../SVGs/Star";
 import { connect } from "react-redux";
 import { deleteReview } from "../../store/actions/products";
 
-function Review({ i, review, currentUser, deleteReview }) {
+function Review({ review, currentUser, deleteReview }) {
 	function handleRemove() {
 		deleteReview(review.user._id, review._id);
 	}
