@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { postReview } from "../../store/actions/products";
+import "./ReviewFormModal.css";
 import Star from "../SVGs/Star";
 
 const ReviewFormModal = ({ userId, postReview, id }) => {
