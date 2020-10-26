@@ -136,7 +136,7 @@ function ProductDetail({
 				<div className="reviews__header">
 					<h3>Customer Reviews</h3>
 					{currentUser.isAuthenticated && !leftReview && (
-						<ReviewFormModal id={_id} modal={true} />
+						<ReviewFormModal productId={_id} modal={true} />
 					)}
 					<p>
 						<Star size={20} fill={true} />

@@ -5,7 +5,7 @@ import "./ReviewFormModal.css";
 import Star from "../SVGs/Star";
 import { propTypeMongoId } from "../../middleware";
 
-const ReviewFormModal = ({ userId, postReview, id }) => {
+const ReviewFormModal = ({ userId, postReview, productId }) => {
 	const [data, updateData] = React.useState({
 		title: "",
 		score: 0,
@@ -16,7 +16,7 @@ const ReviewFormModal = ({ userId, postReview, id }) => {
 
 	function handleSubmit(e) {
 		e.preventDefault();
-		postReview(id, userId, data);
+		postReview(productId, userId, data);
 		updateShowForm(false);
 	}
 
@@ -126,7 +126,7 @@ function mapStateToProps(state) {
 }
 
 ReviewFormModal.propTypes = {
-	id: function (props, propName, componentName) {
+	productId: function (props, propName, componentName) {
 		propTypeMongoId(props, propName, componentName);
 	},
 };
