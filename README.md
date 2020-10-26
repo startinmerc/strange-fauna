@@ -945,8 +945,8 @@ Version logs for the project are below...
 #### Modular form
 
 * Create seperate ReviewForm to embed on ProductDetail page
-* -Refactor both review forms
-* -Style forms
+* Style form
+* Refactor both review forms to single component
 
 ---
 
