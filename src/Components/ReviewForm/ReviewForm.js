@@ -6,6 +6,9 @@ import {
 	fetchOneProduct,
 	postReview,
 } from "../../store/actions/products";
+import "./ReviewFormModal.css";
+import Star from "../SVGs/Star";
+// import { propTypeMongoId } from "../../middleware";
 
 const ReviewForm = ({
 	userId,
@@ -44,11 +47,66 @@ const ReviewForm = ({
 
 	return (
 		<main id="review-form">
+			<h2>Review Form</h2>
+			<h3>{foundProduct && foundProduct.name}</h3>
 			<form onSubmit={handleSubmit}>
-				<h2>Review Form</h2>
-				<h3>{foundProduct && foundProduct.name}</h3>
-				<div>
-					<label htmlFor="title">Review Title</label>
+				<div className="review-form__section">
+					<label htmlFor="score">Review Score:</label>
+					<div>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={1}
+								checked={data.score === "1"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 1} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={2}
+								checked={data.score === "2"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 2} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={3}
+								checked={data.score === "3"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 3} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={4}
+								checked={data.score === "4"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 4} />
+						</label>
+						<label className="radio--star">
+							<input
+								type="radio"
+								name="score"
+								value={5}
+								checked={data.score === "5"}
+								onChange={handleChange}
+							/>
+							<Star size={20} fill={data.score >= 5} />
+						</label>
+					</div>
+					<label htmlFor="title" style={{ marginLeft: "5px" }}>
+						Review Title:
+					</label>
 					<input
 						placeholder="review title"
 						value={data.title}
@@ -58,20 +116,8 @@ const ReviewForm = ({
 						id="title"
 					></input>
 				</div>
-				<div>
-					{/* To change to radios */}
-					<label htmlFor="score">Review Score</label>
-					<input
-						placeholder="0"
-						value={data.score}
-						onChange={handleChange}
-						type="number"
-						name="score"
-						id="score"
-					></input>
-				</div>
-				<div>
-					<label htmlFor="content">Review Content</label>
+				<div className="review-form__section">
+					<label htmlFor="content">Review Content:</label>
 					<input
 						placeholder="review content"
 						value={data.content}
@@ -81,7 +127,9 @@ const ReviewForm = ({
 						id="content"
 					></input>
 				</div>
-				<button type="submit">Submit</button>
+				<button type="submit" className="button--wide">
+					Submit
+				</button>
 			</form>
 		</main>
 	);
