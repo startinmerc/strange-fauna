@@ -32,7 +32,6 @@ const ReviewFormModal = ({ userId, postReview, productId }) => {
 			{showForm && (
 				<form onSubmit={handleSubmit}>
 					<div className="review-form__section">
-						{/* To change to radios */}
 						<label htmlFor="score">Review Score:</label>
 						<div>
 							<label className="radio--star">
