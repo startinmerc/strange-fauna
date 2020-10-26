@@ -26,7 +26,9 @@ function Products() {
 				<ProductList type="reduction" />
 			</Route>
 			<Route path={`${match.url}/:id/review`}>
-				<ReviewForm />
+				<main>
+					<ReviewForm fullPage={true} />
+				</main>
 			</Route>
 			<Route path={`${match.url}/:id`}>
 				<ProductDetail />

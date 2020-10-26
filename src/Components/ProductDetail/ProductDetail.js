@@ -8,7 +8,7 @@ import { clearSearch, fetchOneProduct } from "../../store/actions/products";
 import { connect } from "react-redux";
 import "./ProductDetail.css";
 import Review from "../Review/Review";
-import ReviewFormModal from "../ReviewForm/ReviewFormModal";
+import ReviewForm from "../ReviewForm/ReviewForm";
 
 // Expects no props,
 // Returns full product detail page
@@ -136,7 +136,7 @@ function ProductDetail({
 				<div className="reviews__header">
 					<h3>Customer Reviews</h3>
 					{currentUser.isAuthenticated && !leftReview && (
-						<ReviewFormModal productId={_id} modal={true} />
+						<ReviewForm productId={_id} modal={true} />
 					)}
 					<p>
 						<Star size={20} fill={true} />
